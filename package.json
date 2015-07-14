@@ -1,7 +1,11 @@
 {
   "private": true,
   "devDependencies": {
-    "gulp": "^3.8.8"
+    "gulp": "^3.8.8",
+    "angular-aria": "~1.4.2",
+    "angular-animate": "~1.4.2",
+    "angular": "~1.4.2",
+    "angular-material": "~0.10.0"
   },
   "dependencies": {
     "laravel-elixir": "^2.0.0",
