@@ -1,4 +1,4 @@
-var injections = ['scope'];
+var injections = ['$scope'];
 
 var controller = function ($scope) {
     console.log('running');
