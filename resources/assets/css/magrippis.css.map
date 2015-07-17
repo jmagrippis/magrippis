@@ -1,1 +1,1 @@
-{"version":3,"sources":["magrippis.css"],"names":[],"mappings":"AAAA;EACE,mBAAkB,EAAE","file":"magrippis.css","sourcesContent":[],"sourceRoot":"/source/"}
+{"version":3,"sources":["components/workarea.scss"],"names":[],"mappings":"AAAA;EACE,mBAAkB,EADT","file":"magrippis.css","sourcesContent":[".workarea {\r\n  max-width: 1280px;\r\n}"],"sourceRoot":"/source/"}

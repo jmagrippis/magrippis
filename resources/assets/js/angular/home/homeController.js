@@ -1,8 +1,7 @@
-var injections = ['$scope'];
+var injections = ['$scope', 'Categories'];
 
-var controller = function ($scope) {
-    console.log('running');
-    $scope.greeting = 'Hola!';
+var controller = function ($scope, Categories) {
+    $scope.categories = Categories.query();
 };
 
 var exports = injections;

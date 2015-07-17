@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Magrippis\Models\User;
 
 class UsersSeeder extends Seeder
 {
@@ -11,13 +12,13 @@ class UsersSeeder extends Seeder
      */
     public function run()
     {
-        \Magrippis\Models\User::create(
+        User::create(
             [
-                'username' => env('DB_CONNECTION'),
-                'email' => 'j@magrippis.com',
-                'password' => 'this is johnny',
-                'first_name' => 'Johnny',
-                'last_name' => 'Magrippis',
+                'username' => env('ADMIN_USERNAME'),
+                'email' => env('ADMIN_EMAIL'),
+                'password' => env('ADMIN_PASSWORD'),
+                'first_name' => env('ADMIN_FIRST_NAME'),
+                'last_name' => env('ADMIN_LAST_NAME'),
                 'level' => 5
             ]
         );

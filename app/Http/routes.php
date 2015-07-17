@@ -11,6 +11,12 @@
 |
 */
 
+Route::group(['prefix' => 'api/v1'], function () {
+
+    Route::resource('categories', 'CategoriesController');
+
+});
+
 Route::any('{path?}', function () {
     return view('angular');
 })->where('path', '.+');

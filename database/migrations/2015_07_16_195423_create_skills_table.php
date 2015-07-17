@@ -14,7 +14,11 @@ class CreateSkillsTable extends Migration
     {
         Schema::create('skills', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
+            $table->unsignedInteger('category_id');
+            $table->foreign('category_id')
+                ->references('id')->on('categories')
+                ->onDelete('cascade');
+            $table->string('name_en');
             $table->tinyInteger('ordering')->default(1)->index();
             $table->boolean('featured')->default(0);
             $table->timestamps();
