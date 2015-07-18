@@ -41,22 +41,32 @@
         </div>
     </md-toolbar>
     <md-content class="md-padding" layout="column" layout-align="center center">
-        <md-whiteframe class="md-whiteframe-z1 md-padding md-margin workarea" layout="column" layout-align="center center" style="max-width: 1280px">
-            <md-card ng-repeat="category in categories">
-                <img src="//placehold.it/1920x480" class="md-card-image" alt="Placeholder Image">
-                <md-card-content>
-                    <h2 class="md-title">@{{ category.name }}</h2>
+        <md-whiteframe class="md-whiteframe-z1 md-padding md-margin workarea" layout="column" layout-align="center center">
+            <div>
+                <md-card ng-repeat="category in categories" layout="row">
+                    <div flex="50" style="background-color: #eee" layout="column">
+                        <md-icon><i class="material-icons">favorite</i></md-icon>
+                    </div>
+                    <div flex="50" class="md-padding">
+                        <md-card-content flex="50">
+                            <h2 class="md-title">@{{ category.name }}</h2>
 
-                    <p>
-                        @{{ category.description }}
-                    </p>
+                            <p>
+                                @{{ category.description }}
+                            </p>
 
-                </md-card-content>
-                <div class="md-actions" layout="row" layout-align="end center">
-                    <md-button>Action 1</md-button>
-                    <md-button>Action 2</md-button>
-                </div>
-            </md-card>
+                        </md-card-content>
+                        <div layout="row" layout-align="end center">
+                            <md-chips ng-model="category.skills">
+                                <md-chip-template>
+                                    @{{ $chip.name }}
+                                </md-chip-template>
+                            </md-chips>
+                        </div>
+                    </div>
+                </md-card>
+            </div>
+
         </md-whiteframe>
     </md-content>
 </div>

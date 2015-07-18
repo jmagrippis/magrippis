@@ -48626,6 +48626,8 @@ var injections = ['$scope', 'Categories'];
 
 var controller = function controller($scope, Categories) {
     $scope.categories = Categories.query();
+
+    console.log($scope.categories);
 };
 
 var _exports = injections;
