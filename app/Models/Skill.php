@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Skill extends Model
 {
+    use TranslatableTrait;
+
     /**
      * The attributes that are mass assignable.
      *
@@ -36,16 +38,5 @@ class Skill extends Model
     public function getNameAttribute()
     {
         return $this->getLocalized('name');
-    }
-
-    /**
-     * Returns the localized version of an attribute
-     * @param $column
-     * @return mixed
-     */
-    protected function getLocalized($column)
-    {
-        $localized = $this->{$column . '_' . \App::getLocale()};
-        return $localized ? $localized : $this->{$column . '_' . config('fallback_locale')};
     }
 }

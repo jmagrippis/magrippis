@@ -1,0 +1,11 @@
+.skills {
+  md-card {
+    .icon {
+      background-color: $color-accent;
+      color: $color-primary-dark;
+      i {
+        font-size: 6rem;
+      }
+    }
+  }
+}

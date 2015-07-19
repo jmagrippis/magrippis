@@ -41,11 +41,16 @@
         </div>
     </md-toolbar>
     <md-content class="md-padding" layout="column" layout-align="center center">
+        <div class="callout">
+            <md-content>
+                Get the developer you deserve.
+            </md-content>
+        </div>
         <md-whiteframe class="md-whiteframe-z1 md-padding md-margin workarea" layout="column" layout-align="center center">
-            <div>
+            <div class="skills">
                 <md-card ng-repeat="category in categories" layout="row">
-                    <div flex="50" style="background-color: #eee" layout="column">
-                        <md-icon><i class="material-icons">favorite</i></md-icon>
+                    <div flex="50" class="icon" layout="column" layout-align="center center">
+                        <i class="material-icons">favorite</i>
                     </div>
                     <div flex="50" class="md-padding">
                         <md-card-content flex="50">
@@ -56,8 +61,8 @@
                             </p>
 
                         </md-card-content>
-                        <div layout="row" layout-align="end center">
-                            <md-chips ng-model="category.skills">
+                        <div layout="row" layout-align="start center">
+                            <md-chips ng-model="category.skills" readonly="true">
                                 <md-chip-template>
                                     @{{ $chip.name }}
                                 </md-chip-template>
@@ -66,7 +71,6 @@
                     </div>
                 </md-card>
             </div>
-
         </md-whiteframe>
     </md-content>
 </div>

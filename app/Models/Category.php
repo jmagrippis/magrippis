@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Category extends Model
 {
+    use TranslatableTrait;
+
     /**
      * The attributes that are mass assignable.
      *
@@ -45,16 +47,5 @@ class Category extends Model
     public function getDescriptionAttribute()
     {
         return $this->getLocalized('description');
-    }
-
-    /**
-     * Returns the localized version of an attribute
-     * @param $column
-     * @return mixed
-     */
-    protected function getLocalized($column)
-    {
-        $localized = $this->{$column . '_' . \App::getLocale()};
-        return $localized ? $localized : $this->{$column . '_' . config('fallback_locale')};
     }
 }
