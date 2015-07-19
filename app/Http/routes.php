@@ -13,7 +13,8 @@
 
 Route::group(['prefix' => 'api/v1'], function () {
 
-    Route::resource('categories', 'CategoriesController');
+    Route::resource('categories', 'CategoriesController', ['only' => ['index', 'show']]);
+    Route::resource('skills', 'SkillsController', ['only' => ['index']]);
 
 });
 

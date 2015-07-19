@@ -43,7 +43,24 @@
     <md-content class="md-padding" layout="column" layout-align="center center">
         <div class="callout">
             <md-content>
-                Get the developer you deserve.
+                Find the developer you deserve.
+                <md-chips ng-model="searchTags" md-autocomplete-snap md-require-match>
+                    <md-autocomplete
+                            md-selected-item="selectedSkill"
+                            md-search-text="searchText"
+                            md-search-text-change=""
+                            md-items="skill in querySearch(searchText)"
+                            md-item-text="skill.name"
+                            placeholder="Enter a skill"
+                            >
+                        <span md-highlight-text="searchText">@{{item.name}}</span>
+                    </md-autocomplete>
+                    <md-chip-template>
+                        <span>
+                          <strong>@{{$chip.name}}</strong>
+                        </span>
+                    </md-chip-template>
+                </md-chips>
             </md-content>
         </div>
         <md-whiteframe class="md-whiteframe-z1 md-padding md-margin workarea" layout="column" layout-align="center center">
