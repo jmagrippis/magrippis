@@ -2,4 +2,18 @@ md-fab-speed-dial.contact {
   position: fixed;
   right: 1rem;
   bottom: 1rem;
+  md-icon {
+    a {
+      color: $color-primary;
+      i.fa {
+        top: -0.2rem;
+        position: relative;
+      }
+    }
+    &:hover {
+      a {
+        color: $color-accent;
+      }
+    }
+  }
 }
