@@ -15,7 +15,7 @@ return [
     |
     */
 
-    'driver' => env('MAIL_DRIVER', 'smtp'),
+    'driver' => env('MAIL_DRIVER', 'mandrill'),
 
     /*
     |--------------------------------------------------------------------------
@@ -54,7 +54,7 @@ return [
     |
     */
 
-    'from' => ['address' => null, 'name' => null],
+    'from' => ['address' => env('ADMIN_EMAIL'), 'name' => env('ADMIN_FIRST_NAME') . ' ' . env('ADMIN_LAST_NAME')],
 
     /*
     |--------------------------------------------------------------------------

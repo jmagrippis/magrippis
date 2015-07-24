@@ -7,9 +7,9 @@
     <link rel="stylesheet" href="{{ elixir('assets/css/magrippis.css') }}">
 </head>
 <body>
-<div ng-app="magrippis" ng-controller="HomeController as homeC" layout="column" layout-fill>
+<div ng-app="magrippis" ng-controller="CoreController as core" layout="column" layout-fill>
     @include('partials.toolbar')
-    <md-content class="md-padding" layout="column" layout-align="center center">
+    <md-content class="md-padding" layout="column" layout-align="center center" ng-controller="HomeController as home">
         <div class="callout">
             <md-content>
                 Find the developer you deserve.

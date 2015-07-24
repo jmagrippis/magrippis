@@ -5,8 +5,6 @@ namespace Magrippis\Http\Controllers;
 use Illuminate\Http\Request;
 
 use Magrippis\Http\Requests;
-use Magrippis\Http\Controllers\Controller;
-use Magrippis\Models\Category;
 
 class SkillsController extends Controller
 {

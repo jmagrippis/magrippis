@@ -1,0 +1,55 @@
+<md-dialog aria-label="Get in touch">
+    <md-toolbar>
+        <div class="md-toolbar-tools">
+            <h2>Get in touch</h2>
+            <span flex></span>
+            <md-button class="md-icon-button" ng-click="contact.cancel()">
+                <md-icon md-font-library="material-icons" aria-label="Close dialog">close</md-icon>
+            </md-button>
+        </div>
+    </md-toolbar>
+    <md-progress-linear md-mode="indeterminate" ng-show="processing"></md-progress-linear>
+    <md-dialog-content>
+        <div>
+            <p>
+                You are very welcome to get in touch regarding business opportunities, general website questions, or even Steam co-op sessions!
+            </p>
+        </div>
+        <form name="contactForm" layout="column">
+            <div layout="row" layout-sm="column">
+                <md-input-container flex-gt-sm="45">
+                    <label>Name</label>
+                    <input ng-model="contact.user.name" name="name" required>
+                    <div ng-messages="contactForm.name.$error" ng-if="contactForm.name.$touched">
+                        <div ng-message="required">It's only fair, you know mine.</div>
+                    </div>
+                </md-input-container>
+                <span flex="10" hide-sm></span>
+                <md-input-container flex-gt-sm="45">
+                    <label>Email</label>
+                    <input type="email" ng-model="contact.user.email" name="email" required>
+                    <div ng-messages="contactForm.email.$error" ng-if="contactForm.email.$touched">
+                        <div ng-message="required">How will I get back to you?</div>
+                        <div ng-message="email">That address looks dodgy...</div>
+                    </div>
+                </md-input-container>
+            </div>
+            <md-input-container flex>
+                <label>Message</label>
+                <textarea ng-model="contact.user.message" name="message" required></textarea>
+                <div ng-messages="contactForm.message.$error" ng-if="contactForm.message.$touched">
+                    <div ng-message="required">An empty message is better left unsent.</div>
+                </div>
+            </md-input-container>
+        </form>
+    </md-dialog-content>
+    <div class="md-actions" layout="row">
+        <span flex></span>
+        <md-button ng-click="contact.cancel()" class="md-primary">
+            Cancel
+        </md-button>
+        <md-button ng-click="contact.email(contact.user)" ng-disabled="!contactForm.$valid" class="md-primary md-raised">
+            Send!
+        </md-button>
+    </div>
+</md-dialog>

@@ -2,4 +2,6 @@ var angular = require('angular');
 
 angular
     .module('magrippis.controllers', ['magrippis.factories'])
-    .controller('HomeController', require('./home/homeController.js'));
+    .controller('CoreController', require('./components/core/coreController.js'))
+    .controller('HomeController', require('./components/home/homeController.js'))
+    .controller('ContactController', require('./components/contact/contactController.js'));

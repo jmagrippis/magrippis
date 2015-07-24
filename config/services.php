@@ -20,7 +20,7 @@ return [
     ],
 
     'mandrill' => [
-        'secret' => '',
+        'secret' => env('MANDRILL_KEY'),
     ],
 
     'ses' => [
@@ -30,7 +30,7 @@ return [
     ],
 
     'stripe' => [
-        'model'  => Magrippis\User::class,
+        'model'  => Magrippis\Models\User::class,
         'key'    => '',
         'secret' => '',
     ],
