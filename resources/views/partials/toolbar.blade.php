@@ -4,14 +4,14 @@
             <span>Johnny Magrippis</span>
         </h2>
         <span flex></span>
-        <md-button class="md-icon-button md-raised md-primary" aria-label="Home">
+        <md-button class="md-icon-button md-raised md-primary" aria-label="Home" ui-sref="app.home" ng-disabled="core.isActiveState('app.home')">
             <md-icon md-font-library="material-icons">style</md-icon>
             <md-tooltip>
                 Home
             </md-tooltip>
         </md-button>
-        <md-button class="md-icon-button md-raised md-primary" aria-label="Portfolio">
-            <md-icon md-font-library="material-icons">assignment_turned_in</md-icon>
+        <md-button class="md-icon-button md-raised md-primary" aria-label="Portfolio" ui-sref="app.portfolio" ng-disabled="core.isActiveState('app.portfolio')">
+            <md-icon md-font-library="material-icons" ui-sref="app.portfolio">assignment_turned_in</md-icon>
             <md-tooltip>
                 Portfolio
             </md-tooltip>

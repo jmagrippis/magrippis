@@ -1,6 +1,10 @@
-var injections = ['$mdDialog'];
+var injections = ['$mdDialog', '$state'];
 
-var controller = function ($mdDialog) {
+var controller = function ($mdDialog, $state) {
+
+    this.isActiveState = function(state) {
+        return $state.includes(state)
+    };
 
     this.showContact = function (event) {
         $mdDialog.show({
