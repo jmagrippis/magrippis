@@ -1,31 +1,29 @@
-var injections = ['$scope', 'Categories'];
+let injections = ['Categories'];
 
-var controller = function ($scope, Categories) {
-    $scope.availableSkills = [];
-    $scope.categories = Categories.query({}, function () {
-        $scope.categories.forEach(function (category) {
-            $scope.availableSkills = $scope.availableSkills.concat(category.skills);
+let controller = function (Categories) {
+    this.availableSkills = [];
+    this.categories = Categories.query({}, () => {
+        this.categories.forEach(category => {
+            this.availableSkills = this.availableSkills.concat(category.skills);
         });
     });
 
-    $scope.searchTags = [];
-    $scope.selectedSkill;
-    $scope.searchText;
+    this.searchTags = [];
+    this.selectedSkill = {};
+    this.searchText = '';
 
-    $scope.querySearch = function querySearch(query) {
-        var results = query ? $scope.availableSkills.filter(createFilterFor(query)) : [];
+    this.querySearch = query => {
+        let results = query ? this.availableSkills.filter(createFilterFor(query)) : [];
         return results;
     };
 
     function createFilterFor(query) {
-        var lowercaseQuery = angular.lowercase(query);
-        return function filterFn(skill) {
-            return (skill.name.indexOf(lowercaseQuery) === 0);
-        };
+        let lowercaseQuery = angular.lowercase(query);
+        return skill => skill.name.indexOf(lowercaseQuery) === 0;
     }
 };
 
-var exports = injections;
+let exports = injections;
 exports.push(controller);
 
 module.exports = exports;

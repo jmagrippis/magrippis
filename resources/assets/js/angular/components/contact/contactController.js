@@ -1,14 +1,14 @@
-var injections = ['$scope', '$http', '$mdDialog', '$mdToast'];
+let injections = ['$http', '$mdDialog', '$mdToast'];
 
-var controller = function ($scope, $http, $mdDialog, $mdToast) {
+let controller = function ($http, $mdDialog, $mdToast) {
 
-    this.email = function(user) {
+    this.email = user => {
 
-        $scope.processing = true;
+        this.processing = true;
 
         $http.post('/api/v1/contact', user).
-            success(function(response) {
-                $scope.processing = false;
+            success(response => {
+                this.processing = false;
 
                 $mdDialog.hide();
 
@@ -19,17 +19,17 @@ var controller = function ($scope, $http, $mdDialog, $mdToast) {
                         .hideDelay(3000)
                 );
             }).
-            error(function(response, status) {
-                console.log({status: status, response: response})
+            error((response, status) => {
+                console.log({status, response})
             });
     };
 
-    this.cancel = function() {
+    this.cancel = () => {
         $mdDialog.cancel();
     };
 };
 
-var exports = injections;
+let exports = injections;
 exports.push(controller);
 
 module.exports = exports;

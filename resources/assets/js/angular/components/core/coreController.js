@@ -1,12 +1,10 @@
-var injections = ['$mdDialog', '$state'];
+let injections = ['$mdDialog', '$state'];
 
-var controller = function ($mdDialog, $state) {
+let controller = function ($mdDialog, $state) {
 
-    this.isActiveState = function(state) {
-        return $state.includes(state)
-    };
+    this.isActiveState = state => $state.includes(state);
 
-    this.showContact = function (event) {
+    this.showContact = event => {
         $mdDialog.show({
             parent: angular.element(document.body),
             controller: 'ContactController',
@@ -19,7 +17,7 @@ var controller = function ($mdDialog, $state) {
 
 };
 
-var exports = injections;
+let exports = injections;
 exports.push(controller);
 
 module.exports = exports;
