@@ -22,6 +22,16 @@ angular
                     }
                 }
             })
+            .state('app.cv', {
+                url: 'cv',
+                views: {
+                    mainContent: {
+                        templateUrl: './angular/components/cv/cv.html',
+                        controller: 'CVController',
+                        controllerAs: 'cv'
+                    }
+                }
+            })
             .state('app.portfolio', {
                 url: 'portfolio',
                 views: {

@@ -1,4 +1,4 @@
-<md-toolbar md-scroll-shrink>
+<md-toolbar>
     <div class="md-toolbar-tools">
         <h2>
             <span>Johnny Magrippis</span>
@@ -8,6 +8,12 @@
             <md-icon md-font-library="material-icons">style</md-icon>
             <md-tooltip>
                 Home
+            </md-tooltip>
+        </md-button>
+        <md-button class="md-icon-button md-raised md-primary" aria-label="CV" ui-sref="app.cv" ng-disabled="core.isActiveState('app.cv')">
+            <md-icon md-font-library="material-icons" ui-sref="app.cv">assignment</md-icon>
+            <md-tooltip>
+                CV
             </md-tooltip>
         </md-button>
         <md-button class="md-icon-button md-raised md-primary" aria-label="Portfolio" ui-sref="app.portfolio" ng-disabled="core.isActiveState('app.portfolio')">
