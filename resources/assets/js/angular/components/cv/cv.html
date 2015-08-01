@@ -1,27 +1,121 @@
 <md-content class="md-padding" layout layout-align="center center" class="cv">
-    <md-content class="md-padding workarea" layout="row" layout-align="center center" layout-fill>
-        <aside flex="33" layout="column" layout-align="center center">
+    <md-content class="md-padding workarea" layout="row" layout-sm="column" layout-align="center center" layout-fill>
+        <aside flex-sm="100" flex-gt-sm="35" layout="column" layout-align="center center">
             <md-whiteframe class="md-whiteframe-z1 aside" layout layout-align="center center" layout-fill>
                 <md-content layout="column" layout-align="center center" layout-padding>
                     <img src="/assets/img/johnny-avatar.jpg" alt="Johnny Magrippis" class="avatar">
+
                     <h1>Ioannis "Johnny" Magrippis</h1>
-                    <md-button class="md-raised md-primary" ng-click="cv.retitle()">{{ cv.titles[cv.currentKey].name }}</md-button>
+
+                    <md-button class="md-raised md-primary" ng-click="cv.retitle()">
+                        {{ cv.titles[cv.currentKey].name }}
+                    </md-button>
                 </md-content>
             </md-whiteframe>
         </aside>
-        <main flex="66" layout="column" layout-align="center center" layout-margin layout-padding>
-            <md-whiteframe class="md-whiteframe-z1" layout layout-align="center center" layout-fill>
-                <md-content>
-                    <h2>Summary</h2>
-                    <p>I am Johnny Magrippis.</p>
+        <span flex="5" hide-sm></span>
+        <main flex-sm="100" flex-gt-sm="60" layout="column" layout-align="center center" layout-margin layout-padding>
+
+            <md-whiteframe class="md-whiteframe-z1 section" layout="row" layout-align="center center" layout-padding
+                           layout-fill>
+                <md-content flex>
+                    <div layout="row" layout-align="start center">
+                        <md-icon md-font-library="material-icons" flex="10" class="md-primary">assignment_ind</md-icon>
+                        <h2 class="md-display-1" flex>Summary</h2>
+                    </div>
+
+                    <p class="md-subhead">Professional Web Designer since 2004 and a versatile Software Developer
+                        since 2008. Lifelong thirst for knowledge, and a love for figuring out how
+                        new things work as well as experimenting with new trends; a useful quality in this
+                        field of emerging technologies and evolving standards. Diverse skills,
+                        specialized in programming, active lifestyle, extremely sociable &
+                        adaptable; fluent in English & Greek, advanced in French.
+                    </p>
+
+                    <p class="md-subhead">
+                        Technology has been my passion since I was old enough to hold a game controller,
+                        and coding my business since college. This very site, <a
+                            href="//magrippis.com">magrippis.com</a>,
+                        showcases some of my programming and design strengths.
+                    </p>
                 </md-content>
             </md-whiteframe>
-            <md-whiteframe class="md-whiteframe-z1" layout layout-align="center center" layout-fill>
-                <md-content>
-                    <h2>Work Experience</h2>
-                    <p>I am Johnny Magrippis.</p>
+
+            <md-whiteframe class="md-whiteframe-z1 section" layout="row" layout-align="center center" layout-fill>
+                <md-content flex>
+                    <div layout="row" layout-align="start center">
+                        <md-icon md-font-library="material-icons" flex="10" class="md-primary">trending_up</md-icon>
+                        <h2 class="md-display-1" flex>Qualities</h2>
+                    </div>
+
+                    <div ng-repeat="quality in cv.qualities">
+                        <p class="md-subhead" ng-bind-html="quality"></p>
+                        <md-divider></md-divider>
+                    </div>
+                    <p class="md-headline">
+                        As such, extremely skilled at the use of an assortment of relevant software, such as the
+                        <strong>Office Suite</strong>, Adobe's <strong>Creative Suite</strong>,
+                        <strong>PHPStorm</strong>, <strong>Blender</strong>, <strong>Maya</strong>,
+                        <strong>Spine</strong>, <strong>Unity 3D</strong> & the <strong>Unreal Engine</strong>, as well
+                        as online tools for collaborative projects, such as <strong>GitHub</strong>,
+                        <strong>bitbucket</strong>, <strong>CodePen</strong>, <strong>jsfiddle</strong>,
+                        <strong>trello</strong> & <strong>Google Docs</strong>.
+                    </p>
                 </md-content>
             </md-whiteframe>
+
+            <md-whiteframe class="md-whiteframe-z1 section" layout="row" layout-align="center center" layout-fill>
+                <md-content flex>
+                    <div layout="row" layout-align="start center">
+                        <md-icon md-font-library="material-icons" flex="10" class="md-primary">work</md-icon>
+                        <h2 class="md-display-1" flex>Work Experience</h2>
+                    </div>
+
+                    <div>
+                        <p>I am Johnny Magrippis.</p>
+                    </div>
+                </md-content>
+            </md-whiteframe>
+
+            <md-whiteframe class="md-whiteframe-z1 section" layout="row" layout-align="center center" layout-fill>
+                <md-content flex>
+                    <div layout="row" layout-align="start center">
+                        <md-icon md-font-library="material-icons" flex="10" class="md-primary">school</md-icon>
+                        <h2 class="md-display-1" flex>Education</h2>
+                    </div>
+
+                    <div>
+                        <p>I am Johnny Magrippis.</p>
+                    </div>
+                </md-content>
+            </md-whiteframe>
+
+            <md-whiteframe class="md-whiteframe-z1 section" layout="row" layout-align="center center" layout-fill>
+                <md-content flex>
+                    <div layout="row" layout-align="start center">
+                        <md-icon md-font-library="material-icons" flex="10" class="md-primary">mood</md-icon>
+                        <h2 class="md-display-1" flex>Interests</h2>
+                    </div>
+
+                    <div>
+                        <p>I am Johnny Magrippis.</p>
+                    </div>
+                </md-content>
+            </md-whiteframe>
+
+            <md-whiteframe class="md-whiteframe-z1 section" layout="row" layout-align="center center" layout-fill>
+                <md-content flex>
+                    <div layout="row" layout-align="start center">
+                        <md-icon md-font-library="material-icons" flex="10" class="md-primary">people</md-icon>
+                        <h2 class="md-display-1" flex>References</h2>
+                    </div>
+
+                    <div>
+                        <p>I am Johnny Magrippis.</p>
+                    </div>
+                </md-content>
+            </md-whiteframe>
+
         </main>
     </md-content>
 </md-content>
