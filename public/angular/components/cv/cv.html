@@ -1,23 +1,83 @@
 <md-content class="md-padding" layout layout-align="center center" class="cv">
-    <md-content class="md-padding workarea" layout="row" layout-sm="column" layout-align="center center" layout-fill>
+    <md-content class="md-padding workarea" layout="row" layout-sm="column" layout-align="center start" layout-fill>
         <aside flex-sm="100" flex-gt-sm="35" layout="column" layout-align="center center">
             <md-whiteframe class="md-whiteframe-z1 aside" layout layout-align="center center" layout-fill>
-                <md-content layout="column" layout-align="center center" layout-padding>
+                <md-content layout="column" layout-align="center center" layout-padding class="container">
                     <img src="/assets/img/johnny-avatar.jpg" alt="Johnny Magrippis" class="avatar">
 
-                    <h1>Ioannis "Johnny" Magrippis</h1>
+                    <h1 class="md-headline">Ioannis "Johnny" Magrippis</h1>
 
-                    <md-button class="md-raised md-primary" ng-click="cv.retitle()">
+                    <md-button class="md-raised md-primary job-title" ng-click="cv.retitle()">
                         {{ cv.titles[cv.currentKey].name }}
                     </md-button>
+
+                    <section>
+                        <h3 class="md-title">Contact</h3>
+                        <div class="icon-list" layout="row">
+                            <md-icon flex="10" class="md-secondary md-accent" md-font-library="material-icons">home</md-icon>
+                            <ul flex="90">
+                                <li>Kritonos 25</li>
+                                <li>Glyfada, 166-74</li>
+                                <li>Attica, Greece</li>
+                            </ul>
+                        </div>
+                        <div class="icon-list" layout="row">
+                            <md-icon flex="10" class="md-secondary md-accent" md-font-library="material-icons">mail</md-icon>
+                            <ul flex="90">
+                                <li><a href="mailto:j@magrippis.com">j@magrippis.com</a></li>
+                                <li><a href="//magrippis.com">magrippis.com</a></li>
+                            </ul>
+                        </div>
+                        <div class="icon-list" layout="row">
+                            <md-icon flex="10" class="md-secondary md-accent" md-font-library="material-icons">phone</md-icon>
+                            <ul flex="90">
+                                <li>+30 6945665237</li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h3 class="md-title">Featured Skills</h3>
+                        <div ng-repeat="skill in cv.skills" layout="row" layout-align="start center">
+                            <h4 flex="35" class="md-subhead">{{ skill.name }}</h4>
+                            <md-slider flex="50" ng-model="skill.value" min="0" max="255" aria-label="skill-name" class="md-accent">
+                        </div>
+                    </section>
+
+                    <section>
+                        <h3 class="md-title">About</h3>
+                        <md-content>
+                            <p class="md-headline">
+                                Technology has been my passion since I was old enough to hold a game controller,
+                                and coding my business since college. This very site, <a
+                                    href="//magrippis.com">magrippis.com</a>,
+                                showcases some of my programming and design strengths.
+                            </p>
+                        </md-content>
+                    </section>
+
+                    <section>
+                        <h3 class="md-title">Languages</h3>
+                        <div class="icon-list" layout="row">
+                            <md-icon flex="10" class="md-secondary md-accent" md-font-library="material-icons">language</md-icon>
+                            <ul flex="90">
+                                <li layout="row" layout-align="start center" ng-repeat="language in cv.languages">
+                                    <span flex="33">{{ language.name }}</span>
+                                    <div flex="66" layout="row" layout-align="space-between">
+                                        <md-icon class="md-secondary md-accent" md-font-library="material-icons" ng-repeat="number in cv.length(language.level) track by $index">star</md-icon>
+                                        <md-icon class="md-secondary md-accent" md-font-library="material-icons" ng-repeat="number in cv.length(5 - language.level) track by $index">star_border</md-icon>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
                 </md-content>
             </md-whiteframe>
         </aside>
         <span flex="5" hide-sm></span>
         <main flex-sm="100" flex-gt-sm="60" layout="column" layout-align="center center" layout-margin layout-padding>
 
-            <md-whiteframe class="md-whiteframe-z1 section" layout="row" layout-align="center center" layout-padding
-                           layout-fill>
+            <md-whiteframe class="md-whiteframe-z1 section" layout="row" layout-align="center center" layout-fill>
                 <md-content flex>
                     <div layout="row" layout-align="start center">
                         <md-icon md-font-library="material-icons" flex="10" class="md-primary">assignment_ind</md-icon>
@@ -30,13 +90,6 @@
                         field of emerging technologies and evolving standards. Diverse skills,
                         specialized in programming, active lifestyle, extremely sociable &
                         adaptable; fluent in English & Greek, advanced in French.
-                    </p>
-
-                    <p class="md-subhead">
-                        Technology has been my passion since I was old enough to hold a game controller,
-                        and coding my business since college. This very site, <a
-                            href="//magrippis.com">magrippis.com</a>,
-                        showcases some of my programming and design strengths.
                     </p>
                 </md-content>
             </md-whiteframe>

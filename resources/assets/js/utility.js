@@ -16,4 +16,8 @@ function shuffle(array) {
     return array;
 }
 
-export { shuffle };
+function length(length) {
+    return new Array(length);
+}
+
+export { shuffle, length };

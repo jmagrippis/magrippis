@@ -1,4 +1,4 @@
-import { shuffle } from './../../../utility';
+import { shuffle, length } from './../../../utility';
 import data from './data.js';
 
 let injections = [];
@@ -22,6 +22,17 @@ let controller = function () {
     };
 
     this.qualities =  data.qualities;
+
+    this.skills = data.skills;
+
+    this.languages = [
+        {name: "English", level: 5},
+        {name: "Greek", level: 5},
+        {name: "French", level: 3},
+        {name: "German", level: 1}
+    ];
+
+    this.length = length;
 };
 
 let exports = injections;
