@@ -18,6 +18,7 @@ Route::group(['prefix' => 'api/v1'], function () {
     Route::resource('skills', 'SkillsController', ['only' => ['index']]);
     Route::resource('jobs', 'JobsController', ['only' => ['index']]);
     Route::resource('diplomas', 'DiplomasController', ['only' => ['index']]);
+    Route::resource('projects', 'ProjectsController', ['only' => ['index']]);
 
 });
 

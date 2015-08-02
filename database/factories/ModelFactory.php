@@ -37,3 +37,13 @@ $factory->define(Magrippis\Models\Diploma::class, function (Faker\Generator $fak
         'completed_at' => $faker->dateTimeThisDecade()
     ];
 });
+
+$factory->define(Magrippis\Models\Project::class, function (Faker\Generator $faker) {
+    return [
+        'name' => $faker->company,
+        'description_en' => $faker->paragraph(),
+        'link' => $faker->url,
+        'completed_at' => $faker->dateTimeThisDecade(),
+        'category_id' => $faker->numberBetween(1, 2)
+    ];
+});

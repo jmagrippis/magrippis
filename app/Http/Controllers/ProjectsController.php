@@ -5,30 +5,24 @@ namespace Magrippis\Http\Controllers;
 use Illuminate\Http\Request;
 
 use Magrippis\Http\Requests;
-use Magrippis\Models\Category;
+use Magrippis\Models\Project;
 
-class CategoriesController extends Controller
+class ProjectsController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return Response
      */
-    public function index(Request $request)
+    public function index()
     {
-        $query = Category::with('skills');
-
-        if ($request->has('type')) {
-            $query->where('type', $request->get('type'));
-        }
-
-        return $query->get();
+        return Project::with('skills')->orderBy('ordering')->orderBy('completed_at', 'desc')->get();
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  Request $request
+     * @param  Request  $request
      * @return Response
      */
     public function store(Request $request)
@@ -39,7 +33,7 @@ class CategoriesController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int $id
+     * @param  int  $id
      * @return Response
      */
     public function show($id)
@@ -50,8 +44,8 @@ class CategoriesController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  Request $request
-     * @param  int $id
+     * @param  Request  $request
+     * @param  int  $id
      * @return Response
      */
     public function update(Request $request, $id)
@@ -62,7 +56,7 @@ class CategoriesController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int $id
+     * @param  int  $id
      * @return Response
      */
     public function destroy($id)

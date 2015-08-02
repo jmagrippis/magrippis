@@ -30,12 +30,21 @@ class Skill extends Model
     protected $visible = ['id', 'category_id', 'name', 'featured'];
 
     /**
-     * Belongs to a category
+     * Belongs to a Category
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function post()
+    public function category()
     {
-        return $this->belongsTo('Magrippis\Models\Category');
+        return $this->belongsTo(Category::class);
+    }
+
+    /**
+     * Might belong to many projects
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function projects()
+    {
+        return $this->belongsToMany(Project::class);
     }
 
     /**

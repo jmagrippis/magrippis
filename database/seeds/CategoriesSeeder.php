@@ -13,6 +13,23 @@ class CategoriesSeeder extends Seeder
      */
     public function run()
     {
+        $project_categories = [
+            [
+                'name_en' => 'Web',
+                'ordering' => 1,
+                'type' => 'project'
+            ],
+            [
+                'name_en' => 'App',
+                'ordering' => 2,
+                'type' => 'project'
+            ]
+        ];
+
+        foreach ($project_categories as $category) {
+            Category::create($category);
+        }
+
         $faker = Faker\Factory::create();
 
         foreach (range(1, 5) as $order) {

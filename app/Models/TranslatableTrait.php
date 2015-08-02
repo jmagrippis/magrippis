@@ -13,6 +13,6 @@ trait TranslatableTrait
     protected function getLocalized($column)
     {
         $localized = $this->{$column . '_' . \App::getLocale()};
-        return $localized ? $localized : $this->{$column . '_' . config('fallback_locale')};
+        return $localized ? $localized : $this->{$column . '_' . config('app.fallback_locale')};
     }
 }

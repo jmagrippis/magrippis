@@ -2,7 +2,7 @@ let injections = ['Categories'];
 
 let controller = function (Categories) {
     this.availableSkills = [];
-    this.categories = Categories.query({}, () => {
+    this.categories = Categories.query({type: 'skill'}, () => {
         this.categories.forEach(category => {
             this.availableSkills = this.availableSkills.concat(category.skills);
         });

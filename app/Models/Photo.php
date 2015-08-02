@@ -4,7 +4,7 @@ namespace Magrippis\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Category extends Model
+class Photo extends Model
 {
     use TranslatableTrait;
 
@@ -13,7 +13,7 @@ class Category extends Model
      *
      * @var array
      */
-    protected $fillable = ['name_en', 'name_el', 'description_en', 'description_el', 'ordering', 'featured'];
+    protected $fillable = ['name_en', 'name_el', 'description_en', 'description_el', 'extension', 'ordering'];
 
     /**
      * Attributes not mapped on a database column.
@@ -23,19 +23,11 @@ class Category extends Model
     protected $appends = ['name', 'description'];
 
     /**
-     * The attributes that should be visible in arrays.
-     *
-     * @var array
+     * Belongs to one of various different Models.
      */
-    protected $visible = ['id', 'name', 'description', 'featured', 'skills'];
-
-    /**
-     * Might have many skills.
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
-     */
-    public function skills()
+    public function photoable()
     {
-        return $this->hasMany(Skill::class);
+        return $this->morphTo();
     }
 
     /**
