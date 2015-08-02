@@ -3,5 +3,10 @@ md-whiteframe.section {
 
   md-content {
     padding: 0 2rem;
+
+    md-icon.lg {
+      font-size: 2rem;
+      height: 2rem;
+    }
   }
 }

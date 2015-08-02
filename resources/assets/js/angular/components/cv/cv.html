@@ -1,7 +1,7 @@
 <md-content class="md-padding" layout layout-align="center center" class="cv">
     <md-content class="md-padding workarea" layout="row" layout-sm="column" layout-align="center start" layout-fill>
         <aside flex-sm="100" flex-gt-sm="35" layout="column" layout-align="center center">
-            <md-whiteframe class="md-whiteframe-z1 aside" layout layout-align="center center" layout-fill>
+            <md-whiteframe class="md-whiteframe-z2 aside" layout layout-align="center center" layout-fill>
                 <md-content layout="column" layout-align="center center" layout-padding class="container">
                     <img src="/assets/img/johnny-avatar.jpg" alt="Johnny Magrippis" class="avatar">
 
@@ -77,10 +77,10 @@
         <span flex="5" hide-sm></span>
         <main flex-sm="100" flex-gt-sm="60" layout="column" layout-align="center center" layout-margin layout-padding>
 
-            <md-whiteframe class="md-whiteframe-z1 section" layout="row" layout-align="center center" layout-fill>
+            <md-whiteframe class="md-whiteframe-z2 section" layout="row" layout-align="center center" layout-fill>
                 <md-content flex>
                     <div layout="row" layout-align="start center">
-                        <md-icon md-font-library="material-icons" flex="10" class="md-primary">assignment_ind</md-icon>
+                        <md-icon md-font-library="material-icons" flex="10" class="md-primary lg">assignment_ind</md-icon>
                         <h2 class="md-display-1" flex>Summary</h2>
                     </div>
 
@@ -94,10 +94,10 @@
                 </md-content>
             </md-whiteframe>
 
-            <md-whiteframe class="md-whiteframe-z1 section" layout="row" layout-align="center center" layout-fill>
+            <md-whiteframe class="md-whiteframe-z2 section" layout="row" layout-align="center center" layout-fill>
                 <md-content flex>
                     <div layout="row" layout-align="start center">
-                        <md-icon md-font-library="material-icons" flex="10" class="md-primary">trending_up</md-icon>
+                        <md-icon md-font-library="material-icons" flex="10" class="md-primary lg">trending_up</md-icon>
                         <h2 class="md-display-1" flex>Qualities</h2>
                     </div>
 
@@ -117,10 +117,10 @@
                 </md-content>
             </md-whiteframe>
 
-            <md-whiteframe class="md-whiteframe-z1 section" layout="row" layout-align="center center" layout-fill>
+            <md-whiteframe class="md-whiteframe-z2 section" layout="row" layout-align="center center" layout-fill>
                 <md-content flex>
                     <div layout="row" layout-align="start center">
-                        <md-icon md-font-library="material-icons" flex="10" class="md-primary">work</md-icon>
+                        <md-icon md-font-library="material-icons" flex="10" class="md-primary lg">work</md-icon>
                         <h2 class="md-display-1" flex>Work Experience</h2>
                     </div>
 
@@ -142,23 +142,35 @@
                 </md-content>
             </md-whiteframe>
 
-            <md-whiteframe class="md-whiteframe-z1 section" layout="row" layout-align="center center" layout-fill>
+            <md-whiteframe class="md-whiteframe-z2 section" layout="row" layout-align="center center" layout-fill>
                 <md-content flex>
                     <div layout="row" layout-align="start center">
-                        <md-icon md-font-library="material-icons" flex="10" class="md-primary">school</md-icon>
+                        <md-icon md-font-library="material-icons" flex="10" class="md-primary lg">school</md-icon>
                         <h2 class="md-display-1" flex>Education</h2>
                     </div>
 
-                    <div>
-                        <p>I am Johnny Magrippis.</p>
-                    </div>
+                    <section class="diplomas">
+                        <md-whiteframe class="md-whiteframe-z1 section business-card" layout="column" layout-align="center center" ng-repeat="diploma in cv.diplomas">
+                            <div class="card-header" layout layout-align="space-between center" layout-fill>
+                                <h3 class="md-headline">{{ diploma.name }}</h3>
+                                <span class="md-title">{{ diploma.institution }}</span>
+                            </div>
+                            <md-content flex layout="column" layout-align="center start">
+                                <div layout="row" layout-align="space-between center" layout-fill>
+                                    <span flex></span>
+                                    <div class="md-body-1">{{ diploma.started }} - {{ diploma.completed }}</div>
+                                </div>
+                                <div class="md-subhead" ng-bind-html="diploma.summary"></div>
+                            </md-content>
+                        </md-whiteframe>
+                    </section>
                 </md-content>
             </md-whiteframe>
 
-            <md-whiteframe class="md-whiteframe-z1 section" layout="row" layout-align="center center" layout-fill>
+            <md-whiteframe class="md-whiteframe-z2 section" layout="row" layout-align="center center" layout-fill>
                 <md-content flex>
                     <div layout="row" layout-align="start center">
-                        <md-icon md-font-library="material-icons" flex="10" class="md-primary">mood</md-icon>
+                        <md-icon md-font-library="material-icons" flex="10" class="md-primary lg">mood</md-icon>
                         <h2 class="md-display-1" flex>Interests</h2>
                     </div>
 
@@ -168,10 +180,10 @@
                 </md-content>
             </md-whiteframe>
 
-            <md-whiteframe class="md-whiteframe-z1 section" layout="row" layout-align="center center" layout-fill>
+            <md-whiteframe class="md-whiteframe-z2 section" layout="row" layout-align="center center" layout-fill>
                 <md-content flex>
                     <div layout="row" layout-align="start center">
-                        <md-icon md-font-library="material-icons" flex="10" class="md-primary">people</md-icon>
+                        <md-icon md-font-library="material-icons" flex="10" class="md-primary lg">people</md-icon>
                         <h2 class="md-display-1" flex>References</h2>
                     </div>
 

@@ -5,9 +5,9 @@ namespace Magrippis\Http\Controllers;
 use Illuminate\Http\Request;
 
 use Magrippis\Http\Requests;
-use Magrippis\Models\Job;
+use Magrippis\Models\Diploma;
 
-class JobsController extends Controller
+class DiplomasController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,7 +16,7 @@ class JobsController extends Controller
      */
     public function index()
     {
-        return Job::orderBy('left_at', 'desc')->orderBy('joined_at', 'desc')->get();
+        return Diploma::orderBy('completed_at', 'desc')->orderBy('started_at')->get();
     }
 
     /**

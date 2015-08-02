@@ -28,3 +28,12 @@ $factory->define(Magrippis\Models\Job::class, function (Faker\Generator $faker) 
         'left_at' => $faker->dateTimeThisDecade()
     ];
 });
+
+$factory->define(Magrippis\Models\Diploma::class, function (Faker\Generator $faker) {
+    return [
+        'institution_en' => $faker->company,
+        'name_en' => $faker->bs,
+        'summary_en' => '<p>' . $faker->paragraph . '</p>',
+        'completed_at' => $faker->dateTimeThisDecade()
+    ];
+});

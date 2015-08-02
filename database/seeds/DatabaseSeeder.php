@@ -17,6 +17,7 @@ class DatabaseSeeder extends Seeder
         $this->call(UsersSeeder::class);
         $this->call(CategoriesSeeder::class);
         $this->call(JobsSeeder::class);
+        $this->call(DiplomasSeeder::class);
 
         Model::reguard();
     }

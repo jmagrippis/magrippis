@@ -1,9 +1,9 @@
 import { shuffle, length } from './../../../utility';
 import data from './data.js';
 
-let injections = ['Jobs'];
+let injections = ['Jobs', 'Diplomas'];
 
-let controller = function (Jobs) {
+let controller = function (Jobs, Diplomas) {
 
     this.titles = data.titles;
 
@@ -38,6 +38,8 @@ let controller = function (Jobs) {
     this.length = length;
 
     this.jobs = Jobs.query();
+
+    this.diplomas = Diplomas.query()
 };
 
 let exports = injections;

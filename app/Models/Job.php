@@ -13,7 +13,7 @@ class Job extends Model
      *
      * @var array
      */
-    protected $fillable = ['company', 'title_en', 'title_el', 'summary_en', 'summary_el', 'joined_at', 'left_at', 'ordering'];
+    protected $fillable = ['company', 'title_en', 'title_el', 'summary_en', 'summary_el', 'joined_at', 'left_at'];
 
     /**
      * Attributes not mapped on a database column.
@@ -34,20 +34,11 @@ class Job extends Model
      *
      * @var array
      */
-    protected $visible = ['id', 'company', 'title', 'summary', 'joined', 'left', 'left_at'];
-
-    /**
-     * Belongs to a category.
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
-     */
-    public function post()
-    {
-        return $this->belongsTo('Magrippis\Models\Category');
-    }
+    protected $visible = ['id', 'company', 'title', 'summary', 'joined', 'left'];
 
     /**
      * Gets the localized Title attribute.
-     * @return mixed
+     * @return string
      */
     public function getTitleAttribute()
     {
@@ -56,7 +47,7 @@ class Job extends Model
 
     /**
      * Gets the localized Summary attribute.
-     * @return mixed
+     * @return string
      */
     public function getSummaryAttribute()
     {
