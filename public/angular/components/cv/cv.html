@@ -40,7 +40,7 @@
                         <h3 class="md-title">Featured Skills</h3>
                         <div ng-repeat="skill in cv.skills" layout="row" layout-align="start center">
                             <h4 flex="35" class="md-subhead">{{ skill.name }}</h4>
-                            <md-slider flex="50" ng-model="skill.value" min="0" max="255" aria-label="skill-name" class="md-accent">
+                            <md-slider flex="50" ng-model="skill.value" ng-blur="cv.snapSkill(skill)" min="0" max="255" aria-label="skill-name" class="md-accent">
                         </div>
                     </section>
 

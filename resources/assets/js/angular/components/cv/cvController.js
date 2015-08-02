@@ -21,9 +21,17 @@ let controller = function (Jobs) {
         this.titles[this.currentKey].active = true;
     };
 
-    this.qualities =  data.qualities;
+    this.qualities = data.qualities;
 
     this.skills = data.skills;
+
+    this.skills.forEach(skill => {
+        skill.default = skill.value;
+    });
+
+    this.snapSkill = skill => {
+        skill.value = skill.default;
+    };
 
     this.languages = data.languages;
 

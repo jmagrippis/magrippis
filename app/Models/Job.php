@@ -34,7 +34,7 @@ class Job extends Model
      *
      * @var array
      */
-    protected $visible = ['id', 'company', 'title', 'summary', 'joined', 'left'];
+    protected $visible = ['id', 'company', 'title', 'summary', 'joined', 'left', 'left_at'];
 
     /**
      * Belongs to a category.
@@ -79,6 +79,6 @@ class Job extends Model
      */
     public function getLeftAttribute()
     {
-        return $this->left_at ? $this->left_at->formatLocalized('%B %Y') : 'Present';
+        return $this->left_at->isPast() ? $this->left_at->formatLocalized('%B %Y') : 'Present';
     }
 }

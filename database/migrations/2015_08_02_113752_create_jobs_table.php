@@ -21,7 +21,6 @@ class CreateJobsTable extends Migration
             $table->text('summary_el')->nullable();
             $table->timestamp('joined_at')->index();
             $table->timestamp('left_at')->nullable()->index();
-            $table->tinyInteger('ordering')->default(1)->index();
             $table->timestamps();
         });
     }
