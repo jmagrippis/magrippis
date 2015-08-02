@@ -21,6 +21,12 @@ let controller = function (Jobs, Diplomas) {
         this.titles[this.currentKey].active = true;
     };
 
+    this.expanded = data.expanded;
+
+    this.toggle = section => {
+        this.expanded[section] = !this.expanded[section];
+    };
+
     this.qualities = data.qualities;
 
     this.skills = data.skills;
@@ -39,7 +45,11 @@ let controller = function (Jobs, Diplomas) {
 
     this.jobs = Jobs.query();
 
-    this.diplomas = Diplomas.query()
+    this.diplomas = Diplomas.query();
+
+    this.interests = data.interests;
+
+    this.references = data.references;
 };
 
 let exports = injections;

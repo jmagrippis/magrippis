@@ -52,7 +52,43 @@ let cv_data = {
         {name: "Greek", level: 5},
         {name: "French", level: 3},
         {name: "German", level: 1}
-    ]
+    ],
+    interests: [
+        {icon: "wb_sunny", description: "Athlete and tournament-winning <strong>Beach Volleyball Player</strong>"},
+        {icon: "mode_edit", description: "Part-time <strong>Writer</strong> & <strong>Reviewer</strong>"},
+        {icon: "photo_camera", description: "Prosumer <strong>Photographer</strong>"},
+        {icon: "camera", description: "Aspiring <strong>Director</strong>, <strong>DP</strong> and <strong>Visual</strong> & <strong>Special FX artist</strong>"},
+        {icon: "theaters", description: "Occasional small-bit <strong>Actor</strong> & extra"},
+        {icon: "games", description: "Lifelong <strong>Gamer</strong>"},
+        {icon: "airplanemode_active", description: "Worldwide <strong>Traveler</strong>; lived in Athens (Greece), Boston (USA) & Urshult (Sweden), visited ten times as many cities, including London, Z&uuml;rich, Frankfurt, Copenhagen & Kiev"}
+    ],
+    references: [
+        {
+            name: "Mr. Giorgos Mpardis",
+            title: "Founder of Digital Academy",
+            email: "gmpardis@dga.gr",
+            phone: "+30 2107241721"
+        },
+        {
+            name: "Mr. Joseph Kouroupakis",
+            title: "Manager of Woodline Saliveros",
+            email: "info@woodline.gr",
+            phone: "+30 2109888705"
+        },
+        {
+            name: "Mr. Michael Fakukakis",
+            title: "USA Sales Manager at Recom Ltd",
+            email: "mfakukakis@iptelecom.gr",
+            phone: "+1 2673364713"
+        }
+    ],
+    expanded: {
+        qualities: false,
+        work: false,
+        education: false,
+        interests: false,
+        references: false
+    }
 };
 
 export default cv_data;

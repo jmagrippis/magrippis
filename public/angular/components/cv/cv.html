@@ -14,7 +14,7 @@
                     <section>
                         <h3 class="md-title">Contact</h3>
                         <div class="icon-list" layout="row">
-                            <md-icon flex="10" class="md-secondary md-accent" md-font-library="material-icons">home</md-icon>
+                            <md-icon flex="10" class="md-accent" md-font-library="material-icons">home</md-icon>
                             <ul flex="90">
                                 <li>Kritonos 25</li>
                                 <li>Glyfada, 166-74</li>
@@ -94,26 +94,31 @@
                 </md-content>
             </md-whiteframe>
 
-            <md-whiteframe class="md-whiteframe-z2 section" layout="row" layout-align="center center" layout-fill>
+            <md-whiteframe class="md-whiteframe-z2 section" layout="row" layout-align="space-between center" layout-fill>
                 <md-content flex>
                     <div layout="row" layout-align="start center">
                         <md-icon md-font-library="material-icons" flex="10" class="md-primary lg">trending_up</md-icon>
                         <h2 class="md-display-1" flex>Qualities</h2>
+                        <md-button class="md-icon-button md-raised" ng-click="cv.toggle('qualities')">
+                            <md-icon md-font-library="material-icons">{{ cv.expanded.qualities ? 'expand_less' : 'expand_more' }}</md-icon>
+                        </md-button>
                     </div>
 
-                    <div ng-repeat="quality in cv.qualities">
-                        <p class="md-subhead" ng-bind-html="quality"></p>
-                        <md-divider></md-divider>
-                    </div>
-                    <p class="md-headline">
-                        As such, extremely skilled at the use of an assortment of relevant software, such as the
-                        <strong>Office Suite</strong>, Adobe's <strong>Creative Suite</strong>,
-                        <strong>PHPStorm</strong>, <strong>Blender</strong>, <strong>Maya</strong>,
-                        <strong>Spine</strong>, <strong>Unity 3D</strong> & the <strong>Unreal Engine</strong>, as well
-                        as online tools for collaborative projects, such as <strong>GitHub</strong>,
-                        <strong>bitbucket</strong>, <strong>CodePen</strong>, <strong>jsfiddle</strong>,
-                        <strong>trello</strong> & <strong>Google Docs</strong>.
-                    </p>
+                    <section ng-if="cv.expanded.qualities">
+                        <div ng-repeat="quality in cv.qualities">
+                            <p class="md-subhead" ng-bind-html="quality"></p>
+                            <md-divider></md-divider>
+                        </div>
+                        <p class="md-headline">
+                            As such, extremely skilled at the use of an assortment of relevant software, such as the
+                            <strong>Office Suite</strong>, Adobe's <strong>Creative Suite</strong>,
+                            <strong>PHPStorm</strong>, <strong>Blender</strong>, <strong>Maya</strong>,
+                            <strong>Spine</strong>, <strong>Unity 3D</strong> & the <strong>Unreal Engine</strong>, as well
+                            as online tools for collaborative projects, such as <strong>GitHub</strong>,
+                            <strong>bitbucket</strong>, <strong>CodePen</strong>, <strong>jsfiddle</strong>,
+                            <strong>trello</strong> & <strong>Google Docs</strong>.
+                        </p>
+                    </section>
                 </md-content>
             </md-whiteframe>
 
@@ -122,12 +127,16 @@
                     <div layout="row" layout-align="start center">
                         <md-icon md-font-library="material-icons" flex="10" class="md-primary lg">work</md-icon>
                         <h2 class="md-display-1" flex>Work Experience</h2>
+                        <md-button class="md-icon-button md-raised" ng-click="cv.toggle('work')">
+                            <md-icon md-font-library="material-icons">{{ cv.expanded.work ? 'expand_less' : 'expand_more' }}</md-icon>
+                        </md-button>
                     </div>
 
-                    <section class="jobs">
+                    <section ng-if="cv.expanded.work">
                         <md-whiteframe class="md-whiteframe-z1 section business-card" layout="column" layout-align="center center" ng-repeat="job in cv.jobs">
                             <div class="card-header" layout layout-align="space-between center" layout-fill>
                                 <h3 class="md-headline">{{ job.company }}</h3>
+                                <span flex="5"></span>
                                 <span class="md-title">{{ job.title }}</span>
                             </div>
                             <md-content flex layout="column" layout-align="center start">
@@ -147,12 +156,16 @@
                     <div layout="row" layout-align="start center">
                         <md-icon md-font-library="material-icons" flex="10" class="md-primary lg">school</md-icon>
                         <h2 class="md-display-1" flex>Education</h2>
+                        <md-button class="md-icon-button md-raised" ng-click="cv.toggle('education')">
+                            <md-icon md-font-library="material-icons">{{ cv.expanded.education ? 'expand_less' : 'expand_more' }}</md-icon>
+                        </md-button>
                     </div>
 
-                    <section class="diplomas">
+                    <section ng-if="cv.expanded.education">
                         <md-whiteframe class="md-whiteframe-z1 section business-card" layout="column" layout-align="center center" ng-repeat="diploma in cv.diplomas">
                             <div class="card-header" layout layout-align="space-between center" layout-fill>
                                 <h3 class="md-headline">{{ diploma.name }}</h3>
+                                <span flex="5"></span>
                                 <span class="md-title">{{ diploma.institution }}</span>
                             </div>
                             <md-content flex layout="column" layout-align="center start">
@@ -172,24 +185,44 @@
                     <div layout="row" layout-align="start center">
                         <md-icon md-font-library="material-icons" flex="10" class="md-primary lg">mood</md-icon>
                         <h2 class="md-display-1" flex>Interests</h2>
+                        <md-button class="md-icon-button md-raised" ng-click="cv.toggle('interests')">
+                            <md-icon md-font-library="material-icons">{{ cv.expanded.interests ? 'expand_less' : 'expand_more' }}</md-icon>
+                        </md-button>
                     </div>
 
-                    <div>
-                        <p>I am Johnny Magrippis.</p>
-                    </div>
+                    <section ng-if="cv.expanded.interests">
+                        <div ng-repeat="interest in cv.interests">
+                            <div layout layout-align="space-around center">
+                                <p class="md-subhead" flex="80" ng-bind-html="interest.description"></p>
+                                <md-icon md-font-library="material-icons" flex="10" class="md-primary">{{ interest.icon }}</md-icon>
+                            </div>
+                            <md-divider ng-if="!$last"></md-divider>
+                        </div>
+                    </section>
                 </md-content>
             </md-whiteframe>
 
             <md-whiteframe class="md-whiteframe-z2 section" layout="row" layout-align="center center" layout-fill>
                 <md-content flex>
                     <div layout="row" layout-align="start center">
-                        <md-icon md-font-library="material-icons" flex="10" class="md-primary lg">people</md-icon>
+                        <md-icon md-font-library="material-icons" flex="10" class="md-primary lg">supervisor_account</md-icon>
                         <h2 class="md-display-1" flex>References</h2>
+                        <md-button class="md-icon-button md-raised" ng-click="cv.toggle('references')">
+                            <md-icon md-font-library="material-icons">{{ cv.expanded.references ? 'expand_less' : 'expand_more' }}</md-icon>
+                        </md-button>
                     </div>
 
-                    <div>
-                        <p>I am Johnny Magrippis.</p>
-                    </div>
+                    <section ng-if="cv.expanded.references">
+                        <div class="icon-list" layout="row" ng-repeat="reference in cv.references">
+                            <md-icon flex="10" class="md-primary" md-font-library="material-icons">person</md-icon>
+                            <ul flex="90">
+                                <li class="md-title">{{ reference.name }}</li>
+                                <li class="md-subhead">{{ reference.title }}</li>
+                                <li class="md-subhead">{{ reference.email }}</li>
+                                <li class="md-subhead">{{ reference.phone }}</li>
+                            </ul>
+                        </div>
+                    </section>
                 </md-content>
             </md-whiteframe>
 
