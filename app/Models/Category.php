@@ -13,7 +13,7 @@ class Category extends Model
      *
      * @var array
      */
-    protected $fillable = ['name', 'description_en', 'ordering', 'featured'];
+    protected $fillable = ['name_en', 'name_el', 'description_en', 'description_el', 'ordering', 'featured'];
 
     /**
      * Attributes not mapped on a database column.
@@ -23,7 +23,7 @@ class Category extends Model
     protected $appends = ['name', 'description'];
 
     /**
-     * Might have many skills
+     * Might have many skills.
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function skills()
@@ -32,7 +32,7 @@ class Category extends Model
     }
 
     /**
-     * Gets the localized Name attribute
+     * Gets the localized Name attribute.
      * @return mixed
      */
     public function getNameAttribute()
@@ -41,7 +41,7 @@ class Category extends Model
     }
 
     /**
-     * Gets the localized Description attribute
+     * Gets the localized Description attribute.
      * @return mixed
      */
     public function getDescriptionAttribute()

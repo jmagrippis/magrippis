@@ -16,6 +16,7 @@ Route::group(['prefix' => 'api/v1'], function () {
     Route::post('contact', ['as' => 'contact', 'uses' => 'EmailsController@contact']);
     Route::resource('categories', 'CategoriesController', ['only' => ['index', 'show']]);
     Route::resource('skills', 'SkillsController', ['only' => ['index']]);
+    Route::resource('jobs', 'JobsController', ['only' => ['index']]);
 
 });
 

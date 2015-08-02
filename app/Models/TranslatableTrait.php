@@ -6,7 +6,7 @@ namespace Magrippis\Models;
 trait TranslatableTrait
 {
     /**
-     * Returns the localized version of an attribute
+     * Returns the localized version of an attribute.
      * @param $column
      * @return mixed
      */

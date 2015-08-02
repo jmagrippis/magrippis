@@ -13,7 +13,7 @@ class Skill extends Model
      *
      * @var array
      */
-    protected $fillable = ['name_en', 'ordering', 'featured'];
+    protected $fillable = ['name_en', 'name_el', 'ordering', 'featured'];
 
     /**
      * Attributes not mapped on a database column.
