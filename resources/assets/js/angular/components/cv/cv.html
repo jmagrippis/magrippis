@@ -124,9 +124,21 @@
                         <h2 class="md-display-1" flex>Work Experience</h2>
                     </div>
 
-                    <div>
-                        <p>I am Johnny Magrippis.</p>
-                    </div>
+                    <section class="jobs">
+                        <md-whiteframe class="md-whiteframe-z1 section business-card" layout="column" layout-align="center center" ng-repeat="job in cv.jobs">
+                            <div class="card-header" layout layout-align="space-between center" layout-fill>
+                                <h3 class="md-headline">{{ job.company }}</h3>
+                                <span class="md-title">{{ job.title }}</span>
+                            </div>
+                            <md-content flex layout="column" layout-align="center start">
+                                <div layout="row" layout-align="space-between center" layout-fill>
+                                    <span flex></span>
+                                    <div class="md-body-1">{{ job.joined }} - {{ job.left }}</div>
+                                </div>
+                                <div class="md-subhead" ng-bind-html="job.summary"></div>
+                            </md-content>
+                        </md-whiteframe>
+                    </section>
                 </md-content>
             </md-whiteframe>
 

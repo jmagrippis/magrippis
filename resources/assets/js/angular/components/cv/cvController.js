@@ -1,9 +1,9 @@
 import { shuffle, length } from './../../../utility';
 import data from './data.js';
 
-let injections = [];
+let injections = ['Jobs'];
 
-let controller = function () {
+let controller = function (Jobs) {
 
     this.titles = data.titles;
 
@@ -25,14 +25,11 @@ let controller = function () {
 
     this.skills = data.skills;
 
-    this.languages = [
-        {name: "English", level: 5},
-        {name: "Greek", level: 5},
-        {name: "French", level: 3},
-        {name: "German", level: 1}
-    ];
+    this.languages = data.languages;
 
     this.length = length;
+
+    this.jobs = Jobs.query();
 };
 
 let exports = injections;

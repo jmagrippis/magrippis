@@ -25,7 +25,7 @@ let cv_data = {
         {name: "Stylish Sysadmin", active: false},
         {name: "Computer Scientist", active: false}
     ],
-    skills : [
+    skills: [
         {
             name: "C#",
             value: 195
@@ -46,6 +46,12 @@ let cv_data = {
             name: "Photoshop",
             value: 220
         }
+    ],
+    languages: [
+        {name: "English", level: 5},
+        {name: "Greek", level: 5},
+        {name: "French", level: 3},
+        {name: "German", level: 1}
     ]
 };
 

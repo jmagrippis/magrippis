@@ -23,6 +23,13 @@ class Skill extends Model
     protected $appends = ['name'];
 
     /**
+     * The attributes that should be visible in arrays.
+     *
+     * @var array
+     */
+    protected $visible = ['id', 'category_id', 'name', 'featured'];
+
+    /**
      * Belongs to a category
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */

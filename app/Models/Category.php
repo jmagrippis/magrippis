@@ -23,6 +23,13 @@ class Category extends Model
     protected $appends = ['name', 'description'];
 
     /**
+     * The attributes that should be visible in arrays.
+     *
+     * @var array
+     */
+    protected $visible = ['id', 'name', 'description', 'featured', 'skills'];
+
+    /**
      * Might have many skills.
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */

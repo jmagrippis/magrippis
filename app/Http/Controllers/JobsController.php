@@ -16,7 +16,7 @@ class JobsController extends Controller
      */
     public function index()
     {
-        return Job::orderBy('left_at', 'desc')->orderBy('joined_at', 'desc')->get();
+        return Job::orderBy('ordering')->orderBy('left_at', 'desc')->orderBy('joined_at', 'desc')->get();
     }
 
     /**

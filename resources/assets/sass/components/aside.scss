@@ -3,7 +3,7 @@ aside {
     background-color: $color-primary;
     md-content {
       background-color: inherit;
-      color: rgba(255,255,255,0.87);
+      color: $color-white-transparent;
 
       a {
         color: $color-accent;
@@ -32,7 +32,7 @@ aside {
         h3 {
           margin: 0 0 0.75rem;
           text-align: right;
-          border-bottom: 1px solid rgba(255,255,255,0.87);
+          border-bottom: 1px solid $color-white-transparent;
         }
       }
     }

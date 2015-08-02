@@ -30,6 +30,13 @@ class Job extends Model
     protected $dates = ['joined_at', 'left_at'];
 
     /**
+     * The attributes that should be visible in arrays.
+     *
+     * @var array
+     */
+    protected $visible = ['id', 'company', 'title', 'summary', 'joined', 'left'];
+
+    /**
      * Belongs to a category.
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
