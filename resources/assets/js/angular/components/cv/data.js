@@ -7,6 +7,7 @@ let cv_data = {
         "Expert coder; proficient in languages such as <strong>PHP</strong>, <strong>Javascript</strong>, <strong>C#</strong>, <strong>Python</strong>, <strong>Ruby</strong> & <strong>C++</strong> &amp; as well as <strong>HTML5</strong>, <strong>CSS3</strong>",
         "Comfortable with libraries such as <strong>jQuery</strong> and <strong>React</strong>, client-side frameworks such as <strong>Angular</strong>, CSS frameworks including <strong>Twitter Bootstrap</strong> and <strong>Zurb's Foundation</strong> and back-end frameworks like <strong>Laravel</strong> and <strong>Symfony</strong>",
         "Seasoned in using CMS like <strong>Wordpress</strong>, <strong>Drupal</strong> and <strong>Joomla</strong>, alongside their relevant extensions such as <strong>Magento</strong>",
+        "Native <strong>iOS</strong> and <strong>Android</strong> developer in <strong>Objective-C</strong> and <strong>Java</strong>, also familiar with platform agnostic javascript solutions like <strong>Apache Cordova</strong>",
         "Proficient <strong>Database Administrator</strong>, having designed and maintened hundreds databases, relational or not",
         "Capable <strong>Graphic Designer</strong>; excellent at working with and producing both vector and raster graphics",
         "Solid <strong>Modeler</strong> &amp; <strong>Animator</strong>",
