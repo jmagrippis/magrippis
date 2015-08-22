@@ -1,10 +1,10 @@
-var injections = [];
+let injections = [];
 
-var controller = function () {
-    console.log('we are home!');
+let controller = function () {
+    console.log('we are at the portfolio page!');
 };
 
-var exports = injections;
+let exports = injections;
 exports.push(controller);
 
 module.exports = exports;

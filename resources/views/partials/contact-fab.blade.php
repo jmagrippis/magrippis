@@ -1,7 +1,7 @@
 <md-fab-speed-dial md-direction="up" class="contact md-fling">
     <md-fab-trigger>
         <md-button aria-label="contact-menu" class="md-fab md-accent">
-            <md-icon md-font-library="material-icons">menu</md-icon>
+            <md-icon md-font-set="material-icons">menu</md-icon>
         </md-button>
     </md-fab-trigger>
     <md-fab-actions>

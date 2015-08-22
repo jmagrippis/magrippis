@@ -14,7 +14,7 @@
                     <section>
                         <h3 class="md-title">Contact</h3>
                         <div class="icon-list" layout="row">
-                            <md-icon flex="10" class="md-accent" md-font-library="material-icons">home</md-icon>
+                            <md-icon flex="10" class="md-accent" md-font-set="material-icons">home</md-icon>
                             <ul flex="90">
                                 <li>Kritonos 25</li>
                                 <li>Glyfada, 166-74</li>
@@ -22,14 +22,14 @@
                             </ul>
                         </div>
                         <div class="icon-list" layout="row">
-                            <md-icon flex="10" class="md-secondary md-accent" md-font-library="material-icons">mail</md-icon>
+                            <md-icon flex="10" class="md-secondary md-accent" md-font-set="material-icons">mail</md-icon>
                             <ul flex="90">
                                 <li><a href="mailto:j@magrippis.com">j@magrippis.com</a></li>
                                 <li><a href="//magrippis.com">magrippis.com</a></li>
                             </ul>
                         </div>
                         <div class="icon-list" layout="row">
-                            <md-icon flex="10" class="md-secondary md-accent" md-font-library="material-icons">phone</md-icon>
+                            <md-icon flex="10" class="md-secondary md-accent" md-font-set="material-icons">phone</md-icon>
                             <ul flex="90">
                                 <li>+30 6945665237</li>
                             </ul>
@@ -59,13 +59,13 @@
                     <section>
                         <h3 class="md-title">Languages</h3>
                         <div class="icon-list" layout="row">
-                            <md-icon flex="10" class="md-secondary md-accent" md-font-library="material-icons">language</md-icon>
+                            <md-icon flex="10" class="md-secondary md-accent" md-font-set="material-icons">language</md-icon>
                             <ul flex="90">
                                 <li layout="row" layout-align="start center" ng-repeat="language in cv.languages">
                                     <span flex="33">{{ language.name }}</span>
                                     <div flex="66" layout="row" layout-align="space-between">
-                                        <md-icon class="md-secondary md-accent" md-font-library="material-icons" ng-repeat="number in cv.length(language.level) track by $index">star</md-icon>
-                                        <md-icon class="md-secondary md-accent" md-font-library="material-icons" ng-repeat="number in cv.length(5 - language.level) track by $index">star_border</md-icon>
+                                        <md-icon class="md-secondary md-accent" md-font-set="material-icons" ng-repeat="number in cv.length(language.level) track by $index">star</md-icon>
+                                        <md-icon class="md-secondary md-accent" md-font-set="material-icons" ng-repeat="number in cv.length(5 - language.level) track by $index">star_border</md-icon>
                                     </div>
                                 </li>
                             </ul>
@@ -80,7 +80,7 @@
             <md-whiteframe class="md-whiteframe-z2 section" layout="row" layout-align="center center" layout-fill>
                 <md-content flex>
                     <div layout="row" layout-align="start center">
-                        <md-icon md-font-library="material-icons" flex="10" class="md-primary lg">assignment_ind</md-icon>
+                        <md-icon md-font-set="material-icons" flex="10" class="md-primary lg">assignment_ind</md-icon>
                         <h2 class="md-display-1" flex>Summary</h2>
                     </div>
 
@@ -97,10 +97,10 @@
             <md-whiteframe class="md-whiteframe-z2 section" layout="row" layout-align="space-between center" layout-fill>
                 <md-content flex>
                     <div layout="row" layout-align="start center">
-                        <md-icon md-font-library="material-icons" flex="10" class="md-primary lg">trending_up</md-icon>
+                        <md-icon md-font-set="material-icons" flex="10" class="md-primary lg">trending_up</md-icon>
                         <h2 class="md-display-1" flex>Qualities</h2>
                         <md-button class="md-icon-button md-raised" ng-click="cv.toggle('qualities')">
-                            <md-icon md-font-library="material-icons">{{ cv.expanded.qualities ? 'expand_less' : 'expand_more' }}</md-icon>
+                            <md-icon md-font-set="material-icons">{{ cv.expanded.qualities ? 'expand_less' : 'expand_more' }}</md-icon>
                         </md-button>
                     </div>
 
@@ -125,10 +125,10 @@
             <md-whiteframe class="md-whiteframe-z2 section" layout="row" layout-align="center center" layout-fill>
                 <md-content flex>
                     <div layout="row" layout-align="start center">
-                        <md-icon md-font-library="material-icons" flex="10" class="md-primary lg">work</md-icon>
+                        <md-icon md-font-set="material-icons" flex="10" class="md-primary lg">work</md-icon>
                         <h2 class="md-display-1" flex>Work Experience</h2>
                         <md-button class="md-icon-button md-raised" ng-click="cv.toggle('work')">
-                            <md-icon md-font-library="material-icons">{{ cv.expanded.work ? 'expand_less' : 'expand_more' }}</md-icon>
+                            <md-icon md-font-set="material-icons">{{ cv.expanded.work ? 'expand_less' : 'expand_more' }}</md-icon>
                         </md-button>
                     </div>
 
@@ -154,10 +154,10 @@
             <md-whiteframe class="md-whiteframe-z2 section" layout="row" layout-align="center center" layout-fill>
                 <md-content flex>
                     <div layout="row" layout-align="start center">
-                        <md-icon md-font-library="material-icons" flex="10" class="md-primary lg">school</md-icon>
+                        <md-icon md-font-set="material-icons" flex="10" class="md-primary lg">school</md-icon>
                         <h2 class="md-display-1" flex>Education</h2>
                         <md-button class="md-icon-button md-raised" ng-click="cv.toggle('education')">
-                            <md-icon md-font-library="material-icons">{{ cv.expanded.education ? 'expand_less' : 'expand_more' }}</md-icon>
+                            <md-icon md-font-set="material-icons">{{ cv.expanded.education ? 'expand_less' : 'expand_more' }}</md-icon>
                         </md-button>
                     </div>
 
@@ -183,10 +183,10 @@
             <md-whiteframe class="md-whiteframe-z2 section" layout="row" layout-align="center center" layout-fill>
                 <md-content flex>
                     <div layout="row" layout-align="start center">
-                        <md-icon md-font-library="material-icons" flex="10" class="md-primary lg">mood</md-icon>
+                        <md-icon md-font-set="material-icons" flex="10" class="md-primary lg">mood</md-icon>
                         <h2 class="md-display-1" flex>Interests</h2>
                         <md-button class="md-icon-button md-raised" ng-click="cv.toggle('interests')">
-                            <md-icon md-font-library="material-icons">{{ cv.expanded.interests ? 'expand_less' : 'expand_more' }}</md-icon>
+                            <md-icon md-font-set="material-icons">{{ cv.expanded.interests ? 'expand_less' : 'expand_more' }}</md-icon>
                         </md-button>
                     </div>
 
@@ -194,7 +194,7 @@
                         <div ng-repeat="interest in cv.interests">
                             <div layout layout-align="space-around center">
                                 <p class="md-subhead" flex="80" ng-bind-html="interest.description"></p>
-                                <md-icon md-font-library="material-icons" flex="10" class="md-primary">{{ interest.icon }}</md-icon>
+                                <md-icon md-font-set="material-icons" flex="10" class="md-primary">{{ interest.icon }}</md-icon>
                             </div>
                             <md-divider ng-if="!$last"></md-divider>
                         </div>
@@ -205,16 +205,16 @@
             <md-whiteframe class="md-whiteframe-z2 section" layout="row" layout-align="center center" layout-fill>
                 <md-content flex>
                     <div layout="row" layout-align="start center">
-                        <md-icon md-font-library="material-icons" flex="10" class="md-primary lg">supervisor_account</md-icon>
+                        <md-icon md-font-set="material-icons" flex="10" class="md-primary lg">supervisor_account</md-icon>
                         <h2 class="md-display-1" flex>References</h2>
                         <md-button class="md-icon-button md-raised" ng-click="cv.toggle('references')">
-                            <md-icon md-font-library="material-icons">{{ cv.expanded.references ? 'expand_less' : 'expand_more' }}</md-icon>
+                            <md-icon md-font-set="material-icons">{{ cv.expanded.references ? 'expand_less' : 'expand_more' }}</md-icon>
                         </md-button>
                     </div>
 
                     <section ng-if="cv.expanded.references">
                         <div class="icon-list" layout="row" ng-repeat="reference in cv.references">
-                            <md-icon flex="10" class="md-primary" md-font-library="material-icons">person</md-icon>
+                            <md-icon flex="10" md-font-set="material-icons" class="md-primary">person</md-icon>
                             <ul flex="90">
                                 <li class="md-title">{{ reference.name }}</li>
                                 <li class="md-subhead">{{ reference.title }}</li>
