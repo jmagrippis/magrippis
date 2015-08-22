@@ -1,0 +1,11 @@
+.parallax {
+  background: url("/assets/img/vertex.jpg");
+  background-size: cover;
+  padding: 2rem 0.5rem;
+
+  md-content {
+    background-color: inherit;
+    color: $color-white-transparent;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.8);
+  }
+}

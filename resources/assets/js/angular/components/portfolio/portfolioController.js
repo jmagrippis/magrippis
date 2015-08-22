@@ -1,7 +1,7 @@
-let injections = [];
+let injections = ['Projects'];
 
-let controller = function () {
-    console.log('we are at the portfolio page!');
+let controller = function (Projects) {
+    this.projects = Projects.query();
 };
 
 let exports = injections;
