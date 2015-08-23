@@ -23,6 +23,13 @@ class Photo extends Model
     protected $appends = ['name', 'description'];
 
     /**
+     * The attributes that should be visible in arrays.
+     *
+     * @var array
+     */
+    protected $visible = ['id', 'name', 'description', 'uri', 'extension', 'photoable_type'];
+
+    /**
      * Belongs to one of various different Models.
      */
     public function photoable()

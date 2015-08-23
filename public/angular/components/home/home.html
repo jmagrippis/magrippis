@@ -25,11 +25,11 @@
     </div>
     <md-whiteframe class="md-whiteframe-z1 md-padding md-margin workarea" layout="column" layout-align="center center">
         <div class="skills">
-            <md-card ng-repeat="category in home.categories" layout="row">
-                <div flex="50" class="icon" layout="column" layout-align="center center">
+            <md-card ng-repeat="category in home.categories" layout-gt-sm="row" layout-sm="column">
+                <div flex-sm="100" flex-gt-sm="50" class="icon" layout="column" layout-align="center center">
                     <i class="material-icons">favorite</i>
                 </div>
-                <div flex="50" class="md-padding">
+                <div flex-sm="100" flex-gt-sm="50" class="md-padding">
                     <md-card-content flex="50">
                         <h2 class="md-title">{{ category.name }}</h2>
 

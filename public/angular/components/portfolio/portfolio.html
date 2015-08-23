@@ -9,24 +9,24 @@
         <section layout-fill>
             <h2 class="md-display-2">Websites</h2>
             <div layout="row" layout-sm="column" layout-align="center center" layout-fill layout-wrap>
-                <article flex-sm="100" flex-gt-sm="50" ng-repeat="project in portfolio.projects | filter:{category_id: 1}">
-                    <md-card>
+                <article flex-sm="100" flex-gt-sm="50" ng-repeat="project in portfolio.projects | filter:{category_id: 1}" class="project">
+                    <md-card layout="column">
                         <a href="{{ project.link }}" target="_blank">
-                            <img ng-src="//lorempixel.com/900/600/abstract/1" class="md-card-image" alt="{{ project.name }}">
+                            <img ng-src="/{{ project.photos[0].uri }}" class="md-card-image" alt="{{ project.name }}">
                         </a>
-                        <md-card-content>
+                        <md-card-content flex layout="column" layout-align="space-between">
                             <h3 class="md-title">{{ project.name }}</h3>
                             <p>
                                 {{ project.description }}
                             </p>
+                            <div layout="row" layout-align="end center">
+                                <md-chips ng-model="project.skills" readonly="true">
+                                    <md-chip-template>
+                                        {{ $chip.name }}
+                                    </md-chip-template>
+                                </md-chips>
+                            </div>
                         </md-card-content>
-                        <div layout="row" layout-align="end center">
-                            <md-chips ng-model="project.skills" readonly="true">
-                                <md-chip-template>
-                                    {{ $chip.name }}
-                                </md-chip-template>
-                            </md-chips>
-                        </div>
                     </md-card>
                 </article>
             </div>
@@ -42,14 +42,14 @@
                             <p>
                                 {{ project.description }}
                             </p>
+                            <div layout="row" layout-align="end center">
+                                <md-chips ng-model="project.skills" readonly="true">
+                                    <md-chip-template>
+                                        {{ $chip.name }}
+                                    </md-chip-template>
+                                </md-chips>
+                            </div>
                         </md-card-content>
-                        <div layout="row" layout-align="end center">
-                            <md-chips ng-model="project.skills" readonly="true">
-                                <md-chip-template>
-                                    {{ $chip.name }}
-                                </md-chip-template>
-                            </md-chips>
-                        </div>
                     </md-card>
                 </article>
             </div>

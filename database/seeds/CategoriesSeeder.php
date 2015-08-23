@@ -50,6 +50,9 @@ class CategoriesSeeder extends Seeder
                         'name_en' => 'React JS'
                     ],
                     [
+                        'name_en' => 'Backbone.js'
+                    ],
+                    [
                         'name_en' => 'jQuery'
                     ],
                     [
@@ -273,6 +276,9 @@ class CategoriesSeeder extends Seeder
                     ],
                     [
                         'name_en' => 'Flickr'
+                    ],
+                    [
+                        'name_en' => 'Paypal'
                     ]
                 ]
             ],

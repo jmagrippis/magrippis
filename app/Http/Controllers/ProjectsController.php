@@ -16,7 +16,7 @@ class ProjectsController extends Controller
      */
     public function index()
     {
-        return Project::with('skills')->orderBy('ordering')->orderBy('completed_at', 'desc')->get();
+        return Project::with('skills', 'photos')->orderBy('ordering')->orderBy('completed_at', 'desc')->get();
     }
 
     /**

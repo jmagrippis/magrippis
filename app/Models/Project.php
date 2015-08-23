@@ -27,7 +27,7 @@ class Project extends Model
      *
      * @var array
      */
-    protected $visible = ['id', 'name', 'description', 'link', 'skills', 'category_id'];
+    protected $visible = ['id', 'name', 'description', 'link', 'skills', 'category_id', 'photos'];
 
     /**
      * Requires many Skills
