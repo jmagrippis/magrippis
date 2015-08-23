@@ -15,6 +15,7 @@ class ProjectsSeeder extends Seeder
     public function run()
     {
         $projects = [
+            //Websites
             [
                 'category_id' => 1,
                 'name' => 'Gus\' Drive-In',
@@ -23,7 +24,29 @@ class ProjectsSeeder extends Seeder
                 'completed_at' => date('Y-m-d G:i:s', mktime(0, 0, 0, 5, 1, 2015)),
                 'ordering' => 1,
                 'skills' => [
-                    1, 3, 7, 8, 9, 11, 13, 16, 18, 22, 23, 27, 31, 32, 39, 40, 41, 65, 74, 76, 78, 81, 93
+                    1,
+                    3,
+                    7,
+                    8,
+                    9,
+                    11,
+                    13,
+                    16,
+                    18,
+                    22,
+                    23,
+                    27,
+                    31,
+                    32,
+                    39,
+                    40,
+                    41,
+                    65,
+                    74,
+                    76,
+                    78,
+                    81,
+                    93
                 ],
                 'photos' => [
                     [
@@ -40,7 +63,30 @@ class ProjectsSeeder extends Seeder
                 'completed_at' => date('Y-m-d G:i:s', mktime(0, 0, 0, 12, 11, 2014)),
                 'ordering' => 2,
                 'skills' => [
-                    1, 3, 7, 8, 9, 11, 13, 14, 16, 17, 18, 22, 23, 27, 32, 39, 40, 41, 65, 74, 76, 78, 81, 93
+                    1,
+                    3,
+                    7,
+                    8,
+                    9,
+                    11,
+                    13,
+                    14,
+                    16,
+                    17,
+                    18,
+                    22,
+                    23,
+                    27,
+                    32,
+                    39,
+                    40,
+                    41,
+                    65,
+                    74,
+                    76,
+                    78,
+                    81,
+                    93
                 ],
                 'photos' => [
                     [
@@ -57,7 +103,32 @@ class ProjectsSeeder extends Seeder
                 'completed_at' => date('Y-m-d G:i:s', mktime(0, 0, 0, 9, 1, 2014)),
                 'ordering' => 3,
                 'skills' => [
-                    1, 6, 7, 8, 9, 11, 12, 16, 17, 18, 22, 23, 27, 32, 39, 40, 41, 61, 65, 67, 69, 73, 74, 76, 77, 81
+                    1,
+                    6,
+                    7,
+                    8,
+                    9,
+                    11,
+                    12,
+                    16,
+                    17,
+                    18,
+                    22,
+                    23,
+                    27,
+                    32,
+                    39,
+                    40,
+                    41,
+                    61,
+                    65,
+                    67,
+                    69,
+                    73,
+                    74,
+                    76,
+                    77,
+                    81
                 ],
                 'photos' => [
                     [
@@ -74,7 +145,21 @@ class ProjectsSeeder extends Seeder
                 'completed_at' => date('Y-m-d G:i:s', mktime(0, 0, 0, 7, 1, 2012)),
                 'ordering' => 4,
                 'skills' => [
-                    1, 6, 7, 8, 18, 22, 23, 32, 33, 65, 74, 76, 97, 98, 99
+                    1,
+                    6,
+                    7,
+                    8,
+                    18,
+                    22,
+                    23,
+                    32,
+                    33,
+                    65,
+                    74,
+                    76,
+                    97,
+                    98,
+                    99
                 ],
                 'photos' => [
                     [
@@ -91,7 +176,20 @@ class ProjectsSeeder extends Seeder
                 'completed_at' => date('Y-m-d G:i:s', mktime(0, 0, 0, 7, 1, 2013)),
                 'ordering' => 5,
                 'skills' => [
-                    1, 6, 7, 8, 11, 12, 18, 25, 65, 74, 76, 97, 98, 99
+                    1,
+                    6,
+                    7,
+                    8,
+                    11,
+                    12,
+                    18,
+                    25,
+                    65,
+                    74,
+                    76,
+                    97,
+                    98,
+                    99
                 ],
                 'photos' => [
                     [
@@ -108,12 +206,241 @@ class ProjectsSeeder extends Seeder
                 'completed_at' => date('Y-m-d G:i:s', mktime(0, 0, 0, 7, 1, 2015)),
                 'ordering' => 6,
                 'skills' => [
-                    1, 3, 7, 8, 9, 11, 16, 18, 22, 23, 27, 31, 39, 40, 41, 65, 74, 76, 78, 81, 87, 90
+                    1,
+                    3,
+                    7,
+                    8,
+                    9,
+                    11,
+                    16,
+                    18,
+                    22,
+                    23,
+                    27,
+                    31,
+                    39,
+                    40,
+                    41,
+                    65,
+                    74,
+                    76,
+                    78,
+                    81,
+                    87,
+                    90
                 ],
                 'photos' => [
                     [
                         'name_en' => 'Sparta Taxi Services Splash Image',
                         'location' => 'sparta-taxi-splash.jpg'
+                    ]
+                ]
+            ],
+            //Apps
+            [
+                'category_id' => 2,
+                'name' => 'AgedUp',
+                'description_en' => 'Promotional awareness app for people with Alzheimer\'s disease and their caretakers, including useful info and brain training exercises.',
+                'completed_at' => date('Y-m-d G:i:s', mktime(0, 0, 0, 8, 15, 2015)),
+                'ordering' => 1,
+                'skills' => [
+                    1,
+                    2,
+                    3,
+                    7,
+                    8,
+                    9,
+                    11,
+                    18,
+                    22,
+                    23,
+                    28,
+                    31,
+                    36,
+                    37,
+                    39,
+                    40,
+                    41,
+                    45,
+                    46,
+                    50,
+                    51,
+                    75,
+                    76,
+                    77,
+                    87,
+                    90,
+                    97,
+                    98
+                ],
+                'photos' => [
+                    [
+                        'name_en' => 'AgedUp Tips Screen with open menu and one exercise screen',
+                        'location' => 'aged-up-tips-and-exercises.jpg'
+                    ]
+                ]
+            ],
+            [
+                'category_id' => 2,
+                'name' => 'Taxaki',
+                'description_en' => 'Premiere taxi-hailing app for various areas in Greece, with driver stats and reviews, as well as live tracking.',
+                'completed_at' => date('Y-m-d G:i:s', mktime(0, 0, 0, 7, 1, 2015)),
+                'ordering' => 1,
+                'skills' => [
+                    1,
+                    6,
+                    7,
+                    8,
+                    11,
+                    12,
+                    16,
+                    17,
+                    18,
+                    20,
+                    22,
+                    23,
+                    27,
+                    31,
+                    32,
+                    39,
+                    40,
+                    41,
+                    45,
+                    46,
+                    47,
+                    50,
+                    65,
+                    74,
+                    76,
+                    78,
+                    87,
+                    90,
+                    91
+                ],
+                'photos' => [
+                    [
+                        'name_en' => 'Taxaki Driver Select screen and map screen with taxi location',
+                        'location' => 'taxaki-drivers-and-map.jpg'
+                    ]
+                ]
+            ],
+            [
+                'category_id' => 2,
+                'name' => 'Pouliseto',
+                'description_en' => 'Fast and easy bartering app, allowing you to take a photo of any item you own, and sell it quickly without commission fees.',
+                'completed_at' => date('Y-m-d G:i:s', mktime(0, 0, 0, 6, 15, 2015)),
+                'ordering' => 1,
+                'skills' => [
+                    1,
+                    6,
+                    7,
+                    8,
+                    11,
+                    12,
+                    14,
+                    16,
+                    18,
+                    20,
+                    22,
+                    23,
+                    27,
+                    31,
+                    32,
+                    39,
+                    40,
+                    41,
+                    42,
+                    45,
+                    46,
+                    47,
+                    61,
+                    74,
+                    76,
+                    77,
+                    87,
+                    90
+                ],
+                'photos' => [
+                    [
+                        'name_en' => 'Pouliseto Category Index screen and Add Listing screen',
+                        'location' => 'pouliseto-splash-and-add-listing.jpg'
+                    ]
+                ]
+            ],
+            [
+                'category_id' => 2,
+                'name' => 'Frontier Fighter',
+                'description_en' => 'Multiplatform 2D physics-based shoot-em-up, featuring vector graphics and detailed procedural backgrounds.',
+                'completed_at' => date('Y-m-d G:i:s', mktime(0, 0, 0, 8, 1, 2014)),
+                'ordering' => 1,
+                'skills' => [
+                    45,
+                    49,
+                    53,
+                    54,
+                    58,
+                    59,
+                    60,
+                    97,
+                    98
+                ],
+                'photos' => [
+                    [
+                        'name_en' => 'Frontier Fighter Splash Screen',
+                        'location' => 'frontier-fighter-splash.jpg'
+                    ]
+                ]
+            ],
+            [
+                'category_id' => 2,
+                'name' => 'Hyltec Leakage Tester',
+                'description_en' => 'Chimney and flue leakage tester using software coded in C, complete with a web-based interactive tutorial counterpart for training.',
+                'completed_at' => date('Y-m-d G:i:s', mktime(0, 0, 0, 3, 1, 2014)),
+                'ordering' => 1,
+                'skills' => [
+                    1,
+                    6,
+                    7,
+                    8,
+                    11,
+                    18,
+                    74,
+                    76,
+                    79
+                ],
+                'photos' => [
+                    [
+                        'name_en' => 'Hyltec Leakage Checker Web Tutorial Interface',
+                        'location' => 'hyltec-leakage-checker-interface.jpg'
+                    ]
+                ]
+            ],
+            [
+                'category_id' => 2,
+                'name' => 'Design Your Own',
+                'description_en' => 'Versatile app using html5 Canvas, for clothing customization and printing preset or custom designs on clothes and business cards.',
+                'completed_at' => date('Y-m-d G:i:s', mktime(0, 0, 0, 12, 1, 2013)),
+                'ordering' => 1,
+                'skills' => [
+                    1,
+                    6,
+                    7,
+                    8,
+                    11,
+                    12,
+                    16,
+                    18,
+                    74,
+                    76,
+                    79,
+                    93,
+                    97,
+                    98
+                ],
+                'photos' => [
+                    [
+                        'name_en' => 'Design Your Own Web App Interface',
+                        'location' => 'design-your-own-interface.jpg'
                     ]
                 ]
             ]
@@ -140,17 +467,6 @@ class ProjectsSeeder extends Seeder
                     'ordering' => $key + 1
                 ]));
             }
-
         }
-
-        $faker = Faker\Factory::create();
-
-        $skills = Skill::all()->lists('id')->toArray();
-
-        factory(Project::class, 6)
-            ->create(['category_id' => 2])
-            ->each(function($project) use ($faker, $skills) {
-                $project->skills()->sync($faker->randomElements($skills, 4));
-            });
     }
 }

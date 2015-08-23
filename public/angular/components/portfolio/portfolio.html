@@ -34,10 +34,12 @@
         <section layout-fill>
             <h2 class="md-display-2">Apps</h2>
             <div layout="row" layout-sm="column" layout-align="center center" layout-fill layout-wrap>
-                <article flex-sm="100" flex-gt-sm="33" ng-repeat="project in portfolio.projects | filter:{category_id: 2}">
-                    <md-card>
-                        <img ng-src="//lorempixel.com/900/600/abstract/2" class="md-card-image" alt="{{ project.name }}">
-                        <md-card-content>
+                <article flex-sm="100" flex-gt-sm="33" ng-repeat="project in portfolio.projects | filter:{category_id: 2}" class="project">
+                    <md-card layout="column">
+                        <a href="{{ project.link }}" target="_blank">
+                            <img ng-src="/{{ project.photos[0].uri }}" class="md-card-image" alt="{{ project.name }}">
+                        </a>
+                        <md-card-content flex layout="column" layout-align="space-between">
                             <h3 class="md-title">{{ project.name }}</h3>
                             <p>
                                 {{ project.description }}
