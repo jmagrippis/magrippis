@@ -41,6 +41,16 @@ angular
                         controllerAs: 'portfolio'
                     }
                 }
+            })
+            .state('app.hobbies', {
+                url: 'hobbies',
+                views: {
+                    mainContent: {
+                        templateUrl: './angular/components/hobbies/hobbies.html',
+                        controller: 'HobbiesController',
+                        controllerAs: 'hobbies'
+                    }
+                }
             });
 
         $urlRouterProvider.otherwise('/');

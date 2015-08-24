@@ -22,7 +22,7 @@
                 Portfolio
             </md-tooltip>
         </md-button>
-        <md-button class="md-icon-button md-raised md-primary" aria-label="Hobbies">
+        <md-button class="md-icon-button md-raised md-primary" ui-sref="app.hobbies" aria-label="Hobbies" ng-disabled="core.isActiveState('app.hobbies')">
             <md-icon md-font-set="material-icons">favorite</md-icon>
             <md-tooltip>
                 Hobbies

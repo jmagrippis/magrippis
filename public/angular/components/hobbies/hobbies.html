@@ -1,0 +1,29 @@
+<section class="parallax diamonds" layout="column" layout-align="center center">
+    <md-content class="md-padding workarea" layout="row" layout-sm="column" layout-align="center start" layout-fill>
+        <div>
+            <p class="md-display-1">
+                I am lucky enough to be passionate about my work, but that doesn't mean work is the only thing I'm passionate about! There's a <em>plethora</em> of things that interest me, and not enough hours in the day to get into them half as much as I'd like.
+            </p>
+            <p class="md-display-2">
+                Read on to find out more about the man behind the keyboard!
+            </p>
+        </div>
+    </md-content>
+</section>
+
+<md-content class="md-padding" layout="column" layout-align="center center">
+    <md-content class="md-padding workarea" layout="column" layout-align="center start" layout-fill>
+        <md-whiteframe class="md-whiteframe-z1 section business-card-accent" layout="column" layout-align="center center" ng-repeat="hobby in hobbies.categories">
+            <div class="card-header" layout layout-align="space-between center" layout-fill>
+                <h3 class="md-display-1">{{ hobby.name }}</h3>
+            </div>
+            <img src="//placehold.it/1280x320" alt="cover photo" class="cover">
+            <div class="md-subhead md-padding" ng-bind-html="hobby.description"></div>
+            <div class="md-padding" layout="row" layout-align="center center">
+                <img flex="33" class="md-margin" src="//placehold.it/960x640" alt="Thumbnail">
+                <img flex="33" class="md-margin" src="//placehold.it/960x640" alt="Thumbnail">
+                <img flex="33" class="md-margin" src="//placehold.it/960x640" alt="Thumbnail">
+            </div>
+        </md-whiteframe>
+    </md-content>
+</md-content>

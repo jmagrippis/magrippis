@@ -6,6 +6,8 @@ let controller = function (Categories) {
         this.categories.forEach(category => {
             this.availableSkills = this.availableSkills.concat(category.skills);
         });
+
+        console.log(this.availableSkills);
     });
 
     this.searchTags = [];

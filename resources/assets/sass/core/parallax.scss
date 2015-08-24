@@ -3,9 +3,18 @@
   background-size: cover;
   padding: 2rem 0.5rem;
 
+  &.diamonds {
+    background: url("/assets/img/diamonds.jpg");
+    background-size: cover;
+  }
+
   md-content {
     background-color: inherit;
     color: $color-white-transparent;
     text-shadow: 1px 1px 1px rgba(0,0,0,0.8);
+
+    p {
+      margin: 1rem 0;
+    }
   }
 }

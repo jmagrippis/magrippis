@@ -6,3 +6,14 @@ md-whiteframe.business-card {
     margin-bottom: 1rem;
   }
 }
+
+md-whiteframe.business-card-accent {
+  .card-header {
+    background-color: $color-accent;
+    padding: 0 2rem;
+  }
+
+  img.cover {
+    width: 100%;
+  }
+}

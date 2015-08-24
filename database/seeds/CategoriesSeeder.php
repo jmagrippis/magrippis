@@ -477,5 +477,39 @@ class CategoriesSeeder extends Seeder
                 $skill_category->skills()->save(new Skill($skill));
             }
         }
+
+        $hobby_categories = [
+            [
+                'name_en' => 'Video Games',
+                'description_en' => '<p>Perhaps predictably, I am a gamer. I have been for as long as I can remember. My #1 motivation for learning how to read was so I would be able to play <a href="http://en.wikipedia.org/wiki/Final_Fantasy">Final Fantasy</a> on my own. I have done non-lethal perfect runs of <a href="http://en.wikipedia.org/wiki/Metal_Gear_Solid">Metal Gear Solid</a>, I have role-played forgetful wizards in <a href="http://en.wikipedia.org/wiki/Ultima_Online">Ultima Online</a> and I have rescued almost as many <a href="http://en.wikipedia.org/wiki/Lemmings_(video_game)">Lemmings</a> as I have blown up.</p>
+<p>To me, video games are this perfect storm of writing, direction, art, <em>adventure</em>... and they top all of it off with <em>unprecedented</em> interactivity with the audience. You <strong>are</strong> the protagonist. It\'s definitely my favorite medium and it always fascinated me, even when I could not put my finger on the why.</p>
+<p>In addition to being a beloved pastime, video games always seem to be on the verge of crossing over to my professional life for good: I was being paid to write video game reviews once upon a time, and I do sometimes produce the <a href="http://www.youtube.com/watch?v=GmWuGis2Y5k">JRT Show</a>, an in-depth gaming review show with comedy sketches that I love, but is too time-consuming to do regularly. I have contributed code & assets to small projects, and I\'m always tinkering with silly simple games.</p>
+<p>Of course, with the power of <a href="https://unity3d.com/">Unity</a> and the <a href="https://www.unrealengine.com/">Unreal Engine</a>, those timid gaming forays have been looking increasingly professional!</p>
+<p>My ultimate dream remains to be a part of a AAA game. I was in the credits of <a href="https://twitter.com/TimOfLegend">Tim Schafer</a>\'s <a href="http://en.wikipedia.org/wiki/Broken_Age">Broken Age</a> as a backer, so we are getting somewhere!</p>
+<p>As a fun trivia, my favorite games would be <a href="http://en.wikipedia.org/wiki/Super_Metroid">Super Metroid</a> from the "retro" era, and <a href="http://en.wikipedia.org/wiki/Batman:_Arkham_Asylum">Batman: Arkham Asylum</a> for the contemporary one. <a href="http://en.wikipedia.org/wiki/Rayman_Origins">Rayman Origins</a> would probably be the game I\'d love to have made the most.</p>',
+                'ordering' => 1,
+                'type' => 'hobby'
+            ],
+            [
+                'name_en' => 'Photography & Directing',
+                'description_en' => '<p>Although I don\'t take nearly as many pictures as <a href="https://www.flickr.com/photos/78933929@N02/">my talented sister</a>, I do have an equally soft spot for photography. I relish at the technical aspects of it, and enjoy going out there to capture that delicious bokeh!</p>
+<p>Photography is also sometimes part of the package when creating websites for businesses, with my trusty Canon called up to bat when the provided product and showcase photos aren\'t up to quality standards, or when a fellow actor or model is looking for someone to shoot for their photo book.</p>
+<p>Directing is a somewhat related interest of mine that I\'d like to do more of: my typical "shower thoughts" are related to apps, but sometimes they are premises; most of <em>those</em> would be great for video games, but some translate best as a 5 minute short or a small web series, and I jot them down to shoot at my own time. I am especially fond of projects like that, as they are a great way to directly interact with fresh talent, or even bring your own friends into the mix!</p>',
+                'ordering' => 2,
+                'type' => 'hobby'
+            ],
+            [
+                'name_en' => 'Beach Volleyball',
+                'description_en' => '<p>If loving video games is expected of me, and being into photography sounds fitting, my interest in fitness & sports sometimes throws people off. Fact is, I enjoy sports about as much as I love spending hours in front of a monitor tweaking code!</p>
+<p>I\'ve went through basketball phases and football phases but, at the twilight of my college years, I found <em>the</em> sport for me: <strong>Beach Volleyball</strong>. It combines qualities from both team and solo sports, power as well as intelligence, you don\'t need to be exceptionally tall but you do need to be fast and tireless, it\'s relatively safe, and it\'s a <em>phenomenal</em> workout! And you only need four players, so it\'s pretty easy to organize a quick match. What else could I possibly need?</p>
+<p>Hooked from the get go, I have now reached a point where I don\'t only play in the stereotypical sunny beaches that immediately come to mind when one thinks about this sport, but also in harsh winter tournaments during unimaginable rainstorms; and I am loving every minute of it.</p>',
+                'ordering' => 3,
+                'type' => 'hobby'
+            ]
+        ];
+
+        foreach ($hobby_categories as $category) {
+            Category::create($category);
+        }
     }
 }
