@@ -51,6 +51,16 @@ angular
                         controllerAs: 'hobbies'
                     }
                 }
+            })
+            .state('app.blog', {
+                url: 'blog',
+                views: {
+                    mainContent: {
+                        templateUrl: './angular/components/blog/blog.html',
+                        controller: 'BlogController',
+                        controllerAs: 'blog'
+                    }
+                }
             });
 
         $urlRouterProvider.otherwise('/');

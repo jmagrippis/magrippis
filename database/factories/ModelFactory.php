@@ -47,3 +47,27 @@ $factory->define(Magrippis\Models\Project::class, function (Faker\Generator $fak
         'category_id' => $faker->numberBetween(1, 2)
     ];
 });
+
+$factory->define(Magrippis\Models\Post::class, function (Faker\Generator $faker) {
+    return [
+        'title_en' => $faker->company,
+        'content_en' => '<p>' . $faker->paragraph() . '</p>' .
+            '<p>' . $faker->paragraph() . '</p>' .
+            '<p>' . $faker->paragraph() . '</p>',
+        'created_at' => $faker->dateTimeThisYear()
+    ];
+});
+
+$factory->define(Magrippis\Models\Tag::class, function (Faker\Generator $faker) {
+    return [
+        'name_en' => $faker->word,
+    ];
+});
+
+$factory->define(Magrippis\Models\Category::class, function (Faker\Generator $faker) {
+    return [
+        'name_en' => $faker->word . ' ' . $faker->word,
+        'description_en' => $faker->paragraph(),
+        'type' => 'post'
+    ];
+});

@@ -4,7 +4,7 @@ namespace Magrippis\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Project extends Model
+class Post extends Model
 {
     use TranslatableTrait;
 
@@ -13,36 +13,36 @@ class Project extends Model
      *
      * @var array
      */
-    protected $fillable = ['name', 'description_en', 'description_el', 'link', 'type', 'completed_at', 'ordering'];
+    protected $fillable = ['content_en', 'content_el', 'title_en', 'title_el', 'published_at', 'featured'];
 
     /**
      * Attributes not mapped on a database column.
      *
      * @var array
      */
-    protected $appends = ['description'];
+    protected $appends = ['title', 'content'];
 
     /**
      * The attributes that should be mutated to dates.
      *
      * @var array
      */
-    protected $dates = ['completed_at'];
+    protected $dates = ['published_at'];
 
     /**
      * The attributes that should be visible in arrays.
      *
      * @var array
      */
-    protected $visible = ['id', 'name', 'description', 'link', 'skills', 'category_id', 'photos'];
+    protected $visible = ['id', 'title', 'content', 'featured', 'category_id', 'photos', 'tags', 'category'];
 
     /**
-     * Requires many Skills
+     * Has many tags
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */
-    public function skills()
+    public function tags()
     {
-        return $this->belongsToMany(Skill::class);
+        return $this->belongsToMany(Tag::class);
     }
 
     /**
@@ -64,11 +64,20 @@ class Project extends Model
     }
 
     /**
-     * Gets the localized Description attribute.
+     * Gets the localized Title attribute.
      * @return string
      */
-    public function getDescriptionAttribute()
+    public function getTitleAttribute()
     {
-        return $this->getLocalized('description');
+        return $this->getLocalized('title');
+    }
+
+    /**
+     * Gets the localized Content attribute.
+     * @return string
+     */
+    public function getContentAttribute()
+    {
+        return $this->getLocalized('content');
     }
 }

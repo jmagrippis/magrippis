@@ -39,6 +39,24 @@ class Category extends Model
     }
 
     /**
+     * Might have many projects.
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function projects()
+    {
+        return $this->hasMany(Project::class);
+    }
+
+    /**
+     * Might have many posts.
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function posts()
+    {
+        return $this->hasMany(Post::class);
+    }
+
+    /**
      * Gets the localized Name attribute.
      * @return string
      */

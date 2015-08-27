@@ -6,6 +6,10 @@
   &.diamonds {
     background: url("/assets/img/diamonds.jpg");
     background-size: cover;
+
+    &.bottom {
+      background-position: bottom;
+    }
   }
 
   md-content {

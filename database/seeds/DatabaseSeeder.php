@@ -19,6 +19,7 @@ class DatabaseSeeder extends Seeder
         $this->call(JobsSeeder::class);
         $this->call(DiplomasSeeder::class);
         $this->call(ProjectsSeeder::class);
+        $this->call(PostsSeeder::class);
 
         Model::reguard();
     }

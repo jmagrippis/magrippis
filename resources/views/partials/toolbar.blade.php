@@ -28,7 +28,7 @@
                 Hobbies
             </md-tooltip>
         </md-button>
-        <md-button class="md-icon-button md-raised md-primary" aria-label="Blog">
+        <md-button class="md-icon-button md-raised md-primary" ui-sref="app.blog" aria-label="Blog" ng-disabled="core.isActiveState('app.blog')">
             <md-icon md-font-set="material-icons">mode_edit</md-icon>
             <md-tooltip>
                 Blog
