@@ -1,0 +1,36 @@
+<md-content class="md-padding" layout="column" layout-align="center center">
+    <md-content class="md-padding workarea" layout="row" layout-align="center start" layout-fill>
+        <main flex-sm="100" flex-gt-sm="66" layout="column" layout-align="center center" layout-margin layout-padding>
+            <md-whiteframe class="md-whiteframe-z2 section" layout="column" layout-align="center center" layout-fill>
+                <md-card class="captioned-card" ng-repeat="post in blog.posts">
+                    <div class="topper">
+                        <img src="//placehold.it/1280x320" class="md-card-image" alt="Washed Out">
+                        <h2 class="md-display-1">{{ post.title }}</h2>
+                    </div>
+                    <md-card-content class="md-headline">
+                        <p ng-bind-html="post.teaser"></p>
+                    </md-card-content>
+                    <div class="md-actions" layout="row" layout-align="end center">
+                        <md-button ui-sref="app.blog.show({ postSlug: post.slug })">Read More</md-button>
+                    </div>
+                </md-card>
+            </md-whiteframe>
+        </main>
+        <aside flex-sm="100" flex-gt-sm="33" layout="column" layout-align="center center" layout-margin layout-padding>
+            <md-whiteframe class="md-whiteframe-z2 aside" layout layout-align="center center" layout-fill>
+                <md-content layout="column" layout-align="center center" layout-padding class="container">
+                    <h3>Categories</h3>
+                    <ul>
+                        <li ng-repeat="category in blog.availableCategories">{{ category.name }}</li>
+                    </ul>
+                    <h3>Tags</h3>
+                    <md-chips ng-model="blog.availableTags" readonly="true">
+                        <md-chip-template>
+                            {{ $chip.name }}
+                        </md-chip-template>
+                    </md-chips>
+                </md-content>
+            </md-whiteframe>
+        </aside>
+    </md-content>
+</md-content>

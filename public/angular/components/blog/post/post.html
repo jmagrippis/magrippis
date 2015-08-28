@@ -1,0 +1,37 @@
+<md-content class="md-padding post" layout="column" layout-align="center center">
+    <md-content class="md-padding workarea" layout="row" layout-align="center start" layout-fill>
+        <main flex-sm="100" flex-gt-sm="90" layout="column" layout-align="center center" layout-margin layout-padding>
+            <md-card class="captioned-card">
+                <div class="topper">
+                    <img src="//placehold.it/1280x320" class="md-card-image" alt="Washed Out">
+                    <h2 class="md-display-1">{{ post.post.title }}</h2>
+                </div>
+                <md-card-content class="md-headline">
+                    <p ng-bind-html="post.post.content"></p>
+                </md-card-content>
+                <md-divider></md-divider>
+                <div layout="row" layout-align="space-between" layout-padding>
+                    <div flex>
+                        Posted in <strong>{{ post.post.category.name }}</strong>
+                    </div>
+                    <div flex class="text-right">
+                        {{ post.post.published_diff }}
+                    </div>
+                </div>
+                <md-divider></md-divider>
+                <div layout="row" layout-align="space-between center" layout-padding>
+                    <div flex="15">
+                        Tags:
+                    </div>
+                    <div flex class="text-right">
+                        <md-chips ng-model="post.post.tags" readonly="true">
+                            <md-chip-template>
+                                {{ $chip.name }}
+                            </md-chip-template>
+                        </md-chips>
+                    </div>
+                </div>
+            </md-card>
+        </main>
+    </md-content>
+</md-content>

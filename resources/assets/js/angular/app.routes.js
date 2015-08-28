@@ -54,11 +54,30 @@ angular
             })
             .state('app.blog', {
                 url: 'blog',
+                abstract: true,
                 views: {
                     mainContent: {
                         templateUrl: './angular/components/blog/blog.html',
+                    }
+                }
+            })
+            .state('app.blog.index', {
+                url: '/',
+                views: {
+                    blogContent: {
+                        templateUrl: './angular/components/blog/index.html',
                         controller: 'BlogController',
                         controllerAs: 'blog'
+                    }
+                }
+            })
+            .state('app.blog.show', {
+                url: '/:postSlug',
+                views: {
+                    blogContent: {
+                        templateUrl: './angular/components/blog/post/post.html',
+                        controller: 'PostController',
+                        controllerAs: 'post'
                     }
                 }
             });

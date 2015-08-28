@@ -33,12 +33,12 @@ class PostsController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  int  $slug
      * @return Response
      */
-    public function show($id)
+    public function show($slug)
     {
-        //
+        return Post::with('tags', 'photos', 'category')->where('slug', $slug)->firstOrFail();
     }
 
     /**

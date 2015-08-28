@@ -54,7 +54,7 @@ $factory->define(Magrippis\Models\Post::class, function (Faker\Generator $faker)
         'content_en' => '<p>' . $faker->paragraph() . '</p>' .
             '<p>' . $faker->paragraph() . '</p>' .
             '<p>' . $faker->paragraph() . '</p>',
-        'created_at' => $faker->dateTimeThisYear()
+        'published_at' => $faker->dateTimeThisYear()
     ];
 });
 

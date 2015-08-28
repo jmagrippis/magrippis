@@ -143,7 +143,8 @@ return [
         Magrippis\Providers\AppServiceProvider::class,
         Magrippis\Providers\EventServiceProvider::class,
         Magrippis\Providers\RouteServiceProvider::class,
-        Intervention\Image\ImageServiceProvider::class
+        Intervention\Image\ImageServiceProvider::class,
+        Cviebrock\EloquentSluggable\SluggableServiceProvider::class
 
     ],
 

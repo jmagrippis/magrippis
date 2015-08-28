@@ -18,10 +18,13 @@ class CreatePostsTable extends Migration
             $table->foreign('category_id')
                 ->references('id')->on('categories')
                 ->onDelete('cascade');
-            $table->string('title_en');
+            $table->string('title_en', 250);
             $table->string('title_el')->nullable();
+            $table->string('slug')->unique();
             $table->text('content_en');
+            $table->text('content_md_en')->nullable();
             $table->text('content_el')->nullable();
+            $table->text('content_md_el')->nullable();
             $table->boolean('featured')->default(false)->index();
             $table->timestamp('published_at')->index();
             $table->timestamps();
