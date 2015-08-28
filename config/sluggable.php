@@ -17,7 +17,7 @@ return [
 	 *
 	 * Defaults to null, which uses the toString() method on your model.
 	 */
-	'build_from' => 'title_en',
+	'build_from' => 'name_en',
 
 	/**
 	 * What field to we store the slug in?  Defaults to "slug".

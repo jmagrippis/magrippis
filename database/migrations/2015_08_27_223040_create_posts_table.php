@@ -26,7 +26,7 @@ class CreatePostsTable extends Migration
             $table->text('content_el')->nullable();
             $table->text('content_md_el')->nullable();
             $table->boolean('featured')->default(false)->index();
-            $table->timestamp('published_at')->index();
+            $table->timestamp('published_at')->default(DB::raw('CURRENT_TIMESTAMP'))->index();
             $table->timestamps();
         });
     }

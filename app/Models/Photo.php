@@ -3,10 +3,13 @@
 namespace Magrippis\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Cviebrock\EloquentSluggable\SluggableInterface;
+use Cviebrock\EloquentSluggable\SluggableTrait;
 
-class Photo extends Model
+class Photo extends Model implements SluggableInterface
 {
     use TranslatableTrait;
+    use SluggableTrait;
 
     /**
      * The attributes that are mass assignable.

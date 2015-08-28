@@ -3,7 +3,7 @@
         <main flex-sm="100" flex-md="95" flex-lg="90" flex-gt-lg="70" layout="column" layout-align="center center" layout-margin layout-padding>
             <md-card class="captioned-card">
                 <div class="topper">
-                    <img src="//placehold.it/1680x480" class="md-card-image" alt="Washed Out">
+                    <img ng-src="{{ post.post.featured_photo.uri }}" class="md-card-image" alt="{{ post.post.featured_photo.name }}">
                     <h2 class="md-display-1">{{ post.post.title }}</h2>
                 </div>
                 <md-card-content class="md-headline">
