@@ -2,9 +2,9 @@
     <md-content class="md-padding workarea" layout="row" layout-align="center start" layout-fill>
         <main flex-sm="100" flex-gt-sm="66" layout="column" layout-align="center center" layout-margin layout-padding>
             <md-whiteframe class="md-whiteframe-z2 section" layout="column" layout-align="center center" layout-fill>
-                <md-card class="captioned-card" ng-repeat="post in blog.posts">
+                <md-card class="captioned-card" ng-repeat="post in blog.posts | inCategory : (blog.categories | filter: {checked: true}) | hasTag : (blog.tags | filter: {checked: true})">
                     <div class="topper">
-                        <img src="//placehold.it/1280x320" class="md-card-image" alt="Washed Out">
+                        <img src="//placehold.it/1680x480" class="md-card-image" alt="Washed Out">
                         <h2 class="md-display-1">{{ post.title }}</h2>
                     </div>
                     <md-card-content class="md-headline">
@@ -20,13 +20,14 @@
             <md-whiteframe class="md-whiteframe-z2 aside" layout layout-align="center center" layout-fill>
                 <md-content layout="column" layout-align="center center" layout-padding class="container">
                     <h3>Categories</h3>
-                    <ul>
-                        <li ng-repeat="category in blog.availableCategories">{{ category.name }}</li>
-                    </ul>
+                    <md-list-item ng-repeat="category in blog.categories | orderBy: 'name'" layout-fill>
+                        <p> {{ category.name }} </p>
+                        <md-checkbox class="md-secondary" ng-model="category.checked"></md-checkbox>
+                    </md-list-item>
                     <h3>Tags</h3>
-                    <md-chips ng-model="blog.availableTags" readonly="true">
-                        <md-chip-template>
-                            {{ $chip.name }}
+                    <md-chips ng-model="blog.tags" readonly="true" class="readonly">
+                        <md-chip-template ng-class="{ active: $chip.checked }" ng-click="blog.toggleChecked($chip)">
+                            #{{ $chip.name }}
                         </md-chip-template>
                     </md-chips>
                 </md-content>

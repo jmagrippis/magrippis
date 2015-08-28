@@ -5,24 +5,18 @@ namespace Magrippis\Http\Controllers;
 use Illuminate\Http\Request;
 
 use Magrippis\Http\Requests;
-use Magrippis\Models\Category;
+use Magrippis\Models\Tag;
 
-class CategoriesController extends Controller
+class TagsController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return Response
      */
-    public function index(Request $request)
+    public function index()
     {
-        $query = Category::with('skills')->orderBy('ordering');
-
-        if ($request->has('type')) {
-            $query->where('type', $request->get('type'));
-        }
-
-        return $query->get();
+        return Tag::all();
     }
 
     /**

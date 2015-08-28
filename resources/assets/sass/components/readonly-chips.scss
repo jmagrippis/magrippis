@@ -1,0 +1,12 @@
+md-chips.readonly {
+  md-chip-template {
+    transition: color 0.5s;
+    cursor: pointer;
+    &.active {
+      color: $color-accent;
+    }
+    &:focus {
+      outline: none;
+    }
+  }
+}

@@ -16,7 +16,7 @@ class PostsController extends Controller
      */
     public function index()
     {
-        return Post::with('tags', 'photos', 'category')->orderBy('published_at', 'desc')->get();
+        return Post::with('tags', 'photos')->orderBy('published_at', 'desc')->get();
     }
 
     /**

@@ -22,6 +22,7 @@ class CreatePhotosTable extends Migration
             $table->text('description_en')->nullable();
             $table->text('description_el')->nullable();
             $table->string('extension', 8);
+            $table->boolean('featured')->default(false);
             $table->tinyInteger('ordering')->default(1)->index();
             $table->timestamps();
         });

@@ -1,9 +1,9 @@
 <md-content class="md-padding post" layout="column" layout-align="center center">
-    <md-content class="md-padding workarea" layout="row" layout-align="center start" layout-fill>
-        <main flex-sm="100" flex-gt-sm="90" layout="column" layout-align="center center" layout-margin layout-padding>
+    <md-content class="md-padding workarea" layout="row" layout-align="center center" layout-fill>
+        <main flex-sm="100" flex-md="95" flex-lg="90" flex-gt-lg="70" layout="column" layout-align="center center" layout-margin layout-padding>
             <md-card class="captioned-card">
                 <div class="topper">
-                    <img src="//placehold.it/1280x320" class="md-card-image" alt="Washed Out">
+                    <img src="//placehold.it/1680x480" class="md-card-image" alt="Washed Out">
                     <h2 class="md-display-1">{{ post.post.title }}</h2>
                 </div>
                 <md-card-content class="md-headline">
@@ -26,7 +26,7 @@
                     <div flex class="text-right">
                         <md-chips ng-model="post.post.tags" readonly="true">
                             <md-chip-template>
-                                {{ $chip.name }}
+                                #{{ $chip.name }}
                             </md-chip-template>
                         </md-chips>
                     </div>
@@ -34,4 +34,7 @@
             </md-card>
         </main>
     </md-content>
+    <md-button class="md-raised md-primary" ui-sref="app.blog.index">
+        <md-icon md-font-set="material-icons">chevron_left</md-icon> Return to Blog Index
+    </md-button>
 </md-content>

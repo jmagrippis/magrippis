@@ -1,16 +1,22 @@
-let injections = ['Posts'];
+let injections = ['$filter', 'Posts', 'Categories', 'Tags'];
 
-let controller = function (Posts) {
+let controller = function ($filter, Posts, Categories, Tags) {
 
-    this.availableTags = [];
-    this.availableCategories = [];
+    this.posts = Posts.query();
 
-    this.posts = Posts.query(null, () => {
-        this.posts.forEach(post => {
-            this.availableTags = this.availableTags.concat(post.tags);
-            this.availableCategories.push(post.category);
+    this.categories = Categories.query({type: 'post'}, () => {
+        this.categories.forEach(category => {
+            category.checked = true;
         });
     });
+
+    this.tags = Tags.query(null, () => {
+        this.tags = $filter('orderBy')(this.tags, 'name');
+    });
+
+    this.toggleChecked = object => {
+        object.checked = !object.checked;
+    }
 
 };
 
