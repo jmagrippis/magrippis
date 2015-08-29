@@ -16,7 +16,7 @@ class Photo extends Model implements SluggableInterface
      *
      * @var array
      */
-    protected $fillable = ['name_en', 'name_el', 'description_en', 'description_el', 'extension', 'ordering'];
+    protected $fillable = ['name_en', 'name_el', 'description_en', 'description_el', 'extension', 'ordering', 'featured'];
 
     /**
      * Attributes not mapped on a database column.
@@ -30,7 +30,7 @@ class Photo extends Model implements SluggableInterface
      *
      * @var array
      */
-    protected $visible = ['id', 'name', 'description', 'uri', 'extension', 'photoable_type'];
+    protected $visible = ['id', 'name', 'description', 'directory', 'slug', 'extension', 'photoable_type', 'featured'];
 
     /**
      * Belongs to one of various different Models.
@@ -56,5 +56,15 @@ class Photo extends Model implements SluggableInterface
     public function getDescriptionAttribute()
     {
         return $this->getLocalized('description');
+    }
+
+    /**
+     * Gets the Uri for a particular \.
+     * @param string $size
+     * @return string
+     */
+    public function uri($size = '')
+    {
+        return $this->directory . $this->slug . $size . '.' . $this->extension;
     }
 }

@@ -27,7 +27,7 @@ class Category extends Model
      *
      * @var array
      */
-    protected $visible = ['id', 'name', 'description', 'featured', 'skills'];
+    protected $visible = ['id', 'name', 'description', 'featured', 'skills', 'photos'];
 
     /**
      * Might have many skills.
@@ -54,6 +54,15 @@ class Category extends Model
     public function posts()
     {
         return $this->hasMany(Post::class);
+    }
+
+    /**
+     * Might have many Photos.
+     * @return \Illuminate\Database\Eloquent\Relations\MorphMany
+     */
+    public function photos()
+    {
+        return $this->morphMany(Photo::class, 'photoable');
     }
 
     /**

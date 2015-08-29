@@ -1,0 +1,7 @@
+a {
+  text-decoration: none;
+  color: $color-accent;
+  &:hover {
+    color: $color-primary;
+  }
+}

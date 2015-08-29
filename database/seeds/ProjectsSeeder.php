@@ -455,17 +455,19 @@ class ProjectsSeeder extends Seeder
             $new_project->skills()->sync($project['skills']);
 
             foreach ($project['photos'] as $key => $photo) {
-                $path = 'assets/img/projects/' . $new_project->id . '/' . $photo['location'];
+                $image = \Image::make(base_path('resources/assets/img/projects/') . $photo['location']);
 
-                $image = \Image::make(base_path('resources/assets/img/projects/') . $photo['location'])
-                    ->save(public_path($path), 100);
-
-                $new_project->photos()->save(new Photo([
-                    'uri' => $path,
+                $new_photo = Photo::create([
                     'name_en' => $photo['name_en'],
-                    'extension' => substr($image->mime(), strrpos($image->mime(), '/') + 1),
-                    'ordering' => $key + 1
-                ]));
+                    'ordering' => $key + 1,
+                    'extension' => substr($image->mime(), strrpos($image->mime(), '/') + 1)
+                ]);
+
+                $new_photo->directory = 'assets/img/projects/' . $new_project->id . '/';
+                $new_project->photos()->save($new_photo);
+
+                $image->save(public_path($new_photo->uri()), 100);
+
             }
         }
     }

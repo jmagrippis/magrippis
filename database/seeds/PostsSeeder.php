@@ -60,19 +60,18 @@ Besides, without plenty of posts, why would I even bother with the filtering fun
             new Tag(['name_en' => 'update'])
         ]);
 
+        $image = \Image::make(base_path('resources/assets/img/posts/new-beginnings.jpg'));
+
         $photo = Photo::create([
             'name_en' => 'Creating something with a bang!',
             'ordering' => 1,
-            'featured' => true
+            'featured' => true,
+            'extension' => substr($image->mime(), strrpos($image->mime(), '/') + 1)
         ]);
 
-        $photo->uri = 'assets/img/posts/' . $photo->slug . '.jpg';
-
-        $image = \Image::make(base_path('resources/assets/img/posts/new-beginnings.jpg'))
-            ->save(public_path($photo->uri), 100);
-
-        $photo->extension = substr($image->mime(), strrpos($image->mime(), '/') + 1);
-
+        $photo->directory = 'assets/img/posts/' . $post->id . '/';
         $post->photos()->save($photo);
+
+        $image->save(public_path($photo->uri()), 100);
     }
 }

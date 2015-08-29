@@ -16,7 +16,7 @@ class CategoriesController extends Controller
      */
     public function index(Request $request)
     {
-        $query = Category::with('skills')->orderBy('ordering');
+        $query = Category::with('skills', 'photos')->orderBy('ordering');
 
         if ($request->has('type')) {
             $query->where('type', $request->get('type'));

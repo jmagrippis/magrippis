@@ -14,7 +14,7 @@
                 <article flex-sm="100" flex-gt-sm="50" ng-repeat="project in portfolio.projects | filter:{category_id: 1}" class="project">
                     <md-card layout="column">
                         <a href="{{ project.link }}" target="_blank">
-                            <img ng-src="/{{ project.photos[0].uri }}" class="md-card-image" alt="{{ project.name }}">
+                            <img ng-src="{{ project.featured_uri }}" class="md-card-image" alt="{{ project.name }}">
                         </a>
                         <md-card-content flex layout="column" layout-align="space-between">
                             <h3 class="md-title">{{ project.name }}</h3>
@@ -39,7 +39,7 @@
                 <article flex-sm="100" flex-gt-sm="33" ng-repeat="project in portfolio.projects | filter:{category_id: 2}" class="project">
                     <md-card layout="column">
                         <a href="{{ project.link }}" target="_blank">
-                            <img ng-src="/{{ project.photos[0].uri }}" class="md-card-image" alt="{{ project.name }}">
+                            <img ng-src="{{ project.featured_uri }}" class="md-card-image" alt="{{ project.name }}">
                         </a>
                         <md-card-content flex layout="column" layout-align="space-between">
                             <h3 class="md-title">{{ project.name }}</h3>

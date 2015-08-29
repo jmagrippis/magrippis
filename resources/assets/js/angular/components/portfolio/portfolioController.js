@@ -1,7 +1,11 @@
-let injections = ['Projects'];
+let injections = ['Projects', 'Getters'];
 
-let controller = function (Projects) {
-    this.projects = Projects.query();
+let controller = function (Projects, Getters) {
+    this.projects = Projects.query(projects => {
+        projects.forEach(project => {
+            project.featured_uri = Getters.getPhotoUri(project.photos[0]);
+        });
+    });
 };
 
 let exports = injections;

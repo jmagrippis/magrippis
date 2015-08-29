@@ -23,7 +23,7 @@ class Post extends Model implements SluggableInterface
      *
      * @var array
      */
-    protected $appends = ['title', 'content', 'content_md', 'teaser', 'published_diff', 'featured_photo'];
+    protected $appends = ['title', 'content', 'content_md', 'teaser', 'published_diff'];
 
     /**
      * The attributes that should be mutated to dates.
@@ -37,7 +37,7 @@ class Post extends Model implements SluggableInterface
      *
      * @var array
      */
-    protected $visible = ['id', 'title', 'slug', 'content', 'content_md', 'teaser', 'featured', 'category_id', 'photos', 'tags', 'category', 'published_diff', 'featured_photo'];
+    protected $visible = ['id', 'title', 'slug', 'content', 'content_md', 'teaser', 'featured', 'category_id', 'photos', 'tags', 'category', 'published_diff'];
 
     /**
      * Options for the Model's slug
@@ -122,14 +122,4 @@ class Post extends Model implements SluggableInterface
         return $this->published_at->DiffForHumans();
     }
 
-    /**
-     * Gets uri of the Posts' featured image
-     * @return string
-     */
-    public function getFeaturedPhotoAttribute()
-    {
-        return $this->photos->filter(function ($photo) {
-            return $photo->featured;
-        })->first();
-    }
 }

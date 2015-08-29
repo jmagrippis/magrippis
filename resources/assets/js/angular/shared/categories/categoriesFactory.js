@@ -1,6 +1,6 @@
-var injections = ['$resource'];
+let injections = ['$resource'];
 
-var factory = function ($resource) {
+let factory = function ($resource) {
     return $resource('/api/v1/categories/:id', null, {
         query: {
             method: "GET",
@@ -10,7 +10,7 @@ var factory = function ($resource) {
     });
 };
 
-var exports = injections;
+let exports = injections;
 exports.push(factory);
 
 module.exports = exports;

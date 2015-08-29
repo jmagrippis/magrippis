@@ -16,7 +16,7 @@ class CreatePhotosTable extends Migration
             $table->increments('id');
             $table->unsignedInteger('photoable_id');
             $table->string('photoable_type');
-            $table->string('uri');
+            $table->string('directory');
             $table->string('name_en', 250)->nullable();
             $table->string('name_el')->nullable();
             $table->string('slug')->unique();

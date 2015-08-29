@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use Magrippis\Models\Category;
+use Magrippis\Models\Photo;
 use Magrippis\Models\Skill;
 
 class CategoriesSeeder extends Seeder
@@ -488,7 +489,29 @@ class CategoriesSeeder extends Seeder
 <p>My ultimate dream remains to be a part of a AAA game. I was in the credits of <a href="https://twitter.com/TimOfLegend">Tim Schafer</a>\'s <a href="http://en.wikipedia.org/wiki/Broken_Age">Broken Age</a> as a backer, so we are getting somewhere!</p>
 <p>As a fun trivia, my favorite games would be <a href="http://en.wikipedia.org/wiki/Super_Metroid">Super Metroid</a> from the "retro" era, and <a href="http://en.wikipedia.org/wiki/Batman:_Arkham_Asylum">Batman: Arkham Asylum</a> for the contemporary one. <a href="http://en.wikipedia.org/wiki/Rayman_Origins">Rayman Origins</a> would probably be the game I\'d love to have made the most.</p>',
                 'ordering' => 1,
-                'type' => 'hobby'
+                'type' => 'hobby',
+                'photos' => [
+                    [
+                        'name_en' => 'Life as a point and click adventure game!',
+                        'featured' => true,
+                        'location' => 'adventure.jpg'
+                    ],
+                    [
+                        'name_en' => 'From the Assassin\s Creed III review.',
+                        'featured' => false,
+                        'location' => 'talkingSmile.jpg'
+                    ],
+                    [
+                        'name_en' => 'Directing the sketches for a review of Punch-Out!! for the Nintendo Wii!',
+                        'featured' => false,
+                        'location' => 'directing.jpg'
+                    ],
+                    [
+                        'name_en' => 'No wonder quicktime events annoy so many people!',
+                        'featured' => false,
+                        'location' => 'tigerQuicktime.jpg'
+                    ]
+                ]
             ],
             [
                 'name_en' => 'Photography & Directing',
@@ -496,7 +519,29 @@ class CategoriesSeeder extends Seeder
 <p>Photography is also sometimes part of the package when creating websites for businesses, with my trusty Canon called up to bat when the provided product and showcase photos aren\'t up to quality standards, or when a fellow actor or model is looking for someone to shoot for their photo book.</p>
 <p>Directing is a somewhat related interest of mine that I\'d like to do more of: my typical "shower thoughts" are related to apps, but sometimes they are premises; most of <em>those</em> would be great for video games, but some translate best as a 5 minute short or a small web series, and I jot them down to shoot at my own time. I am especially fond of projects like that, as they are a great way to directly interact with fresh talent, or even bring your own friends into the mix!</p>',
                 'ordering' => 2,
-                'type' => 'hobby'
+                'type' => 'hobby',
+                'photos' => [
+                    [
+                        'name_en' => 'A ray of sunlight is all it takes for a smile',
+                        'featured' => true,
+                        'location' => 'smiling-in-the-forest.jpg'
+                    ],
+                    [
+                        'name_en' => 'Posing by the sea, against the waves',
+                        'featured' => false,
+                        'location' => 'posing-by-the-sea.jpg'
+                    ],
+                    [
+                        'name_en' => 'Sun, fountains and cafeterias: the good life.',
+                        'featured' => false,
+                        'location' => 'sun-fountains-cafeterias.jpg'
+                    ],
+                    [
+                        'name_en' => 'A touch of color...',
+                        'featured' => false,
+                        'location' => 'a-touch-of-color.jpg'
+                    ]
+                ]
             ],
             [
                 'name_en' => 'Beach Volleyball',
@@ -504,12 +549,55 @@ class CategoriesSeeder extends Seeder
 <p>I\'ve went through basketball phases and football phases but, at the twilight of my college years, I found <em>the</em> sport for me: <strong>Beach Volleyball</strong>. It combines qualities from both team and solo sports, power as well as intelligence, you don\'t need to be exceptionally tall but you do need to be fast and tireless, it\'s relatively safe, and it\'s a <em>phenomenal</em> workout! And you only need four players, so it\'s pretty easy to organize a quick match. What else could I possibly need?</p>
 <p>Hooked from the get go, I have now reached a point where I don\'t only play in the stereotypical sunny beaches that immediately come to mind when one thinks about this sport, but also in harsh winter tournaments during unimaginable rainstorms; and I am loving every minute of it.</p>',
                 'ordering' => 3,
-                'type' => 'hobby'
+                'type' => 'hobby',
+                'photos' => [
+                    [
+                        'name_en' => 'You\'re supposed to use two hands for every save, but damn if one-handed ones don\'t look impressive!',
+                        'featured' => true,
+                        'location' => 'side-jump-save.jpg'
+                    ],
+                    [
+                        'name_en' => 'We took the 2014 Beach Volleyleague Trophy home that day!',
+                        'featured' => false,
+                        'location' => 'mens-gold.jpg'
+                    ],
+                    [
+                        'name_en' => 'Blocking isn\'t my strongest suit, but it\'s known to happen',
+                        'featured' => false,
+                        'location' => 'block.jpg'
+                    ],
+                    [
+                        'name_en' => 'One of the many medals I\'ve won with my fantastic partner, in mixed and in life, Krystallia Kapeni',
+                        'featured' => false,
+                        'location' => 'mixed-gold.jpg'
+                    ]
+                ]
             ]
         ];
 
         foreach ($hobby_categories as $category) {
-            Category::create($category);
+            $category_data = $category;
+            unset($category_data['photos']);
+
+            $new_category = Category::create($category_data);
+
+            foreach ($category['photos'] as $key => $photo) {
+                $image = \Image::make(base_path('resources/assets/img/categories/hobbies/') . $photo['location']);
+
+                $new_photo = Photo::create([
+                    'name_en' => $photo['name_en'],
+                    'featured' => $photo['featured'],
+                    'ordering' => $key + 1,
+                    'extension' => substr($image->mime(), strrpos($image->mime(), '/') + 1)
+                ]);
+
+                $new_photo->directory = 'assets/img/categories/' . $new_category->id . '/';
+                $new_category->photos()->save($new_photo);
+
+                $image->save(public_path($new_photo->uri()), 100)
+                    ->fit(572, 383)
+                    ->save(public_path($new_photo->uri('@thumb')));
+            }
         }
     }
 }
