@@ -2,7 +2,7 @@ var angular = require('angular');
 
 angular
     .module("magrippis", [
-        require('angular-material'), require('angular-animate'), require('angular-messages'), require('angular-sanitize'), 'magrippis.routes', require('./app.modules.js')
+        require('angular-material'), require('angular-animate'), require('angular-messages'), require('angular-sanitize'), require('./app.routes.js'), require('./app.modules.js')
     ])
     .config(['$mdThemingProvider', function ($mdThemingProvider) {
 

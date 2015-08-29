@@ -16,7 +16,7 @@
                 <h3 class="md-display-1">{{ hobby.name }}</h3>
             </div>
             <img ng-src="{{ hobby.featured_photo.uri }}" alt="{{ hobby.featured_photo.name }}" class="cover">
-            <div class="md-headline md-padding" ng-bind-html="hobby.description">
+            <div class="md-headline card-content" ng-bind-html="hobby.description">
             </div>
             <div layout="row" layout-align="center center" layout-wrap>
                 <img ng-repeat="photo in hobby.photos | filter: {id: '!' + hobby.featured_photo.id }" flex-sm="100" flex-md="100" flex-gt-md="33" ng-src="{{ photo.uri }}" alt="{{ photo.name }}">

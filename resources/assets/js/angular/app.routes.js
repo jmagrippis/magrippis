@@ -1,7 +1,4 @@
-var angular = require('angular');
-
-angular
-    .module('magrippis.routes', [require('angular-ui-router'), 'magrippis.controllers'])
+angular.module('magrippis.routes', [require('angular-ui-router'), 'magrippis.controllers'])
     .config(['$locationProvider', '$stateProvider', '$urlRouterProvider', function ($locationProvider, $stateProvider, $urlRouterProvider) {
 
         $locationProvider.html5Mode(true);
@@ -85,3 +82,5 @@ angular
         $urlRouterProvider.otherwise('/');
 
     }]);
+
+module.exports = 'magrippis.routes';

@@ -3,7 +3,7 @@
     position: relative;
     h2 {
       color: $color-white-transparent;
-      text-shadow: 1px 1px 1px rgba(0,0,0,0.8);
+      text-shadow: $base-shadow;
       position: absolute;
       bottom: 0;
       left: 1rem;

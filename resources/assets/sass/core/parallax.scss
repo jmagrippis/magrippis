@@ -1,5 +1,5 @@
 .parallax {
-  background: url("/assets/img/vertex.jpg");
+  background: url("/assets/img/big-diamond.jpg");
   background-size: cover;
   padding: 2rem 0.5rem;
 
@@ -10,6 +10,11 @@
     &.bottom {
       background-position: bottom;
     }
+  }
+
+  &.vertex {
+    background: url("/assets/img/vertex.jpg");
+    background-size: cover;
   }
 
   md-content {

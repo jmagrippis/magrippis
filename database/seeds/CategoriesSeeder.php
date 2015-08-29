@@ -131,10 +131,10 @@ class CategoriesSeeder extends Seeder
                         'name_en' => 'Symfony'
                     ],
                     [
-                        'name_en' => 'Laravel'
+                        'name_en' => 'Django'
                     ],
                     [
-                        'name_en' => 'Django'
+                        'name_en' => 'Phoenix'
                     ],
                     [
                         'name_en' => 'REST API'

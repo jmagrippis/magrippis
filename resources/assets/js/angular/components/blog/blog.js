@@ -35,7 +35,7 @@ angular.module('magrippis.blog', [require('./post/post.js')])
     .filter('hasTag', function () {
         return function (posts, tags) {
 
-            if (tags.length == 0) return posts;
+            if (tags.length === 0) return posts;
 
             return posts.filter(post => {
                 let tagIds = [];

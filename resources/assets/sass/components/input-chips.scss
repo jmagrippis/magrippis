@@ -1,0 +1,15 @@
+md-chips.input-chips {
+  margin-top: 1.5rem;
+  text-shadow: none;
+
+  @include placeholder-color(#000);
+}
+
+md-chips.output-chips {
+  md-chip-template {
+    transition: all 0.5s;
+    &.selected {
+      color: $color-primary;
+    }
+  }
+}

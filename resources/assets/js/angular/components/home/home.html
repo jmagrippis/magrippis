@@ -3,16 +3,14 @@
         <div class="md-display-1">
             Find the developer you deserve.
         </div>
-        <md-chips ng-model="home.searchTags" md-autocomplete-snap md-require-match>
+        <md-chips class="input-chips" ng-model="home.searchedSkills" md-autocomplete-snap md-require-match>
             <md-autocomplete
                     md-selected-item="home.selectedSkill"
-                    md-selected-item-change=""
                     md-search-text="home.searchText"
-                    md-search-text-change=""
                     md-items="skill in home.querySearch(home.searchText)"
                     md-item-text="skill.name"
-                    md-item-change=""
                     placeholder="Enter a skill"
+                    md-autoselect="true"
                     >
                 <span md-highlight-text="home.searchText">{{skill.name}}</span>
             </md-autocomplete>
@@ -28,7 +26,7 @@
 <md-content class="md-padding" layout="column" layout-align="center center">
     <md-whiteframe class="md-whiteframe-z1 md-padding md-margin workarea" layout="column" layout-align="center center">
         <div class="skills">
-            <md-card ng-repeat="category in home.categories" layout-gt-sm="row" layout-sm="column">
+            <md-card ng-repeat="category in home.categories | hasSkill : home.searchedSkills" layout-gt-sm="row" layout-sm="column">
                 <div flex-sm="100" flex-gt-sm="50" class="icon" layout="column" layout-align="center center">
                     <i class="material-icons">favorite</i>
                 </div>
@@ -42,8 +40,8 @@
 
                     </md-card-content>
                     <div layout="row" layout-align="start center">
-                        <md-chips ng-model="category.skills" readonly="true">
-                            <md-chip-template>
+                        <md-chips class="output-chips" ng-model="category.skills" readonly="true">
+                            <md-chip-template ng-class="{selected: (home.searchedSkills | filter: {id: $chip.id} : true).length > 0 }">
                                 {{ $chip.name }}
                             </md-chip-template>
                         </md-chips>
