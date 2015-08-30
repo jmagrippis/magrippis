@@ -1,7 +1,7 @@
 <section class="parallax" layout="column" layout-align="center center">
     <md-content class="md-padding workarea" layout="column" layout-sm="column" layout-align="center center" layout-fill>
         <div class="md-display-1">
-            Find the developer you deserve.
+            Find the developer you deserve:
         </div>
         <md-chips class="input-chips" ng-model="home.searchedSkills" md-autocomplete-snap md-require-match>
             <md-autocomplete
@@ -28,7 +28,7 @@
         <div class="skills">
             <md-card ng-repeat="category in home.categories | hasSkill : home.searchedSkills" layout-gt-sm="row" layout-sm="column">
                 <div flex-sm="100" flex-gt-sm="50" class="icon" layout="column" layout-align="center center">
-                    <i class="material-icons">favorite</i>
+                    <md-icon md-font-set="material-icons" class="md-display-4">{{ category.photos[0].name }}</md-icon>
                 </div>
                 <div flex-sm="100" flex-gt-sm="50" class="md-padding">
                     <md-card-content flex="50">

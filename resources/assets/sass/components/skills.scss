@@ -2,7 +2,9 @@
   md-card {
     .icon {
       background-color: $color-accent;
-      color: $color-primary-dark;
+      md-icon {
+        color: #ffffff;
+      }
       i {
         font-size: 6rem;
       }

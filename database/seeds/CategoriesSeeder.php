@@ -37,6 +37,14 @@ class CategoriesSeeder extends Seeder
                 'description_en' => 'The area I got into the earliest, as dealing with just what the end-user was going to see seemed like a nice, simple entry point into web development. With the advent of client-side operations however, the front-end world isn\'t restricted to making pretty, multi-browser, responsive CSS3 animations, but is, in fact, looking more exciting than ever before!',
                 'ordering' => 1,
                 'type' => 'skill',
+                'photos' => [
+                    [
+                        'name_en' => 'desktop_mac',
+                        'directory' => 'material-icons',
+                        'extension' => 'svg',
+                        'featured' => 'true'
+                    ]
+                ],
                 'skills' => [
                     [
                         'name_en' => 'Javascript'
@@ -96,6 +104,14 @@ class CategoriesSeeder extends Seeder
                 'description_en' => 'Curious by nature, it was predetermined I\'d eventually make my way into back-end development, to find out what feeds the stuff I\'ve been tinkering with on the front-end. From launching simple blogs backed by Drupal, to creating my own custom solutions with the help of Symfony, from hard-coded data to RESTful APIs, back-end development is where I\'ve acquired the most skills over the years, and there\'s still ample room to grow!',
                 'ordering' => 2,
                 'type' => 'skill',
+                'photos' => [
+                    [
+                        'name_en' => 'settings',
+                        'directory' => 'material-icons',
+                        'extension' => 'svg',
+                        'featured' => 'true'
+                    ]
+                ],
                 'skills' => [
                     [
                         'name_en' => 'PHP'
@@ -185,6 +201,14 @@ class CategoriesSeeder extends Seeder
                 'description_en' => 'The day\'s trending keyword as, besides the mobile market exploding, "everything is an App" nowadays. With gaming being my passion, I\'ve always been experimenting in app development, but it\'s fairly recently I have been able to work on commercial projects.',
                 'ordering' => 3,
                 'type' => 'skill',
+                'photos' => [
+                    [
+                        'name_en' => 'phone_iphone',
+                        'directory' => 'material-icons',
+                        'extension' => 'svg',
+                        'featured' => 'true'
+                    ]
+                ],
                 'skills' => [
                     [
                         'name_en' => 'iOS'
@@ -241,6 +265,14 @@ class CategoriesSeeder extends Seeder
                 'description_en' => 'Everything\'s an App, but everything also has an API, and seamlessly integrating with some of them is essential for making a modern app successful. Here follow those APIs I most commonly interact with.',
                 'ordering' => 4,
                 'type' => 'skill',
+                'photos' => [
+                    [
+                        'name_en' => 'extension',
+                        'directory' => 'material-icons',
+                        'extension' => 'svg',
+                        'featured' => 'true'
+                    ]
+                ],
                 'skills' => [
                     [
                         'name_en' => 'Facebook'
@@ -288,6 +320,14 @@ class CategoriesSeeder extends Seeder
                 'description_en' => 'Over the years I\'ve also dabbled Systems Administration, and especially server management, an area that requires rapid reflexes and a strong stomach.',
                 'ordering' => 5,
                 'type' => 'skill',
+                'photos' => [
+                    [
+                        'name_en' => 'settings_input_component',
+                        'directory' => 'material-icons',
+                        'extension' => 'svg',
+                        'featured' => 'true'
+                    ]
+                ],
                 'skills' => [
                     [
                         'name_en' => 'Apache'
@@ -335,6 +375,14 @@ class CategoriesSeeder extends Seeder
                 'description_en' => 'Version Control is arguably the most important aspect in development and, thankfully, we have created quality tools that make it easy, alongside others that make general collaboration on a project a cinch, even when working remotely.',
                 'ordering' => 6,
                 'type' => 'skill',
+                'photos' => [
+                    [
+                        'name_en' => 'group_work',
+                        'directory' => 'material-icons',
+                        'extension' => 'svg',
+                        'featured' => 'true'
+                    ]
+                ],
                 'skills' => [
                     [
                         'name_en' => 'Git'
@@ -370,6 +418,14 @@ class CategoriesSeeder extends Seeder
                 'description_en' => 'My jack-of-all-trades mentality and affinity for experiments have helped me become proficient in a ton of useful programs. Here\'s a listing of some, most of which dealing with my Graphic Design duties.',
                 'ordering' => 7,
                 'type' => 'skill',
+                'photos' => [
+                    [
+                        'name_en' => 'keyboard',
+                        'directory' => 'material-icons',
+                        'extension' => 'svg',
+                        'featured' => 'true'
+                    ]
+                ],
                 'skills' => [
                     [
                         'name_en' => 'Adobe Creative Suite'
@@ -429,6 +485,14 @@ class CategoriesSeeder extends Seeder
                 'description_en' => 'Developers are more than the sum of their skills, so it is nice to know a few of their other traits. Here are some of mine, according to my friends and colleagues!',
                 'ordering' => 8,
                 'type' => 'skill',
+                'photos' => [
+                    [
+                        'name_en' => 'party_mode',
+                        'directory' => 'material-icons',
+                        'extension' => 'svg',
+                        'featured' => 'true'
+                    ]
+                ],
                 'skills' => [
                     [
                         'name_en' => 'adaptable'
@@ -470,6 +534,7 @@ class CategoriesSeeder extends Seeder
         foreach ($skill_categories as $category) {
             $category_data = $category;
             unset($category_data['skills']);
+            unset($category_data['photos']);
 
             $skill_category = Category::create($category_data);
 
@@ -477,6 +542,11 @@ class CategoriesSeeder extends Seeder
                 $skill['ordering'] = $order;
                 $skill_category->skills()->save(new Skill($skill));
             }
+
+            foreach ($category['photos'] as $photo) {
+                $skill_category->photos()->save(new Photo($photo));
+            }
+
         }
 
         $hobby_categories = [
