@@ -3,7 +3,7 @@
 <head>
     <base href="/">
     <meta charset="UTF-8">
-    <title>Johnny Magrippis: Developer, designer, determined gamer</title>
+    @include('partials.meta')
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="{{ elixir('assets/css/magrippis.css') }}">
 </head>
