@@ -16,5 +16,6 @@
     @include('partials.contact-fab')
 </div>
 <script src="{{ elixir('assets/js/bundle.js') }}"></script>
+@include('partials.analytics')
 </body>
 </html>
