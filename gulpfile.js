@@ -14,7 +14,7 @@ require('./elixir-extensions.js');
  */
 
 elixir(function(mix) {
-    mix.copy('node_modules/font-awesome/fonts', 'public/build/fonts')
+    mix.copy('node_modules/font-awesome/fonts', 'public/build/assets/fonts')
         .copy('resources/assets/js/angular/**/*.html', 'public/angular')
         .angular()
         .styles(['angular-material/angular-material.min.css'], 'resources/assets/css/vendor.css', 'node_modules')
