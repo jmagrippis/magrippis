@@ -26,6 +26,27 @@
 <md-content class="md-padding" layout="column" layout-align="center center">
     <md-whiteframe class="md-whiteframe-z1 md-padding md-margin workarea" layout="column" layout-align="center center">
         <div class="skills">
+            <md-card ng-repeat="category in home.categories" ng-if="!home.searchedSkills.length" layout-gt-sm="row" layout-sm="column">
+                <div flex-sm="100" flex-gt-sm="50" class="icon" layout="column" layout-align="center center">
+                    <md-icon md-font-set="material-icons" class="md-display-4">{{ category.photos[0].name }}</md-icon>
+                </div>
+                <div flex-sm="100" flex-gt-sm="50" class="md-padding">
+                    <md-card-content flex="50">
+                        <h2 class="md-title">{{ category.name }}</h2>
+
+                        <p>
+                            {{ category.description }}
+                        </p>
+
+                    </md-card-content>
+                    <md-chips class="output-chips" ng-model="category.skills" readonly="true">
+                        <md-chip-template ng-class="{selected: (home.searchedSkills | filter: {id: $chip.id} : true).length > 0 }">
+                            <span>{{ $chip.name }}</span>
+                        </md-chip-template>
+                    </md-chips>
+                </div>
+            </md-card>
+            <h2 class="md-display-1 md-padding" ng-if="home.searchedSkills.length">Relevant Skills</h2>
             <md-card ng-repeat="category in home.categories | hasSkill : home.searchedSkills" layout-gt-sm="row" layout-sm="column">
                 <div flex-sm="100" flex-gt-sm="50" class="icon" layout="column" layout-align="center center">
                     <md-icon md-font-set="material-icons" class="md-display-4">{{ category.photos[0].name }}</md-icon>
@@ -39,13 +60,33 @@
                         </p>
 
                     </md-card-content>
-                    <div layout="row" layout-align="start center">
-                        <md-chips class="output-chips" ng-model="category.skills" readonly="true">
-                            <md-chip-template ng-class="{selected: (home.searchedSkills | filter: {id: $chip.id} : true).length > 0 }">
-                                {{ $chip.name }}
-                            </md-chip-template>
-                        </md-chips>
-                    </div>
+                    <md-chips class="output-chips" ng-model="category.skills" readonly="true">
+                        <md-chip-template ng-class="{selected: (home.searchedSkills | filter: {id: $chip.id} : true).length > 0 }">
+                            <span>{{ $chip.name }}</span>
+                        </md-chip-template>
+                    </md-chips>
+                </div>
+            </md-card>
+
+            <h2 class="md-display-1 md-padding" ng-if="home.searchedSkills.length">Other Skills</h2>
+            <md-card ng-repeat="category in home.categories | doesNotHaveSkill : home.searchedSkills" layout-gt-sm="row" layout-sm="column">
+                <div flex-sm="100" flex-gt-sm="50" class="icon" layout="column" layout-align="center center">
+                    <md-icon md-font-set="material-icons" class="md-display-4">{{ category.photos[0].name }}</md-icon>
+                </div>
+                <div flex-sm="100" flex-gt-sm="50" class="md-padding">
+                    <md-card-content flex="50">
+                        <h2 class="md-title">{{ category.name }}</h2>
+
+                        <p>
+                            {{ category.description }}
+                        </p>
+
+                    </md-card-content>
+                    <md-chips class="output-chips" ng-model="category.skills" readonly="true">
+                        <md-chip-template ng-class="{selected: (home.searchedSkills | filter: {id: $chip.id} : true).length > 0 }">
+                            <span>{{ $chip.name }}</span>
+                        </md-chip-template>
+                    </md-chips>
                 </div>
             </md-card>
         </div>

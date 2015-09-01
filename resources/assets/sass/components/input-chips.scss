@@ -6,10 +6,17 @@ md-chips.input-chips {
 }
 
 md-chips.output-chips {
-  md-chip-template {
-    transition: all 0.5s;
-    &.selected {
-      color: $color-primary;
+  md-chips-wrap {
+    md-chip.md-chip {
+      .md-chip-content {
+        text-overflow: inherit;
+        md-chip-template {
+          transition: all 0.5s;
+          &.selected {
+            color: $color-primary;
+          }
+        }
+      }
     }
   }
 }

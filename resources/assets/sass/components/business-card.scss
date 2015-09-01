@@ -14,7 +14,11 @@ md-whiteframe.business-card-accent {
   }
 
   .card-content {
-    padding: 1rem 4rem;
+    padding: 1rem;
+
+    @media screen and (min-width: $layout-breakpoint-sm) {
+      padding: 1rem 4rem;
+    }
   }
 
   img.cover {
