@@ -1,6 +1,6 @@
-let injections = ['$mdDialog', '$state'];
+let injections = ['$scope', '$mdDialog', '$state', '$document'];
 
-let controller = function ($mdDialog, $state) {
+let controller = function ($scope, $mdDialog, $state, $document) {
 
     this.isActiveState = state => $state.includes(state);
 
@@ -14,6 +14,18 @@ let controller = function ($mdDialog, $state) {
             clickOutsideToClose: true
         })
     };
+
+    this.scroller = false;
+
+    this.scrollTop = () => {
+        $document.scrollTopAnimated(0, 1000);
+    };
+
+    $document.on('scroll', () => {
+        $scope.$apply(() => {
+            this.scroller = $document.scrollTop() > 1000;
+        });
+    });
 
 };
 

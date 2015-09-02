@@ -14,6 +14,9 @@
     <div ui-view>
     </div>
     @include('partials.contact-fab')
+    <md-button class="md-fab md-mini md-primary" aria-label="Scroll Up" ng-click="core.scrollTop()" id="top-scroller" ng-class="{ show: core.scroller }">
+        <md-icon md-font-set="material-icons">arrow_drop_up</md-icon>
+    </md-button>
 </div>
 <script src="{{ elixir('assets/js/bundle.js') }}"></script>
 @include('partials.analytics')
