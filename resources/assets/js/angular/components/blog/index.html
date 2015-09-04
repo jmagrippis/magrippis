@@ -31,7 +31,7 @@
                         <md-checkbox class="md-secondary" ng-model="category.checked"></md-checkbox>
                     </md-list-item>
                     <h3 class="md-headline">Tags</h3>
-                    <md-chips ng-model="blog.tags" readonly="true" class="readonly">
+                    <md-chips ng-model="blog.tags" readonly="true" class="readonly output-chips">
                         <md-chip-template ng-class="{ active: $chip.checked }" ng-click="blog.toggleChecked($chip)">
                             #{{ $chip.name }}
                         </md-chip-template>

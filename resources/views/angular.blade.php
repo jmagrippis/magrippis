@@ -7,6 +7,7 @@
     @include('partials.meta')
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="{{ elixir('assets/css/magrippis.css') }}">
+    <link rel="dns-prefetch" href="//www.google-analytics.com">
 </head>
 <body>
 <div ng-app="magrippis" ng-controller="CoreController as core" layout="column" layout-fill>
@@ -19,6 +20,8 @@
     </md-button>
 </div>
 <script src="{{ elixir('assets/js/bundle.js') }}"></script>
-@include('partials.analytics')
+@if(env('APP_ENV') == 'production')
+    @include('partials.analytics')
+@endif
 </body>
 </html>

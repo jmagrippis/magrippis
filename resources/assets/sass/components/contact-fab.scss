@@ -7,16 +7,20 @@ md-fab-speed-dial.contact {
     left: inherit;
     right: 1rem;
   }
-  md-icon {
-    a {
+
+  .md-button {
+    md-icon {
+      transition: color 0.5s;
       color: $color-primary;
+
       i.fa {
         top: -0.2rem;
         position: relative;
       }
     }
+
     &:hover {
-      a {
+      md-icon {
         color: $color-accent;
       }
     }

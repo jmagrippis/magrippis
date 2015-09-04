@@ -1,6 +1,6 @@
-let injections = ['$scope', '$mdDialog', '$state', '$document'];
+let injections = ['$scope', '$mdDialog', '$state', '$document', '$window'];
 
-let controller = function ($scope, $mdDialog, $state, $document) {
+let controller = function ($scope, $mdDialog, $state, $document, $window) {
 
     this.isActiveState = state => $state.includes(state);
 
@@ -26,6 +26,10 @@ let controller = function ($scope, $mdDialog, $state, $document) {
             this.scroller = $document.scrollTop() > 1000;
         });
     });
+
+    this.goTo = (uri) => {
+        $window.open(uri, '_blank');
+    }
 
 };
 
