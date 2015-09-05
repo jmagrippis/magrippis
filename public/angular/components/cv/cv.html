@@ -99,9 +99,7 @@
                     <div layout="row" layout-align="start center">
                         <md-icon md-font-set="material-icons" flex="10" class="md-primary lg">trending_up</md-icon>
                         <h2 class="md-display-1" flex>Qualities</h2>
-                        <md-button class="md-icon-button md-raised" ng-click="cv.toggle('qualities')">
-                            <md-icon md-font-set="material-icons">{{ cv.expanded.qualities ? 'expand_less' : 'expand_more' }}</md-icon>
-                        </md-button>
+                        <jma-expander section="'qualities'" controller="cv"></jma-expander>
                     </div>
 
                     <section ng-if="cv.expanded.qualities">
@@ -127,9 +125,7 @@
                     <div layout="row" layout-align="start center">
                         <md-icon md-font-set="material-icons" flex="10" class="md-primary lg">work</md-icon>
                         <h2 class="md-display-1" flex>Work Experience</h2>
-                        <md-button class="md-icon-button md-raised" ng-click="cv.toggle('work')">
-                            <md-icon md-font-set="material-icons">{{ cv.expanded.work ? 'expand_less' : 'expand_more' }}</md-icon>
-                        </md-button>
+                        <jma-expander section="'work'" controller="cv"></jma-expander>
                     </div>
 
                     <section ng-if="cv.expanded.work">
@@ -156,9 +152,7 @@
                     <div layout="row" layout-align="start center">
                         <md-icon md-font-set="material-icons" flex="10" class="md-primary lg">school</md-icon>
                         <h2 class="md-display-1" flex>Education</h2>
-                        <md-button class="md-icon-button md-raised" ng-click="cv.toggle('education')">
-                            <md-icon md-font-set="material-icons">{{ cv.expanded.education ? 'expand_less' : 'expand_more' }}</md-icon>
-                        </md-button>
+                        <jma-expander section="'education'" controller="cv"></jma-expander>
                     </div>
 
                     <section ng-if="cv.expanded.education">
@@ -185,9 +179,7 @@
                     <div layout="row" layout-align="start center">
                         <md-icon md-font-set="material-icons" flex="10" class="md-primary lg">mood</md-icon>
                         <h2 class="md-display-1" flex>Interests</h2>
-                        <md-button class="md-icon-button md-raised" ng-click="cv.toggle('interests')">
-                            <md-icon md-font-set="material-icons">{{ cv.expanded.interests ? 'expand_less' : 'expand_more' }}</md-icon>
-                        </md-button>
+                        <jma-expander section="'interests'" controller="cv"></jma-expander>
                     </div>
 
                     <section ng-if="cv.expanded.interests">
@@ -207,9 +199,7 @@
                     <div layout="row" layout-align="start center">
                         <md-icon md-font-set="material-icons" flex="10" class="md-primary lg">supervisor_account</md-icon>
                         <h2 class="md-display-1" flex>References</h2>
-                        <md-button class="md-icon-button md-raised" ng-click="cv.toggle('references')">
-                            <md-icon md-font-set="material-icons">{{ cv.expanded.references ? 'expand_less' : 'expand_more' }}</md-icon>
-                        </md-button>
+                        <jma-expander section="'references'" controller="cv"></jma-expander>
                     </div>
 
                     <section ng-if="cv.expanded.references">

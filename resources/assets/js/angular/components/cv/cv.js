@@ -17,6 +17,16 @@ angular.module('magrippis.cv', [])
                 isArray:true
             }
         });
-    }]);
+    }])
+    .directive('jmaExpander', function() {
+        return {
+            restrict: 'E',
+            scope: {
+                section: '=',
+                controller: '='
+            },
+            templateUrl: '/angular/components/cv/directives/expander.html'
+        };
+    });
 
 module.exports = 'magrippis.cv';

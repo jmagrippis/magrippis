@@ -1,16 +1,15 @@
 #top-scroller {
   position: fixed;
   right: 1rem;
-  bottom: 1rem;
+  bottom: -4rem;
 
   @media screen and (min-width: $layout-breakpoint-sm) {
     left: 1rem;
     right: inherit;
   }
 
-  opacity: 0;
-  transition: opacity 0.5s;
+  transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   &.show {
-    opacity: 1;
+    bottom: 1rem;
   }
 }

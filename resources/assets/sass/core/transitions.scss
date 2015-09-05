@@ -1,3 +1,10 @@
 a {
   transition: all 0.5s;
 }
+
+.rotatable {
+  transition: all 0.5s;
+  &.rotated {
+    transform: rotate(0.5turn);
+  }
+}
