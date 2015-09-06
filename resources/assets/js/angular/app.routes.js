@@ -7,7 +7,17 @@ angular.module('magrippis.routes', [require('angular-ui-router'), 'magrippis.con
             .state('app', {
                 url: '/',
                 abstract: true,
-                template: '<div ui-view="mainContent"></div>'
+                views: {
+                    toolbar: {
+                        templateUrl: './angular/components/toolbar/toolbar.html'
+                    },
+                    body: {
+                        template: '<div ui-view="mainContent"></div>'
+                    },
+                    fab: {
+                        templateUrl: './angular/components/fab/fab.html'
+                    }
+                }
             })
             .state('app.home', {
                 url: '',

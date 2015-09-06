@@ -1,4 +1,4 @@
-md-fab-speed-dial.contact {
+.contact-fab {
   position: fixed;
   left: 1rem;
   bottom: 1rem;
@@ -8,20 +8,22 @@ md-fab-speed-dial.contact {
     right: 1rem;
   }
 
-  .md-button {
-    md-icon {
-      transition: color 0.5s;
-      color: $color-primary;
-
-      i.fa {
-        top: -0.2rem;
-        position: relative;
-      }
-    }
-
-    &:hover {
+  md-fab-speed-dial {
+    .md-button {
       md-icon {
-        color: $color-accent;
+        transition: color 0.5s;
+        color: $color-primary;
+
+        i.fa {
+          top: -0.2rem;
+          position: relative;
+        }
+      }
+
+      &:hover {
+        md-icon {
+          color: $color-accent;
+        }
       }
     }
   }
