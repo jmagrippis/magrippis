@@ -1,17 +1,22 @@
 {
+  "name": "magrippis",
+  "version": "0.1.0",
+  "description": "The personal website of developer Johnny Magrippis, featuring a portfolio, CV and blog, as well as various experiments.",
+  "keywords": [
+    "react", "graphql"
+  ],
   "private": true,
-  "devDependencies": {
-    "gulp": "^3.8.8"
-  },
   "dependencies": {
-    "laravel-elixir": "^2.0.0",
-    "font-awesome": "~4.3.0",
-    "angular-messages": "~1.4.3",
-    "angular-animate": "~1.4.3",
-    "angular-sanitize": "~1.4.3",
-    "angular-aria": "~1.4.3",
-    "angular": "~1.4.3",
-    "angular-material": "~0.10.1",
-    "angular-scroll": "~0.7.2"
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2"
+  },
+  "devDependencies": {
+    "react-scripts": "0.9.5"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
   }
 }
