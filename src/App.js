@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React, { PureComponent } from 'react'
 
 class App extends PureComponent {
   render() {
@@ -6,8 +6,8 @@ class App extends PureComponent {
       <div>
         <p>You gotta start with a hello, world.</p>
       </div>
-    );
+    )
   }
 }
 
-export default App;
+export default App

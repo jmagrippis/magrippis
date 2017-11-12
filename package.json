@@ -1,16 +1,26 @@
 {
   "name": "magrippis",
-  "version": "0.1.0",
+  "version": "2.0.0-0",
   "private": true,
+  "devDependencies": {
+    "husky": "^0.14.3",
+    "lint-staged": "^5.0.0",
+    "prettier": "^1.8.2"
+  },
   "dependencies": {
     "react": "^16.1.0",
     "react-dom": "^16.1.0",
     "react-scripts": "1.0.17"
   },
   "scripts": {
+    "precommit": "lint-staged",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,json,css,md}": ["prettier --write", "git add"],
+    "{package.json,README.md}": ["prettier --write", "git add"]
   }
 }
