@@ -1,17 +1,11 @@
 {
   "name": "magrippis",
   "version": "0.1.0",
-  "description": "The personal website of developer Johnny Magrippis, featuring a portfolio, CV and blog, as well as various experiments.",
-  "keywords": [
-    "react", "graphql"
-  ],
   "private": true,
   "dependencies": {
-    "react": "^15.4.2",
-    "react-dom": "^15.4.2"
-  },
-  "devDependencies": {
-    "react-scripts": "0.9.5"
+    "react": "^16.1.0",
+    "react-dom": "^16.1.0",
+    "react-scripts": "1.0.17"
   },
   "scripts": {
     "start": "react-scripts start",
