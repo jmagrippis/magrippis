@@ -3,14 +3,20 @@
   "version": "2.0.0-0",
   "private": true,
   "devDependencies": {
+    "enzyme": "^3.1.1",
+    "enzyme-adapter-react-16": "^1.0.4",
     "husky": "^0.14.3",
     "lint-staged": "^5.0.0",
     "prettier": "^1.8.2"
   },
   "dependencies": {
+    "material-ui": "^1.0.0-0",
+    "material-ui-icons": "^1.0.0-beta.17",
     "react": "^16.1.0",
     "react-dom": "^16.1.0",
-    "react-scripts": "1.0.17"
+    "react-scripts": "1.0.17",
+    "reset-css": "^2.2.1",
+    "styled-components": "^2.2.3"
   },
   "scripts": {
     "precommit": "lint-staged",
