@@ -1,0 +1,32 @@
+type User @model {
+  id: ID! @isUnique
+  name: String
+  specialities: [Speciality!]! @relation(name: "UserSpecialities")
+  projects: [Project!]! @relation(name: "UserProjects")
+}
+
+type Speciality @model {
+  id: ID! @isUnique
+  name: String!
+  description: String!
+  user: User! @relation(name: "UserSpecialities")
+  tags: [Tag!]! @relation(name: "SpecialityTags")
+  icon: String
+}
+
+type Project @model {
+  id: ID! @isUnique
+  name: String!
+  description: String!
+  user: User! @relation(name: "UserProjects")
+  tags: [Tag!]! @relation(name: "ProjectsTags")
+  icon: String
+}
+
+type Tag @model {
+  id: ID! @isUnique
+  name: String!
+  speciality: Speciality! @relation(name: "SpecialityTags")
+  projects: [Project!]! @relation(name: "ProjectsTags")
+  description: String
+}

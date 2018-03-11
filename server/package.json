@@ -1,0 +1,12 @@
+{
+  "name": "magrippis-server",
+  "version": "1.0.0",
+  "scripts": {
+    "graphcool": "graphcool"
+  },
+  "description": "Graphcool Service for magrippis.com vanity site",
+  "devDependencies": {
+    "graphcool": "^0.11.5"
+  },
+  "license": "MIT"
+}

@@ -1,6 +1,6 @@
 {
   "name": "magrippis",
-  "version": "2.0.0-0",
+  "version": "2.0.0-beta0",
   "private": true,
   "devDependencies": {
     "enzyme": "^3.1.1",
@@ -28,5 +28,6 @@
   "lint-staged": {
     "src/**/*.{js,jsx,json,css,md}": ["prettier --write", "git add"],
     "{package.json,README.md}": ["prettier --write", "git add"]
-  }
+  },
+  "license": "MIT"
 }
