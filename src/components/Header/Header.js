@@ -21,29 +21,29 @@ class Header extends PureComponent {
       <div>
         <AppBar position="static">
           <Toolbar>
-            <Title type="title" color="inherit">
+            <Title variant="title" color="inherit">
               Johnny Magrippis
             </Title>
-            <IconButton disabled color="contrast" aria-label="Home">
+            <IconButton disabled color="inherit" aria-label="Home">
               <HomeIcon />
             </IconButton>
             <Tooltip title="CV">
-              <IconButton color="contrast" aria-label="CV">
+              <IconButton color="inherit" aria-label="CV">
                 <SchoolIcon />
               </IconButton>
             </Tooltip>
             <Tooltip title="portfolio">
-              <IconButton color="contrast" aria-label="Portfolio">
+              <IconButton color="inherit" aria-label="Portfolio">
                 <BusinessCenterIcon />
               </IconButton>
             </Tooltip>
             <Tooltip title="hobbies">
-              <IconButton color="contrast" aria-label="Hobbies">
+              <IconButton color="inherit" aria-label="Hobbies">
                 <FavoriteIcon />
               </IconButton>
             </Tooltip>
             <Tooltip title="blog">
-              <IconButton color="contrast" aria-label="Blog">
+              <IconButton color="inherit" aria-label="Blog">
                 <CreateIcon />
               </IconButton>
             </Tooltip>

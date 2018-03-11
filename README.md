@@ -12,19 +12,19 @@ You can view the result of all this code at
 
 * [React][]
 * [GraphQL][]
-* [Relay][]
 
 ## Questions & Contributions
 
-The web is vast and technologies change all the time! Feel free to ask why a
-feature is implemented in a particular way, or push "Best Practices" and request
-neat features!
+The web is vast and technologies change all the time! This project once was a
+frontend in Angular talking to a RESTful API written in php.
+
+Feel free to ask why a feature is implemented in a particular way, or push "Best
+Practices" and request neat features!
 
 ### License
 
 For learning purposes, this repo is licensed under the [MIT license][].
 
-[react]: https://facebook.github.io/react/ "It is kind of a big deal"
-[graphql]: https://github.com/facebook/graphql "With the help of graph.cool"
-[relay]: https://facebook.github.io/relay/ "React + GraphQL = ❤️"
+[react]: https://facebook.github.io/react/ 'It is kind of a big deal'
+[graphql]: https://github.com/facebook/graphql 'With the help of graph.cool'
 [mit license]: http://opensource.org/licenses/MIT "Everyone's favourite license?"
