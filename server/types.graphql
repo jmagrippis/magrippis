@@ -12,7 +12,7 @@ type Speciality @model {
   user: User! @relation(name: "UserSpecialities")
   tags: [Tag!]! @relation(name: "SpecialityTags")
   order: Int! @isUnique
-  icon: String
+  icon: String!
 }
 
 type Project @model {

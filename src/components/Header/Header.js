@@ -1,9 +1,9 @@
 import React, { PureComponent } from 'react'
 import AppBar from 'material-ui/AppBar'
+import Icon from 'material-ui/Icon'
 import IconButton from 'material-ui/IconButton'
 import Toolbar from 'material-ui/Toolbar'
 import Typography from 'material-ui/Typography'
-import HomeIcon from 'material-ui-icons/Home'
 import styled from 'styled-components'
 
 const Title = styled(Typography)`
@@ -45,7 +45,7 @@ class Header extends PureComponent {
               {title}
             </Title>
             <IconButton disabled color="inherit" aria-label="Home">
-              <HomeIcon />
+              <Icon>home</Icon>
             </IconButton>
           </Toolbar>
         </AppBar>
