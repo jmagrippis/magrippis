@@ -1,6 +1,6 @@
 {
   "name": "magrippis",
-  "version": "2.0.0-beta0",
+  "version": "2.0.0-beta.1",
   "private": true,
   "devDependencies": {
     "enzyme": "^3.1.1",
@@ -10,11 +10,17 @@
     "prettier": "^1.11.0"
   },
   "dependencies": {
+    "apollo-cache-inmemory": "^1.1.10",
+    "apollo-client": "^2.2.6",
+    "apollo-link-http": "^1.5.3",
+    "graphql": "^0.13.1",
+    "graphql-tag": "^2.8.0",
     "material-ui": "^1.0.0-0",
     "material-ui-icons": "^1.0.0-beta.17",
     "react": "^16.2.0",
+    "react-apollo": "^2.0.4",
     "react-dom": "^16.2.0",
-    "react-scripts": "1.1.1",
+    "react-scripts": "next",
     "reset-css": "^2.2.1",
     "styled-components": "^3.2.1"
   },
@@ -29,5 +35,13 @@
     "src/**/*.{js,jsx,json,css,md}": ["prettier --write", "git add"],
     "{package.json,README.md}": ["prettier --write", "git add"]
   },
-  "license": "MIT"
+  "license": "MIT",
+  "browserslist": {
+    "development": [
+      "last 2 chrome versions",
+      "last 2 firefox versions",
+      "last 2 edge versions"
+    ],
+    "production": [">1%", "last 4 versions", "Firefox ESR", "not ie < 11"]
+  }
 }

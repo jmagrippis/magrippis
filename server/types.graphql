@@ -11,6 +11,7 @@ type Speciality @model {
   description: String!
   user: User! @relation(name: "UserSpecialities")
   tags: [Tag!]! @relation(name: "SpecialityTags")
+  order: Int! @isUnique
   icon: String
 }
 
