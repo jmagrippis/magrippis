@@ -10,16 +10,16 @@
     "prettier": "^1.11.0"
   },
   "dependencies": {
+    "@material-ui/core": "^1.0.0",
     "apollo-cache-inmemory": "^1.1.10",
     "apollo-client": "^2.2.6",
     "apollo-link-http": "^1.5.3",
     "graphql": "^0.13.1",
     "graphql-tag": "^2.8.0",
-    "material-ui": "^1.0.0-0",
-    "react": "^16.2.0",
+    "react": "^16.4.0",
     "react-apollo": "^2.0.4",
-    "react-dom": "^16.2.0",
-    "react-scripts": "next",
+    "react-dom": "^16.4.0",
+    "react-scripts": "^2.0.0-next.66cc7a90",
     "reset-css": "^2.2.1",
     "styled-components": "^3.2.1"
   },

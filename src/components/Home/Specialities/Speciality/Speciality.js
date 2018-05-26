@@ -1,12 +1,11 @@
 import React, { PureComponent } from 'react'
-import Typography from 'material-ui/Typography'
-import ExpansionPanel, {
-  ExpansionPanelSummary,
-  ExpansionPanelDetails
-} from 'material-ui/ExpansionPanel'
-import Grid from 'material-ui/Grid'
-import Icon from 'material-ui/Icon'
-import purple from 'material-ui/colors/purple'
+import Typography from '@material-ui/core/Typography'
+import ExpansionPanel from '@material-ui/core/ExpansionPanel'
+import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails'
+import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary'
+import Grid from '@material-ui/core/Grid'
+import Icon from '@material-ui/core/Icon'
+import purple from '@material-ui/core/colors/purple'
 import styled from 'styled-components'
 
 const Aside = styled.aside`

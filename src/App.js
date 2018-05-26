@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react'
-import { MuiThemeProvider } from 'material-ui/styles'
+import { MuiThemeProvider } from '@material-ui/core/styles'
 
 import Header from './components/Header/Header'
 import Home from './components/Home/Home'

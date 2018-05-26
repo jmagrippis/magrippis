@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react'
-import Typography from 'material-ui/Typography'
+import Typography from '@material-ui/core/Typography'
 import styled from 'styled-components'
 
 import Specialities from './Specialities/Specialities'

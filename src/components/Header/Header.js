@@ -1,9 +1,9 @@
 import React, { PureComponent } from 'react'
-import AppBar from 'material-ui/AppBar'
-import Icon from 'material-ui/Icon'
-import IconButton from 'material-ui/IconButton'
-import Toolbar from 'material-ui/Toolbar'
-import Typography from 'material-ui/Typography'
+import AppBar from '@material-ui/core/AppBar'
+import Icon from '@material-ui/core/Icon'
+import IconButton from '@material-ui/core/IconButton'
+import Toolbar from '@material-ui/core/Toolbar'
+import Typography from '@material-ui/core/Typography'
 import styled from 'styled-components'
 
 const Title = styled(Typography)`

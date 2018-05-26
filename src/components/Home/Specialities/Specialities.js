@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react'
 import { graphql } from 'react-apollo'
 import gql from 'graphql-tag'
-import { LinearProgress } from 'material-ui/Progress'
+import LinearProgress from '@material-ui/core/LinearProgress'
 import styled from 'styled-components'
 
 import Speciality from './Speciality/Speciality'
