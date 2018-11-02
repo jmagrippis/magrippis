@@ -1,12 +1,24 @@
 {
   "name": "magrippis-server",
   "version": "1.0.0",
+  "description": "The graphql server for the magrippis vanity site",
+  "main": "src/index.js",
+  "repository": "https://github.com/jmagrippis/magrippis",
+  "author": "Johnny Magrippis <j@magrippis.com>",
+  "license": "MIT",
   "scripts": {
-    "graphcool": "graphcool"
+    "start": "node ./dist/index.js",
+    "dev": "nodemon ./dist/index.js",
+    "build": "tsc"
   },
-  "description": "Graphcool Service for magrippis.com vanity site",
+  "dependencies": {
+    "apollo-server": "^2.1.0",
+    "graphql": "^14.0.2"
+  },
   "devDependencies": {
-    "graphcool": "^0.11.5"
-  },
-  "license": "MIT"
+    "@types/graphql": "^14.0.3",
+    "@types/zen-observable": "^0.8.0",
+    "nodemon": "^1.18.5",
+    "typescript": "^3.1.6"
+  }
 }
