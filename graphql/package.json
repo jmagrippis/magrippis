@@ -2,13 +2,13 @@
   "name": "magrippis-server",
   "version": "1.0.0",
   "description": "The graphql server for the magrippis vanity site",
-  "main": "src/index.js",
+  "main": "dist/index.js",
   "repository": "https://github.com/jmagrippis/magrippis",
   "author": "Johnny Magrippis <j@magrippis.com>",
   "license": "MIT",
   "scripts": {
     "start": "node ./dist/index.js",
-    "dev": "nodemon ./dist/index.js",
+    "dev": "PORT=4000 nodemon ./dist/index.js",
     "build": "tsc"
   },
   "dependencies": {
