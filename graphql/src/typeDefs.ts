@@ -1,12 +1,14 @@
 import { gql } from 'apollo-server'
 
 export const typeDefs = gql`
-  type Project {
+  type Keyword {
     name: String!
     description: String!
+    category: String!
   }
 
   type Query {
-    projects: [Project]
+    keywords: [Keyword]
+    keyword(name: String!): Keyword
   }
 `
