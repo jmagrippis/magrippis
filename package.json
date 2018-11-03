@@ -1,46 +1,18 @@
 {
   "name": "magrippis",
-  "version": "2.0.0-beta.1",
+  "version": "1.0.0",
   "private": true,
   "devDependencies": {
-    "enzyme": "^3.1.1",
-    "enzyme-adapter-react-16": "^1.1.1",
     "husky": "^0.14.3",
     "lint-staged": "^5.0.0",
     "prettier": "^1.11.0"
   },
-  "dependencies": {
-    "@material-ui/core": "^1.0.0",
-    "apollo-cache-inmemory": "^1.1.10",
-    "apollo-client": "^2.2.6",
-    "apollo-link-http": "^1.5.3",
-    "graphql": "^0.13.1",
-    "graphql-tag": "^2.8.0",
-    "react": "^16.4.0",
-    "react-apollo": "^2.0.4",
-    "react-dom": "^16.4.0",
-    "react-scripts": "^2.0.0-next.66cc7a90",
-    "reset-css": "^2.2.1",
-    "styled-components": "^3.2.1"
-  },
   "scripts": {
-    "precommit": "lint-staged",
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "precommit": "lint-staged"
   },
   "lint-staged": {
     "src/**/*.{js,jsx,json,css,md}": ["prettier --write", "git add"],
-    "{package.json,README.md}": ["prettier --write", "git add"]
+    "**/{package.json,README.md}": ["prettier --write", "git add"]
   },
-  "license": "MIT",
-  "browserslist": {
-    "development": [
-      "last 2 chrome versions",
-      "last 2 firefox versions",
-      "last 2 edge versions"
-    ],
-    "production": [">1%", "last 4 versions", "Firefox ESR", "not ie < 11"]
-  }
+  "license": "MIT"
 }
