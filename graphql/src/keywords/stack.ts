@@ -2,7 +2,7 @@ export const stack = [
   {
     name: 'GraphQL',
     description:
-      'Empower api consumers to ask and get *exactly* what they need. Obfuscate complexity in the GraphQL server layer and never have a breaking release again!'
+      'Empower API consumers to ask and get **exactly** what they need. Obfuscate complexity in the GraphQL server layer and never have a breaking release again!'
   },
   {
     name: 'AWS',
