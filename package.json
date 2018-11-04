@@ -5,14 +5,20 @@
   "devDependencies": {
     "husky": "^0.14.3",
     "lint-staged": "^5.0.0",
-    "prettier": "^1.11.0"
+    "prettier": "^1.14.3"
   },
   "scripts": {
     "precommit": "lint-staged"
   },
   "lint-staged": {
-    "src/**/*.{js,jsx,json,css,md}": ["prettier --write", "git add"],
-    "**/{package.json,README.md}": ["prettier --write", "git add"]
+    "**/src/**/*.{js,jsx,ts,tsx,json,css,md}": [
+      "prettier --write",
+      "git add"
+    ],
+    "**/{package.json,README.md}": [
+      "prettier --write",
+      "git add"
+    ]
   },
   "license": "MIT"
 }
