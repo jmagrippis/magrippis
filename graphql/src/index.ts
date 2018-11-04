@@ -6,13 +6,17 @@ import { resolvers } from './resolvers'
 
 config()
 
+const engine = process.env.ENGINE_API_KEY
+  ? {
+      apiKey: process.env.ENGINE_API_KEY
+    }
+  : undefined
+
 const apolloOptions = {
   typeDefs,
   resolvers,
-  introspection: true,
-  engine: {
-    apiKey: process.env.ENGINE_API_KEY
-  }
+  engine,
+  introspection: true
 }
 
 const server = new ApolloServer(apolloOptions)

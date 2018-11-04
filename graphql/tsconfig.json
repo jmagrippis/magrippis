@@ -4,8 +4,8 @@
     "sourceMap": true,
     "module": "commonjs",
     "target": "es6",
-    "lib": ["esnext"],
-    "moduleResolution": "node"
+    "moduleResolution": "node",
+    "lib": ["esnext"]
   },
   "include": ["./src/**/*"]
 }
