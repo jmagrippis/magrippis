@@ -1,17 +1,24 @@
 {
+  "name": "magrippis",
+  "version": "1.0.0",
   "private": true,
   "devDependencies": {
-    "gulp": "^3.8.8"
+    "husky": "^0.14.3",
+    "lint-staged": "^5.0.0",
+    "prettier": "^1.14.3"
   },
-  "dependencies": {
-    "laravel-elixir": "^2.0.0",
-    "font-awesome": "~4.3.0",
-    "angular-messages": "~1.4.3",
-    "angular-animate": "~1.4.3",
-    "angular-sanitize": "~1.4.3",
-    "angular-aria": "~1.4.3",
-    "angular": "~1.4.3",
-    "angular-material": "~0.10.1",
-    "angular-scroll": "~0.7.2"
-  }
+  "scripts": {
+    "precommit": "lint-staged"
+  },
+  "lint-staged": {
+    "**/src/**/*.{js,jsx,ts,tsx,json,css,md}": [
+      "prettier --write",
+      "git add"
+    ],
+    "**/{package.json,README.md}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "license": "MIT"
 }

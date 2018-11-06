@@ -1,0 +1,29 @@
+{
+  "name": "magrippis-server",
+  "version": "1.0.0",
+  "description": "The graphql server for the magrippis vanity site",
+  "main": "dist/index.js",
+  "repository": "https://github.com/jmagrippis/magrippis",
+  "author": "Johnny Magrippis <j@magrippis.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "node ./dist/index.js",
+    "dev": "PORT=4000 nodemon ./dist/index.js",
+    "build": "NODE_ENV=production tsc",
+    "deploy": "yarn build && gcloud app deploy",
+    "apollo": "apollo"
+  },
+  "dependencies": {
+    "apollo-server": "^2.1.0",
+    "dotenv": "^6.1.0",
+    "graphql": "^14.0.2"
+  },
+  "devDependencies": {
+    "@types/dotenv": "^4.0.3",
+    "@types/graphql": "^14.0.3",
+    "@types/zen-observable": "^0.8.0",
+    "apollo": "^1.9.2",
+    "nodemon": "^1.18.5",
+    "typescript": "^3.1.6"
+  }
+}

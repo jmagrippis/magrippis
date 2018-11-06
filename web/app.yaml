@@ -1,0 +1,16 @@
+runtime: nodejs10
+service: default
+
+handlers:
+  - url: /static
+    static_dir: build/static
+
+  - url: /(.*\.(css|eot|gz|html|ico|js|map|png|svg|ttf|woff|woff2))
+    static_files: build/\1
+    upload: build/(.*\.(css|eot|gz|html|ico|js|map|png|svg|ttf|woff|woff2))
+
+  - url: /.*
+    static_files: build/index.html
+    upload: build/index.html
+    secure: always
+    expiration: '15m'

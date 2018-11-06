@@ -1,5 +1,0 @@
-suites:
-    main:
-        namespace: Magrippis
-        psr4_prefix: Magrippis
-        src_path: app
