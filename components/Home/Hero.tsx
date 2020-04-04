@@ -3,7 +3,7 @@ import React from 'react'
 import heroImage from './hero.jpg'
 
 export const Hero = () => (
-  <section className="p-4 bg-green-200 mb-8">
+  <section className="p-8 bg-green-200">
     <div className="container m-auto flex items-center justify-center flex-wrap sm:flex-no-wrap">
       <img
         src={heroImage}
