@@ -25,11 +25,9 @@
     "tailwindcss": "^1.2.0"
   },
   "devDependencies": {
-    "@testing-library/cypress": "^6.0.0",
     "@types/classnames": "^2.2.10",
     "@types/node": "^13.11.0",
     "@types/react": "^16.9.32",
-    "cypress": "^4.3.0",
     "husky": "^4.2.3",
     "now": "^17.1.1",
     "prettier": "^2.0.2",
