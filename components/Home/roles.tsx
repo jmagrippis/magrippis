@@ -13,7 +13,7 @@ export const roles = [
   'an ML engineer',
   'an app developer',
   'an athlete',
-  'a beach volleyball player',
+  'a beach volleyballer',
   'a powerlifter',
   'a gamer',
   'a mentor',
