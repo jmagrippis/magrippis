@@ -1,24 +1,45 @@
 {
-  "name": "magrippis",
-  "version": "1.0.0",
+  "name": "magrippis.com",
+  "version": "0.1.0",
   "private": true,
-  "devDependencies": {
-    "husky": "^0.14.3",
-    "lint-staged": "^5.0.0",
-    "prettier": "^1.14.3"
-  },
   "scripts": {
-    "precommit": "lint-staged"
+    "dev": "next dev -p 3500",
+    "build": "next build",
+    "start": "next start"
   },
-  "lint-staged": {
-    "**/src/**/*.{js,jsx,ts,tsx,json,css,md}": [
-      "prettier --write",
-      "git add"
-    ],
-    "**/{package.json,README.md}": [
-      "prettier --write",
-      "git add"
-    ]
+  "dependencies": {
+    "@now/node": "^1.5.0",
+    "autoprefixer": "^9.7.5",
+    "classnames": "^2.2.6",
+    "imagemin-mozjpeg": "^8.0.0",
+    "imagemin-svgo": "^7.1.0",
+    "lodash": "^4.17.15",
+    "moment": "^2.24.0",
+    "next": "9.3.4",
+    "next-compose-plugins": "^2.2.0",
+    "next-optimized-images": "^2.5.7",
+    "postcss-import": "^12.0.1",
+    "react": "16.13.1",
+    "react-dom": "16.13.1",
+    "react-spring": "^8.0.27",
+    "tailwindcss": "^1.2.0"
+  },
+  "devDependencies": {
+    "@testing-library/cypress": "^6.0.0",
+    "@types/classnames": "^2.2.10",
+    "@types/node": "^13.11.0",
+    "@types/react": "^16.9.32",
+    "cypress": "^4.3.0",
+    "husky": "^4.2.3",
+    "now": "^17.1.1",
+    "prettier": "^2.0.2",
+    "pretty-quick": "^2.0.1",
+    "typescript": "^3.8.3"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
   },
   "license": "MIT"
 }

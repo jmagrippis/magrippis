@@ -1,5 +1,0 @@
-dispatch:
-  - url: 'magrippis.com/*'
-    service: default
-  - url: 'graphql.magrippis.com/*'
-    service: graphql

@@ -1,0 +1,20 @@
+@import './tailwind.css';
+
+html,
+body {
+  height: 100%;
+}
+
+html {
+  scroll-behavior: smooth;
+  /* bg-purple-100 */
+  background-color: #faf5ff;
+}
+
+body > div {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Fira Code', monospace;
+}
