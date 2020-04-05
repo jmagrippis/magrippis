@@ -1,5 +1,4 @@
 import React from 'react'
-import Link from 'next/link'
 
 export const CTA = () => (
   <section className="p-8 bg-teal-200 text-center text-2xl">

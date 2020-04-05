@@ -32,6 +32,7 @@ export const highlightsContent: HighlightType[] = [
   {
     title: 'Photography',
     imgSrc: photographyImage,
+    link: 'https://www.instagram.com/jmagrippis/',
     description: [
       'Higher up than “blogging”, because a picture is worth a thousand words, and I have a lot to say 📷',
       'I’ve managed to travel to quite a few fantastic places around the world, and although first priority is to experience them, I do set aside time for dedicated photo shoots!',
@@ -45,6 +46,7 @@ export const highlightsContent: HighlightType[] = [
   {
     title: 'Blogging',
     imgSrc: bloggingImage,
+    link: 'https://medium.com/@jmagrippis',
     description: [
       <>
         I love writing in general, and sometimes I structure my thoughts into
@@ -74,6 +76,7 @@ export const highlightsContent: HighlightType[] = [
   {
     title: 'Milestones Feed',
     imgSrc: milestonesImage,
+    link: '/milestones',
     description: [
       <>
         You may follow{' '}
@@ -90,7 +93,7 @@ export const highlightsContent: HighlightType[] = [
         </Link>
         !
       </>,
-      'When I deploy something on a stream, when I toy with a side-project on the weekend, when I digital nomad my way into working remotely in a different hemisphere for a month, this is where you’d find a bit of detail.',
+      'When I deploy something during a stream, when I toy with a side-project on the weekend, when I digital nomad my way into working remotely in a different hemisphere for a month, this is where you’d find a bit of detail.',
       'Also likely to see early thoughts when I start a new video game, and summations when I’m done with it, placements in Beach Volleyball tournaments, as well as when I finally manage to stick an L-sit to handstand transition on the parallettes.',
     ],
   },
