@@ -28,7 +28,9 @@ export const Hero = () => {
         />
         <div className="text-right" style={{ flexBasis: '60ch' }}>
           <p className="text-3xl mb-1">Hi, I’m Johnny and I’m</p>
-          <p className="text-4xl text-purple-600 h-24 sm:h-auto">{role}</p>
+          <p className="text-4xl text-purple-600 h-24 bg-teal-200 sm:h-auto">
+            {role}
+          </p>
         </div>
       </div>
     </section>
