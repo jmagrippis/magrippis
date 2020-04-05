@@ -31,8 +31,10 @@ export const Milestone = ({
   >
     <div className="mb-4 sm:mb-0">
       <div className="flex flex-col sm:flex-row items-center mb-2">
-        <h2 className="text-2xl">{title}</h2>
-        <span className="border-l border-teal-200 mx-4 px-4 text-sm">
+        <h2 className="text-2xl border-b border-teal-200 sm:border-none">
+          {title}
+        </h2>
+        <span className="sm:border-l border-teal-200 mx-4 px-4 text-sm">
           {moment(timestamp).fromNow()}
         </span>
       </div>
