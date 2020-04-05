@@ -41,7 +41,7 @@ export const Hero = () => {
   })
 
   return (
-    <section className="p-8 bg-teal-200">
+    <section className="p-8 bg-teal-100">
       <div className="container m-auto flex items-center justify-center flex-wrap sm:flex-no-wrap">
         <img
           src={heroImage}
@@ -54,7 +54,7 @@ export const Hero = () => {
             ({ item, key, props }) =>
               item === role && (
                 <animated.p
-                  className="text-4xl text-purple-600 h-24 bg-teal-200 sm:h-auto"
+                  className="text-4xl text-purple-600 h-24 sm:h-auto"
                   key={key}
                   style={props}
                 >

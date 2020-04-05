@@ -14,7 +14,7 @@ export const Highlights = () => (
         description={description}
         link={link}
         className={cn({
-          'bg-teal-200': i % 2,
+          'bg-teal-100': i % 2,
         })}
       />
     ))}
