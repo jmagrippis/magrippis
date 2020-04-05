@@ -2,7 +2,7 @@ import React, { ReactNode } from 'react'
 import moment from 'moment'
 import cn from 'classnames'
 
-import githubIcon from './github-mark.svg'
+import githubIcon from '../github-mark.svg'
 import openInNewIcon from './open-in-new.svg'
 
 export type MilestoneType = {
