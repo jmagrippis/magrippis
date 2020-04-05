@@ -23,9 +23,9 @@ export const Mission = () => (
         "career-change mentoring" brand.
       </p>
       <p>
-        My brand is going to be me and all the things I fancy at any the time!
-        So, get in touch if you are interested in any particular aspect, or you
-        too want to be successful, while still being your complex, fascinating
+        My brand is going to be me and all the things I fancy at any time! So,
+        get in touch if you are interested in any particular aspect, or you too
+        want to be successful, while still showcasing your complex, fascinating
         self 😄
       </p>
     </div>
