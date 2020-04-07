@@ -29,7 +29,9 @@ export const roles = [
   'an explorer',
   'a nerd',
   'a geek',
-  'a jock',
+  'a podcaster',
+  'a streamer',
+  'a cuber',
   'a dungeon master',
   'an island man',
 ]
