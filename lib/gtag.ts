@@ -2,6 +2,10 @@ export const GA_TRACKING_ID = 'UA-163073041-1'
 
 const isProduction = process.env.NODE_ENV === 'production'
 
+export enum Action {
+  SignupIframeEnter = 'signup_iframe_enter',
+}
+
 type EventPayload = {
   event_category?: string
   event_label?: string

@@ -2,6 +2,13 @@ import React from 'react'
 
 export const milestonesContent = [
   {
+    title: 'Coding Challenges newsletter',
+    timestamp: 1586367949000,
+    href: 'https://jmagrippis.substack.com/',
+    description:
+      'After feedback from friends and colleagues, I’ve set up a newsletter about the coding challenges I always find myself designing! You should join too 😁',
+  },
+  {
     title: 'magrippis - v3',
     timestamp: 1586094061160,
     href: '/',
