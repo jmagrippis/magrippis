@@ -3,12 +3,12 @@ import { NextSeo } from 'next-seo'
 
 import { Body } from './Body'
 
+const TITLE = 'Milestones | jmagrippis'
+const DESCRIPTION = 'Curated activity feed of what Johnny has been up to.'
+
 const Milestones = () => (
   <>
-    <NextSeo
-      title="Milestones - jmagrippis"
-      description="Curated activity feed of what Johnny has been up to."
-    />
+    <NextSeo title={TITLE} description={DESCRIPTION} />
     <Body />
   </>
 )

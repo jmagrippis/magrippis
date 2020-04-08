@@ -16,7 +16,7 @@ export const App = ({ Component, pageProps }: AppProps) => (
       }}
       twitter={{
         handle: '@jmagrippis',
-        cardType: 'summary_large_image',
+        cardType: 'summary',
       }}
     />
     <div className="w-full flex flex-grow flex-col items-center justify-between">
