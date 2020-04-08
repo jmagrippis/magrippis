@@ -4,6 +4,7 @@ import { Hero } from './Hero'
 import { Mission } from './Mission'
 import { CTA } from './CTA'
 import { Highlights } from './Highlights/Highlights'
+import { Signup } from './Signup'
 
 export const Body = () => (
   <main className="w-full flex-grow">
@@ -11,5 +12,6 @@ export const Body = () => (
     <Mission />
     <CTA />
     <Highlights />
+    <Signup />
   </main>
 )
