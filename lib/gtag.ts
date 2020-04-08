@@ -1,5 +1,7 @@
 export const GA_TRACKING_ID = 'UA-163073041-1'
 
+const isProduction = process.env.NODE_ENV === 'production'
+
 type EventPayload = {
   event_category?: string
   event_label?: string
@@ -20,7 +22,7 @@ declare global {
 }
 
 export const trackPageView = (url: string) => {
-  if (!window.gtag) return
+  if (!isProduction || !window.gtag) return
 
   window.gtag('config', GA_TRACKING_ID, {
     page_path: url,
@@ -31,7 +33,8 @@ export const trackEvent = (
   action: string,
   { event_category, event_label, value }: EventPayload
 ) => {
-  if (!window.gtag) return
+  if (!isProduction || !window.gtag) return
+
   window.gtag('event', action, {
     event_category,
     event_label,
