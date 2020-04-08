@@ -10,6 +10,15 @@ export default class extends Document {
     return (
       <html>
         <Head>
+          <link rel="icon" href="/favicon.ico" />
+          <link
+            href="https://fonts.googleapis.com/css?family=Fira+Code:400,600&display=swap"
+            rel="stylesheet"
+          />
+          <meta
+            name="viewport"
+            content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no"
+          />
           {/* Global Site Tag (gtag.js) - Google Analytics */}
           <script
             async
