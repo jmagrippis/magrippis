@@ -5,7 +5,7 @@ import { Body } from './Body'
 
 const TITLE = 'jmagrippis | Johnny Magrippis'
 const DESCRIPTION =
-  'Johnny Magrippis is Fullstack Engineer / Mentor / Photographer / (...)  challenging the need to have a niche.'
+  'Johnny Magrippis is a Fullstack Engineer / Mentor / Photographer / (...)  challenging the need to have a niche.'
 
 const Home = () => (
   <>
