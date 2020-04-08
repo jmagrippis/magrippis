@@ -12,12 +12,13 @@ export const Hero = () => {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      let next = role
-      while (next === role) {
-        next = sample(roles)
-      }
-
-      setRole(next)
+      setRole((currentRole) => {
+        let next = currentRole
+        while (next === currentRole) {
+          next = sample(roles)
+        }
+        return next
+      })
     }, RESELECT_INTERVAL)
 
     return () => {
