@@ -1,10 +1,4 @@
 import React from 'react'
-import { Action, trackEvent } from '../../lib/gtag'
-
-const onIframeEnter = () =>
-  trackEvent(Action.SignupIframeEnter, {
-    event_category: 'engagement',
-  })
 
 export const Signup = () => (
   <section className="container flex flex-col sm:flex-row items-center m-auto p-8">
@@ -17,7 +11,6 @@ export const Signup = () => (
       frameBorder="0"
       scrolling="no"
       className="sm:flex-grow"
-      onMouseEnter={onIframeEnter}
     ></iframe>
   </section>
 )
