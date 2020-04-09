@@ -2,6 +2,12 @@ import React from 'react'
 
 export const milestonesContent = [
   {
+    title: 'Animal Crossing: New Horizons - credits',
+    timestamp: 1586416203000,
+    description:
+      'I wasn’t expecting Animal Crossing to have end credits, but there actually was a little storyline that gets nicely wrapped up with a proper credits sequence! The game continues after of course, and I’m far from done with it: A few minutes of island life have become part of my morning ritual 🍑',
+  },
+  {
     title: 'Coding Challenges newsletter',
     timestamp: 1586367949000,
     href: 'https://jmagrippis.substack.com/',
