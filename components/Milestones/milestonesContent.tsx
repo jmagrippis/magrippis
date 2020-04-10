@@ -35,7 +35,7 @@ export const milestonesContent = [
     github: 'https://github.com/jmagrippis/healthy-habits',
     description: (
       <>
-        New app! A colab with{' '}
+        New app! A collab with{' '}
         <a
           href="https://github.com/aliwoodman"
           className="underline text-purple-400"
