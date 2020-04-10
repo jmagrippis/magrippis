@@ -2,6 +2,12 @@ import React from 'react'
 
 export const milestonesContent = [
   {
+    title: 'Final Fantasy VII Remake',
+    timestamp: 1586511002000,
+    description:
+      'It’s finally available to play! Just from the first couple of hours I can tell this is an impeccable execution of the project. Not that it’s gonna be the perfect game, but they’re making me experience the essence of playing the original back then in PS1, via the means of a current-gen AAA game.',
+  },
+  {
     title: 'Animal Crossing: New Horizons - credits',
     timestamp: 1586416203000,
     description:
