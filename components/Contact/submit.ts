@@ -18,9 +18,9 @@ export const submit = async (payload: Payload) => {
     console.error('there was an error submitting your email...', error)
   })
 
-  if (response && response.ok) {
+  if (!response || !response.ok) {
     return false
   }
 
-  return false
+  return true
 }
