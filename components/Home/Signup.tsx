@@ -1,9 +1,13 @@
-import React from 'react'
+import React, { ReactNode } from 'react'
 
-export const Signup = () => (
+type Props = {
+  prompt: ReactNode
+}
+
+export const Signup = ({ prompt }: Props) => (
   <section className="container flex flex-col sm:flex-row items-center m-auto p-8">
-    <div className="text-xl mb-4">
-      If you made it this far, how about subscribing to...
+    <div className="text-xl mb-4" style={{ maxWidth: '60ch' }}>
+      {prompt}
     </div>
     <iframe
       src="https://jmagrippis.substack.com/embed"

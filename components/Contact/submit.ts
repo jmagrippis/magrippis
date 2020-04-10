@@ -1,13 +1,21 @@
 import { Subject } from './subjects'
 
-type Payload = {
+export type ContactPayload = {
   name: string
   email: string
   subject: Subject
   content: string
 }
 
-export const submit = async (payload: Payload) => {
+export const isContactPayload = (payload: any): payload is ContactPayload =>
+  payload &&
+  typeof payload === 'object' &&
+  typeof payload.name === 'string' &&
+  typeof payload.email === 'string' &&
+  typeof payload.subject === 'string' &&
+  typeof payload.content === 'string'
+
+export const submit = async (payload: ContactPayload) => {
   const response = await fetch('/api/contact', {
     method: 'POST',
     body: JSON.stringify(payload),

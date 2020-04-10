@@ -1,10 +1,11 @@
 import React from 'react'
 
 import { Form } from './Form'
+import { Signup } from '../Home/Signup'
 
 export const Body = () => (
-  <main className="w-full flex-grow py-4">
-    <div className="container m-auto p-4">
+  <main className="w-full flex-grow pt-4">
+    <div className="container m-auto p-4 mb-4">
       <h1 className="text-4xl mb-6">Contact</h1>
 
       <section className="text-xl mb-6" style={{ maxWidth: '60ch' }}>
@@ -20,6 +21,17 @@ export const Body = () => (
       </section>
 
       <Form />
+    </div>
+
+    <div className="bg-teal-100">
+      <Signup
+        prompt={
+          <>
+            If you’d rather <strong>I</strong> get in touch, proactively, you
+            should subscribe to my newsletter!
+          </>
+        }
+      />
     </div>
   </main>
 )

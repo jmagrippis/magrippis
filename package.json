@@ -21,6 +21,8 @@
     "next-optimized-images": "^2.5.7",
     "next-seo": "^4.4.0",
     "postcss-import": "^12.0.1",
+    "postmark": "^2.5.1",
+    "prop-types": "^15.7.2",
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "react-spring": "^8.0.27",

@@ -12,6 +12,6 @@ export const Body = () => (
     <Mission />
     <CTA />
     <Highlights />
-    <Signup />
+    <Signup prompt="If you made it this far, how about subscribing to..." />
   </main>
 )
