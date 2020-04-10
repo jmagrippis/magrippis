@@ -2,6 +2,27 @@ import React from 'react'
 
 export const milestonesContent = [
   {
+    title: 'magrippis.com - contact form',
+    timestamp: 1586559838000,
+    href: '/',
+    github: 'https://github.com/jmagrippis/magrippis',
+    description: (
+      <>
+        "Get in touch" now links to a proper contact page, where I suggest the
+        mailing list too! Trying out{' '}
+        <a
+          href="https://postmarkapp.com/"
+          className="underline text-purple-400"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Postmark
+        </a>{' '}
+        as the transport.
+      </>
+    ),
+  },
+  {
     title: 'Final Fantasy VII Remake',
     timestamp: 1586511002000,
     description:
@@ -21,7 +42,7 @@ export const milestonesContent = [
       'After feedback from friends and colleagues, I’ve set up a newsletter about the coding challenges I always find myself designing! You should join too 😁',
   },
   {
-    title: 'magrippis - v3',
+    title: 'magrippis.com - v3',
     timestamp: 1586094061160,
     href: '/',
     github: 'https://github.com/jmagrippis/magrippis',
