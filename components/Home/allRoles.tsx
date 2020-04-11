@@ -1,4 +1,4 @@
-export const roles = [
+export const allRoles = [
   'an engineer',
   'a photographer',
   'a writer',

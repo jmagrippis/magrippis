@@ -1,24 +1,23 @@
 import React, { useState, useEffect } from 'react'
-import { sample } from 'lodash'
+import { shuffle } from 'lodash'
 import { useTransition, animated } from 'react-spring'
 
 import heroImage from './hero.jpg'
-import { roles } from './roles'
+import { allRoles } from './allRoles'
 
 const RESELECT_INTERVAL = 3000
 
 export const Hero = () => {
-  const [role, setRole] = useState(roles[0])
+  const [firstRole, ...otherRoles] = allRoles
+  const [roles, setRoles] = useState([firstRole, ...shuffle(otherRoles)])
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setRole((currentRole) => {
-        let next = currentRole
-        while (next === currentRole) {
-          next = sample(roles)
-        }
-        return next
-      })
+      if (!document?.hasFocus()) return
+
+      setRoles((currentRoles) =>
+        currentRoles.length > 1 ? currentRoles.slice(1) : shuffle(allRoles)
+      )
     }, RESELECT_INTERVAL)
 
     return () => {
@@ -26,7 +25,7 @@ export const Hero = () => {
     }
   }, [])
 
-  const transitions = useTransition(role, null, {
+  const transitions = useTransition(roles[0], null, {
     from: {
       opacity: 0,
       transform: 'translate3d(0,2rem,0)',
@@ -53,7 +52,7 @@ export const Hero = () => {
 
           {transitions.map(
             ({ item, key, props }) =>
-              item === role && (
+              item === roles[0] && (
                 <animated.p
                   className="text-4xl text-purple-600 h-24 sm:h-auto"
                   key={key}
