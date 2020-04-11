@@ -1,7 +1,5 @@
 {
-  "build": {
-    "env": {
-      "POSTMARK_SECRET": "@postmark-secret"
-    }
+  "env": {
+    "POSTMARK_SECRET": "@postmark-secret"
   }
 }
