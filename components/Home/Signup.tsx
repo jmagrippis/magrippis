@@ -1,5 +1,9 @@
 import React, { ReactNode } from 'react'
 
+import { TrackEvent } from '../../pages/_document'
+
+const onIframeEnter = () => window.plausible(TrackEvent.SignupIframeEnter)
+
 type Props = {
   prompt: ReactNode
 }
@@ -15,6 +19,7 @@ export const Signup = ({ prompt }: Props) => (
       frameBorder="0"
       scrolling="no"
       className="sm:flex-grow"
+      onMouseEnter={onIframeEnter}
     ></iframe>
   </section>
 )
