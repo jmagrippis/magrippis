@@ -40,6 +40,12 @@ export default class extends Document {
             data-domain="magrippis.com"
             src="https://plausible.io/js/plausible.js"
           />
+          <script
+            dangerouslySetInnerHTML={{
+              __html:
+                'window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }',
+            }}
+          />
         </Head>
         <body>
           <Main />
