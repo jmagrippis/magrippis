@@ -2,6 +2,14 @@ import React from 'react'
 
 export const milestonesContent = [
   {
+    title: 'Website analytics with Next.js and Plausible.io',
+    timestamp: 1586710090000,
+    href:
+      'https://medium.com/@jmagrippis/website-analytics-with-next-js-and-plausible-io-3620da743a1',
+    description:
+      'New blog post! Let’s add website analytics to our Next.js React app the simple and privacy-friendly way, and with Typescript support!',
+  },
+  {
     title: 'magrippis.com - contact form',
     timestamp: 1586559838000,
     href: '/',
