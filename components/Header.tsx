@@ -18,9 +18,11 @@ export const Header = () => (
       <ul className="flex flex-row text-purple-500">
         <li>
           <Link href="/milestones">
-            <a className="transition duration-300 text-purple-600 hover:text-purple-800">
-              <span className="hidden sm:inline">milestones</span>
-              <span className="sm:hidden">
+            <a>
+              <span className="hidden sm:inline transition duration-300 text-purple-600 hover:text-purple-800">
+                milestones
+              </span>
+              <span className="sm:hidden transition duration-300 hover:text-purple-700">
                 <StarIcon title="Milestones feed" width="1.5rem" />
               </span>
             </a>
