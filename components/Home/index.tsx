@@ -3,7 +3,7 @@ import { NextSeo } from 'next-seo'
 
 import { Body } from './Body'
 
-const TITLE = 'jmagrippis | Johnny Magrippis'
+const TITLE = 'jmagrippis | coding challenges and success without stress'
 const DESCRIPTION =
   'Johnny Magrippis is a Fullstack Engineer / Mentor / Photographer / (...)  challenging the need to have a niche.'
 

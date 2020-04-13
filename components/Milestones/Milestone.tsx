@@ -2,8 +2,8 @@ import React, { ReactNode } from 'react'
 import moment from 'moment'
 import cn from 'classnames'
 
-import githubIcon from '../github-mark.svg'
-import openInNewIcon from './open-in-new.svg'
+import GithubIcon from '../github-mark.svg'
+import OpenInNewIcon from './open-in-new.svg'
 
 export type MilestoneType = {
   title: string
@@ -41,22 +41,20 @@ export const Milestone = ({
       <div style={{ maxWidth: '80ch' }}>{description}</div>
     </div>
     {github || href ? (
-      <aside className="text-purple-200 flex">
+      <aside className="text-teal-500 flex">
         {github && (
           <a href={github} target="_blank" rel="noopener noreferrer">
-            <img
-              src={githubIcon}
-              alt="see the source code in a new tab"
-              className="w-16 p-1"
+            <GithubIcon
+              title="see the source code in a new tab"
+              className="transition duration-300 hover:text-teal-700 w-16 p-1"
             />
           </a>
         )}
         {href && (
           <a href={href} target="_blank" rel="noopener noreferrer">
-            <img
-              src={openInNewIcon}
-              alt="see milestone in a new tab"
-              className="w-16"
+            <OpenInNewIcon
+              title="see milestone in a new tab"
+              className="transition duration-300 hover:text-teal-700 w-16"
             />
           </a>
         )}
