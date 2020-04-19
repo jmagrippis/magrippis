@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react'
 import cn from 'classnames'
-import Link from 'next/link'
+
 import { LinkOrPlainAnchor } from '../../LinkOrPlainAnchor'
 
 export type HighlightType = {

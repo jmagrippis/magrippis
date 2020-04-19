@@ -2,6 +2,34 @@ import React from 'react'
 
 export const milestonesContent = [
   {
+    title: 'First ever "branded" stream!',
+    timestamp: 1587308400000,
+    href: 'https://www.twitch.tv/jmagrippis',
+    description:
+      'Ran a poll on the gram for what type of stream it should be, no surprise that audience wanted a photo tutorial 📷 Super exciting to do, I felt great and am definitely hungry for more!',
+  },
+  {
+    title: 'Top Three Things',
+    timestamp: 1587202672000,
+    href: 'https://topthreethings.com',
+    github: 'https://github.com/jmagrippis/top-three-things',
+    description: (
+      <>
+        New week, new app! Got "Top Three Things" all the way from idea to
+        "functional prototype", figuring out{' '}
+        <a
+          href="https://hasura.io/"
+          className="underline text-purple-400"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Hasura GraphQL
+        </a>{' '}
+        in the process. This idea has legs...
+      </>
+    ),
+  },
+  {
     title: 'Website analytics with Next.js and Plausible.io',
     timestamp: 1586710090000,
     href:
