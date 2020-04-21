@@ -38,7 +38,7 @@ export const Milestone = ({
           {moment(timestamp).fromNow()}
         </span>
       </div>
-      <div style={{ maxWidth: '80ch' }}>{description}</div>
+      <div className="max-w-readability-lg">{description}</div>
     </div>
     {github || href ? (
       <aside className="text-teal-500 flex">

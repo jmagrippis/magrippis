@@ -11,3 +11,18 @@ declare module '*.svg' {
   >
   export default content
 }
+
+declare module '*.mdx' {
+  import { ReactNode } from 'react'
+
+  export const frontMatter: {
+    title: string
+    snippet: string
+    timestamp: number
+    tags: string[]
+    __resourcePath: string
+  }
+
+  const component: ReactNode
+  export default ReactNode
+}

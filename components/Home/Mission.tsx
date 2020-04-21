@@ -5,7 +5,7 @@ export const Mission = () => (
     <div className="text-3xl text-center mb-4">
       I’m challenging the need to “have a niche”
     </div>
-    <div className="m-auto" style={{ maxWidth: '80ch' }}>
+    <div className="m-auto max-w-readability-lg">
       <p className="mb-2">
         Should your brand be focused? That’s the increasingly trending advice
         and it does give businesses a higher chance of success.

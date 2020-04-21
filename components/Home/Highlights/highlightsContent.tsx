@@ -67,6 +67,7 @@ export const highlightsContent: HighlightType[] = [
   {
     title: 'Streaming',
     imgSrc: streamingImage,
+    link: 'https://www.twitch.tv/jmagrippis',
     description: [
       'After a decade of trying out new tech by building prototypes in isolation and solely for my own amusement, I’ve decided to get with the times and stream myself hacking them together!',
       'I’m also noticing a gap in the market, in that there are plenty of talented coders streaming, but I haven’t found any Pair Programming streams...',

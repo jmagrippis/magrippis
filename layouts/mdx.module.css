@@ -26,7 +26,7 @@
 }
 
 .container pre {
-  @apply my-6;
+  @apply my-8;
 }
 
 .container pre code {

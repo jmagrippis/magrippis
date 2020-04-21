@@ -2,6 +2,10 @@
 title: How to setup MDX in Next.js
 snippet: I enhanced my blogposts with interactive React components, and so can you!
 timestamp: 1587483859000
+tags:
+  - Typescript
+  - Next.js
+  - Frontend
 ---
 
 import { Demonstration } from '../../../components/blog/Demonstration'
@@ -24,15 +28,33 @@ A common use-case would be to render a component for your readers to mess around
 
 <Demonstration />
 
-And then inline you may inline the code that achieves the above.
+And then you may inline the code that achieves the above.
 
 ```tsx
-const Hero = () => <div>lol</div>
+import React, { useState } from 'react'
+import cn from 'classnames'
+
+export const Demonstration = () => {
+  const [tapped, setTapped] = useState(false)
+
+  return (
+    <div
+      className={cn(
+        'cursor-pointer p-4 rounded shadow-lg text-center transition duration-300',
+        {
+          'bg-teal-200 text-teal-900': tapped,
+          'bg-purple-600 text-purple-100': !tapped,
+        }
+      )}
+      onClick={() => setTapped(!tapped)}
+    >
+      🤜 Tap this React Component 🤛
+    </div>
+  )
+}
 ```
 
 And discuss as needed!
-
-COOL IMAGE HERE
 
 So, how cool is that? Cool enough to want to bring it in your own blog? Well, you’re in luck, as the next section is…
 
@@ -48,7 +70,9 @@ So first step is bringing that library in!
 yarn add next-mdx-enhanced
 ```
 
-Since I’m putting code in my markdown, and if you’re thinking of using MDX you probably will be too, let’s bring in a library that adds classes to style those code blocks nicely! I went with [rehype-prism](https://github.com/mapbox/rehype-prism 'highlight code blocks in HTML with Prism')
+The plugin uses an `.mdx-data` directory for caching, so let’s add it to our `.gitignore` at this point.
+
+Since I’m putting code snippets in my markdown, and if you’re thinking of using MDX you probably will be too, let’s bring in a library that adds classes to style those code blocks nicely! I went with [rehype-prism](https://github.com/mapbox/rehype-prism 'highlight code blocks in HTML with Prism')
 
 ```bash
 yarn add @mapbox/rehype-prism
@@ -122,7 +146,7 @@ It means two big things:
 
 ## I can render code blocks nicely
 
-```tsx
+```ts
 export const Demonstration = () => (
   <div style={{ padding: '20px', backgroundColor: 'orange' }}>
     <h3>This is JSX</h3>
@@ -318,12 +342,70 @@ import { FeaturedImage } from '../components/blog/FeaturedImage'
 )
 ```
 
-Should work a treat and that’s the last we’ll be messing with these files! But even though we’ve set up the posts, navigating to them can only happen by having a direct link to them… So let’s finish by scaffolding an index page can navigate to all of them!
+Should work a treat, and that’s the last we’ll be messing with these files!
+
+But even though we’ve set up the posts to render for their appropriate URLs, you may only navigate to them directly, if you know those URL! So let’s finish strong by scaffolding an index page that can navigate to all of them!
 
 ### Creating a blog index
 
-Let’s create a `blog/index.tsx` that looks like the code that is pending…
+Having `/blog` resolve to something is done via the common Next.js way: by defining a `pages/blog/index.tsx` which has a React component as its default export.
 
-## Conclusion
+`next-mdx-enhanced` gives us a `__resourcePath` along with the front-matter it parses resource path, which we’ll use to link to the blog posts.
 
-This went well!
+Given those two pieces of knowledge, let’s create a `pages/blog/index.tsx` that looks like this:
+
+```tsx
+import Link from 'next/link'
+
+import { frontMatter as mdxFtw } from './mdx-ftw.mdx'
+
+const pages = [mdxFtw]
+
+const formatPath = (p: string) => p.replace(/\.mdx$/, '')
+
+const BlogIndex = () => (
+  <>
+    <h1>Blog</h1>
+    <ul>
+      {pages.map((page) => (
+        <li key={page.__resourcePath}>
+          <Link href={formatPath(page.__resourcePath)}>
+            <a>
+              <h2>{page.title}</h2>
+              <p>{page.snippet}</p>
+            </a>
+          </Link>
+        </li>
+      ))}
+    </ul>
+  </>
+)
+
+export default BlogIndex
+```
+
+This _would have worked_, if Typescript had any idea how our current setup resolves `.mdx` files! We have to clarify by declaring the `*.mdx` module somewhere. I’ve setup my `tsconfig.json` to include my `global.d.ts`, where I also specify what `.svg` and `.jpg` imports resolve to, so this is where I’ll be adding this snippet:
+
+```ts
+declare module '*.mdx' {
+  import { ReactNode } from 'react'
+
+  export const frontMatter: {
+    title: string
+    snippet: string
+    timestamp: number
+    __resourcePath: string
+  }
+
+  const component: ReactNode
+  export default ReactNode
+}
+```
+
+After that, Typescript will be happy, the code will transpile, and navigating to `/blog` will give us a list of all of our MDX pages. Yep, all one of them, and clicking on them will get us to the complete article!
+
+Again, have a look at [babel-plugin-import-glob-array](https://github.com/jescalan/babel-plugin-import-glob-array 'import many files using glob pattern matching') if you don’t fancy updating that `pages` array manually, or let me know and I’ll follow up this post with an explanation of how to set that up.
+
+More important at this point would be to style those pages nicely and, hey, how about writing more posts?
+
+But before doing either, make sure to pat yourself in the back: we did it, we set up MDX in our Next.js app! 👏🏼🥳🎉
