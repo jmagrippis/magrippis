@@ -11,6 +11,8 @@ coverage
 # next.js
 .next/
 out/
+.mdx-data
+.now
 
 # production
 build
@@ -27,5 +29,3 @@ yarn-error.log*
 # cypress
 cypress/videos
 cypress/screenshots
-
-.now

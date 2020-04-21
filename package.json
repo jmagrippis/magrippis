@@ -1,6 +1,6 @@
 {
   "name": "magrippis.com",
-  "version": "0.1.0",
+  "version": "3.2.0",
   "private": true,
   "scripts": {
     "dev": "next dev -p 3500",
@@ -8,6 +8,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@mapbox/rehype-prism": "^0.4.0",
     "@now/node": "^1.5.0",
     "@types/lodash": "^4.14.149",
     "autoprefixer": "^9.7.5",
@@ -17,11 +18,13 @@
     "moment": "^2.24.0",
     "next": "9.3.4",
     "next-compose-plugins": "^2.2.0",
+    "next-mdx-enhanced": "^2.4.0",
     "next-optimized-images": "^2.5.7",
     "next-seo": "^4.4.0",
     "next-svgr": "^0.0.2",
     "postcss-import": "^12.0.1",
     "postmark": "^2.5.1",
+    "prism-themes": "^1.4.0",
     "prop-types": "^15.7.2",
     "react": "16.13.1",
     "react-dom": "16.13.1",
@@ -34,7 +37,7 @@
     "@types/react": "^16.9.32",
     "husky": "^4.2.3",
     "now": "^17.1.1",
-    "prettier": "^2.0.2",
+    "prettier": "^2.0.4",
     "pretty-quick": "^2.0.1",
     "typescript": "^3.8.3"
   },

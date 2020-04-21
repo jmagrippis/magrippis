@@ -1,0 +1,47 @@
+.container section > * {
+  @apply mb-2;
+}
+
+.container h1 {
+  @apply text-4xl;
+}
+
+.container h2 {
+  @apply text-3xl;
+}
+
+.container h3 {
+  @apply text-2xl;
+  @apply font-semibold;
+}
+
+.container a {
+  @apply text-purple-600;
+  @apply transition;
+  @apply duration-300;
+}
+
+.container a:hover {
+  @apply text-purple-800;
+}
+
+.container pre {
+  @apply my-6;
+}
+
+.container pre code {
+  font-family: 'Fira Code', monospace;
+}
+
+@screen sm {
+  .container pre code {
+    @apply text-lg;
+  }
+}
+
+.container p code {
+  @apply px-2;
+  @apply bg-teal-100;
+  @apply text-purple-900;
+  font-family: 'Fira Code', monospace;
+}

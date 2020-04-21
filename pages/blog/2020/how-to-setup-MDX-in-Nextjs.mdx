@@ -1,0 +1,329 @@
+---
+title: How to setup MDX in Next.js
+snippet: I enhanced my blogposts with interactive React components, and so can you!
+timestamp: 1587483859000
+---
+
+import { Demonstration } from '../../../components/blog/Demonstration'
+
+## The what
+
+[Next.js](https://nextjs.org/ 'if you thought this page loaded fast, they’re part of the why!') is a framework for isomoprhic React apps. It makes it easy to write blazing fast websites, by rendering them on the server first for a speed and SEO boost. The client takes over after, to get the seamless UX of a Single Page App.
+
+[Markdown](https://daringfireball.net/projects/markdown/ 'maybe the wikipedia article would be more informative, but it’s always nice to link the source') is a minimal markup language. It makes it easy to write!
+
+**HTML**, the most famous markup language for instance, renders beautifully but is hard to read in raw form… **Markdown** however, may be parsed into HTML for your browser to render just as beautifully, but even when you see it raw through your human eyeballs, you can tell what is a title, what is a list, what is emphasised… It’s just brilliant, and it’s especially popular with developers. Its popularity has not stopped there however: [Ulysses](https://ulysses.app/ 'A pleasant, focused writing experience based on markdown') is a prime example of a slick writing app that has adopted it to great success.
+
+So that ’s Markdown, MD! [MDX](https://mdxjs.com/ 'Markdown for the component era') is markdown with JSX support, which pretty much means you can embed React components in your posts!
+
+But why?!
+
+## The why
+
+A common use-case would be to render a component for your readers to mess around with… Given this whole site is using Next.js and I just brought in MDX support, I can show rather than tell:
+
+<Demonstration />
+
+And then inline you may inline the code that achieves the above.
+
+```tsx
+const Hero = () => <div>lol</div>
+```
+
+And discuss as needed!
+
+COOL IMAGE HERE
+
+So, how cool is that? Cool enough to want to bring it in your own blog? Well, you’re in luck, as the next section is…
+
+## The how
+
+### Config
+
+The library we’ll be using is [next-mdx-enhanced](https://github.com/hashicorp/next-mdx-enhanced 'A Next.js plugin that enables MDX pages, layouts, and front matter'). It is not the [official plugin by the Nextjs team](https://github.com/zeit/next.js/tree/master/packages/next-mdx 'made by the next team'), which is workable but has you jumping through hoops to be able to make a “blog index” page with all your posts, and to get front-matter support. Front-matter is useful metadata you may put at the front of your `.mdx` files and use for things like cover images, or thumbnails and summaries for twitter cards.
+
+So first step is bringing that library in!
+
+```bash
+yarn add next-mdx-enhanced
+```
+
+Since I’m putting code in my markdown, and if you’re thinking of using MDX you probably will be too, let’s bring in a library that adds classes to style those code blocks nicely! I went with [rehype-prism](https://github.com/mapbox/rehype-prism 'highlight code blocks in HTML with Prism')
+
+```bash
+yarn add @mapbox/rehype-prism
+```
+
+Our goal with those two libraries is to initialise the `Next.js` plugin that will sort mdx out for us. In our code we’ll do something like
+
+```js
+const rehypePrism = require('@mapbox/rehype-prism')
+
+const mdx = require('next-mdx-enhanced')({
+  defaultLayout: true,
+  fileExtensions: ['mdx', 'md'],
+  rehypePlugins: [rehypePrism],
+})
+```
+
+Depending on how you’ve set up your `Next.js` site, you may or may not have a `next.config.js` at the root of your repository. If you **do**, you will need to pipe that `const mdx` to your existing configuration. If you **do not**, just create and empty file and paste the below.
+
+In either case, I do suggest adding one more library, one that makes using multiple plugins with `Next.js` much easier. It’s no worse when you’re using only one, but the moment you use _more than one_, it really helps keep things sane. So let’s bring in [next-compose-plugins](https://github.com/cyrilwanner/next-compose-plugins 'a cleaner API for enabling and configuring plugins for next.js'):
+
+```bash
+yarn add next-compose-plugins
+```
+
+And here’s how our complete `next.config.js` may look like:
+
+```js
+const withPlugins = require('next-compose-plugins')
+const rehypePrism = require('@mapbox/rehype-prism')
+
+const mdx = require('next-mdx-enhanced')({
+  defaultLayout: true,
+  fileExtensions: ['mdx', 'md'],
+  rehypePlugins: [rehypePrism],
+})
+
+// you may tweak other base Next options in this object
+// we are using it to tell Next to also handle .md and .mdx files
+const nextConfig = { pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'mdx', 'md'] }
+
+module.exports = withPlugins(
+  [
+    mdx,
+    // you may add more plugins, and their configs, to this array
+  ],
+  nextConfig
+)
+```
+
+### Content
+
+The config above gets us most of the way there, but of course now we need some MDX to render! So let’s create an `.mdx` file!
+
+It may be anywhere inside our `pages` directory and `Next.js` will resolve it as it would a “regular” javascript/typescript file and of course. I’ve created this `pages/blog/mdx-ftw.mdx` file and of course the content could be anything adhering to the format, but feel free to copy & paste the below:
+
+````md
+---
+title: MDX FTW
+timestamp: 1587386236000
+snippet: I got React components to render in my blogposts, I love it
+---
+
+import { Demonstration } from '../../components/blog/Demonstration'
+
+It means two big things:
+
+## I can render React Components
+
+<Demonstration />
+
+## I can render code blocks nicely
+
+```tsx
+export const Demonstration = () => (
+  <div style={{ padding: '20px', backgroundColor: 'orange' }}>
+    <h3>This is JSX</h3>
+  </div>
+)
+```
+````
+
+The properties between the `---`s can be anything you’d want to use in your layout file; their names have no special significance.
+
+Your `import`s should resolve to components relative to the `.mdx` file, as you might expect! I prefer putting all components that are just used in my blog section, in `components/blog`, so for this example I created an `components/blog/Demonstration.tsx` file, which contains what is also in the code block after it!
+
+With those two files set, you might expect navigating to `/blog/mdx-ftw` would **just work**, but we have one more step: we have yet to create our default layout!
+
+### Layout
+
+When I said the front-matter property names have no special significance it was only _mostly_ true. There is one that does mean something by default to `next-mdx-enhanced`: `layout`. You may use it to specify which layout the mdx content should be nested in, so you may have a `layouts/docs` and a `layout/blog`, and even a `layout/your-wildest-dreams` according to the occasion.
+
+In our case, we’ve also passed the `defaultLayout: true` in the plugin config before, so instead of specifying the layout on every blogpost, we may just create a `layouts/index.tsx` that everything will be falling back to when there is no `layout` property in the front-matter. So let’s create that file!
+
+```tsx
+import React, { ReactNode } from 'react'
+import cn from 'classnames'
+
+type FrontMatter = {
+  title: string
+  snippet: string
+}
+
+export default ({ title, snippet }: FrontMatter) => ({
+  children,
+}: {
+  children: ReactNode
+}) => (
+  <div>
+    <h1>{title}</h1>
+    <p>{snippet}</p>
+    <section>{children}</section>
+  </div>
+)
+```
+
+It’s somewhat funky, as the default export has to be a Higher Order Component type of thing, which is soooo 2018; but hopefully it makes some sense: The first method takes all the properties in the front-matter as an argument, and the second has all of the parsed mdx, everything after the front-matter, as `children`.
+
+At this point, navigating to `/blog/mdx-ftw` will work, check it out!
+
+Great job!
+
+### Styling
+
+The mdx content will be there, it will have correctly been transformed to the equivalent html, but, according to how you’ve set up your styles, it might be looking a bit… plain. I know I always declare a “style reset” at the start of all of my apps, so headers are indistinguishable from paragraphs for example, unless I explicitly style them. This helps me keep an important habit, using different html tags for semantics, not for styling!
+
+So how _do we_ explicitly style the mdx output?
+
+We could configure the plugin with a map for the components to use in each case: give it a Styled Component to use for `p`s, a regular component with some css classes from Tailwind.css to use for `h2`s, anything we’d like.
+
+Or we could do it with CSS modules! Nothing wrong with any approach, personally I find this one the most straightforward. So let’s create a `layouts/mdx.module.css` that looks something like this:
+
+```css
+.container > *,
+.container section > * {
+  margin-bottom: 0.5rem;
+}
+
+.container h1 {
+  font-size: 2.25rem;
+}
+
+.container h2 {
+  font-size: 1.875rem;
+}
+
+/* Add your own styles as you fancy them */
+```
+
+And let’s import it in our layout file:
+
+```tsx
+import React, { ReactNode } from 'react'
+
+import styles from './mdx.module.css'
+
+// ...
+
+=> (
+  <div className={styles.container}>
+    <h1>{title}</h1>
+    <p>{snippet}</p>
+    <section>{children}</section>
+  </div>
+)
+
+```
+
+This should make our post easier to read! How about we make it a bit more… shareable, by tweaking its metadata?
+
+### Metadata
+
+For this I’m using yet another third party, [Next SEO](https://github.com/garmeeh/next-seo 'manage your SEO easily in Next.js projects'), as it does take care of a lot of the boilerplate needed to have things like Open Graph attributes that get you pretty cards when sharing on social media. Let’s add it to our project with:
+
+```bash
+yarn add next-seo
+```
+
+And amend `/blog/mdx-ftw.mdx` to use it:
+
+```tsx
+import { NextSeo } from 'next-seo'
+
+// ...
+
+export default ({ title, snippet }: FrontMatter) => ({
+  children,
+}: {
+  children: ReactNode
+}) => (
+  <>
+    <NextSeo title={title} description={snippet} />
+    <div className={styles.container}>
+      <h1>{title}</h1>
+      <p>{snippet}</p>
+      <section>{children}</section>
+    </div>
+  </>
+)
+```
+
+An image is worth a thousand words, so how would we go about configuring a bespoke image to show depending on the article? I propose nesting all of the blog images into `components/blog/images` and creating a `components/blog/FeaturedImage.tsx` component that looks like this:
+
+```tsx
+import React from 'react'
+import { NextSeo } from 'next-seo'
+
+import mdxFtw from './images/mdx-ftw.jpg'
+import { rootUrl } from '../../lib/constants'
+
+const titlesToImages = {
+  'MDX FTW': mdxFtw,
+}
+
+type Props = {
+  title: string
+}
+
+export const FeaturedImage = ({ title }: Props) => {
+  const imageSrc = titlesToImages[title]
+
+  return imageSrc ? (
+    <>
+      <NextSeo
+        openGraph={{
+          images: [
+            {
+              url: `${rootUrl}${imageSrc}`,
+              width: 2048,
+              height: 1152,
+              alt: `Featured image for ${title}`,
+            },
+          ],
+        }}
+        twitter={{
+          handle: '@aTwitterHandle',
+          cardType: 'summary_large_image',
+        }}
+      />
+      <img src={imageSrc} />
+    </>
+  ) : null
+}
+```
+
+`rootUrl` must equal to the root of wherever your blog gets deployed to; unfortunately these things will not work with relative urls.
+
+That `titlesToImages` map needs to be updated manually with every new post, a nice thing to optimise once you’ve got more than a handful! I’m conscious of the length of this article, so I will simply point to [a babel plugin for glob imports](a%20babel%20plugin%20for%20glob%20imports "it's called "babel-plugin-import-glob-array""); please do let me know and I’ll to go into further detail.
+
+Glob imports would also help us get all of our posts from the `pages/blog` directory, if we wanted a page that lists all of them; which **we do** but we’ll make do with the manual approach in the next section. Before that, let’s not forget to render our new component in `layouts/index.tsx`!
+
+```tsx
+import { FeaturedImage } from '../components/blog/FeaturedImage'
+
+// ...
+
+=> (
+  <>
+    <NextSeo title={title} description={snippet} />
+    <div className={styles.container}>
+      <h1>{title}</h1>
+      <p>{snippet}</p>
+      <FeaturedImage title={title} />
+      <section>{children}</section>
+    </div>
+  </>
+)
+```
+
+Should work a treat and that’s the last we’ll be messing with these files! But even though we’ve set up the posts, navigating to them can only happen by having a direct link to them… So let’s finish by scaffolding an index page can navigate to all of them!
+
+### Creating a blog index
+
+Let’s create a `blog/index.tsx` that looks like the code that is pending…
+
+## Conclusion
+
+This went well!
