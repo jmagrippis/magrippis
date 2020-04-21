@@ -53,11 +53,7 @@ export const Form = () => {
   }, [status])
 
   return (
-    <form
-      className="text-xl text-right"
-      style={{ maxWidth: '60ch' }}
-      onSubmit={onSubmit}
-    >
+    <form className="text-xl text-right max-w-readability" onSubmit={onSubmit}>
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-8 items-center mb-6">
         <label htmlFor="name" className="text-gray-700">
           Name

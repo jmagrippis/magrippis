@@ -8,7 +8,7 @@ export const Body = () => (
     <div className="container m-auto p-4 mb-4">
       <h1 className="text-4xl mb-6">Contact</h1>
 
-      <section className="text-xl mb-6" style={{ maxWidth: '60ch' }}>
+      <section className="text-xl mb-6 max-w-readability">
         <p className="mb-4">Looking for mentoring? Career-change advice?</p>
         <p className="mb-4">
           Maybe you’re up for a collab on the gram? On YouTube? Or would like to
