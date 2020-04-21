@@ -5,8 +5,7 @@ import { DefaultSeo } from 'next-seo'
 import heroImage from './Home/hero.jpg'
 import { Header } from './Header'
 import { Footer } from './Footer'
-
-const rootUrl = 'https://magrippis.com'
+import { rootUrl } from '../lib/constants'
 
 export const App = ({ Component, pageProps }: AppProps) => (
   <>
