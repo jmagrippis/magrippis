@@ -2,6 +2,22 @@
   @apply mb-2;
 }
 
+.container section a {
+  @apply text-purple-600;
+  @apply transition;
+  @apply duration-300;
+}
+
+.container section img {
+  @apply m-auto;
+  @apply shadow;
+  @apply rounded;
+  @apply mb-4;
+}
+
+.container section a:hover {
+  @apply text-purple-800;
+}
 .container h1 {
   @apply text-4xl;
 }
@@ -15,31 +31,22 @@
   @apply font-semibold;
 }
 
-.container a {
-  @apply text-purple-600;
-  @apply transition;
-  @apply duration-300;
+.container section pre {
+  @apply my-6;
 }
 
-.container a:hover {
-  @apply text-purple-800;
-}
-
-.container pre {
-  @apply my-8;
-}
-
-.container pre code {
+.container section pre code {
   font-family: 'Fira Code', monospace;
+  @apply text-sm;
 }
 
 @screen sm {
-  .container pre code {
-    @apply text-lg;
+  .container section pre code {
+    @apply text-base;
   }
 }
 
-.container p code {
+.container section p code {
   @apply px-2;
   @apply bg-teal-100;
   @apply text-purple-900;

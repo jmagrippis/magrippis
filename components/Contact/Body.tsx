@@ -5,10 +5,10 @@ import { Signup } from '../Home/Signup'
 
 export const Body = () => (
   <main className="w-full flex-grow pt-4">
-    <div className="container m-auto p-4 mb-4">
+    <div className="max-w-readability text-xl m-auto p-4 mb-4">
       <h1 className="text-4xl mb-6">Contact</h1>
 
-      <section className="text-xl mb-6 max-w-readability">
+      <section className="mb-6">
         <p className="mb-4">Looking for mentoring? Career-change advice?</p>
         <p className="mb-4">
           Maybe you’re up for a collab on the gram? On YouTube? Or would like to

@@ -3,6 +3,7 @@ import { NextSeo } from 'next-seo'
 
 import { frontMatter as mdxInNext } from '../../pages/blog/2020/how-to-setup-MDX-in-Nextjs.mdx'
 import { PostSnippet } from './PostSnippet'
+import { Notice } from '../Notice/Notice'
 
 const TITLE = 'Blog | jmagrippis'
 const DESCRIPTION =
@@ -20,15 +21,14 @@ export const Blog = () => (
           <PostSnippet key={page.__resourcePath} {...page} />
         ))}
       </ul>
-      <a
+      <Notice
         href="https://medium.com/@jmagrippis"
-        className="block text-center bg-gray-100 p-4 rounded shadow-sm"
         target="_blank"
         rel="noopener noreferrer"
       >
         Find more posts over at{' '}
         <span className="underline text-purple-600">Medium</span>
-      </a>
+      </Notice>
     </div>
   </>
 )
