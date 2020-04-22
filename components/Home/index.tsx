@@ -1,24 +1,7 @@
 import React from 'react'
-import { NextSeo } from 'next-seo'
 
 import { Body } from './Body'
 
-const TITLE = 'jmagrippis | coding challenges and success without stress'
-const DESCRIPTION =
-  'Johnny Magrippis is a Fullstack Engineer / Mentor / Photographer / (...)  challenging the need to have a niche.'
-
-const Home = () => (
-  <>
-    <NextSeo
-      title={TITLE}
-      description={TITLE}
-      openGraph={{
-        title: TITLE,
-        description: DESCRIPTION,
-      }}
-    />
-    <Body />
-  </>
-)
+const Home = () => <Body />
 
 export default Home
