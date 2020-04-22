@@ -2,6 +2,14 @@ import React from 'react'
 
 export const milestonesContent = [
   {
+    title: 'How to setup MDX in Next.js',
+    timestamp: 1587546353000,
+    href: '/blog/2020/how-to-setup-MDX-in-Nextjs',
+    github: 'https://github.com/jmagrippis/magrippis',
+    description:
+      'New blog post! Burying the lead, as a big milestone is that I brought in blogging functionality to this very site, and everything new I write will be hosted in-house 🎉 Starting with this article, detailing how I did it, so you can do it too 😉',
+  },
+  {
     title: 'First ever "branded" stream!',
     timestamp: 1587308400000,
     href: 'https://www.twitch.tv/jmagrippis',
@@ -40,7 +48,7 @@ export const milestonesContent = [
   {
     title: 'magrippis.com - contact form',
     timestamp: 1586559838000,
-    href: '/',
+    href: '/contact',
     github: 'https://github.com/jmagrippis/magrippis',
     description: (
       <>

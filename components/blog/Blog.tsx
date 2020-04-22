@@ -14,7 +14,7 @@ const pages = [mdxInNext]
 export const Blog = () => (
   <>
     <NextSeo title={TITLE} description={DESCRIPTION} />
-    <div className="text-lg max-w-readability-lg flex-grow">
+    <div className="text-lg max-w-readability-lg flex-grow py-4">
       <h1 className="text-4xl p-4">Blog</h1>
       <ul className="mb-8">
         {pages.map((page) => (

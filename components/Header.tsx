@@ -2,6 +2,7 @@ import React from 'react'
 import Link from 'next/link'
 
 import StarIcon from './star.svg'
+import BookIcon from './book.svg'
 import MailIcon from './mail.svg'
 import GithubIcon from './github-mark.svg'
 import InstagramIcon from './instagram.svg'
@@ -24,6 +25,18 @@ export const Header = () => (
               </span>
               <span className="sm:hidden transition duration-300 hover:text-purple-700">
                 <StarIcon title="Milestones feed" width="1.5rem" />
+              </span>
+            </a>
+          </Link>
+        </li>
+        <li className="ml-3">
+          <Link href="/blog">
+            <a>
+              <span className="hidden sm:inline transition duration-300 text-purple-600 hover:text-purple-800">
+                blog
+              </span>
+              <span className="sm:hidden transition duration-300 hover:text-purple-700">
+                <BookIcon title="Blogposts by Johnny" width="1.5rem" />
               </span>
             </a>
           </Link>

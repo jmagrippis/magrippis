@@ -90,7 +90,7 @@ export const Form = () => {
         </label>
         <select
           required
-          className="form-select h-full w-full px-1 py-2 rounded shadow focus:outline-none focus:shadow-outline sm:col-span-2 mb-4 sm:mb-0"
+          className="form-select bg-white h-full w-full px-1 py-2 rounded shadow focus:outline-none focus:shadow-outline sm:col-span-2 mb-4 sm:mb-0"
           value={subject}
           onChange={({ currentTarget: { value } }) => {
             if (isSubject(value)) {

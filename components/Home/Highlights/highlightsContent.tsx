@@ -46,22 +46,30 @@ export const highlightsContent: HighlightType[] = [
   {
     title: 'Blogging',
     imgSrc: bloggingImage,
-    link: 'https://medium.com/@jmagrippis',
+    link: '/blog',
     description: [
       <>
         I love writing in general, and sometimes I structure my thoughts into
         something coherent, and they make their way into{' '}
+        <Link href="/blog">
+          <a className="underline text-purple-600">the blog</a>
+        </Link>
+        !
+      </>,
+      <>
+        There is stuff I’ve written all over the internets, some{' '}
         <a
           href="https://medium.com/@jmagrippis"
           className="underline text-purple-600"
+          target="_blank"
+          rel="noopener noreferrer"
         >
-          a blog
+          controversially hosted on Medium
         </a>
-        !
+        , but people reached out to me through this very site to have my content
+        in one place and not behind a paywall so... this is the start!
       </>,
-      'It is controversially hosted on Medium for now. I have created my own blogging solutions from scratch a few times, mostly for the fun of it, but I do want people to read what I write.',
-      'Medium does give me that extra reach, but only when I put my stuff behind their metered paywall.',
-      'Please ask me for a free friend link for any articles you’d like, and I’ll happily sort you out. If enough people ask, I’ll abandon Medium altogether 🚀',
+      'Everything new will be released there, so check it out 🚀',
     ],
   },
   {

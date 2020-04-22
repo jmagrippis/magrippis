@@ -4,6 +4,7 @@ import cn from 'classnames'
 
 import GithubIcon from '../github-mark.svg'
 import OpenInNewIcon from './open-in-new.svg'
+import { LinkOrPlainAnchor } from '../LinkOrPlainAnchor'
 
 export type MilestoneType = {
   title: string
@@ -51,12 +52,12 @@ export const Milestone = ({
           </a>
         )}
         {href && (
-          <a href={href} target="_blank" rel="noopener noreferrer">
+          <LinkOrPlainAnchor href={href}>
             <OpenInNewIcon
               title="see milestone in a new tab"
               className="transition duration-300 hover:text-teal-700 w-16"
             />
-          </a>
+          </LinkOrPlainAnchor>
         )}
       </aside>
     ) : null}
