@@ -19,7 +19,7 @@ const statusToCopy = {
 }
 
 export const StatusToast = ({ status }: Props) =>
-  !!statusToCopy[status] ? (
+  statusToCopy[status] ? (
     <div
       className={cn(
         'text-base flex-grow self-stretch flex items-center justify-center shadow-sm rounded px-4 py-2 mr-4 border',

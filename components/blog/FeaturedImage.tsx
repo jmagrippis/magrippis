@@ -51,6 +51,7 @@ export const FeaturedImage = ({
       <img
         src={imageSrc}
         className={cn('sm:rounded shadow-lg max-w-full', className)}
+        alt={`hero of "${title}"`}
       />
     </>
   ) : null

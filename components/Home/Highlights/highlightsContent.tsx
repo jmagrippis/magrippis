@@ -1,18 +1,19 @@
 import React from 'react'
-import { HighlightType } from './Highlight'
+import Link from 'next/link'
 
+import { HighlightType } from './Highlight'
 import mentoringImage from './mentoring.jpg'
 import workshopsImage from './workshops.jpg'
 import photographyImage from './photography.jpg'
 import bloggingImage from './blogging.jpg'
 import streamingImage from './streaming.jpg'
 import milestonesImage from './milestones.jpg'
-import Link from 'next/link'
 
 export const highlightsContent: HighlightType[] = [
   {
     title: 'Mentoring',
     imgSrc: mentoringImage,
+    imgTitle: 'Lovely sculpture of two birds I snapped in Barbados',
     description: [
       'My most fulfilling work.',
       'A lot of my time is spent teaching others, but mentoring holds a special place in my heart. Its one-to-one nature, the paradoxically unique struggles every one of us has, observing progress over a long period of time... It’s fascinating.',
@@ -23,6 +24,7 @@ export const highlightsContent: HighlightType[] = [
   {
     title: 'Workshops',
     imgSrc: workshopsImage,
+    imgTitle: 'Mingling with colleagues and attendees',
     description: [
       'I am a firm believer in the power of workshops. Even those your employer forces you to attend! It’s all in the power of the facilitators to design something engaging that leaves you with key learnings you can apply immediately.',
       'I run workshops focused in career-changing into frontend engineering, and leveling up as a software engineer. From zero to deploying your javascript game to the internet, from an associate engineer to approaching software startup problems like a senior.',
@@ -32,6 +34,8 @@ export const highlightsContent: HighlightType[] = [
   {
     title: 'Photography',
     imgSrc: photographyImage,
+    imgTitle:
+      'Did not travel far for this one: It’s the view from my Balcony in London!',
     link: 'https://www.instagram.com/jmagrippis/',
     description: [
       'Higher up than “blogging”, because a picture is worth a thousand words, and I have a lot to say 📷',
@@ -46,6 +50,7 @@ export const highlightsContent: HighlightType[] = [
   {
     title: 'Blogging',
     imgSrc: bloggingImage,
+    imgTitle: 'Overlooking a national park in Patagonia',
     link: '/blog',
     description: [
       <>
@@ -75,6 +80,7 @@ export const highlightsContent: HighlightType[] = [
   {
     title: 'Streaming',
     imgSrc: streamingImage,
+    imgTitle: 'Talking "Implementation Details"',
     link: 'https://www.twitch.tv/jmagrippis',
     description: [
       'After a decade of trying out new tech by building prototypes in isolation and solely for my own amusement, I’ve decided to get with the times and stream myself hacking them together!',
@@ -85,6 +91,7 @@ export const highlightsContent: HighlightType[] = [
   {
     title: 'Milestones Feed',
     imgSrc: milestonesImage,
+    imgTitle: 'A tree growing in Patagonia',
     link: '/milestones',
     description: [
       <>

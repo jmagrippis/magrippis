@@ -23,7 +23,7 @@ declare global {
 export default class extends Document {
   render() {
     return (
-      <html>
+      <html lang="en">
         <Head>
           <link rel="icon" href="/favicon.ico" />
           <link

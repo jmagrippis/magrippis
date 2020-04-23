@@ -25,14 +25,15 @@ export const Form = () => {
         subject,
         content,
       }).then((success) => {
-        if (success) {
-          setStatus(Status.Success)
-          setName('')
-          setEmail('')
-          setContent('')
+        if (!success) {
+          setStatus(Status.Error)
           return
         }
-        setStatus(Status.Error)
+
+        setStatus(Status.Success)
+        setName('')
+        setEmail('')
+        setContent('')
       })
     },
     [status, name, email, subject, content]
@@ -41,8 +42,8 @@ export const Form = () => {
   useEffect(() => {
     if (status === Status.Success) {
       const timeout = setTimeout(() => {
-        setStatus((status) =>
-          status === Status.Success ? Status.Idle : status
+        setStatus((currentStatus) =>
+          currentStatus === Status.Success ? Status.Idle : currentStatus
         )
       }, 5000)
 

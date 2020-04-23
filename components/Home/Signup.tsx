@@ -18,6 +18,7 @@ export const Signup = ({ prompt }: Props) => (
       scrolling="no"
       className="sm:flex-grow"
       onMouseEnter={onIframeEnter}
-    ></iframe>
+      title="sign-up with substack"
+    />
   </section>
 )

@@ -46,6 +46,8 @@ export const Hero = () => {
         <img
           src={heroImage}
           className="h-64 w-64 rounded-full shadow-lg mb-8 sm:mr-16 sm:mb-0"
+          title="Johnny’s avatar"
+          alt="Johnny’s avatar"
         />
         <div className="text-right" style={{ flexBasis: '60ch' }}>
           <p className="text-3xl mb-1">Hi, I’m Johnny and I’m</p>
