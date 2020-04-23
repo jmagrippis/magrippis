@@ -31,8 +31,6 @@ export const Form = () => {
         }
 
         setStatus(Status.Success)
-        setName('')
-        setEmail('')
         setContent('')
       })
     },
@@ -86,11 +84,12 @@ export const Form = () => {
           }}
         />
 
-        <label htmlFor="email" className="text-gray-700">
+        <label htmlFor="subject" className="text-gray-700">
           Subject
         </label>
         <select
           required
+          id="subject"
           className="form-select bg-white h-full w-full px-1 py-2 rounded shadow focus:outline-none focus:shadow-outline sm:col-span-2 mb-4 sm:mb-0"
           value={subject}
           onChange={({ currentTarget: { value } }) => {
