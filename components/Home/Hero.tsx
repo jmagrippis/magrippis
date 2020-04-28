@@ -36,7 +36,7 @@ export const Hero = () => {
     },
     leave: {
       opacity: 0,
-      transform: 'translate3d(0,2rem,0)',
+      transform: 'translate3d(0,-2rem,0)',
     },
   })
 
@@ -52,18 +52,17 @@ export const Hero = () => {
         <div className="text-right" style={{ flexBasis: '60ch' }}>
           <p className="text-3xl mb-1">Hi, I’m Johnny and I’m</p>
 
-          {transitions.map(
-            ({ item, key, props }) =>
-              item === roles[0] && (
-                <animated.p
-                  className="text-4xl text-purple-600 h-24 sm:h-auto text-shadow-md"
-                  key={key}
-                  style={props}
-                >
-                  {item}
-                </animated.p>
-              )
-          )}
+          <p className="relative text-4xl text-purple-600 h-24 sm:h-auto">
+            {transitions.map(({ item, key, props }) => (
+              <animated.span
+                className="absolute right-0 text-shadow-md"
+                key={key}
+                style={props}
+              >
+                {item}
+              </animated.span>
+            ))}
+          </p>
         </div>
       </div>
     </section>
