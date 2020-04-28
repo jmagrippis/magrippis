@@ -1,5 +1,4 @@
 import React from 'react'
-import cn from 'classnames'
 
 import { Highlight } from './Highlight'
 import { highlightsContent } from './highlightsContent'
@@ -15,9 +14,7 @@ export const Highlights = () => (
           imgTitle={imgTitle}
           description={description}
           link={link}
-          className={cn({
-            'bg-teal-100': i % 2,
-          })}
+          alternate={!!(i % 2)}
         />
       )
     )}

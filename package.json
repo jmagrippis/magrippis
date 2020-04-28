@@ -61,7 +61,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint && pretty-quick --staged"
+      "pre-commit": "yarn lint && pretty-quick --staged"
     }
   },
   "license": "MIT"

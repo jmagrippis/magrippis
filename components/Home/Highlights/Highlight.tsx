@@ -9,6 +9,7 @@ export type HighlightType = {
   imgTitle: string
   description: ReactNode[]
   link?: string
+  alternate?: boolean
 }
 
 type Props = HighlightType & {
@@ -22,10 +23,15 @@ export const Highlight = ({
   description,
   className,
   link,
+  alternate,
 }: Props) => (
-  <section className={className}>
+  <section
+    className={cn(className, {
+      'bg-teal-100': alternate,
+    })}
+  >
     <div className="container m-auto p-8 grid grid-cols-1 sm:grid-cols-3 gap-8 items-center">
-      <div className="col-span-2 sm:col-span-2">
+      <div className="col-span-2">
         {link ? (
           <LinkOrPlainAnchor href={link}>
             <img
@@ -45,8 +51,12 @@ export const Highlight = ({
         )}
       </div>
 
-      <div className="col-span-1">
-        <div className="text-3xl  mb-4">
+      <div
+        className={cn({
+          'sm:row-start-1': alternate,
+        })}
+      >
+        <div className="text-3xl mb-4">
           {link ? (
             <LinkOrPlainAnchor href={link} className="underline">
               {title}
