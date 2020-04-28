@@ -9,16 +9,18 @@ type Props = {
 }
 
 export const Signup = ({ prompt }: Props) => (
-  <section className="container flex flex-col sm:flex-row items-center m-auto p-8">
-    <div className="text-xl mb-4 max-w-readability">{prompt}</div>
-    <iframe
-      src="https://jmagrippis.substack.com/embed"
-      height="320"
-      frameBorder="0"
-      scrolling="no"
-      className="sm:flex-grow"
-      onMouseEnter={onIframeEnter}
-      title="sign-up with substack"
-    />
+  <section className="bg-gray-100">
+    <div className="container flex flex-col sm:flex-row items-center m-auto p-8 bg-gray-100">
+      <div className="text-xl mb-4 max-w-readability">{prompt}</div>
+      <iframe
+        src="https://jmagrippis.substack.com/embed"
+        height="320"
+        frameBorder="0"
+        scrolling="no"
+        className="sm:flex-grow"
+        onMouseEnter={onIframeEnter}
+        title="sign-up with substack"
+      />
+    </div>
   </section>
 )

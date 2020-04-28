@@ -24,7 +24,8 @@ export const StatusToast = ({ status }: Props) =>
       className={cn(
         'text-base flex-grow self-stretch flex items-center justify-center shadow-sm rounded px-4 py-2 mr-4 border',
         {
-          'text-teal-700 bg-teal-100 border-teal': status === Status.Processing,
+          'text-purple-700 bg-purple-100 border-purple':
+            status === Status.Processing,
         },
         {
           'text-green-100 bg-green-400 border-green': status === Status.Success,

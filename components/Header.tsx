@@ -9,21 +9,21 @@ import InstagramIcon from './instagram.svg'
 import TwitterIcon from './twitter.svg'
 
 export const Header = () => (
-  <header className="w-full bg-purple-200">
+  <header className="w-full bg-gray-800 text-purple-100">
     <div className="m-auto container flex flex-row items-center p-4">
       <div className="flex-grow">
         <Link href="/">
-          <a>jmagrippis</a>
+          <a className="transition duration-300 hover:text-purple-300">
+            jmagrippis
+          </a>
         </Link>
       </div>
-      <ul className="flex flex-row text-purple-500">
+      <ul className="flex flex-row">
         <li>
           <Link href="/milestones">
-            <a>
-              <span className="hidden sm:inline transition duration-300 text-purple-600 hover:text-purple-800">
-                milestones
-              </span>
-              <span className="sm:hidden transition duration-300 hover:text-purple-700">
+            <a className="transition duration-300 hover:text-purple-300">
+              <span className="hidden sm:inline ">milestones</span>
+              <span className="sm:hidden">
                 <StarIcon title="Milestones feed" width="1.5rem" />
               </span>
             </a>
@@ -31,11 +31,9 @@ export const Header = () => (
         </li>
         <li className="ml-3">
           <Link href="/blog">
-            <a>
-              <span className="hidden sm:inline transition duration-300 text-purple-600 hover:text-purple-800">
-                blog
-              </span>
-              <span className="sm:hidden transition duration-300 hover:text-purple-700">
+            <a className="transition duration-300 hover:text-purple-300">
+              <span className="hidden sm:inline">blog</span>
+              <span className="sm:hidden">
                 <BookIcon title="Blogposts by Johnny" width="1.5rem" />
               </span>
             </a>
@@ -43,14 +41,14 @@ export const Header = () => (
         </li>
         <li className="ml-4">
           <Link href="/contact">
-            <a className="transition duration-300 hover:text-purple-700">
+            <a className="transition duration-300 hover:text-purple-300">
               <MailIcon title="Contact Johnny" width="1.5rem" />
             </a>
           </Link>
         </li>
         <li className="ml-4">
           <a
-            className="transition duration-300 hover:text-purple-700"
+            className="transition duration-300 hover:text-purple-300"
             href="https://github.com/jmagrippis"
             target="_blank"
             rel="noopener noreferrer"
@@ -60,7 +58,7 @@ export const Header = () => (
         </li>
         <li className="ml-4">
           <a
-            className="transition duration-300 hover:text-purple-700"
+            className="transition duration-300 hover:text-purple-300"
             href="https://www.instagram.com/jmagrippis/"
             target="_blank"
             rel="noopener noreferrer"
@@ -70,7 +68,7 @@ export const Header = () => (
         </li>
         <li className="ml-4">
           <a
-            className="transition duration-300 hover:text-purple-700"
+            className="transition duration-300 hover:text-purple-300"
             href="https://twitter.com/jmagrippis"
             target="_blank"
             rel="noopener noreferrer"

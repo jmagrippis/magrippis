@@ -3,12 +3,11 @@
 html,
 body {
   height: 100%;
+  @apply text-gray-900;
 }
 
 html {
   scroll-behavior: smooth;
-  /* bg-purple-100 */
-  background-color: #faf5ff;
 }
 
 body > div {

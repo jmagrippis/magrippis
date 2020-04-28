@@ -19,7 +19,7 @@ export const PostSnippet = ({
   __resourcePath,
 }: Props) => (
   <li
-    className="cursor-pointer sm:p-4 border-l border-teal-200 hover:border-teal-300 transition duration-300"
+    className="cursor-pointer sm:p-4 border-l border-purple-200 hover:border-purple-300 transition duration-300"
     key={__resourcePath}
   >
     <Link href={formatPath(__resourcePath)}>
@@ -33,7 +33,7 @@ export const PostSnippet = ({
               {tags.map((tag) => (
                 <span
                   key={tag}
-                  className="bg-teal-100 text-teal-900 p-2 mr-2 rounded shadow-sm"
+                  className="text-purple-900 p-2 mr-2 rounded shadow-sm"
                 >
                   {tag}
                 </span>

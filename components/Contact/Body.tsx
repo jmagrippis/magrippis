@@ -23,15 +23,13 @@ export const Body = () => (
       <Form />
     </div>
 
-    <div className="bg-teal-100">
-      <Signup
-        prompt={
-          <>
-            If you’d rather <strong>I</strong> get in touch, proactively, you
-            should subscribe to my newsletter!
-          </>
-        }
-      />
-    </div>
+    <Signup
+      prompt={
+        <>
+          If you’d rather <strong>I</strong> get in touch, proactively, you
+          should subscribe to my newsletter!
+        </>
+      }
+    />
   </main>
 )

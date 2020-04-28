@@ -8,7 +8,7 @@ export const Body = () => (
   <main className="w-full flex-grow py-4">
     <div className="container m-auto p-4">
       <h1 className="text-4xl mb-6">Milestones</h1>
-      <ul className="border border-teal-400 rounded shadow-md">
+      <ul className="border border-purple-400 rounded shadow-md">
         {milestonesContent.map(
           ({ title, description, timestamp, href, github }, i) => (
             <Milestone
