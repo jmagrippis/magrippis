@@ -2,6 +2,13 @@ import React from 'react'
 
 export const milestonesContent = [
   {
+    title: 'First ever coding stream!',
+    timestamp: 1587916984000,
+    href: 'https://www.twitch.tv/jmagrippis',
+    description:
+      'It finally happened: I live-streamed some code. It was extremely enjoyable and I can’t wait to do more and tweak things further!',
+  },
+  {
     title: 'How to setup MDX in Next.js',
     timestamp: 1587546353000,
     href: '/blog/2020/how-to-setup-MDX-in-Nextjs',
