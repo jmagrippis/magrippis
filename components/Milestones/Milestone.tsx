@@ -26,7 +26,7 @@ export const Milestone = ({
 }: Props) => (
   <li
     className={cn(
-      'p-4 border-bottom border-purple-200 flex flex-col sm:flex-row items-center justify-between',
+      'p-4 flex flex-col sm:flex-row items-center justify-between',
       className
     )}
   >

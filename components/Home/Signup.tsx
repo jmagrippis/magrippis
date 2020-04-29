@@ -9,7 +9,7 @@ type Props = {
 }
 
 export const Signup = ({ prompt }: Props) => (
-  <section className="bg-gray-100 text-black">
+  <section className="bg-gray-100 text-black w-full">
     <div className="container flex flex-col sm:flex-row items-center m-auto p-8">
       <div className="text-xl mb-4 max-w-readability">{prompt}</div>
       <iframe

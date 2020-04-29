@@ -18,10 +18,10 @@ export default ({ title, snippet }: FrontMatter) => ({
 }: {
   children: ReactNode
 }) => (
-  <>
-    <div
+  <div className="bg-prism">
+    <main
       className={cn(
-        'w-full py-4 sm:text-lg max-w-readability-lg',
+        'm-auto py-4 sm:text-lg max-w-readability-lg',
         styles.container
       )}
     >
@@ -34,11 +34,14 @@ export default ({ title, snippet }: FrontMatter) => ({
         className="mb-6"
       />
       <section className="px-4 mb-4">{children}</section>
-      <Link href="/blog">
-        <Notice>
-          Check out <span className="underline text-purple-600">all posts</span>
-        </Notice>
-      </Link>
-    </div>
-  </>
+      <div className="px-4">
+        <Link href="/blog">
+          <Notice>
+            Check out{' '}
+            <span className="underline text-purple-600">all posts</span>
+          </Notice>
+        </Link>
+      </div>
+    </main>
+  </div>
 )

@@ -30,7 +30,7 @@ export const FeaturedImage = ({
       {!!withSeo && (
         <NextSeo
           {...getSeoProps({
-            title,
+            title: `${title} | jmagrippis`,
             description,
             openGraph: {
               images: [

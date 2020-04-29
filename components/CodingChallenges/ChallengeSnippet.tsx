@@ -2,15 +2,15 @@ import React from 'react'
 import Link from 'next/link'
 import moment from 'moment'
 
-import { FeaturedImage } from './FeaturedImage'
 import { FrontMatter } from '../../layouts'
+import { FeaturedPreview } from './FeaturedPreview'
 import { formatMdxPath } from '../../lib/formatMdxPath'
 
 type Props = FrontMatter & {
   __resourcePath: string
 }
 
-export const PostSnippet = ({
+export const ChallengeSnippet = ({
   title,
   snippet,
   tags,
@@ -23,7 +23,9 @@ export const PostSnippet = ({
   >
     <Link href={formatMdxPath(__resourcePath)}>
       <a className="sm:grid sm:grid-cols-3 sm:gap-8">
-        <FeaturedImage title={title} />
+        <div className="bg-gray-100 rounded shadow flex items-center p-1">
+          <FeaturedPreview title={title} />
+        </div>
         <div className="p-4 sm:p-0 sm:col-span-2">
           <h2 className="text-2xl underline mb-2">{title}</h2>
           <p className="mb-4">{snippet}</p>
@@ -32,7 +34,7 @@ export const PostSnippet = ({
               {tags.map((tag) => (
                 <span
                   key={tag}
-                  className="bg-purple-100 text-purple-900 p-2 mr-2 rounded shadow-sm"
+                  className="text-purple-900 p-2 mr-2 rounded shadow-sm"
                 >
                   {tag}
                 </span>

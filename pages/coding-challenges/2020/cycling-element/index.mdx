@@ -1,0 +1,110 @@
+---
+layout: challenge
+title: Cycling Element
+snippet: 'Select an element from an array with the catch being: it must keep changing to the next one!'
+timestamp: 1588183235000
+tags:
+  - UI
+  - async
+  - transitions
+---
+
+import { FeaturedPreview } from '../../../../components/CodingChallenges/2020/CyclingElement/FeaturedPreview'
+import { Video } from '../../../../components/Video/Video'
+
+<div className="pb-4">
+  <FeaturedPreview />
+</div>
+
+A trending design pattern you might have noticed even on my homepage, is to have some of the copy in a "Hero" section keep changing. Next.js for example opens with this:
+
+<Video src="/videos/nextjs-cycling-element.mp4" />
+
+How would we recreate this? Are we limited to text, or can we cycle through anything? Numbers, components, even functions?
+
+We will explore with this challenge!
+
+## Spec
+
+Let’s make a game!
+
+You are meant to progress through the list items step by step. Completing all of **MVP** leaves you with something usable you can deploy and show.
+
+Making it through all stretch goals leaves you with something fun to message your friends to try out!
+
+The `FeaturedPreview` above, the button you may tap to affect your score, is a work-in-progress based on me going through the spec live, on the [Twitch stream](https://www.twitch.tv/jmagrippis "feel free to join, it's free!").
+
+### MVP
+
+#### 1. Create a prominent header which cycles between the following text:
+
+- “The best game for developers”
+- “The best game for nerds”
+- “The best game for training your twitch reflex”
+- “The best game for hand-eye coordination”
+- “The best game for **you**”
+
+#### 2. Create a button with copy alternating between “hit to win” / “hit to lose”
+
+#### 3. Clicking the button while it includes “win” adds 1 to your score
+
+#### 4. Display said score prominently above the button, below the header
+
+#### 5. Clicking the button while it includes “lose” subtracts 5 from your score
+
+### Stretch Goals
+
+#### 1. Have the changed part of the copy in the header “animate in”
+
+#### 2. Game alternates between three “buttons” that have no copy: They just look different. For example: “green circle”, “grey circle”, “red circle”, but feel free to be creative, maybe use sprites!
+
+#### 3. Endless mode:
+
+- hitting the “green circle” adds one point
+- hitting a “grey circle” removes two points
+- hitting a “red circle” results in “Game Over”
+- The “Game Over” screen shows the high-score even more prominently
+- “Game Over” screen has a button to restart the game
+- **Not** clicking “green circle” before it changes removes one point
+
+#### 4. High-score mode:
+
+- “Game Over” screen as above, after we’ve gone through 30 buttons
+- Users can choose between “short” / “medium” / “long” sessions
+
+#### 5. “Random” modes:
+
+- instead of predictably alternating between the buttons, vary the order in which they appear
+- Keep the ratios the same: if a “long” High-Score session is going to show 300 buttons it has to be 100 “green”, 100 “grey”, 100 “red” buttons
+
+## Starting points
+
+### Code Sandbox
+
+If you wish to give this a try in React, all you have to do is use this [Code Sandbox](https://codesandbox.io/s/cycling-element-uyhd0?file=/src/components/App.js 'uses the default create-react-app template')!
+
+### “Official” git repository
+
+To work with your own tools but with React, testing, and styling via [Tailwind.css](https://tailwindcss.com/ 'utility-first CSS framework') already setup for you, you may checkout [this repository](https://github.com/jmagrippis/magrippis 'It is this very site!'):
+
+- `pages/coding-challenges/cycling-element/playground/index.tsx` is a mostly empty React file. Feel free to work in there, and/or create extra components in the `components` directory, and write extra tests. Any file ending in `.test.tsx` will be picked up when you run `yarn test --watch`
+- `yarn dev` will start the hot-reloading development server, and you’ll be able to see the results of your work at [http://localhost:3500/coding-challenges/cycling-element/playground](http://localhost:3500/coding-challenges/cycling-element/playground)
+
+This is a more realistic workflow, as most of the time in software engineering, you are adding features to pre-existing codebases.
+
+### MacGuyver mode
+
+You may create your own solution in anything you’d like, and use the [contact form](/contact 'best way to reach me') to submit a link to wherever you’ve made your source code available! It’d be great if it were also deployed somewhere like [Netlify](https://www.netlify.com/ 'The fastest way to
+build the fastest sites') so everyone can have a play!
+
+### Lone Ranger
+
+And, of course, feel free to give this a try even if you have no intention to submit anything to me for feedback. The point of this is for you to learn, and I’d love to help more; but I can step out of the way as needed.
+
+## Demo solution
+
+There is a solution-in-progress over at [/coding-challenges/cycling-element/demo](/coding-challenges/cycling-element/demo). As mentioned before, you may catch [the Twitch stream](https://www.twitch.tv/jmagrippis) to see me go through the spec live!
+
+It’s not meant to be “the one true solution”, but it is using React with hooks 😄
+
+I am trying to have fun with mine, make sure to have fun with yours!

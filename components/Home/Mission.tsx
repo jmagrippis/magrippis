@@ -1,7 +1,7 @@
 import React from 'react'
 
 export const Mission = () => (
-  <section className="bg-gray-100 text-black">
+  <section className="bg-prism text-black">
     <div className="container m-auto p-8">
       <div className="text-3xl text-center mb-4">
         I’m challenging the need to “have a niche”

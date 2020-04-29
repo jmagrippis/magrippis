@@ -15,21 +15,25 @@ const pages = [mdxInNext]
 export const Blog = () => (
   <>
     <NextSeo {...getSeoProps({ title, description })} />
-    <div className="text-lg max-w-readability-lg flex-grow py-4">
-      <h1 className="text-4xl p-4">Blog</h1>
-      <ul className="mb-8">
-        {pages.map((page) => (
-          <PostSnippet key={page.__resourcePath} {...page} />
-        ))}
-      </ul>
-      <Notice
-        href="https://medium.com/@jmagrippis"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Find more posts over at{' '}
-        <span className="underline text-purple-600">Medium</span>
-      </Notice>
+    <div className="bg-prism flex-grow flex justify-center">
+      <main className="text-lg max-w-readability-lg py-4">
+        <h1 className="text-4xl p-4">Blog</h1>
+        <ul className="mb-8 bg-white shadow">
+          {pages.map((page) => (
+            <PostSnippet key={page.__resourcePath} {...page} />
+          ))}
+        </ul>
+        <div className="px-4">
+          <Notice
+            href="https://medium.com/@jmagrippis"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Find more posts over at{' '}
+            <span className="underline text-purple-600">Medium</span>
+          </Notice>
+        </div>
+      </main>
     </div>
   </>
 )

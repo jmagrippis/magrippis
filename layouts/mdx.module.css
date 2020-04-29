@@ -8,6 +8,20 @@
   @apply duration-300;
 }
 
+.container section ul > li {
+  @apply list-inside;
+  @apply list-disc;
+}
+
+.container section ol > li {
+  @apply list-inside;
+  @apply list-decimal;
+}
+
+.container section ul {
+  @apply pl-4;
+}
+
 .container section img {
   @apply m-auto;
   @apply shadow;
@@ -31,6 +45,17 @@
   @apply font-semibold;
 }
 
+.container h4 {
+  @apply text-xl;
+}
+
+.container video {
+  @apply mx-auto;
+  @apply my-6;
+  @apply shadow-md;
+  @apply rounded;
+}
+
 .container section pre {
   @apply my-6;
 }
@@ -46,9 +71,10 @@
   }
 }
 
-.container section p code {
+.container section p code,
+.container section li code {
   @apply px-2;
-  @apply bg-teal-100;
+  @apply bg-purple-100;
   @apply text-purple-900;
   font-family: 'Fira Code', monospace;
 }
