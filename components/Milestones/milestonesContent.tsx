@@ -2,6 +2,27 @@ import React from 'react'
 
 export const milestonesContent = [
   {
+    title: 'Coding Challenges - Cycling Element',
+    timestamp: 1588232768000,
+    href: '/coding-challenges/2020/cycling-element',
+    github: 'https://github.com/jmagrippis/magrippis',
+    description: (
+      <>
+        My first ever “public” challenge, and accompanying post for those
+        subscribed{' '}
+        <a
+          href="https://jmagrippis.substack.com/"
+          className="underline text-purple-400"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          to my newsletter
+        </a>
+        , is now out! Definitely a proud moment, check it out 😄
+      </>
+    ),
+  },
+  {
     title: 'First ever coding stream!',
     timestamp: 1587916984000,
     href: 'https://www.twitch.tv/jmagrippis',
