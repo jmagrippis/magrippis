@@ -2,6 +2,19 @@ import React from 'react'
 
 export const milestonesContent = [
   {
+    title: 'Lunch & Learn: Productivity Protips',
+    timestamp: 1593522000000,
+    description:
+      'I presented my top two methods for planning & executing for maximum productivity without pulling out your hair, as well as a lightning round of smaller protips. I may adapt this to a public talk, maybe through a Twitch stream, or an Instagram live, depending on the interest!',
+  },
+  {
+    title: 'New start @ DREST!',
+    timestamp: 1591003800000,
+    href: 'https://www.drest.com',
+    description:
+      'I am starting a new permanent role, as a tech lead at DREST! They make a stylish fashion game for iOS and Android, so a chance to combine app development with my photography instincts 📷',
+  },
+  {
     title: 'Coding Challenges - Cycling Element',
     timestamp: 1588232768000,
     href: '/coding-challenges/2020/cycling-element',
