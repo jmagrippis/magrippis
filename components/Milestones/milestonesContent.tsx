@@ -2,6 +2,13 @@ import React from 'react'
 
 export const milestonesContent = [
   {
+    title: 'Epic React contributor',
+    timestamp: 1601919898000,
+    href: 'https://epicreact.dev/',
+    description:
+      'Opinionated Javascript educator and testing enthusiast Kent C. Dodds just launched Epic React! It’s a series of interactive workshops for leveling up your React and frontend architecture skills... and I’m a contributor! Small fixes, but it’s great to contribute at something so many fellow engineers are perusing!',
+  },
+  {
     title: 'Lunch & Learn: Productivity Protips',
     timestamp: 1593522000000,
     description:
