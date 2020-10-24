@@ -6,7 +6,7 @@ import { getSeoProps } from '../getSeoProps'
 
 const title = 'Contact | jmagrippis'
 const description =
-  'Contact Johnny for career advice and mentoring, as well as podcasting, streaming or photography collaborations!'
+  'Contact Johnny for career advice and mentoring, as well as podcasting, streaming or photography collaborations! Or get in touch to hire as a Principal Engineer or skilled Engineering Consultant with an expertise in Typescript, GraphQL and React.'
 
 const Contact = () => (
   <>

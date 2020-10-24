@@ -7,7 +7,9 @@ import { Form } from './Form'
 import { subjects } from './subjects'
 
 describe('Form', () => {
-  afterEach(fetchMock.reset)
+  afterEach(() => {
+    fetchMock.reset()
+  })
 
   it('can submit successfully', async () => {
     const name = 'Elena'

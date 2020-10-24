@@ -2,6 +2,7 @@ import React from 'react'
 import Link from 'next/link'
 
 import { HighlightType } from './Highlight'
+import consultingImage from './consulting.jpg'
 import mentoringImage from './mentoring.jpg'
 import workshopsImage from './workshops.jpg'
 import photographyImage from './photography.jpg'
@@ -10,6 +11,18 @@ import streamingImage from './streaming.jpg'
 import milestonesImage from './milestones.jpg'
 
 export const highlightsContent: HighlightType[] = [
+  {
+    title: 'Consulting',
+    imgSrc: consultingImage,
+    imgTitle: 'Talking "Implementation Details"',
+    description: [
+      'I love solving problems and I’ve been doing that professionally as a Software Engineer for almost two decades!',
+      'The longer I am in the business, the more I seek out projects where my problem-solving will fundamentally affect the lives of more people:',
+      'Like in Babylon Health where we raised Series C to fund the mission of bringing affordable healthcare to everyone.',
+      'Or in Funding Circle where I worked on instant decisioning for loan applications, including to businesses affected by COVID-19.',
+      'If you have an ambitious project that needs delivering, and are looking for an Engineering Consultant who is an expert in Typescript, GraphQL and React, feel free to reach out.',
+    ],
+  },
   {
     title: 'Mentoring',
     imgSrc: mentoringImage,
@@ -80,7 +93,7 @@ export const highlightsContent: HighlightType[] = [
   {
     title: 'Streaming',
     imgSrc: streamingImage,
-    imgTitle: 'Talking "Implementation Details"',
+    imgTitle: 'Live streaming on Twitch!',
     link: 'https://www.twitch.tv/jmagrippis',
     description: [
       'After a decade of trying out new tech by building prototypes in isolation and solely for my own amusement, I’ve decided to get with the times and stream myself hacking them together!',

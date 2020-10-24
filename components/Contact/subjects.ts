@@ -1,4 +1,5 @@
 export enum Subject {
+  EngineeringConsultancy = 'engineering-consultancy',
   Mentoring = 'mentoring',
   CodingChallenges = 'coding-challenges',
   CareerAdvice = 'career-advice',
@@ -20,6 +21,7 @@ export const isSubject = (value: string | Subject): value is Subject =>
   Object.values(Subject).includes(value as Subject)
 
 export const subjects: SubjectType[] = [
+  { display: 'Engineering Consultancy', value: Subject.EngineeringConsultancy },
   { display: 'Mentoring', value: Subject.Mentoring },
   { display: 'Coding Challenges', value: Subject.CodingChallenges },
   { display: 'Career Advice', value: Subject.CareerAdvice },
