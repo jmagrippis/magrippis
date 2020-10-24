@@ -1,10 +1,10 @@
 import React, { ReactNode } from 'react'
-import moment from 'moment'
 import cn from 'classnames'
 
 import GithubIcon from '../github-mark.svg'
 import OpenInNewIcon from './open-in-new.svg'
 import { LinkOrPlainAnchor } from '../LinkOrPlainAnchor'
+import { timestampToRelativeTime } from '../../lib/timestampToRelativeTime'
 
 export type MilestoneType = {
   title: string
@@ -36,7 +36,7 @@ export const Milestone = ({
           {title}
         </h2>
         <span className="sm:border-l border-purple-200 mx-4 px-4 text-sm">
-          {moment(timestamp).fromNow()}
+          {timestampToRelativeTime(timestamp)}
         </span>
       </div>
       <div className="max-w-readability-lg">{description}</div>

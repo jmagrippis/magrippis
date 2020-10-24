@@ -1,10 +1,10 @@
 import React from 'react'
 import Link from 'next/link'
-import moment from 'moment'
 
 import { FrontMatter } from '../../layouts'
 import { FeaturedPreview } from './FeaturedPreview'
 import { formatMdxPath } from '../../lib/formatMdxPath'
+import { timestampToRelativeTime } from '../../lib/timestampToRelativeTime'
 
 type Props = FrontMatter & {
   __resourcePath: string
@@ -40,7 +40,7 @@ export const ChallengeSnippet = ({
                 </span>
               ))}
             </div>
-            <span>{moment(timestamp).fromNow()}</span>
+            <span>{timestampToRelativeTime(timestamp)}</span>
           </div>
         </div>
       </a>
