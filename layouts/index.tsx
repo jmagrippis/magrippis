@@ -13,7 +13,7 @@ export type FrontMatter = {
   tags: string[]
 }
 
-export default ({ title, snippet }: FrontMatter) => ({
+const DefaultLayout = ({ title, snippet }: FrontMatter) => ({
   children,
 }: {
   children: ReactNode
@@ -45,3 +45,5 @@ export default ({ title, snippet }: FrontMatter) => ({
     </main>
   </div>
 )
+
+export default DefaultLayout

@@ -14,7 +14,7 @@ export type FrontMatter = {
   tags: string[]
 }
 
-export default ({ title, snippet }: FrontMatter) => ({
+const ChallengeLayout = ({ title, snippet }: FrontMatter) => ({
   children,
 }: {
   children: ReactNode
@@ -50,3 +50,5 @@ export default ({ title, snippet }: FrontMatter) => ({
     </div>
   </>
 )
+
+export default ChallengeLayout

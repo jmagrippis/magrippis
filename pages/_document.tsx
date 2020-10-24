@@ -20,7 +20,7 @@ declare global {
 
 // extending classes in Javascript?! The official suggestion from the Next.js team:
 // https://github.com/zeit/next.js/blob/canary/examples/with-google-analytics/pages/_document.js
-export default class extends Document {
+class CustomDocument extends Document {
   render() {
     return (
       <html lang="en">
@@ -55,3 +55,5 @@ export default class extends Document {
     )
   }
 }
+
+export default CustomDocument

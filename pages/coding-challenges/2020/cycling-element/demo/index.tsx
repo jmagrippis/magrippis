@@ -17,10 +17,12 @@ const secondElements = [
 
 const handleClick = () => {}
 
-export default () => (
+const Demo = () => (
   <>
     <CyclingElement elements={firstElements} />
     <CyclingNotice elements={secondElements} />
     <CyclingCTA handleClick={handleClick} />
   </>
 )
+
+export default Demo
