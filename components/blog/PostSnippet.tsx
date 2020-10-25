@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { FeaturedImage } from './FeaturedImage'
 import { FrontMatter } from '../../layouts'
 import { formatMdxPath } from '../../lib/formatMdxPath'
-import { timestampToRelativeTime } from '../../lib/timestampToRelativeTime'
+import { timestampToRelativeTime } from '../../lib/relativeTime'
 
 type Props = FrontMatter & {
   __resourcePath: string
