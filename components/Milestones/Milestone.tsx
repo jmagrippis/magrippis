@@ -4,11 +4,11 @@ import cn from 'classnames'
 import GithubIcon from '../github-mark.svg'
 import OpenInNewIcon from './open-in-new.svg'
 import { LinkOrPlainAnchor } from '../LinkOrPlainAnchor'
-import { timestampToRelativeTime } from '../../lib/relativeTime'
+import { isoStringToRelativeTime } from '../../lib/relativeTime'
 
 export type MilestoneType = {
   title: string
-  timestamp: number
+  accomplishedAt: string
   description: ReactNode
   github?: string
   href?: string
@@ -18,7 +18,7 @@ type Props = MilestoneType & { className?: string }
 
 export const Milestone = ({
   title,
-  timestamp,
+  accomplishedAt,
   description,
   github,
   href,
@@ -36,7 +36,7 @@ export const Milestone = ({
           {title}
         </h2>
         <span className="sm:border-l border-purple-200 mx-4 px-4 text-sm">
-          {timestampToRelativeTime(timestamp)}
+          {isoStringToRelativeTime(accomplishedAt)}
         </span>
       </div>
       <div className="max-w-readability-lg">{description}</div>

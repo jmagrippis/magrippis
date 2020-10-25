@@ -15,13 +15,14 @@ declare module '*.svg' {
 declare module '*.mdx' {
   import { ReactNode } from 'react'
 
-  export const frontMatter: {
+  export type FrontMatter = {
     title: string
     snippet: string
-    timestamp: number
+    publishedAt: string
     tags: string[]
     __resourcePath: string
   }
+  export const frontMatter: FrontMatter
 
   const component: ReactNode
   export default ReactNode

@@ -3,27 +3,27 @@ import React from 'react'
 export const milestonesContent = [
   {
     title: 'Epic React contributor',
-    timestamp: 1601919898000,
+    accomplishedAt: '2020-10-05T17:44:58.000Z',
     href: 'https://epicreact.dev/',
     description:
       'Opinionated Javascript educator and testing enthusiast Kent C. Dodds just launched Epic React! It’s a series of interactive workshops for leveling up your React and frontend architecture skills... and I’m a contributor! Small fixes, but it’s great to contribute at something so many fellow engineers are perusing!',
   },
   {
     title: 'Lunch & Learn: Productivity Protips',
-    timestamp: 1593522000000,
+    accomplishedAt: '2020-06-30T13:00:00.000Z',
     description:
       'I presented my top two methods for planning & executing for maximum productivity without pulling out your hair, as well as a lightning round of smaller protips. I may adapt this to a public talk, maybe through a Twitch stream, or an Instagram live, depending on the interest!',
   },
   {
     title: 'New start @ DREST!',
-    timestamp: 1591003800000,
+    accomplishedAt: '2020-06-01T09:30:00.000Z',
     href: 'https://www.drest.com',
     description:
       'I am starting a new permanent role, as a tech lead at DREST! They make a stylish fashion game for iOS and Android, so a chance to combine app development with my photography instincts 📷',
   },
   {
     title: 'Coding Challenges - Cycling Element',
-    timestamp: 1588232768000,
+    accomplishedAt: '2020-04-30T07:46:08.000Z',
     href: '/coding-challenges/2020/cycling-element',
     github: 'https://github.com/jmagrippis/magrippis',
     description: (
@@ -44,14 +44,14 @@ export const milestonesContent = [
   },
   {
     title: 'First ever coding stream!',
-    timestamp: 1587916984000,
+    accomplishedAt: '2020-04-26T16:03:04.000Z',
     href: 'https://www.twitch.tv/jmagrippis',
     description:
       'It finally happened: I live-streamed some code. It was extremely enjoyable and I can’t wait to do more and tweak things further!',
   },
   {
     title: 'How to setup MDX in Next.js',
-    timestamp: 1587546353000,
+    accomplishedAt: '2020-04-22T09:05:53.000Z',
     href: '/blog/2020/how-to-setup-MDX-in-Nextjs',
     github: 'https://github.com/jmagrippis/magrippis',
     description:
@@ -59,14 +59,14 @@ export const milestonesContent = [
   },
   {
     title: 'First ever "branded" stream!',
-    timestamp: 1587308400000,
+    accomplishedAt: '2020-04-19T15:00:00.000Z',
     href: 'https://www.twitch.tv/jmagrippis',
     description:
       'Ran a poll on the gram for what type of stream it should be, no surprise that audience wanted a photo tutorial 📷 Super exciting to do, I felt great and am definitely hungry for more!',
   },
   {
     title: 'Top Three Things',
-    timestamp: 1587202672000,
+    accomplishedAt: '2020-04-18T09:37:52.000Z',
     href: 'https://topthreethings.com',
     github: 'https://github.com/jmagrippis/top-three-things',
     description: (
@@ -87,7 +87,7 @@ export const milestonesContent = [
   },
   {
     title: 'Website analytics with Next.js and Plausible.io',
-    timestamp: 1586710090000,
+    accomplishedAt: '2020-04-12T16:48:10.000Z',
     href:
       'https://medium.com/@jmagrippis/website-analytics-with-next-js-and-plausible-io-3620da743a1',
     description:
@@ -95,7 +95,7 @@ export const milestonesContent = [
   },
   {
     title: 'magrippis.com - contact form',
-    timestamp: 1586559838000,
+    accomplishedAt: '2020-04-10T23:03:58.000Z',
     href: '/contact',
     github: 'https://github.com/jmagrippis/magrippis',
     description: (
@@ -116,26 +116,26 @@ export const milestonesContent = [
   },
   {
     title: 'Final Fantasy VII Remake',
-    timestamp: 1586511002000,
+    accomplishedAt: '2020-04-10T09:30:02.000Z',
     description:
       'It’s finally available to play! Just from the first couple of hours I can tell this is an impeccable execution of the project. Not that it’s gonna be the perfect game, but they’re making me experience the essence of playing the original back then in PS1, via the means of a current-gen AAA game.',
   },
   {
     title: 'Animal Crossing: New Horizons - credits',
-    timestamp: 1586416203000,
+    accomplishedAt: '2020-04-09T07:10:03.000Z',
     description:
       'I wasn’t expecting Animal Crossing to have end credits, but there actually was a little storyline that gets nicely wrapped up with a proper credits sequence! The game continues after of course, and I’m far from done with it: A few minutes of island life have become part of my morning ritual 🍑',
   },
   {
     title: 'Coding Challenges newsletter',
-    timestamp: 1586367949000,
+    accomplishedAt: '2020-04-08T17:45:49.000Z',
     href: 'https://jmagrippis.substack.com/',
     description:
       'After feedback from friends and colleagues, I’ve set up a newsletter about the coding challenges I always find myself designing! You should join too 😁',
   },
   {
     title: 'magrippis.com - v3',
-    timestamp: 1586094061160,
+    accomplishedAt: '2020-04-05T13:41:01.160Z',
     href: '/',
     github: 'https://github.com/jmagrippis/magrippis',
     description:
@@ -143,7 +143,7 @@ export const milestonesContent = [
   },
   {
     title: 'Healthy Habits',
-    timestamp: 1585489814000,
+    accomplishedAt: '2020-03-29T13:50:14.000Z',
     href: 'http://devpost.com/software/healthy-habits',
     github: 'https://github.com/jmagrippis/healthy-habits',
     description: (
@@ -165,7 +165,7 @@ export const milestonesContent = [
   },
   {
     title: 'The roles in App Development',
-    timestamp: 1584976897000,
+    accomplishedAt: '2020-03-23T15:21:37.000Z',
     href:
       'https://medium.com/@jmagrippis/the-roles-in-app-development-641ebf393ca4',
     description:
@@ -173,13 +173,13 @@ export const milestonesContent = [
   },
   {
     title: 'First parallettes workout',
-    timestamp: 1584801710000,
+    accomplishedAt: '2020-03-21T14:41:50.000Z',
     description:
       'With the gyms closing due to COVID-19, I got a pair of parallettes to practice at home! They’re elevated bars you may practice things like handstands on. I’ve never had good balance so this wiped me out something fierce!',
   },
   {
     title: 'Animal Crossing: New Horizons',
-    timestamp: 1584712214000,
+    accomplishedAt: '2020-03-20T13:50:14.000Z',
     description: (
       <>
         I’ve never really gotten into Animal Crossing, but the time is calling
@@ -197,14 +197,14 @@ export const milestonesContent = [
   },
   {
     title: 'Endless meeting cubing loop',
-    timestamp: 1583419310000,
+    accomplishedAt: '2020-03-05T14:41:50.000Z',
     href: 'https://www.instagram.com/p/B9XIxV-pbpe/',
     description:
       'Inspired by endless meetings where the same people keep saying the same things, I shot a little pattern I found myself mindlessly doing.',
   },
   {
     title: 'Emoji of the X - Twitter bot',
-    timestamp: 1583335297000,
+    accomplishedAt: '2020-03-04T15:21:37.000Z',
     href: 'https://twitter.com/emoji_of_the',
     github: 'https://github.com/jmagrippis/emoji-of-the-x-scraper',
     description:
@@ -212,7 +212,7 @@ export const milestonesContent = [
   },
   {
     title: 'Google Analytics with React Router',
-    timestamp: 1583076097000,
+    accomplishedAt: '2020-03-01T15:21:37.000Z',
     href:
       'https://medium.com/javascript-in-plain-english/google-analytics-with-react-router-and-hooks-16d403ddc528',
     description:
@@ -220,7 +220,7 @@ export const milestonesContent = [
   },
   {
     title: 'Emoji of the X',
-    timestamp: 1582384897000,
+    accomplishedAt: '2020-02-22T15:21:37.000Z',
     href: 'https://emoji-of.com/',
     github: 'https://github.com/jmagrippis/emoji-of-the-x',
     description:
@@ -228,7 +228,7 @@ export const milestonesContent = [
   },
   {
     title: 'Why would you want to learn React in 2020?',
-    timestamp: 1580311297000,
+    accomplishedAt: '2020-01-29T15:21:37.000Z',
     href:
       'https://medium.com/funding-circle/why-would-you-want-to-learn-react-in-2020-4fff4546965e',
     description:

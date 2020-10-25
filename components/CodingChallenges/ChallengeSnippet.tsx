@@ -1,20 +1,18 @@
 import React from 'react'
 import Link from 'next/link'
 
-import { FrontMatter } from '../../layouts'
+import { FrontMatter } from '*.mdx'
 import { FeaturedPreview } from './FeaturedPreview'
 import { formatMdxPath } from '../../lib/formatMdxPath'
-import { timestampToRelativeTime } from '../../lib/relativeTime'
+import { isoStringToRelativeTime } from '../../lib/relativeTime'
 
-type Props = FrontMatter & {
-  __resourcePath: string
-}
+type Props = FrontMatter
 
 export const ChallengeSnippet = ({
   title,
   snippet,
   tags,
-  timestamp,
+  publishedAt,
   __resourcePath,
 }: Props) => (
   <li
@@ -40,7 +38,7 @@ export const ChallengeSnippet = ({
                 </span>
               ))}
             </div>
-            <span>{timestampToRelativeTime(timestamp)}</span>
+            <span>{isoStringToRelativeTime(publishedAt)}</span>
           </div>
         </div>
       </a>

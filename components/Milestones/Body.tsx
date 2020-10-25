@@ -10,12 +10,12 @@ export const Body = () => (
       <h1 className="text-4xl mb-6">Milestones</h1>
       <ul className="border border-purple-400 rounded shadow-md bg-white">
         {milestonesContent.map(
-          ({ title, description, timestamp, href, github }, i) => (
+          ({ title, description, accomplishedAt, href, github }, i) => (
             <Milestone
               key={title}
               title={title}
               description={description}
-              timestamp={timestamp}
+              accomplishedAt={accomplishedAt}
               href={href}
               github={github}
               className={cn({

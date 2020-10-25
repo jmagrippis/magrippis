@@ -3,16 +3,10 @@ import Link from 'next/link'
 import { NextSeo } from 'next-seo'
 import cn from 'classnames'
 
+import { FrontMatter } from '*.mdx'
 import styles from './mdx.module.css'
 import { Notice } from '../components/Notice/Notice'
 import { getSeoProps } from '../components/getSeoProps'
-
-export type FrontMatter = {
-  title: string
-  snippet: string
-  timestamp: number
-  tags: string[]
-}
 
 const ChallengeLayout = ({ title, snippet }: FrontMatter) => ({
   children,
