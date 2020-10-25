@@ -2,6 +2,14 @@ import React from 'react'
 
 export const milestonesContent = [
   {
+    title: 'Human-readable timestamps with Luxon',
+    accomplishedAt: '2020-10-25T16:51:54.848Z',
+    href: '/blog/2020/human-readable-timestamps-with-Luxon',
+    github: 'https://github.com/jmagrippis/magrippis',
+    description:
+      'New blog post! I was updating my site to get rid of the essentially deprecated Moment.js and found nothing on how to do relative time with my replacement: Luxon. So I wrote this quick how-to!',
+  },
+  {
     title: 'Epic React contributor',
     accomplishedAt: '2020-10-05T17:44:58.000Z',
     href: 'https://epicreact.dev/',
