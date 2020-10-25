@@ -2,11 +2,13 @@ import React from 'react'
 import { NextSeo } from 'next-seo'
 import cn from 'classnames'
 
+import timestampsWithLuxon from './images/Human-readable-timestamps-with-Luxon.jpg'
 import mdxInNextJs from './images/How-to-setup-MDX-in-Nextjs.jpg'
 import { rootUrl } from '../../lib/constants'
 import { getSeoProps } from '../getSeoProps'
 
 const titlesToImages = {
+  'Human-readable timestamps with Luxon': timestampsWithLuxon,
   'How to setup MDX in Next.js': mdxInNextJs,
 }
 

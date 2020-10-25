@@ -4,5 +4,6 @@ module.exports = {
   },
   variants: {
     borderStyle: ['responsive', 'focus'],
+    backgroundColor: ['even'],
   },
 }
