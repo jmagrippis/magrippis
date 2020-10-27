@@ -47,13 +47,15 @@ export const FeaturedImage = ({
           })}
         />
       )}
-      <Image
-        src={imageSrc}
-        width={2048}
-        height={1152}
-        className={cn('sm:rounded shadow-lg max-w-full', className)}
-        alt={`hero of "${title}"`}
-      />
+      <div className={cn('max-w-full w-screen', className)}>
+        <Image
+          src={imageSrc}
+          width={2048}
+          height={1152}
+          className="sm:rounded shadow-lg"
+          alt={`hero of "${title}"`}
+        />
+      </div>
     </>
   ) : null
 }
