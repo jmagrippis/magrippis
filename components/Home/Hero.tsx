@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react'
+import Image from 'next/image'
 import { shuffle } from 'lodash'
 import { useTransition, animated } from 'react-spring'
 
-import heroImage from './hero.jpg'
 import { allRoles } from './allRoles'
 
 const RESELECT_INTERVAL = 3000
@@ -43,12 +43,17 @@ export const Hero = () => {
   return (
     <section className="p-8">
       <div className="container m-auto flex items-center justify-center flex-wrap sm:flex-no-wrap">
-        <img
-          src={heroImage}
-          className="h-64 w-64 rounded-full shadow-lg mb-8 sm:mr-16 sm:mb-0"
-          title="Johnny’s avatar"
-          alt="Johnny’s avatar"
-        />
+        <div className="h-64 w-64 mb-8 sm:mr-16 sm:mb-0">
+          <Image
+            priority
+            width={512}
+            height={512}
+            src="/images/hero.jpg"
+            className="rounded-full shadow-lg"
+            title="Johnny’s avatar"
+            alt="Johnny’s avatar"
+          />
+        </div>
         <div className="text-right" style={{ flexBasis: '60ch' }}>
           <p className="text-3xl mb-1">Hi, I’m Johnny and I’m</p>
 
