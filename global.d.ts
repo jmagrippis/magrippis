@@ -1,8 +1,3 @@
-declare module '*.jpg' {
-  const content: string
-  export default content
-}
-
 declare module '*.svg' {
   import { FunctionComponent, SVGAttributes } from 'react'
 

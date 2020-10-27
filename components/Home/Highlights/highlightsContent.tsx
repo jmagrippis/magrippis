@@ -2,18 +2,11 @@ import React from 'react'
 import Link from 'next/link'
 
 import { HighlightType } from './Highlight'
-import consultingImage from './consulting.jpg'
-import mentoringImage from './mentoring.jpg'
-import workshopsImage from './workshops.jpg'
-import photographyImage from './photography.jpg'
-import bloggingImage from './blogging.jpg'
-import streamingImage from './streaming.jpg'
-import milestonesImage from './milestones.jpg'
 
 export const highlightsContent: HighlightType[] = [
   {
     title: 'Consulting',
-    imgSrc: consultingImage,
+    imgSrc: '/images/highlights/consulting.jpg',
     imgTitle: 'Talking "Implementation Details"',
     description: [
       'I love solving problems and I’ve been doing that professionally as a Software Engineer for almost two decades!',
@@ -25,7 +18,7 @@ export const highlightsContent: HighlightType[] = [
   },
   {
     title: 'Mentoring',
-    imgSrc: mentoringImage,
+    imgSrc: '/images/highlights/mentoring.jpg',
     imgTitle: 'Lovely sculpture of two birds I snapped in Barbados',
     description: [
       'My most fulfilling work.',
@@ -36,7 +29,7 @@ export const highlightsContent: HighlightType[] = [
   },
   {
     title: 'Workshops',
-    imgSrc: workshopsImage,
+    imgSrc: '/images/highlights/workshops.jpg',
     imgTitle: 'Mingling with colleagues and attendees',
     description: [
       'I am a firm believer in the power of workshops. Even those your employer forces you to attend! It’s all in the power of the facilitators to design something engaging that leaves you with key learnings you can apply immediately.',
@@ -46,7 +39,7 @@ export const highlightsContent: HighlightType[] = [
   },
   {
     title: 'Photography',
-    imgSrc: photographyImage,
+    imgSrc: '/images/highlights/photography.jpg',
     imgTitle:
       'Did not travel far for this one: It’s the view from my Balcony in London!',
     link: 'https://www.instagram.com/jmagrippis/',
@@ -62,7 +55,7 @@ export const highlightsContent: HighlightType[] = [
   },
   {
     title: 'Blogging',
-    imgSrc: bloggingImage,
+    imgSrc: '/images/highlights/blogging.jpg',
     imgTitle: 'Overlooking a national park in Patagonia',
     link: '/blog',
     description: [
@@ -92,7 +85,7 @@ export const highlightsContent: HighlightType[] = [
   },
   {
     title: 'Streaming',
-    imgSrc: streamingImage,
+    imgSrc: '/images/highlights/streaming.jpg',
     imgTitle: 'Live streaming on Twitch!',
     link: 'https://www.twitch.tv/jmagrippis',
     description: [
@@ -103,7 +96,7 @@ export const highlightsContent: HighlightType[] = [
   },
   {
     title: 'Milestones Feed',
-    imgSrc: milestonesImage,
+    imgSrc: '/images/highlights/milestones.jpg',
     imgTitle: 'A tree growing in Patagonia',
     link: '/milestones',
     description: [

@@ -20,7 +20,6 @@
     "next": "^10.0.0",
     "next-compose-plugins": "^2.2.0",
     "next-mdx-enhanced": "^4.0.0",
-    "next-optimized-images": "^2.6.2",
     "next-seo": "^4.14.0",
     "next-svgr": "^0.0.2",
     "postcss-import": "^12.0.1",

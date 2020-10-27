@@ -1,4 +1,3 @@
-import heroImage from './Home/hero.jpg'
 import { rootUrl } from '../lib/constants'
 
 const defaultSeo = {
@@ -12,7 +11,7 @@ const defaultSeo = {
     site_name: 'jmagrippis',
     images: [
       {
-        url: `${rootUrl}${heroImage}`,
+        url: `${rootUrl}/images/hero.jpg`,
         width: 512,
         height: 512,
         alt: 'Johnny Magrippis',

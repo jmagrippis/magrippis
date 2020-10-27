@@ -1,4 +1,5 @@
 import React, { ReactNode } from 'react'
+import Image from 'next/image'
 import cn from 'classnames'
 
 import { LinkOrPlainAnchor } from '../../LinkOrPlainAnchor'
@@ -34,16 +35,20 @@ export const Highlight = ({
       <div className="col-span-2">
         {link ? (
           <LinkOrPlainAnchor href={link}>
-            <img
+            <Image
               src={imgSrc}
+              width={2048}
+              height={1365}
               title={imgTitle}
               alt={imgTitle}
               className="rounded shadow-lg"
             />
           </LinkOrPlainAnchor>
         ) : (
-          <img
+          <Image
             src={imgSrc}
+            width={2048}
+            height={1365}
             title={imgTitle}
             alt={imgTitle}
             className="rounded shadow-lg"
