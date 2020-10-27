@@ -16,7 +16,7 @@ export const PostSnippet = ({
   __resourcePath,
 }: Props) => (
   <li
-    className="cursor-pointer even:bg-gray-100 sm:p-4 border-l first:rounded-tl last:first:rounded-bl border-purple-200 hover:border-purple-300 transition duration-300"
+    className="cursor-pointer even:bg-gray-100 sm:p-4 sm:border-l first:rounded-tl last:first:rounded-bl border-purple-200 hover:border-purple-300 transition duration-300"
     key={__resourcePath}
   >
     <Link href={formatMdxPath(__resourcePath)}>
