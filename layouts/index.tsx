@@ -7,11 +7,15 @@ import styles from './mdx.module.css'
 import { FeaturedImage } from '../components/blog/FeaturedImage'
 import { Notice } from '../components/Notice/Notice'
 
-type Props = FrontMatter & {
+type Props = {
+  frontMatter: FrontMatter
   children: ReactNode
 }
 
-const DefaultLayout = ({ title, snippet, children }: Props) => (
+const DefaultLayout = ({
+  frontMatter: { title, snippet },
+  children,
+}: Props) => (
   <div className="bg-prism">
     <main
       className={cn(

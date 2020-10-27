@@ -8,11 +8,15 @@ import styles from './mdx.module.css'
 import { Notice } from '../components/Notice/Notice'
 import { getSeoProps } from '../components/getSeoProps'
 
-type Props = FrontMatter & {
+type Props = {
+  frontMatter: FrontMatter
   children: ReactNode
 }
 
-const ChallengeLayout = ({ title, snippet, children }: Props) => (
+const ChallengeLayout = ({
+  frontMatter: { title, snippet },
+  children,
+}: Props) => (
   <>
     <NextSeo
       {...getSeoProps({
