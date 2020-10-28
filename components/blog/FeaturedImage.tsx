@@ -5,6 +5,7 @@ import cn from 'classnames'
 
 import { rootUrl } from '../../lib/constants'
 import { getSeoProps } from '../getSeoProps'
+import { getImageSrc } from './getImageSrc'
 
 type Props = {
   title: string
@@ -12,9 +13,6 @@ type Props = {
   withSeo?: boolean
   className?: string
 }
-
-export const getImageSrc = (title: string) =>
-  `/images/blog/${title.replace(/ /g, '-').replace(/\./g, '')}.jpg`
 
 export const FeaturedImage = ({
   title,
