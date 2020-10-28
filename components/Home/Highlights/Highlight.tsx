@@ -61,7 +61,7 @@ export const Highlight = ({
           'sm:row-start-1': alternate,
         })}
       >
-        <div className="text-3xl mb-4">
+        <h2 className="text-3xl mb-4">
           {link ? (
             <LinkOrPlainAnchor href={link} className="underline">
               {title}
@@ -69,7 +69,7 @@ export const Highlight = ({
           ) : (
             title
           )}
-        </div>
+        </h2>
         {description.map((copy, i) => (
           <p
             // we will not be reordering these paragraphs...

@@ -31,6 +31,7 @@
     "tailwindcss": "^1.9.6"
   },
   "devDependencies": {
+    "@testing-library/jest-dom": "^5.11.5",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
     "@types/classnames": "^2.2.10",
@@ -58,8 +59,13 @@
     "now": "^20.1.2",
     "prettier": "^2.1.2",
     "pretty-quick": "^3.1.0",
-    "ts-jest": "^26.4.3",
     "typescript": "^4.0.5"
+  },
+  "jest": {
+    "clearMocks": true,
+    "setupFilesAfterEnv": [
+      "./setupTests.ts"
+    ]
   },
   "husky": {
     "hooks": {
