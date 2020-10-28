@@ -23,7 +23,7 @@ declare global {
 class CustomDocument extends Document {
   render() {
     return (
-      <Html lang="en">
+      <Html>
         <Head>
           <link rel="icon" href="/favicon.ico" />
           <link

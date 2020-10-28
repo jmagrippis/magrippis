@@ -10,4 +10,8 @@ const mdx = require('next-mdx-enhanced')({
 
 module.exports = withPlugins([mdx, svgr], {
   pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'mdx', 'md'],
+  i18n: {
+    locales: ['en'],
+    defaultLocale: 'en',
+  },
 })
