@@ -1,6 +1,6 @@
 # Johnny Magrippis Personal Site
 
-![CI](https://github.com/jmagrippis/magrippis/workflows/CI/badge.svg)
+[![CI](https://github.com/jmagrippis/magrippis/workflows/CI/badge.svg)](https://github.com/jmagrippis/magrippis/actions)
 
 The personal website of software engineer Johnny Magrippis. Yours truly!
 
