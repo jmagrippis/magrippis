@@ -1,8 +1,8 @@
 import React, { ReactNode } from 'react'
-import Image from 'next/image'
 import cn from 'classnames'
 
 import { LinkOrPlainAnchor } from '../../LinkOrPlainAnchor'
+import { AppearingImage } from '../../AppearingImage/AppearingImage'
 
 export type HighlightType = {
   title: string
@@ -35,20 +35,22 @@ export const Highlight = ({
       <div className="col-span-2">
         {link ? (
           <LinkOrPlainAnchor href={link}>
-            <Image
+            <AppearingImage
               src={imgSrc}
               width={2048}
               height={1365}
+              offset="7rem"
               title={imgTitle}
               alt={imgTitle}
               className="rounded shadow-lg"
             />
           </LinkOrPlainAnchor>
         ) : (
-          <Image
+          <AppearingImage
             src={imgSrc}
             width={2048}
             height={1365}
+            offset="7rem"
             title={imgTitle}
             alt={imgTitle}
             className="rounded shadow-lg"

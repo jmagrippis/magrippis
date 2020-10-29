@@ -1,11 +1,11 @@
 import React from 'react'
-import Image from 'next/image'
 import { NextSeo } from 'next-seo'
 import cn from 'classnames'
 
 import { rootUrl } from '../../lib/constants'
 import { getSeoProps } from '../getSeoProps'
 import { getImageSrc } from './getImageSrc'
+import { AppearingImage } from '../AppearingImage/AppearingImage'
 
 type Props = {
   title: string
@@ -46,10 +46,11 @@ export const FeaturedImage = ({
         />
       )}
       <div className={cn('max-w-full w-screen', className)}>
-        <Image
+        <AppearingImage
           src={imageSrc}
           width={2048}
           height={1152}
+          offset="3rem"
           className="sm:rounded shadow-lg"
           alt={`hero of "${title}"`}
         />
