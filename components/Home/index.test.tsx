@@ -8,8 +8,8 @@ describe('Home', () => {
   it('has sections for every highlight', () => {
     render(<Home />)
 
-    highlightsContent.forEach(({ title }) => {
-      expect(screen.getByRole('heading', { name: title })).toBeTruthy()
+    highlightsContent.forEach(async ({ title }) => {
+      await screen.findByRole('heading', { name: title })
     })
   })
 })
