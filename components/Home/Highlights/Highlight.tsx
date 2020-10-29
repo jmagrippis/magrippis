@@ -28,7 +28,7 @@ export const Highlight = ({
 }: Props) => (
   <section
     className={cn(className, {
-      'bg-gray-100 text-black': !alternate,
+      'bg-prism text-black': !alternate,
     })}
   >
     <div className="container m-auto p-8 grid grid-cols-1 sm:grid-cols-3 gap-8 items-center">
