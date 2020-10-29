@@ -20,13 +20,11 @@ type ImageProps = Omit<
 export const AppearingImage = ({ offset, onLoad, ...props }: ImageProps) => {
   const [animatedStyle, set] = useSpring(() => ({
     opacity: 0,
-    transform: `translate3d(0,${offset},0)`,
   }))
 
   const handleOnLoad = useCallback(() => {
     set({
       opacity: 1,
-      transform: 'translate3d(0,0,0)',
     })
   }, [set])
 
