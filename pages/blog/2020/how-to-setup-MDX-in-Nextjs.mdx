@@ -33,7 +33,7 @@ A common use-case would be to render a component for your readers to mess around
 And then even inline the code of the above component:
 
 ```tsx
-import React, { useState } from 'react'
+import { useState } from 'react'
 import cn from 'classnames'
 
 export const Demonstration = () => {
@@ -154,7 +154,7 @@ It means two big things:
 ## I can render code blocks nicely
 
 ```tsx
-import React, { useState } from 'react'
+import { useState } from 'react'
 
 const regularStyles = {
   backgroundColor: '#40C9A2',
@@ -193,7 +193,7 @@ When I said the front-matter property names have no special significance it was 
 In our case, we’ve also passed the `defaultLayout: true` in the plugin config before, so instead of specifying the layout on every blogpost, we may just create a `layouts/index.tsx` that everything will be falling back to when there is no `layout` property in the front-matter. So let’s create that file!
 
 ```tsx
-import React, { ReactNode } from 'react'
+import { ReactNode } from 'react'
 import cn from 'classnames'
 
 type FrontMatter = {
@@ -252,7 +252,7 @@ Or we could do it with CSS modules! Nothing wrong with any approach, but this is
 And let’s import it in our layout file:
 
 ```tsx
-import React, { ReactNode } from 'react'
+import { ReactNode } from 'react'
 
 import styles from './mdx.module.css'
 
@@ -304,7 +304,6 @@ export default ({ title, snippet }: FrontMatter) => ({
 An image is worth a thousand words, so how would we go about configuring a bespoke image to show depending on the article? I propose nesting all of the blog images into `components/blog/images` and creating a `components/blog/FeaturedImage.tsx` component that looks like this:
 
 ```tsx
-import React from 'react'
 import { NextSeo } from 'next-seo'
 
 import mdxFtw from './images/mdx-ftw.jpg'
