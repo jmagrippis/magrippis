@@ -1,5 +1,3 @@
-import React from 'react'
-
 import { Highlight } from './Highlight'
 import { highlightsContent } from './highlightsContent'
 

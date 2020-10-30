@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react'
+import { ReactNode } from 'react'
 
 import { Notice } from '../../../Notice/Notice'
 import { useCyclingElement } from './useCyclingElement'

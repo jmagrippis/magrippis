@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react'
+import { ReactNode } from 'react'
 import Link from 'next/link'
 import { NextSeo } from 'next-seo'
 import cn from 'classnames'

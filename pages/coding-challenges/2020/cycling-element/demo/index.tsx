@@ -1,5 +1,3 @@
-import React from 'react'
-
 import { CyclingElement } from '../../../../../components/CodingChallenges/2020/CyclingElement/CyclingElement'
 import { CyclingNotice } from '../../../../../components/CodingChallenges/2020/CyclingElement/CyclingNotice'
 import { CyclingCTA } from '../../../../../components/CodingChallenges/2020/CyclingElement/CyclingCTA'

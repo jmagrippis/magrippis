@@ -1,5 +1,3 @@
-import React from 'react'
-
 import { Highlights } from './Highlights/Highlights'
 import { Signup } from './Signup'
 

@@ -1,5 +1,3 @@
-import React from 'react'
-
 import { Form } from './Form'
 import { Signup } from '../Home/Signup'
 

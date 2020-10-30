@@ -1,4 +1,3 @@
-import React from 'react'
 import { NextSeo } from 'next-seo'
 
 import { frontMatter as cyclingElement } from '../../pages/coding-challenges/2020/cycling-element/index.mdx'

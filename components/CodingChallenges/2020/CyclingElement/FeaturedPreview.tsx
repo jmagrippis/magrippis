@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react'
+import { useState, useCallback } from 'react'
 import cn from 'classnames'
 
 import { CyclingCTA } from './CyclingCTA'
