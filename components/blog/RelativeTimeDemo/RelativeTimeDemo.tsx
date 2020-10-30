@@ -55,9 +55,7 @@ export const RelativeTimeDemo = () => {
         </div>
 
         <span
-          className={
-            'w-full sm:hidden rounded shadow-lg border border-purple-400'
-          }
+          className="w-full sm:hidden rounded shadow-lg border border-purple-400"
           onClick={setToNow}
         />
 
@@ -81,9 +79,7 @@ export const RelativeTimeDemo = () => {
       </div>
 
       <button
-        className={
-          'w-full p-2 rounded shadow-lg text-center transition duration-300 focus:outline-none border-4 bg-purple-600 text-purple-100 border-purple-400 focus:border-purple-200'
-        }
+        className="w-full p-2 rounded shadow-lg text-center transition duration-300 focus:outline-none border-4 bg-purple-600 text-purple-100 border-purple-400 focus:border-purple-200"
         onClick={setToNow}
       >
         set both to now!
