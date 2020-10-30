@@ -1,4 +1,4 @@
-import React, { FormEvent, useCallback, useState, useEffect } from 'react'
+import { FormEvent, useCallback, useState, useEffect } from 'react'
 
 import { submit } from './submit'
 import { subjects, isSubject } from './subjects'

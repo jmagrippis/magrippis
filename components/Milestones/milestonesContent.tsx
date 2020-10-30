@@ -1,5 +1,3 @@
-import React from 'react'
-
 export const milestonesContent = [
   {
     title: 'Human-readable timestamps with Luxon',

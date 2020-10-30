@@ -1,4 +1,4 @@
-import React, { ReactNode, HTMLProps, forwardRef, LegacyRef } from 'react'
+import { ReactNode, HTMLProps, forwardRef, LegacyRef } from 'react'
 import cn from 'classnames'
 
 type Props = {

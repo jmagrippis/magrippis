@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react'
+import { useCallback } from 'react'
 import { useSpring, animated } from 'react-spring'
 import Image from 'next/image'
 

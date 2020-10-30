@@ -1,5 +1,3 @@
-import React from 'react'
-
 export const Mission = () => (
   <section className="bg-prism text-black">
     <div className="container m-auto p-8">
