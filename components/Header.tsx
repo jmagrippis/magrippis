@@ -15,7 +15,7 @@ export const Header = () => {
 
   return (
     <header className="w-full bg-gray-800 text-purple-100">
-      <div className="m-auto container flex flex-row items-center p-4">
+      <nav className="m-auto container flex flex-row items-center p-4">
         <HomeElement className="flex-grow">
           <Link href="/">
             <a className="transition duration-300 hover:text-purple-300">
@@ -26,7 +26,10 @@ export const Header = () => {
         <ul className="flex flex-row">
           <li>
             <Link href="/milestones">
-              <a className="transition duration-300 hover:text-purple-300">
+              <a
+                className="transition duration-300 hover:text-purple-300"
+                aria-label="milestones"
+              >
                 <span className="hidden sm:inline ">milestones</span>
                 <span className="sm:hidden">
                   <StarIcon title="Milestones feed" width="1.5rem" />
@@ -36,7 +39,10 @@ export const Header = () => {
           </li>
           <li className="ml-3">
             <Link href="/blog">
-              <a className="transition duration-300 hover:text-purple-300">
+              <a
+                className="transition duration-300 hover:text-purple-300"
+                aria-label="blog"
+              >
                 <span className="hidden sm:inline">blog</span>
                 <span className="sm:hidden">
                   <BookIcon title="Blogposts by Johnny" width="1.5rem" />
@@ -46,7 +52,10 @@ export const Header = () => {
           </li>
           <li className="ml-4">
             <Link href="/contact">
-              <a className="transition duration-300 hover:text-purple-300">
+              <a
+                className="transition duration-300 hover:text-purple-300"
+                aria-label="contact"
+              >
                 <MailIcon title="Contact Johnny" width="1.5rem" />
               </a>
             </Link>
@@ -82,7 +91,7 @@ export const Header = () => {
             </a>
           </li>
         </ul>
-      </div>
+      </nav>
     </header>
   )
 }
