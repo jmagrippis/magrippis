@@ -9,7 +9,7 @@ const iphoneXViewport: puppeteer.Viewport = {
   deviceScaleFactor: 2,
 }
 
-const ROOT_PATH = 'http://localhost:3500/'
+const ROOT_PATH = process.env.DEPLOYMENT_URL || 'http://localhost:3500/'
 
 describe('navigation', () => {
   let browser: puppeteer.Browser

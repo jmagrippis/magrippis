@@ -1,4 +1,4 @@
-name: CI
+name: main
 
 on: [push, pull_request]
 
@@ -6,12 +6,12 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-    - name: Install modules
-      run: yarn
-    - name: Run the typescript compiler
-      run: yarn tsc
-    - name: Run the linter
-      run: yarn lint
-    - name: Run tests
-      run: yarn test
+      - uses: actions/checkout@v2
+      - name: Install modules
+        run: yarn
+      - name: Run the typescript compiler
+        run: yarn tsc
+      - name: Run the linter
+        run: yarn lint
+      - name: Run tests
+        run: yarn test
