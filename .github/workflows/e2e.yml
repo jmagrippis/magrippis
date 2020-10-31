@@ -8,14 +8,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Install modules
-        run: yarn
-      - name: Run Puppeteer
-        run: yarn e2e
+      - name: Run Cypress 🌲
+        uses: cypress-io/github-action@v2
         env:
-          DEPLOYMENT_URL: ${{ github.event.deployment_status.target_url }}
+          CYPRESS_BASE_URL: ${{ github.event.deployment_status.target_url }}
       # https://docs.github.com/en/actions/reference/context-and-expression-syntax-for-github-actions#job-status-check-functions
-      - name: ✅ Puppeteer ✅
+      - name: ✅ Cypress ✅
         if: ${{ success() }}
         # https://docs.github.com/en/rest/reference/repos#create-a-commit-status
         run: |
@@ -26,10 +24,10 @@ jobs:
           --data '{
             "context": "e2e",
             "state": "success",
-            "description": "Puppeteer tests passed"
+            "description": "Cypress tests passed"
           }'
 
-      - name: 🚨 Puppeteer 🚨
+      - name: 🚨 Cypress 🚨
         if: ${{ failure() }}
         run: |
           curl --request POST \
@@ -39,5 +37,5 @@ jobs:
           --data '{
             "context": "e2e",
             "state": "failure",
-            "description": "Puppeteer tests failed"
+            "description": "Cypress tests failed"
           }'
