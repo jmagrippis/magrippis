@@ -1,0 +1,5 @@
+{
+  "rules": {
+    "testing-library/no-await-sync-query": 0
+  }
+}
