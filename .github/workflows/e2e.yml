@@ -1,0 +1,43 @@
+name: E2E
+
+on: deployment_status
+
+jobs:
+  e2e:
+    if: github.event.deployment_status.state == 'success'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install modules
+        run: yarn
+      - name: Run Puppeteer
+        run: yarn e2e
+        env:
+          DEPLOYMENT_URL: ${{ github.event.deployment_status.target_url }}
+      # https://docs.github.com/en/actions/reference/context-and-expression-syntax-for-github-actions#job-status-check-functions
+      - name: ✅ Puppeteer ✅
+        if: ${{ success() }}
+        # https://docs.github.com/en/rest/reference/repos#create-a-commit-status
+        run: |
+          curl --request POST \
+          --url https://api.github.com/repos/${{ github.repository }}/statuses/${{ github.sha }} \
+          --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
+          --header 'content-type: application/json' \
+          --data '{
+            "context": "e2e",
+            "state": "success",
+            "description": "Puppeteer tests passed"
+          }'
+
+      - name: 🚨 Puppeteer 🚨
+        if: ${{ failure() }}
+        run: |
+          curl --request POST \
+          --url https://api.github.com/repos/${{ github.repository }}/statuses/${{ github.sha }} \
+          --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
+          --header 'content-type: application/json' \
+          --data '{
+            "context": "e2e",
+            "state": "failure",
+            "description": "Puppeteer tests failed"
+          }'
