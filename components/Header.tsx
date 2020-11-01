@@ -66,6 +66,7 @@ export const Header = () => {
               href="https://github.com/jmagrippis"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="github"
             >
               <GithubIcon title="Johnny's github" width="1.5rem" />
             </a>
@@ -76,6 +77,7 @@ export const Header = () => {
               href="https://www.instagram.com/jmagrippis/"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="instagram"
             >
               <InstagramIcon title="Johnny's instagram" width="1.5rem" />
             </a>
@@ -86,6 +88,7 @@ export const Header = () => {
               href="https://twitter.com/jmagrippis"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="twitter"
             >
               <TwitterIcon title="Johnny's twitter" width="1.5rem" />
             </a>

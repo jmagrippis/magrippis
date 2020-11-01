@@ -1,9 +1,7 @@
-import { ReactNode, HTMLProps, forwardRef, LegacyRef } from 'react'
+import { HTMLProps, forwardRef, LegacyRef } from 'react'
 import cn from 'classnames'
 
-type Props = {
-  children: ReactNode
-} & HTMLProps<HTMLAnchorElement>
+type Props = HTMLProps<HTMLAnchorElement>
 
 export const Notice = forwardRef<unknown, Props>(
   ({ children, className, ...restProps }, ref) => (
