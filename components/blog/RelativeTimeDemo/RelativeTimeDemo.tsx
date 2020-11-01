@@ -34,7 +34,7 @@ export const RelativeTimeDemo = () => {
   }
 
   return (
-    <div className="my-4 p-4 bg-white rounded shadow">
+    <div className="p-4 bg-white rounded shadow">
       <div className="grid grid-cols-1 sm:grid-cols-5 gap-4 sm:gap-8 items-center mb-6">
         <label htmlFor="timestamp" className="text-gray-700 sm:text-right">
           Timestamp
