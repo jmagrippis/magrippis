@@ -1,9 +1,7 @@
 import { ReactNode } from 'react'
 import Link from 'next/link'
-import cn from 'classnames'
 
 import { FrontMatter } from '*.mdx'
-import styles from './mdx.module.css'
 import { FeaturedImage } from '../components/blog/FeaturedImage'
 import { Notice } from '../components/Notice/Notice'
 
@@ -17,19 +15,16 @@ const DefaultLayout = ({
   children,
 }: Props) => (
   <div className="bg-prism">
-    <main
-      className={cn(
-        'm-auto py-4 sm:text-lg max-w-readability-lg',
-        styles.container
-      )}
-    >
-      <h1 className="px-4 mb-2">{title}</h1>
-      <p className="px-4 text-xl mb-6">{snippet}</p>
+    <main className="m-auto py-8 prose lg:prose-lg xl:prose-xl">
+      <div className="px-4">
+        <h1>{title}</h1>
+        <p className="text-xl lg:text-2xl">{snippet}</p>
+      </div>
       <FeaturedImage
         title={title}
         description={snippet}
         withSeo
-        className="mb-6"
+        className="pt-2 pb-8 lg:pb-12"
       />
       <section className="px-4 mb-4">{children}</section>
       <div className="px-4">
