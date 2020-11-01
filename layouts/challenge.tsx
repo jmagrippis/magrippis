@@ -24,21 +24,23 @@ const ChallengeLayout = ({
     />
     <div className="bg-prism">
       <main className="m-auto py-8 prose lg:prose-lg xl:prose-xl">
-        <div className="px-4">
-          <h1>{title}</h1>
-          <p className="text-xl lg:text-2xl">{snippet}</p>
-        </div>
-        <section className="px-4 mb-4">{children}</section>
-        <div className="px-4">
-          <Link href="/coding-challenges">
-            <Notice>
-              Check out{' '}
-              <span className="underline text-purple-600">
-                all coding challenges
-              </span>
-            </Notice>
-          </Link>
-        </div>
+        <article>
+          <div className="px-4">
+            <h1>{title}</h1>
+            <p className="text-xl lg:text-2xl">{snippet}</p>
+          </div>
+          <section className="px-4 mb-4">{children}</section>
+          <div className="px-4">
+            <Link href="/coding-challenges" passHref>
+              <Notice>
+                Check out{' '}
+                <span className="underline text-purple-600">
+                  all coding challenges
+                </span>
+              </Notice>
+            </Link>
+          </div>
+        </article>
       </main>
     </div>
   </>
