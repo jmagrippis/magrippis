@@ -1,6 +1,6 @@
 import { NextSeo } from 'next-seo'
 
-import { frontMatter as cyclingElement } from '../../pages/coding-challenges/2020/cycling-element/index.mdx'
+import { ParsedFrontMatter } from '*.mdx'
 import { ChallengeSnippet } from './ChallengeSnippet'
 import { getSeoProps } from '../getSeoProps'
 import { Signup } from '../Home/Signup'
@@ -9,9 +9,9 @@ const title = 'Coding Challenges | jmagrippis'
 const description =
   'Handcrafted coding challenges, inspired by my real experiences delivering software for startups, established companies and side-hustles'
 
-const pages = [cyclingElement]
+type Props = { pages: ParsedFrontMatter[] }
 
-export const CodingChallenges = () => (
+export const CodingChallenges = ({ pages }: Props) => (
   <>
     <NextSeo {...getSeoProps({ title, description })} />
     <div className="bg-prism flex-grow flex flex-col items-center justify-center">

@@ -7,8 +7,6 @@ module.exports = {
     content: [
       './components/**/*.tsx',
       './components/**/*.css',
-      './layouts/**/*.tsx',
-      './layouts/**/*.css',
       './pages/**/*.tsx',
       './pages/**/*.css',
     ],

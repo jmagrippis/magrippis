@@ -1,7 +1,6 @@
 import { NextSeo } from 'next-seo'
 
-import { frontMatter as timestampsWithLuxon } from '../../pages/blog/2020/human-readable-timestamps-with-Luxon.mdx'
-import { frontMatter as mdxInNext } from '../../pages/blog/2020/how-to-setup-MDX-in-Nextjs.mdx'
+import { FrontMatter } from '*.mdx'
 import { PostSnippet } from './PostSnippet'
 import { Notice } from '../Notice/Notice'
 import { getSeoProps } from '../getSeoProps'
@@ -10,9 +9,9 @@ const title = 'Blog | jmagrippis'
 const description =
   'Johnny’s thoughts on software engineering, travelling, photography and many more subjects, in written form!'
 
-const pages = [timestampsWithLuxon, mdxInNext]
+type Props = { pages: FrontMatter[] }
 
-export const Blog = () => (
+export const Blog = ({ pages }: Props) => (
   <>
     <NextSeo {...getSeoProps({ title, description })} />
     <div className="bg-prism flex-grow flex justify-center">

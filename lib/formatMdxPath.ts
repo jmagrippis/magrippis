@@ -1,2 +1,2 @@
 export const formatMdxPath = (path: string) =>
-  path.replace(/(\/index)?\.mdx$/, '')
+  path.replace(/(mdx\/)|(\/index)?\.mdx$/gi, '')

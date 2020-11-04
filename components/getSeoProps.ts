@@ -3,7 +3,7 @@ import { rootUrl } from '../lib/constants'
 const defaultSeo = {
   title: 'jmagrippis | coding challenges and success without stress',
   description:
-    'Johnny Magrippis is a Fullstack Engineer / Mentor / Photographer / (...)  challenging the need to have a niche.',
+    'Johnny Magrippis is a Fullstack Engineer / Mentor / Photographer / (...) challenging the need to have a niche.',
   openGraph: {
     type: 'website',
     locale: 'en_UK',
