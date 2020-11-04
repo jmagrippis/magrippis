@@ -1,6 +1,6 @@
 import { NextSeo } from 'next-seo'
 
-import { FrontMatter } from '*.mdx'
+import { ParsedFrontMatter } from '*.mdx'
 import { PostSnippet } from './PostSnippet'
 import { Notice } from '../Notice/Notice'
 import { getSeoProps } from '../getSeoProps'
@@ -9,7 +9,7 @@ const title = 'Blog | jmagrippis'
 const description =
   'Johnny’s thoughts on software engineering, travelling, photography and many more subjects, in written form!'
 
-type Props = { pages: FrontMatter[] }
+type Props = { pages: ParsedFrontMatter[] }
 
 export const Blog = ({ pages }: Props) => (
   <>
