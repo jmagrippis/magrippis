@@ -1,11 +1,11 @@
 import Link from 'next/link'
 
-import { FrontMatter } from '*.mdx'
+import { ParsedFrontMatter } from '*.mdx'
 import { FeaturedPreview } from './FeaturedPreview'
 import { formatMdxPath } from '../../lib/formatMdxPath'
 import { isoStringToRelativeTime } from '../../lib/relativeTime'
 
-type Props = FrontMatter
+type Props = ParsedFrontMatter
 
 export const ChallengeSnippet = ({
   title,
