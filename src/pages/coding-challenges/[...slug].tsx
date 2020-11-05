@@ -2,20 +2,22 @@ import renderToString from 'next-mdx-remote/render-to-string'
 import matter from 'gray-matter'
 import { glob } from 'glob'
 
-import { formatMdxPath } from '../../lib/formatMdxPath'
+import { formatMdxPath } from 'lib/formatMdxPath'
+import { Challenge } from 'components/CodingChallenges/Chalenge'
 import {
-  BLOG_PATH_PREFIX,
-  blogComponents,
+  CODING_CHALLENGES_PATH_PREFIX,
+  challengeComponents,
   mdxOptions,
-} from '../../mdx/constants'
-import { BlogPost } from '../../components/blog/BlogPost'
+} from '../../../mdx/constants'
 
 export async function getStaticPaths() {
-  const paths = glob.sync(`${BLOG_PATH_PREFIX}**/*.mdx`)
+  const paths = glob.sync(`${CODING_CHALLENGES_PATH_PREFIX}**/*.mdx`)
 
   return {
     paths: paths.map((path) => {
-      const slug = formatMdxPath(path).replace('blog/', '').split('/')
+      const slug = formatMdxPath(path)
+        .replace('coding-challenges/', '')
+        .split('/')
       return {
         params: { slug },
       }
@@ -26,7 +28,7 @@ export async function getStaticPaths() {
 
 export const getStaticProps = async ({ params: { slug } }) => {
   const { content, data } = matter.read(
-    `${BLOG_PATH_PREFIX}${slug.join('/')}.mdx`
+    `${CODING_CHALLENGES_PATH_PREFIX}${slug.join('/')}.mdx`
   )
   const frontMatter = {
     ...data,
@@ -34,7 +36,7 @@ export const getStaticProps = async ({ params: { slug } }) => {
   }
   const mdxSource = await renderToString(content, {
     scope: frontMatter,
-    components: blogComponents,
+    components: challengeComponents,
     mdxOptions,
   })
 
@@ -46,4 +48,4 @@ export const getStaticProps = async ({ params: { slug } }) => {
   }
 }
 
-export default BlogPost
+export default Challenge

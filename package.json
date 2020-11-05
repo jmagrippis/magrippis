@@ -9,7 +9,7 @@
     "test": "jest",
     "e2e": "cypress run",
     "bdd": "cypress open",
-    "lint": "eslint --ext .js,.jsx,.ts,.tsx components lib pages"
+    "lint": "eslint --ext .js,.jsx,.ts,.tsx src"
   },
   "dependencies": {
     "@mapbox/rehype-prism": "^0.5.0",

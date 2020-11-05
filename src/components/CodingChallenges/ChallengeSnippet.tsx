@@ -1,13 +1,13 @@
 import Link from 'next/link'
 
 import { ParsedFrontMatter } from '*.mdx'
-import { FeaturedImage } from './FeaturedImage'
-import { formatMdxPath } from '../../lib/formatMdxPath'
-import { isoStringToRelativeTime } from '../../lib/relativeTime'
+import { FeaturedPreview } from './FeaturedPreview'
+import { formatMdxPath } from 'lib/formatMdxPath'
+import { isoStringToRelativeTime } from 'lib/relativeTime'
 
 type Props = ParsedFrontMatter
 
-export const PostSnippet = ({
+export const ChallengeSnippet = ({
   title,
   snippet,
   tags,
@@ -15,13 +15,15 @@ export const PostSnippet = ({
   __resourcePath,
 }: Props) => (
   <li
-    className="cursor-pointer even:bg-gray-100 sm:p-4 sm:border-l first:rounded-tl last:first:rounded-bl border-purple-200 hover:border-purple-300 transition duration-300"
+    className="cursor-pointer sm:p-4 border-l border-purple-200 hover:border-purple-300 transition duration-300"
     key={__resourcePath}
   >
     <article>
       <Link href={formatMdxPath(__resourcePath)}>
         <a className="sm:grid sm:grid-cols-3 sm:gap-8">
-          <FeaturedImage title={title} />
+          <div className="bg-gray-100 rounded shadow flex justify-center items-center p-1">
+            <FeaturedPreview title={title} />
+          </div>
           <div className="p-4 sm:p-0 sm:col-span-2">
             <h2 className="text-2xl underline mb-2">{title}</h2>
             <p className="mb-4">{snippet}</p>
@@ -30,7 +32,7 @@ export const PostSnippet = ({
                 {tags.map((tag) => (
                   <span
                     key={tag}
-                    className="bg-purple-100 text-purple-900 p-2 mr-2 rounded shadow-sm"
+                    className="text-purple-900 p-2 mr-2 rounded shadow-sm"
                   >
                     {tag}
                   </span>

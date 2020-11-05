@@ -4,8 +4,8 @@ import { NextSeo } from 'next-seo'
 
 import { ParsedFrontMatter } from '*.mdx'
 import { Notice } from '../Notice/Notice'
-import { challengeComponents } from '../../mdx/constants'
-import { getSeoProps } from '../../components/getSeoProps'
+import { challengeComponents } from '../../../mdx/constants'
+import { getSeoProps } from 'components/getSeoProps'
 
 type Props = {
   frontMatter: ParsedFrontMatter

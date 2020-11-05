@@ -4,7 +4,7 @@ import cn from 'classnames'
 import GithubIcon from '../github-mark.svg'
 import OpenInNewIcon from './open-in-new.svg'
 import { LinkOrPlainAnchor } from '../LinkOrPlainAnchor'
-import { isoStringToRelativeTime } from '../../lib/relativeTime'
+import { isoStringToRelativeTime } from 'lib/relativeTime'
 
 export type MilestoneType = {
   title: string

@@ -1,4 +1,4 @@
-import { rootUrl } from '../lib/constants'
+import { rootUrl } from 'lib/constants'
 
 const defaultSeo = {
   title: 'jmagrippis | coding challenges and success without stress',

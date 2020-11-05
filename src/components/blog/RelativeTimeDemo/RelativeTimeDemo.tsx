@@ -3,7 +3,7 @@ import { useState } from 'react'
 import {
   isoStringToRelativeTime,
   timestampToRelativeTime,
-} from '../../../lib/relativeTime'
+} from 'lib/relativeTime'
 
 const renderRelativeFromTimestamp = (timestamp: string) => {
   const parsedTimestamp = parseInt(timestamp)

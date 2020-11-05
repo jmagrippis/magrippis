@@ -1,7 +1,7 @@
 import { NextApiRequest, NextApiResponse } from 'next'
 
-import { isContactPayload } from '../../components/Contact/submit'
-import { postmarkClient } from '../../lib/postmark'
+import { isContactPayload } from 'components/Contact/submit'
+import { postmarkClient } from 'lib/postmark'
 
 const FROM_EMAIL = 'contact@magrippis.com'
 const TO_EMAIL = 'contact@magrippis.com'
