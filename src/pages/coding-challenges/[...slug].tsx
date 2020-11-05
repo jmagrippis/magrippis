@@ -8,7 +8,7 @@ import {
   CODING_CHALLENGES_PATH_PREFIX,
   challengeComponents,
   mdxOptions,
-} from '../../../mdx/constants'
+} from 'mdx/constants'
 
 export async function getStaticPaths() {
   const paths = glob.sync(`${CODING_CHALLENGES_PATH_PREFIX}**/*.mdx`)

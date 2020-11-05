@@ -5,8 +5,8 @@ import { RelativeTimeDemo } from 'components/blog/RelativeTimeDemo/RelativeTimeD
 import { FeaturedPreview } from 'components/CodingChallenges/2020/CyclingElement/FeaturedPreview'
 import { Video } from 'components/Video/Video'
 
-export const BLOG_PATH_PREFIX = 'mdx/blog/'
-export const CODING_CHALLENGES_PATH_PREFIX = 'mdx/coding-challenges/'
+export const BLOG_PATH_PREFIX = 'src/mdx/blog/'
+export const CODING_CHALLENGES_PATH_PREFIX = 'src/mdx/coding-challenges/'
 
 export const mdxOptions = { rehypePlugins: [rehypePrism] }
 

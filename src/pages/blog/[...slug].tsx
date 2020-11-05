@@ -4,11 +4,7 @@ import { glob } from 'glob'
 
 import { formatMdxPath } from 'lib/formatMdxPath'
 import { BlogPost } from 'components/blog/BlogPost'
-import {
-  BLOG_PATH_PREFIX,
-  blogComponents,
-  mdxOptions,
-} from '../../../mdx/constants'
+import { BLOG_PATH_PREFIX, blogComponents, mdxOptions } from 'mdx/constants'
 
 export async function getStaticPaths() {
   const paths = glob.sync(`${BLOG_PATH_PREFIX}**/*.mdx`)
