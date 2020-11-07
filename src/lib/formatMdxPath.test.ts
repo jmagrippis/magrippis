@@ -22,3 +22,9 @@ it('works with files nested in a src/mdx directory', () => {
 
   expect(formatMdxPath(path)).toBe('blog/2020/how-to-setup-MDX-in-Nextjs')
 })
+
+it('works with files nested in a src/pages directory', () => {
+  const path = 'src/pages/blog/2020/how-to-setup-MDX-in-Nextjs.mdx'
+
+  expect(formatMdxPath(path)).toBe('blog/2020/how-to-setup-MDX-in-Nextjs')
+})

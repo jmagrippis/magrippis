@@ -2,7 +2,7 @@ import Link from 'next/link'
 import hydrate from 'next-mdx-remote/hydrate'
 
 import { ParsedFrontMatter } from '*.mdx'
-import { blogComponents } from 'mdx/constants'
+import { blogComponents } from 'lib/mdx'
 import { FeaturedImage } from 'components/blog/FeaturedImage'
 import { Notice } from 'components/Notice/Notice'
 
