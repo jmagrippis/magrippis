@@ -3,12 +3,12 @@ import matter from 'gray-matter'
 import { glob } from 'glob'
 
 import { formatMdxPath } from 'lib/formatMdxPath'
-import { Challenge } from 'components/CodingChallenges/Chalenge'
+import { Challenge } from 'components/CodingChallenges/Challenge'
 import {
   CODING_CHALLENGES_PATH_PREFIX,
   challengeComponents,
   mdxOptions,
-} from 'mdx/constants'
+} from 'lib/mdx'
 
 export async function getStaticPaths() {
   const paths = glob.sync(`${CODING_CHALLENGES_PATH_PREFIX}**/*.mdx`)

@@ -3,7 +3,7 @@ import hydrate from 'next-mdx-remote/hydrate'
 import { NextSeo } from 'next-seo'
 
 import { ParsedFrontMatter } from '*.mdx'
-import { challengeComponents } from 'mdx/constants'
+import { challengeComponents } from 'lib/mdx'
 import { getSeoProps } from 'components/getSeoProps'
 import { Notice } from '../Notice/Notice'
 
