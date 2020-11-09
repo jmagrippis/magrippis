@@ -37,14 +37,14 @@ export const getTwitterHref = ({
 export const ShareCTA = ({ className, ...restProps }: Props) => (
   <aside
     className={cn(
-      'text-center bg-gray-100 border border-gray-200 p-4 mb-2 rounded shadow-sm',
+      'text-center bg-white border border-gray-100 p-4 mb-2 rounded shadow-sm bg-opacity-75',
       className
     )}
   >
     <div className="mb-2">💜 sharing is caring 💜</div>
     <a
       href={getTwitterHref(restProps)}
-      className="bg-twitter-blue py-2 pl-4 pr-5 rounded inline-flex items-center justify-center"
+      className="py-2 pl-4 pr-5 rounded inline-flex items-center justify-center shadow hover:shadow-md bg-twitter-blue hover:bg-blue-500 transition duration-300 ease-in-out"
       style={{ color: 'white', textDecoration: 'none' }}
     >
       <TwitterIcon className="w-8 mr-1" />

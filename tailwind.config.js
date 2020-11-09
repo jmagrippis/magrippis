@@ -11,7 +11,7 @@ module.exports = {
   },
   variants: {
     borderStyle: ['responsive', 'focus'],
-    backgroundColor: ['even'],
+    backgroundColor: ['even', 'hover'],
   },
   theme: {
     extend: {
