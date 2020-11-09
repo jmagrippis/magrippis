@@ -5,6 +5,9 @@ import { ParsedFrontMatter } from '*.mdx'
 import { blogComponents } from 'lib/mdx'
 import { FeaturedImage } from 'components/blog/FeaturedImage'
 import { Notice } from 'components/Notice/Notice'
+import { ShareCTA } from 'components/ShareCTA/ShareCTA'
+import { useRouter } from 'next/router'
+import { rootUrl } from 'lib/constants'
 
 type Props = {
   frontMatter: ParsedFrontMatter
@@ -12,10 +15,11 @@ type Props = {
 }
 
 export const BlogPost = ({
-  frontMatter: { title, snippet },
+  frontMatter: { title, snippet, tags },
   source,
 }: Props) => {
   const mdx = hydrate(source, { components: blogComponents })
+  const { asPath } = useRouter()
 
   return (
     <div className="bg-prism">
@@ -33,6 +37,7 @@ export const BlogPost = ({
           />
           <section className="px-4 mb-4">{mdx}</section>
           <div className="px-4">
+            <ShareCTA title={title} tags={tags} url={`${rootUrl}${asPath}`} />
             <Link href="/blog" passHref>
               <Notice>
                 Check out{' '}
