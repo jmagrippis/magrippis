@@ -14,6 +14,11 @@ module.exports = {
     backgroundColor: ['even'],
   },
   theme: {
+    extend: {
+      colors: {
+        'twitter-blue': '#1da1f2',
+      },
+    },
     typography: (theme) => ({
       default: {
         css: {
