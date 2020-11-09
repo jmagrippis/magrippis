@@ -1,7 +1,7 @@
-import { testedLayouts } from '../testedLayouts'
+import { testedViewports } from '../testedViewports'
 
 describe('navigation', () => {
-  testedLayouts.forEach((layout) => {
+  testedViewports.forEach((layout) => {
     describe(`on ${layout}`, () => {
       before(() => {
         cy.viewport(layout)

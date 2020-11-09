@@ -1,10 +1,10 @@
-import { testedLayouts } from '../testedLayouts'
+import { testedViewports } from '../testedViewports'
 
 describe('blog', () => {
-  testedLayouts.forEach((layout) => {
-    describe(`on ${layout}`, () => {
+  testedViewports.forEach((viewport) => {
+    describe(`on ${viewport}`, () => {
       before(() => {
-        cy.viewport(layout)
+        cy.viewport(viewport)
       })
 
       it('can navigate to the articles, and back', () => {
