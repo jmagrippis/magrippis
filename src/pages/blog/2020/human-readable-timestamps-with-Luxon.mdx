@@ -53,7 +53,7 @@ Whatever you do, my advice is to do extract a method for that `toRelativeTime` t
 
 In this case the benefit is you’d only need to change the internals of your abstraction if you ever wanted to switch out Luxon, instead of changing the implementation everywhere you’re showing a relative time.
 
-Similarly, if you are using Moment.js directly and everywhere in your codebase, it’s a solid idea to abstract it away behind a method first, and then refactor to use something lighter and still heavily supported… like Luxon! Maybe even take inspiration from [these tests](https://github.com/jmagrippis/magrippis/blob/master/lib/relativeTime.test.ts 'a use-case for modules AND unit tests!') 😄
+Similarly, if you are using Moment.js directly and everywhere in your codebase, it’s a solid idea to abstract it away behind a method first, and then refactor to use something lighter and still heavily supported… like Luxon! Maybe even take inspiration from [these tests](https://github.com/jmagrippis/magrippis/blob/main/src/lib/relativeTime.test.ts 'a use-case for modules AND unit tests!') 😄
 
 ## The Demo
 
