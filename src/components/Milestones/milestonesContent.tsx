@@ -1,5 +1,14 @@
 export const milestonesContent = [
   {
+    title: 'How to BDD and E2E test your responsive web app with Cypress',
+    accomplishedAt: '2020-11-14T12:59:30.456Z',
+    href:
+      '/blog/2020/how-to-BDD-and-E2E-test-your-responsive-web-app-with-Cypress',
+    github: 'https://github.com/jmagrippis/magrippis',
+    description:
+      'New blog post! I have been streaming the live development of an app using the Marvel API, and we’re going full on BDD & mobile-first! This covers the BDD & E2E setup, and I will be writing a deep-dive on testing the mobile-first responsive design as well.',
+  },
+  {
     title: 'Share/Tweet blogpost CTA',
     accomplishedAt: '2020-11-09T21:26:32.123Z',
     github: 'https://github.com/jmagrippis/magrippis',
