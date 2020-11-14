@@ -1,5 +1,12 @@
 export const milestonesContent = [
   {
+    title: 'Share/Tweet blogpost CTA',
+    accomplishedAt: '2020-11-09T21:26:32.123Z',
+    github: 'https://github.com/jmagrippis/magrippis',
+    description:
+      'I’ve added a new section in each of my blogposts, with a button to tweet and a button to copy the link to that blogpost! Gotta make it easy for my lovely readers to share what I write 😄',
+  },
+  {
     title: 'Human-readable timestamps with Luxon',
     accomplishedAt: '2020-10-25T16:51:54.848Z',
     href: '/blog/2020/human-readable-timestamps-with-Luxon',
