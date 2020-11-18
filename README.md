@@ -1,6 +1,7 @@
 # Johnny Magrippis Personal Site
 
-[![CI](https://github.com/jmagrippis/magrippis/workflows/CI/badge.svg)](https://github.com/jmagrippis/magrippis/actions)
+[![main](https://github.com/jmagrippis/magrippis/workflows/main/badge.svg)](https://github.com/jmagrippis/magrippis/actions)
+[![E2E](https://github.com/jmagrippis/magrippis/workflows/E2E/badge.svg)](https://github.com/jmagrippis/magrippis/actions)
 
 The personal website of software engineer Johnny Magrippis. Yours truly!
 
@@ -13,9 +14,14 @@ You can view the result of all this code at
 
 - [React]
 - [NextJS]
+- [Tailwind CSS]
+- [Testing Library]
 
 [react]: https://facebook.github.io/react/ "It's kind of a big deal"
 [nextjs]: https://nextjs.org/ 'Isomorphic React framework'
+[tailwind css]: https://tailwindcss.com/ 'A utility-first CSS framework for
+rapidly building custom designs'
+[testing library]: https://testing-library.com/ 'Simple and complete testing utilities that encourage good testing practices'
 
 ## Questions & Contributions
 
@@ -72,9 +78,26 @@ Tests will rerun when any code changes, so you may start adding `MyComponent.tes
 The testing framework of choice is [Jest] and [React Testing Library] is also setup, and heavily recommended for the UI testing.
 
 [jest]: https://jestjs.io/ 'testing framework with a focus on simplicity'
-[react testing library]: https://testing-library.com/ 'testing utilities that encourage good testing practices'
+[react testing library]: https://testing-library.com/docs/react-testing-library/intro 'builds on top of DOM Testing Library by adding APIs for working with React components'
 
-### License
+## Gitmoji commit guide
+
+A fellow engineer introduced me to the [Gitmoji] and I am giving it a shot! I do think that list there is a bit too extensive, but the ones I am using here are:
+
+- 💡 for new blogposts
+- 🔊 for new milestones
+- ✨ for new features
+- ⬆️ for upgrading dependencies
+- ♿️ for accessibility improvements
+- 📝 for updating documentation
+- 🐛 for fixing bugs
+- 🎨 for improving code structure
+- 💄 for purely visual updates
+- ⚡️ for improving performance
+
+[gitmoji]: https://gitmoji.carloscuesta.me/ 'An emoji guide for your commit messages'
+
+## License
 
 For learning purposes, this repo is licensed under the [MIT license].
 
