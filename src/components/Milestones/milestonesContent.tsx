@@ -1,5 +1,11 @@
 export const milestonesContent = [
   {
+    title: 'Ghost of Tsushima - credits',
+    accomplishedAt: '2020-11-15T10:55:00.000Z',
+    description:
+      'It had been a while since I last finished an open world game! The setting and combat in Ghost had me playing steadily through the months, and over the weekend I saw it all the way. The snappy load times and Guiding Wind system definitely played a huge part in keeping me engaged, and I got super-close to a 100%-ing! I’ll likely be coming back for the occasional Legends coop mode 🌸',
+  },
+  {
     title: 'How to BDD and E2E test your responsive web app with Cypress',
     accomplishedAt: '2020-11-14T12:59:30.456Z',
     href:
