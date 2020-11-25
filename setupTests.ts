@@ -22,10 +22,3 @@ process.env = {
     loader: 'default',
   },
 }
-
-// mock writing to the clipboard
-Object.defineProperty(navigator, 'clipboard', {
-  value: {
-    writeText: jest.fn(() => Promise.resolve()),
-  },
-})
