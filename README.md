@@ -39,7 +39,7 @@ This repo also houses [jmagrippis’ Coding Challenges]! Visit the index, find o
 
 ### Prep
 
-You will need a version of Node installed: it is recommended to use [nvm] for hassle-free node version management.
+You will need the version of Node specified in the `.nvmrc` installed: it is recommended to use [nvm] for hassle-free node version management, and simply running `nvm i` at the project root.
 
 [Yarn v1] is recommended for installing this project's dependencies. [npm] which would have been installed alongside node should work almost just as well.
 
@@ -79,6 +79,32 @@ The testing framework of choice is [Jest] and [React Testing Library] is also se
 
 [jest]: https://jestjs.io/ 'testing framework with a focus on simplicity'
 [react testing library]: https://testing-library.com/docs/react-testing-library/intro 'builds on top of DOM Testing Library by adding APIs for working with React components'
+
+### Running e2e tests
+
+For these you **will** need the server running at http://localhost:3500/.
+
+We're using [Cypress] to ensure the app "actually works"™ in production, and to follow BDD with responsive-design and accessibility in mind.
+
+Responsive design especially, is tricky to meaningfully test using the Jest tests from the previous section. In contrast, edge-cases, mutating / destructive scenarios are trickier to test e2e and it's where the Jest tests shine!
+
+My blogpost on [BDD and E2E testing a responsive web app] sums up how I set up a very similar config during live-streams on [Twitch] 🙂
+
+In any case, to develop the app with the tests running side-by-side to the browser using the Cypress Dashboard, run:
+
+```sh
+yarn bdd
+```
+
+Our automated tests that run against deployments are defined in `.github/workflows/e2e.yml`. They essentially run the following command, only visiting the deployment url instead of the local server:
+
+```sh
+yarn e2e
+```
+
+[cypress]: https://www.cypress.io/ 'Fast, easy and reliable testing for anything that runs in a browser'
+[bdd and e2e testing a responsive web app]: https://magrippis.com/blog/2020/how-to-BDD-and-E2E-test-your-responsive-web-app-with-Cypress 'How to BDD and E2E test your responsive web app with Cypress'
+[twitch]: https://www.twitch.tv/jmagrippis 'What app will we be building when you visit?'
 
 ## Gitmoji commit guide
 
