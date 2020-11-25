@@ -20,7 +20,6 @@ describe('blog', () => {
           .within(() => {
             cy.findByRole('heading').should(($title) => {
               title = $title.text()
-              expect(title).to.contain('')
             })
           })
           .then(() => {
@@ -38,6 +37,34 @@ describe('blog', () => {
               .click({ force: true })
             cy.findByRole('heading', { name: 'Blog' }).should('exist')
           })
+      })
+
+      it('displays the article in a semantic way', () => {
+        const blogPath = 'blog/2020/human-readable-timestamps-with-Luxon'
+        cy.visit(`/${blogPath}?utm_source=twitch-campaign`)
+        const expectedShareUrl = `${Cypress.config().baseUrl}/${blogPath}`
+
+        cy.findByRole('heading', {
+          name: 'Human-readable timestamps with Luxon',
+          level: 1,
+        }).should('exist')
+        cy.findByRole('article').should('exist')
+
+        cy.findByRole('complementary').within(($aside) => {
+          cy.findByRole('link', { name: 'tweet' }).should(($anchor) => {
+            expect($anchor.attr('href')).to.include(
+              'https://twitter.com/intent/tweet?'
+            )
+          })
+          cy.findByRole('button', { name: /copy/i }).click({ force: true })
+          cy.findByRole('button', { name: /copied/i }).click({ force: true })
+
+          cy.window().then((win) =>
+            win.navigator.clipboard
+              .readText()
+              .then((text) => expect(text).to.equal(expectedShareUrl))
+          )
+        })
       })
     })
   })

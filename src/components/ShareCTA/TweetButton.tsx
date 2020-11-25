@@ -2,7 +2,7 @@ import cn from 'classnames'
 
 import TwitterIcon from './twitter.svg'
 
-const TWITTER_INTENT_URL = 'https://twitter.com/intent/tweet'
+export const TWITTER_INTENT_URL = 'https://twitter.com/intent/tweet'
 const TWITTER_HANDLE = 'jmagrippis'
 
 type Props = {

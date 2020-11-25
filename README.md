@@ -120,6 +120,7 @@ A fellow engineer introduced me to the [Gitmoji] and I am giving it a shot! I do
 - 🎨 for improving code structure
 - 💄 for purely visual updates
 - ⚡️ for improving performance
+- ♻️ for refactoring code
 
 [gitmoji]: https://gitmoji.carloscuesta.me/ 'An emoji guide for your commit messages'
 
