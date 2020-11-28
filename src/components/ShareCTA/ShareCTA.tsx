@@ -2,6 +2,7 @@ import cn from 'classnames'
 
 import { CopyButton } from './CopyButton'
 import { TweetButton } from './TweetButton'
+import { useShareUrl } from './useShareUrl'
 
 type Props = {
   title: string
@@ -10,12 +11,9 @@ type Props = {
 }
 
 export const ShareCTA = ({ className, title, tags }: Props) => {
-  const shareUrl =
-    typeof window !== 'undefined'
-      ? window.location.href.replace(/\?.+/g, '')
-      : null
+  const shareUrl = useShareUrl()
 
-  return shareUrl ? (
+  return (
     <aside
       className={cn(
         'text-center bg-white border border-gray-100 p-4 mb-2 rounded shadow-sm bg-opacity-75',
@@ -33,5 +31,5 @@ export const ShareCTA = ({ className, title, tags }: Props) => {
         <CopyButton url={shareUrl} />
       </div>
     </aside>
-  ) : null
+  )
 }
