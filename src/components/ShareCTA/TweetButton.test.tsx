@@ -41,19 +41,29 @@ describe('getTwitterHref', () => {
 
   it('errors out if the title is too long', () => {
     const url =
-      'https://magrippis.com/blog/2020/this-is-soooooo-long,-we-should-probably-have-a-catchier-title'
+      'https://magrippis.com/blog/2020/this-url-will-be-truncated-by-twitter-so-its-length-should-not-affect-the-test-and-therefore-I-am-not-using-the-actual-title-below'
     const title =
-      'This is soooooo long, we should probably have a catchier title'
+      'This is soooooo long we should probably have a much catchier title what do you think friends? The problem is that we do want this to throw and now that the url is not a problem it is hard to get there without an absurdly long title!'
     const tags = [
       'the-hashtags',
       'are-not-helping',
       'neither',
       'crash',
       'EpicFail',
+      'testInProduction',
     ]
 
     expect(() => getTwitterHref({ url, title, tags })).toThrow(
-      'Sharing "This is soooooo long, we should probably have a catchier title" results in a tweet that is too long'
+      `Sharing "${title}" results in a tweet that is too long`
     )
+  })
+
+  it('takes into account that the url will be shortened to a maximum of 23 characters', () => {
+    const url =
+      'https://magrippis-git-jma-47-share-url-and-custom-tweet-button-on-a.jmagrippis.vercel.app/blog/2020/how-to-BDD-and-E2E-test-your-responsive-web-app-with-Cypress'
+    const title = 'How to BDD and E2E test your responsive web app with Cypress'
+    const tags = ['Typescript', 'Frontend']
+
+    expect(() => getTwitterHref({ url, title, tags })).not.toThrow()
   })
 })
