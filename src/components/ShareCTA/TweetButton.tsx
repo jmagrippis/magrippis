@@ -12,6 +12,10 @@ type Props = {
   className?: string
 }
 
+// `t.co` shortens urls to a max of 23
+// https://developer.twitter.com/en/docs/twitter-api/v1/developer-utilities/configuration/api-reference/get-help-configuration
+const TWITTER_SHORT_URL_LENGTH = 23
+
 export const getTwitterHref = ({ url, title, tags }: Props) => {
   const shareUrl = new URL(TWITTER_INTENT_URL)
   const search = new URLSearchParams({
@@ -21,7 +25,10 @@ export const getTwitterHref = ({ url, title, tags }: Props) => {
     via: TWITTER_HANDLE,
   }).toString()
 
-  if (search.length > 280) {
+  const urlLengthDiff =
+    url.length - Math.min(url.length, TWITTER_SHORT_URL_LENGTH)
+
+  if (search.length - Math.max(urlLengthDiff, 0) > 280) {
     throw new Error(`Sharing "${title}" results in a tweet that is too long`)
   }
 
