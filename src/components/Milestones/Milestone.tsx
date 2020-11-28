@@ -1,10 +1,12 @@
 import { ReactNode } from 'react'
 import cn from 'classnames'
 
-import GithubIcon from '../github-mark.svg'
-import OpenInNewIcon from './open-in-new.svg'
-import { LinkOrPlainAnchor } from '../LinkOrPlainAnchor'
 import { isoStringToRelativeTime } from 'lib/relativeTime'
+
+import GithubIcon from '../github-mark.svg'
+import { LinkOrPlainAnchor } from '../LinkOrPlainAnchor'
+
+import OpenInNewIcon from './open-in-new.svg'
 
 export type MilestoneType = {
   title: string

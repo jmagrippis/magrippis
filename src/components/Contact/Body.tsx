@@ -1,5 +1,6 @@
-import { Form } from './Form'
 import { Signup } from '../Home/Signup'
+
+import { Form } from './Form'
 
 export const Body = () => (
   <main className="w-full flex-grow pt-4 bg-prism">

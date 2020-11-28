@@ -1,7 +1,8 @@
 import { render, screen } from '@testing-library/react'
 
-import Home from './'
 import { highlightsContent } from './Highlights/highlightsContent'
+
+import Home from './'
 
 describe('Home', () => {
   it('has sections for every highlight', () => {

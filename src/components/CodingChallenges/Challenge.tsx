@@ -2,10 +2,12 @@ import Link from 'next/link'
 import hydrate from 'next-mdx-remote/hydrate'
 import { NextSeo } from 'next-seo'
 
-import { ParsedFrontMatter } from '*.mdx'
-import { challengeComponents } from 'lib/mdx'
 import { getSeoProps } from 'components/getSeoProps'
+import { challengeComponents } from 'lib/mdx'
+
 import { Notice } from '../Notice/Notice'
+
+import { ParsedFrontMatter } from '*.mdx'
 
 type Props = {
   frontMatter: ParsedFrontMatter

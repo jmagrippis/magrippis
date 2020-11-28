@@ -1,9 +1,10 @@
 import dynamic from 'next/dynamic'
 import hydrate from 'next-mdx-remote/hydrate'
 
-import { ParsedFrontMatter } from '*.mdx'
-import { blogComponents } from 'lib/mdx'
 import { FeaturedImage } from 'components/blog/FeaturedImage'
+import { blogComponents } from 'lib/mdx'
+
+import { ParsedFrontMatter } from '*.mdx'
 
 type Props = {
   frontMatter: ParsedFrontMatter

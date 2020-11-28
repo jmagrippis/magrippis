@@ -2,8 +2,8 @@ import renderToString from 'next-mdx-remote/render-to-string'
 import matter from 'gray-matter'
 import { glob } from 'glob'
 
-import { formatMdxPath } from 'lib/formatMdxPath'
 import { Challenge } from 'components/CodingChallenges/Challenge'
+import { formatMdxPath } from 'lib/formatMdxPath'
 import {
   CODING_CHALLENGES_PATH_PREFIX,
   challengeComponents,

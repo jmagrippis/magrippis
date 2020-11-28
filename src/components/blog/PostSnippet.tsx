@@ -1,9 +1,11 @@
 import Link from 'next/link'
 
-import { ParsedFrontMatter } from '*.mdx'
-import { FeaturedImage } from './FeaturedImage'
 import { formatMdxPath } from 'lib/formatMdxPath'
 import { isoStringToRelativeTime } from 'lib/relativeTime'
+
+import { FeaturedImage } from './FeaturedImage'
+
+import { ParsedFrontMatter } from '*.mdx'
 
 type Props = ParsedFrontMatter
 
