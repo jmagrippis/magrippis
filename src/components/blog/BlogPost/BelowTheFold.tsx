@@ -1,5 +1,4 @@
 import Link from 'next/link'
-
 import { Notice } from 'components/Notice/Notice'
 import { ShareCTA } from 'components/ShareCTA/ShareCTA'
 

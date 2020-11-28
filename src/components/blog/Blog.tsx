@@ -1,9 +1,11 @@
 import { NextSeo } from 'next-seo'
 
-import { ParsedFrontMatter } from '*.mdx'
-import { PostSnippet } from './PostSnippet'
 import { Notice } from '../Notice/Notice'
 import { getSeoProps } from '../getSeoProps'
+
+import { PostSnippet } from './PostSnippet'
+
+import { ParsedFrontMatter } from '*.mdx'
 
 const title = 'Blog | jmagrippis'
 const description =

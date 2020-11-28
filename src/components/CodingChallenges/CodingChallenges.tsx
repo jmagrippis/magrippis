@@ -1,9 +1,11 @@
 import { NextSeo } from 'next-seo'
 
-import { ParsedFrontMatter } from '*.mdx'
-import { ChallengeSnippet } from './ChallengeSnippet'
 import { getSeoProps } from '../getSeoProps'
 import { Signup } from '../Home/Signup'
+
+import { ChallengeSnippet } from './ChallengeSnippet'
+
+import { ParsedFrontMatter } from '*.mdx'
 
 const title = 'Coding Challenges | jmagrippis'
 const description =

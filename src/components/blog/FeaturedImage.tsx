@@ -1,10 +1,11 @@
 import { NextSeo } from 'next-seo'
 import cn from 'classnames'
-
 import { rootUrl } from 'lib/constants'
+
 import { getSeoProps } from '../getSeoProps'
-import { getImageSrc } from './getImageSrc'
 import { AppearingImage } from '../AppearingImage/AppearingImage'
+
+import { getImageSrc } from './getImageSrc'
 
 type Props = {
   title: string

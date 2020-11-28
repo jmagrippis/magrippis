@@ -1,7 +1,8 @@
 import { NextSeo } from 'next-seo'
 
-import { Body } from './Body'
 import { getSeoProps } from '../getSeoProps'
+
+import { Body } from './Body'
 
 const title = 'Contact | jmagrippis'
 const description =

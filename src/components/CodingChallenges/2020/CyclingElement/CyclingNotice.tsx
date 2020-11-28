@@ -1,6 +1,7 @@
 import { ReactNode } from 'react'
 
 import { Notice } from '../../../Notice/Notice'
+
 import { useCyclingElement } from './useCyclingElement'
 
 type Props = {

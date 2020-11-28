@@ -8,6 +8,19 @@
     "jsx-a11y/anchor-is-valid": 0,
     "arrow-body-style": ["error"],
     "object-shorthand": ["error"],
-    "react/jsx-curly-brace-presence": ["error"]
+    "react/jsx-curly-brace-presence": ["error"],
+    "import/order": [
+      "error",
+      {
+        "groups": [
+          "builtin",
+          "external",
+          "internal",
+          "parent",
+          "sibling",
+          "index"
+        ]
+      }
+    ]
   }
 }

@@ -2,8 +2,8 @@ import renderToString from 'next-mdx-remote/render-to-string'
 import matter from 'gray-matter'
 import { glob } from 'glob'
 
-import { formatMdxPath } from 'lib/formatMdxPath'
 import { BlogPost } from 'components/blog/BlogPost/BlogPost'
+import { formatMdxPath } from 'lib/formatMdxPath'
 import { BLOG_PATH_PREFIX, blogComponents, mdxOptions } from 'lib/mdx'
 
 export async function getStaticPaths() {
