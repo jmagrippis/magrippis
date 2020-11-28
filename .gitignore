@@ -10,8 +10,7 @@ coverage
 
 # next.js
 .next/
-out/
-.now
+.vercel
 
 # production
 build
