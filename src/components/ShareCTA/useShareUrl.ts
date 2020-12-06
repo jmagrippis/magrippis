@@ -1,4 +1,5 @@
 import { useRouter } from 'next/router'
+
 import { rootUrl } from 'lib/constants'
 
 export const useShareUrl = () => {

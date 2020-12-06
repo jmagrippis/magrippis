@@ -1,3 +1,4 @@
+import { FC } from 'react'
 import cn from 'classnames'
 
 import { CopyButton } from './CopyButton'
@@ -10,7 +11,7 @@ type Props = {
   className?: string
 }
 
-export const ShareCTA = ({ className, title, tags }: Props) => {
+export const ShareCTA: FC<Props> = ({ className, title, tags }) => {
   const shareUrl = useShareUrl()
 
   return (
