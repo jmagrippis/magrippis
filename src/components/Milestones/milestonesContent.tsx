@@ -1,5 +1,13 @@
 export const milestonesContent = [
   {
+    title: 'How to add a custom Tweet CTA to your Next.js page',
+    accomplishedAt: '2020-12-06T15:35:00.000Z',
+    href: '/blog/2020/how-to-add-a-custom-Tweet-CTA-to-your-static-Nextjs-page',
+    github: 'https://github.com/jmagrippis/magrippis',
+    description:
+      'New blog post! A previous milestone was about adding a “sharing hub” section at the end of my blogposts, and this is the write-up of how I did it 😄',
+  },
+  {
     title: 'Ghost of Tsushima - credits',
     accomplishedAt: '2020-11-15T10:55:00.000Z',
     description:
