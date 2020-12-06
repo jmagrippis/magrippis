@@ -1,3 +1,4 @@
+import { FC } from 'react'
 import cn from 'classnames'
 
 import TwitterIcon from './twitter.svg'
@@ -15,6 +16,7 @@ type Props = {
 // `t.co` shortens urls to a max of 23
 // https://developer.twitter.com/en/docs/twitter-api/v1/developer-utilities/configuration/api-reference/get-help-configuration
 const TWITTER_SHORT_URL_LENGTH = 23
+const MAX_TWEET_LENGTH = 280
 
 export const getTwitterHref = ({ url, title, tags }: Props) => {
   const shareUrl = new URL(TWITTER_INTENT_URL)
@@ -28,7 +30,7 @@ export const getTwitterHref = ({ url, title, tags }: Props) => {
   const urlLengthDiff =
     url.length - Math.min(url.length, TWITTER_SHORT_URL_LENGTH)
 
-  if (search.length - Math.max(urlLengthDiff, 0) > 280) {
+  if (search.length - Math.max(urlLengthDiff, 0) > MAX_TWEET_LENGTH) {
     throw new Error(`Sharing "${title}" results in a tweet that is too long`)
   }
 
@@ -37,7 +39,7 @@ export const getTwitterHref = ({ url, title, tags }: Props) => {
   return shareUrl.href
 }
 
-export const TweetButton = (props: Props) => (
+export const TweetButton: FC<Props> = (props) => (
   <a
     href={getTwitterHref(props)}
     className={cn(

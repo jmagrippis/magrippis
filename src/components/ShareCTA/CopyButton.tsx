@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from 'react'
+import { FC, useCallback, useEffect, useState } from 'react'
 import cn from 'classnames'
 
 import LinkIcon from './link.svg'
@@ -8,7 +8,7 @@ type Props = {
   url: string
 }
 
-export const CopyButton = ({ url }: Props) => {
+export const CopyButton: FC<Props> = ({ url }) => {
   const [justCopied, setJustCopied] = useState(false)
 
   const handleClick = useCallback(async () => {
