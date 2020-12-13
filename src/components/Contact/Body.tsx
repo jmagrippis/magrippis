@@ -5,7 +5,7 @@ import { Form } from './Form'
 export const Body = () => (
   <main className="w-full flex-grow pt-4 bg-prism">
     <div className="max-w-readability text-xl m-auto p-4 mb-4">
-      <h1 className="text-4xl mb-6">Contact</h1>
+      <h1 className="text-4xl leading-normal mb-6">Contact</h1>
 
       <section className="mb-6">
         <p className="mb-4">Looking for mentoring? Career-change advice?</p>

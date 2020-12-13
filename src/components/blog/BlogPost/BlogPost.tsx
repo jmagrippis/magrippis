@@ -27,12 +27,7 @@ export const BlogPost = ({
             <h1>{title}</h1>
             <p className="text-xl lg:text-2xl">{snippet}</p>
           </div>
-          <FeaturedImage
-            title={title}
-            description={snippet}
-            withSeo
-            className="pt-2 pb-8 lg:pb-12"
-          />
+          <FeaturedImage title={title} description={snippet} withSeo />
           <section className="px-4 mb-4">{mdx}</section>
           <BelowTheFold title={title} tags={tags} />
         </article>

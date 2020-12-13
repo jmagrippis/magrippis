@@ -23,14 +23,14 @@ export const StatusToast = ({ status }: Props) =>
       className={cn(
         'text-base flex-grow self-stretch flex items-center justify-center shadow-sm rounded px-4 py-2 mr-4 border',
         {
-          'text-purple-700 bg-purple-100 border-purple':
+          'text-purple-700 bg-purple-50 border-purple':
             status === Status.Processing,
         },
         {
           'text-green-100 bg-green-400 border-green': status === Status.Success,
         },
         {
-          'text-red-700 bg-red-100 border-red': status === Status.Error,
+          'text-red-700 bg-red-50 border-red': status === Status.Error,
         }
       )}
     >

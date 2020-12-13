@@ -23,7 +23,7 @@ export const ChallengeSnippet = ({
     <article>
       <Link href={formatMdxPath(__resourcePath)}>
         <a className="sm:grid sm:grid-cols-3 sm:gap-8">
-          <div className="bg-gray-100 rounded shadow flex justify-center items-center p-1">
+          <div className="bg-gray-50 rounded shadow flex justify-center items-center p-1">
             <FeaturedPreview title={title} />
           </div>
           <div className="p-4 sm:p-0 sm:col-span-2">

@@ -62,7 +62,7 @@ export const Form = () => {
           id="name"
           name="name"
           type="text"
-          className="form-input w-full px-1 py-2 rounded shadow focus:outline-none focus:shadow-outline sm:col-span-2 mb-4 sm:mb-0"
+          className="form-input w-full px-1 py-2 rounded shadow focus:outline-none focus:ring ring-purple-300 sm:col-span-2 mb-4 sm:mb-0"
           value={name}
           onChange={({ currentTarget: { value } }) => {
             setName(value)
@@ -77,7 +77,7 @@ export const Form = () => {
           id="email"
           name="email"
           type="email"
-          className="form-input w-full px-1 py-2 rounded shadow focus:outline-none focus:shadow-outline sm:col-span-2 mb-4 sm:mb-0"
+          className="form-input w-full px-1 py-2 rounded shadow focus:outline-none focus:ring ring-purple-300 sm:col-span-2 mb-4 sm:mb-0"
           value={email}
           onChange={({ currentTarget: { value } }) => {
             setEmail(value)
@@ -90,7 +90,7 @@ export const Form = () => {
         <select
           required
           id="subject"
-          className="form-select bg-white h-full w-full px-1 py-2 rounded shadow focus:outline-none focus:shadow-outline sm:col-span-2 mb-4 sm:mb-0"
+          className="form-select bg-white h-full w-full px-1 py-2 rounded shadow focus:outline-none focus:ring ring-purple-300 sm:col-span-2 mb-4 sm:mb-0"
           value={subject}
           onChange={({ currentTarget: { value } }) => {
             if (isSubject(value)) {
@@ -112,7 +112,7 @@ export const Form = () => {
           required
           id="content"
           name="content"
-          className="form-input w-full px-1 py-2 rounded shadow focus:outline-none focus:shadow-outline sm:col-span-3 mb-4 sm:mb-0"
+          className="form-input w-full px-1 py-2 rounded shadow focus:outline-none focus:ring ring-purple-300 sm:col-span-3 mb-4 sm:mb-0"
           value={content}
           onChange={({ currentTarget: { value } }) => {
             setContent(value)
@@ -125,7 +125,7 @@ export const Form = () => {
         <StatusToast status={status} />
         <button
           type="submit"
-          className="shadow transition duration-300 ease-in-out bg-purple-500 border-transparent hover:bg-purple-600 hover:border-purple-400 font-semibold text-white py-2 px-4 border rounded"
+          className="shadow transition duration-300 ease-in-out bg-purple-500 border-transparent hover:bg-purple-600 hover:border-purple-400 font-semibold text-white py-2 px-4 focus:outline-none focus:ring ring-purple-300 border rounded"
         >
           send
         </button>
