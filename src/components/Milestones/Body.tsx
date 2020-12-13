@@ -5,8 +5,8 @@ import { Milestone } from './Milestone'
 
 export const Body = () => (
   <main className="w-full flex-grow py-4 bg-prism">
-    <div className="container m-auto p-4">
-      <h1 className="text-4xl mb-6">Milestones</h1>
+    <div className="container p-4">
+      <h1 className="text-4xl leading-normal mb-6">Milestones</h1>
       <ul className="border border-purple-400 rounded shadow-md bg-white">
         {milestonesContent.map(
           ({ title, description, accomplishedAt, href, github }, i) => (

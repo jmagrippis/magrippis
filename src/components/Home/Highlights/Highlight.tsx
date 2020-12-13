@@ -31,7 +31,7 @@ export const Highlight = ({
       'bg-prism text-black': !alternate,
     })}
   >
-    <div className="container m-auto p-8 grid grid-cols-1 sm:grid-cols-3 gap-8 items-center">
+    <div className="container p-8 grid grid-cols-1 sm:grid-cols-3 gap-8 items-center">
       <div className="col-span-2">
         {link ? (
           <LinkOrPlainAnchor href={link}>

@@ -18,7 +18,7 @@ export const CodingChallenges = ({ pages }: Props) => (
     <NextSeo {...getSeoProps({ title, description })} />
     <div className="bg-prism flex-grow flex flex-col items-center justify-center">
       <main className="text-lg max-w-readability-lg py-4 flex-grow">
-        <h1 className="text-4xl p-4">Coding Challenges</h1>
+        <h1 className="text-4xl leading-normal p-4">Coding Challenges</h1>
         <ul className="mb-8 bg-white shadow">
           {pages.map((page) => (
             <ChallengeSnippet key={page.__resourcePath} {...page} />

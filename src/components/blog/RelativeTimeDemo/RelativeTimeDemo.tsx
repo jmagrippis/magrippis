@@ -43,7 +43,7 @@ export const RelativeTimeDemo = () => {
           id="timestamp"
           name="timestamp"
           type="text"
-          className="form-input w-full px-1 py-2 rounded shadow focus:outline-none focus:shadow-outline mb-4 sm:mb-0 sm:col-span-2"
+          className="form-input w-full px-1 py-2 rounded shadow focus:ring mb-4 sm:mb-0 sm:col-span-2"
           value={timestamp}
           onChange={({ currentTarget: { value } }) => {
             setTimestamp(value)
@@ -66,7 +66,7 @@ export const RelativeTimeDemo = () => {
           id="iso-string"
           name="iso-string"
           type="text"
-          className="form-input w-full px-1 py-2 rounded shadow focus:outline-none focus:shadow-outline mb-4 sm:mb-0 sm:col-span-2"
+          className="form-input w-full px-1 py-2 rounded shadow focus:ring mb-4 sm:mb-0 sm:col-span-2"
           value={isoString}
           onChange={({ currentTarget: { value } }) => {
             setIsoString(value)
