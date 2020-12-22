@@ -1,5 +1,12 @@
 export const milestonesContent = [
   {
+    title: 'How to setup VS Code with Svelte',
+    accomplishedAt: '2020-12-14T09:35:00.000Z',
+    href: 'https://www.youtube.com/watch?v=mdFBhNnwRwU',
+    description:
+      'New YouTube video! SvelteKit is teasingly close, so I’m thinking of starting a dedicated Svelte training site... This is a proof-of-concept I can actually produce that sort of video for it, and an exploration of how much time it’d take me. What better place to start than editor setup? 👨‍🏫',
+  },
+  {
     title: 'How to add a custom Tweet CTA to your Next.js page',
     accomplishedAt: '2020-12-06T15:35:00.000Z',
     href: '/blog/2020/how-to-add-a-custom-Tweet-CTA-to-your-static-Nextjs-page',
