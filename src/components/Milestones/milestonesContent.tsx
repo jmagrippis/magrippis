@@ -1,5 +1,25 @@
 export const milestonesContent = [
   {
+    title: 'Horizon Zero Dawn - credits',
+    accomplishedAt: '2021-01-05T21:33:00.000Z',
+    description:
+      'After almost three years playing it on and off, I finished Horizon; including the Frozen Wilds expansion! It completely grabbed me over the holidays, the turning point being reaching Meridian. I strongly suggest making an effort to get to that city before judging whether to give up on the game: The format becomes a bit more “Witcher 3”-y, and the story is fantastic!',
+  },
+  {
+    title: 'New start @ Zoopla!',
+    accomplishedAt: '2021-01-04T09:30:00.000Z',
+    href: 'https://www.zoopla.co.uk',
+    description:
+      'New year, new permanent role: I’m now a Principal Engineer at Zoopla! If you’ve lived in the UK, I bet you’ve browsed through some property listings through us 🏡 It’s the biggest company I’ve seen with a meaningful culture project as a key goal, so I’m well excited to play a strong part!',
+  },
+  {
+    title: 'Tailwind with SvelteKit',
+    accomplishedAt: '2020-12-22T19:40:00.000Z',
+    href: 'https://www.youtube.com/watch?v=iA5_LdfypTM',
+    description:
+      'New “X with Svelte” YouTube video! A bit more substantial this time so a better "proof of concept" for a potential series, this time we’re putting TailwindCSS & SvelteKit together 🥰',
+  },
+  {
     title: 'How to setup VS Code with Svelte',
     accomplishedAt: '2020-12-14T09:35:00.000Z',
     href: 'https://www.youtube.com/watch?v=mdFBhNnwRwU',
