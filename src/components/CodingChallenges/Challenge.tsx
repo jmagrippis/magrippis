@@ -1,6 +1,7 @@
 import Link from 'next/link'
-import hydrate from 'next-mdx-remote/hydrate'
 import { NextSeo } from 'next-seo'
+import hydrate from 'next-mdx-remote/hydrate'
+import { MdxRemote } from 'next-mdx-remote/types'
 
 import { getSeoProps } from 'components/getSeoProps'
 import { challengeComponents } from 'lib/mdx'
@@ -11,7 +12,7 @@ import { ParsedFrontMatter } from '*.mdx'
 
 type Props = {
   frontMatter: ParsedFrontMatter
-  source: string
+  source: MdxRemote.Source
 }
 
 export const Challenge = ({
