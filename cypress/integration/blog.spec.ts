@@ -10,7 +10,7 @@ describe('blog', () => {
       it('can navigate to the articles, and back', () => {
         cy.visit('/blog')
 
-        cy.findByRole('heading', { name: 'Blog' }).should('exist')
+        cy.findByRole('heading', { name: 'Blog', level: 1 }).should('exist')
         cy.findAllByRole('article').should('exist')
 
         // navigate to the first article
@@ -18,14 +18,14 @@ describe('blog', () => {
         cy.findAllByRole('article')
           .first()
           .within(() => {
-            cy.findByRole('heading').should(($title) => {
+            cy.findByRole('heading', { level: 2 }).should(($title) => {
               title = $title.text()
             })
           })
           .then(() => {
             cy.findAllByRole('article').first().click()
+            cy.findByRole('heading', { name: title, level: 1 })
             cy.findByRole('article')
-            cy.findByRole('heading', { name: title })
 
             // navigate back to all articles
             cy.findByRole('link', { name: 'Check out all posts' })

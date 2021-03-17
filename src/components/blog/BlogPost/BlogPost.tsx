@@ -1,5 +1,6 @@
 import dynamic from 'next/dynamic'
 import hydrate from 'next-mdx-remote/hydrate'
+import { MdxRemote } from 'next-mdx-remote/types'
 
 import { FeaturedImage } from 'components/blog/FeaturedImage'
 import { blogComponents } from 'lib/mdx'
@@ -8,7 +9,7 @@ import { ParsedFrontMatter } from '*.mdx'
 
 type Props = {
   frontMatter: ParsedFrontMatter
-  source: string
+  source: MdxRemote.Source
 }
 
 const BelowTheFold = dynamic(() => import('./BelowTheFold'))
