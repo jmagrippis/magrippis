@@ -1,15 +1,16 @@
-import cn from 'classnames'
-
-import { milestonesContent } from './milestonesContent'
+import { Milestone as MilestoneType } from 'lib/repos/milestones/types'
 import { Milestone } from './Milestone'
 
-export const Body = () => (
+type Props = {
+  milestones: MilestoneType[]
+}
+export const Body = ({ milestones }: Props) => (
   <main className="w-full flex-grow py-4 bg-prism">
     <div className="container p-4">
       <h1 className="text-4xl leading-normal mb-6">Milestones</h1>
-      <ul className="border border-purple-400 rounded shadow-md bg-white">
-        {milestonesContent.map(
-          ({ title, description, accomplishedAt, href, github }, i) => (
+      <ul className="border border-purple-400 rounded shadow-md bg-white divide-y divide-purple-100 ">
+        {milestones.map(
+          ({ title, description, accomplishedAt, href, github }) => (
             <Milestone
               key={title}
               title={title}
@@ -17,10 +18,6 @@ export const Body = () => (
               accomplishedAt={accomplishedAt}
               href={href}
               github={github}
-              className={cn({
-                'border-b border-purple-200':
-                  i + 1 !== milestonesContent.length,
-              })}
             />
           )
         )}
