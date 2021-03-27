@@ -1,17 +1,24 @@
+import { Milestone } from 'lib/repos/milestones/types'
 import { NextSeo } from 'next-seo'
 
 import { getSeoProps } from '../getSeoProps'
 
 import { Body } from './Body'
 
-const title = 'Milestones | jmagrippis'
+export type MilestonesProps = {
+  milestones: Milestone[]
+}
+
 const description = 'Curated activity feed of what Johnny has been up to.'
 
-const Milestones = () => (
-  <>
-    <NextSeo {...getSeoProps({ title, description })} />
-    <Body />
-  </>
-)
+const Milestones = ({ milestones }: MilestonesProps) => {
+  const title = `Latest ${milestones.length} Milestones | jmagrippis`
+  return (
+    <>
+      <NextSeo {...getSeoProps({ title, description })} />
+      <Body milestones={milestones} />
+    </>
+  )
+}
 
 export default Milestones
