@@ -18,6 +18,29 @@ body > div {
   font-family: 'Fira Code', monospace;
 }
 
+/* Fonts */
+
+/* fira-code-regular - latin */
+@font-face {
+  font-family: 'Fira Code';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/fira-code-v10-latin-regular.woff2') format('woff2'),
+    url('/fonts/fira-code-v10-latin-regular.woff') format('woff');
+}
+/* fira-code-600 - latin */
+@font-face {
+  font-family: 'Fira Code';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('/fonts/fira-code-v10-latin-600.woff2') format('woff2'),
+    url('/fonts/fira-code-v10-latin-600.woff') format('woff');
+}
+
+/* utilities */
+
 .max-w-readability {
   max-width: 60ch;
 }

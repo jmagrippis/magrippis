@@ -25,10 +25,15 @@ class CustomDocument extends Document {
       <Html>
         <Head>
           <link rel="icon" href="/favicon.ico" />
-          <link rel="preconnect" href="https://fonts.gstatic.com" />
           <link
-            href="https://fonts.googleapis.com/css?family=Fira+Code:400,600&display=swap"
-            rel="stylesheet"
+            rel="preload"
+            href="/fonts/fira-code-v10-latin-regular.woff2"
+            as="font"
+          />
+          <link
+            rel="preload"
+            href="/fonts/fira-code-v10-latin-600.woff2"
+            as="font"
           />
           <script
             async
