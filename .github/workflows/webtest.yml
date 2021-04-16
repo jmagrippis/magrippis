@@ -1,0 +1,27 @@
+name: WebPageTest
+
+on: pull_request
+
+jobs:
+  web-page-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Wait for Vercel Deployment
+        uses: UnlyEd/github-action-await-vercel@v1.1.0
+        id: await-vercel
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+        with:
+          deployment-url: magrippis.vercel.app
+
+      - name: Run WebPageTest 🚅
+        uses: WPO-Foundation/webpagetest-github-action@main
+        with:
+          apiKey: ${{ secrets.WPT_API_KEY }}
+          urls: |
+            ${{ fromJson(steps.await-vercel.outputs.deploymentDetails).url }}
+            ${{ fromJson(steps.await-vercel.outputs.deploymentDetails).url }}/blog
+          label: 'GitHub Action Test'
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
