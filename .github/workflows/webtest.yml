@@ -23,5 +23,6 @@ jobs:
           urls: |
             ${{ fromJson(steps.await-vercel.outputs.deploymentDetails).url }}
             ${{ fromJson(steps.await-vercel.outputs.deploymentDetails).url }}/blog
+          wptOptions: 'wpt-options.json'
           label: 'GitHub Action Test'
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
