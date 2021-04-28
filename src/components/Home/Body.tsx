@@ -1,6 +1,6 @@
 import dynamic from 'next/dynamic'
 
-import { Hero } from './Hero'
+import { Hero } from './Hero/Hero'
 import { Mission } from './Mission'
 import { CTA } from './CTA'
 

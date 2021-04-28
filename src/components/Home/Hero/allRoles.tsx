@@ -34,4 +34,5 @@ export const allRoles = [
   'a cuber',
   'a dungeon master',
   'an island man',
+  'a Zoopligan',
 ]
