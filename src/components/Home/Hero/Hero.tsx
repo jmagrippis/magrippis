@@ -14,8 +14,8 @@ export const Hero = () => {
             src="/images/hero.jpg"
             title="Johnny’s avatar"
             alt="Johnny’s avatar"
-            layout="fill"
-            objectFit="contain"
+            width={256}
+            height={256}
             priority
           />
         </span>
