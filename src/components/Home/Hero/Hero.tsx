@@ -1,44 +1,10 @@
-import { useState, useEffect } from 'react'
 import Image from 'next/image'
-import { shuffle } from 'lodash'
-import { useTransition, animated } from 'react-spring'
+import { animated } from 'react-spring'
 
-import { allRoles } from './allRoles'
-
-const RESELECT_INTERVAL = 3000
+import { useRoleTransitions } from './useRoleTransitions'
 
 export const Hero = () => {
-  const [firstRole, ...otherRoles] = allRoles
-  const [roles, setRoles] = useState([firstRole, ...shuffle(otherRoles)])
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      if (!document?.hasFocus()) return
-
-      setRoles((currentRoles) =>
-        currentRoles.length > 1 ? currentRoles.slice(1) : shuffle(allRoles)
-      )
-    }, RESELECT_INTERVAL)
-
-    return () => {
-      clearInterval(interval)
-    }
-  }, [])
-
-  const transitions = useTransition(roles[0], null, {
-    from: {
-      opacity: 0,
-      transform: 'translate3d(0,2rem,0)',
-    },
-    enter: {
-      opacity: 1,
-      transform: 'translate3d(0,0,0)',
-    },
-    leave: {
-      opacity: 0,
-      transform: 'translate3d(0,-2rem,0)',
-    },
-  })
+  const transitions = useRoleTransitions()
 
   return (
     <section className="p-8">
@@ -50,6 +16,7 @@ export const Hero = () => {
             alt="Johnny’s avatar"
             layout="fill"
             objectFit="contain"
+            priority
           />
         </span>
         <div className="text-right" style={{ flexBasis: '60ch' }}>
