@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import Image from 'next/image'
 import { shuffle } from 'lodash'
 import { useTransition, animated } from 'react-spring'
 
@@ -42,14 +43,15 @@ export const Hero = () => {
   return (
     <section className="p-8">
       <div className="container flex items-center justify-center flex-wrap sm:flex-nowrap">
-        <img
-          width={512}
-          height={512}
-          src="/images/hero.jpg"
-          className="rounded-full shadow-lg h-64 w-64 mb-8 sm:mr-16 sm:mb-0"
-          title="Johnny’s avatar"
-          alt="Johnny’s avatar"
-        />
+        <span className="rounded-full shadow-lg overflow-hidden h-64 w-64 mb-8 sm:mr-16 sm:mb-0 relative">
+          <Image
+            src="/images/hero.jpg"
+            title="Johnny’s avatar"
+            alt="Johnny’s avatar"
+            layout="fill"
+            objectFit="contain"
+          />
+        </span>
         <div className="text-right" style={{ flexBasis: '60ch' }}>
           <p className="text-3xl mb-1">Hi, I’m Johnny and I’m</p>
 
