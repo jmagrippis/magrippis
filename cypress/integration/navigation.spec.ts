@@ -1,10 +1,10 @@
 import { testedViewports } from '../testedViewports'
 
 describe('navigation', () => {
-  testedViewports.forEach((layout) => {
-    describe(`on ${layout}`, () => {
+  testedViewports.forEach((viewport) => {
+    describe(`on ${viewport}`, () => {
       before(() => {
-        cy.viewport(layout)
+        cy.viewport(viewport)
       })
 
       it('can navigate to all the various sections of the site', () => {
@@ -32,7 +32,12 @@ describe('navigation', () => {
         // outbound links also exist
         cy.findByRole('link', { name: 'github' })
         cy.findByRole('link', { name: 'instagram' })
-        cy.findByRole('link', { name: 'twitter' })
+        cy.findByRole('link', { name: 'YouTube' })
+
+        // only on larger viewports
+        if (viewport === 'macbook-13') {
+          cy.findByRole('link', { name: 'twitter' })
+        }
       })
     })
   })
