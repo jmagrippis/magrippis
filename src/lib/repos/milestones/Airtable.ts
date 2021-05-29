@@ -1,7 +1,6 @@
 import remark from 'remark'
 import html from 'remark-html'
-import type Record from 'airtable/lib/record'
-import type Table from 'airtable/lib/table'
+import type { FieldSet, Record, Table } from 'airtable'
 
 import { styleLinks } from 'lib/remark/styleLinks'
 import { airtableBase } from '../airtableBase'
@@ -9,7 +8,16 @@ import { Milestone, MilestonesInterface } from './types'
 
 const mdProcessor = remark().use(styleLinks).use(html)
 
-const mapRecordToMilestone = (record: Record): Milestone => ({
+interface MilestoneRecordFields extends FieldSet {
+  title: string
+  accomplishedAt: string
+  description: string
+  github: string
+  href: string
+}
+type MilestoneRecord = Record<MilestoneRecordFields>
+
+const mapRecordToMilestone = (record: MilestoneRecord): Milestone => ({
   title: record.get('title'),
   accomplishedAt: record.get('accomplishedAt'),
   description: mdProcessor.processSync(record.get('description')).toString(),
@@ -18,7 +26,7 @@ const mapRecordToMilestone = (record: Record): Milestone => ({
 })
 
 export class MilestonesAirtableRepo implements MilestonesInterface {
-  #table: Table
+  #table: Table<MilestoneRecordFields>
 
   constructor(base = airtableBase) {
     this.#table = base('Milestones')
