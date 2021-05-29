@@ -22,7 +22,7 @@ export const highlightsContent: HighlightType[] = [
     description: [
       'My most fulfilling work.',
       'A lot of my time is spent teaching others, but mentoring holds a special place in my heart. Its one-to-one nature, the paradoxically unique struggles every one of us has, observing progress over a long period of time... It’s fascinating.',
-      'Plus, it’s the most effective way to help someone grow! I love talking at meetups: it reaches a lot of people and helps some a little bit... but focusing on a single person to help tremendously is a different kind of payoff.',
+      'Plus, it’s the most effective way to help someone grow! I love talking at meetups: the reach is great and most of the audience will gain a little bit from attending... but focusing on a single person to help tremendously is a different kind of payoff.',
       'I can only have so many mentees, but do get in touch if you are interested: we may work something out 😄',
     ],
   },
@@ -33,7 +33,42 @@ export const highlightsContent: HighlightType[] = [
     description: [
       'I am a firm believer in the power of workshops. Even those your employer forces you to attend! It’s all in the power of the facilitators to design something engaging that leaves you with key learnings you can apply immediately.',
       'I run workshops focused in career-changing into frontend engineering, and leveling up as a software engineer. From zero to deploying your javascript game to the internet, from an associate engineer to approaching software startup problems like a senior.',
-      'Holding a successful workshop during a pandemic is going to be a tough problem I will definitely be having a go at...',
+      'Holding successful workshops amidst the pandemic has been a problem to solve, but the tools are getting there!',
+    ],
+  },
+  {
+    title: 'Videos & Streams',
+    imgSrc: '/images/highlights/streaming.jpg',
+    imgTitle: 'Live streaming on Twitch!',
+    link: 'https://www.youtube.com/channel/UCm1ALyg61uhPoTnZBm7mY2g',
+    description: [
+      'After a decade of trying out new tech by building prototypes in isolation and for my own amusement, I’ve decided to start capturing myself hacking them together!',
+      <>
+        The picture is from{' '}
+        <a
+          href="https://www.twitch.tv/jmagrippis"
+          className="underline text-purple-600"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          a livestream on Twitch
+        </a>
+        , but, nowadays, I mostly make more persistent content over at YouTube.
+      </>,
+      <>
+        I’m most proud{' '}
+        <a
+          href="https://www.youtube.com/watch?v=1YwO2xacLKI"
+          className="underline text-purple-600"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          of code tutorials
+        </a>
+        , but they take so much time to make! I’m getting more efficient, but I
+        also intermingle more lightweight videos, to keep the production flow
+        going 🎬
+      </>,
     ],
   },
   {
@@ -44,11 +79,11 @@ export const highlightsContent: HighlightType[] = [
     link: 'https://www.instagram.com/jmagrippis/',
     description: [
       'Higher up than “blogging”, because a picture is worth a thousand words, and I have a lot to say 📷',
-      'I’ve managed to travel to quite a few fantastic places around the world, and although first priority is to experience them, I do set aside time for dedicated photo shoots!',
-      'Even now under lockdown, when the fantastic places are all in my London flat! This one is from my balcony and has quickly become a favourite.',
+      'I’ve managed to travel to quite a few fantastic places around the world: first priority is always to experience them, but I do set aside time for dedicated photo shoots!',
+      'The lockdown meant I had to find the fantastic places hidden in my London flat! Constrains spur creativity, and this shot from my balcony has quickly become a favourite.',
       <>
-        I mostly shoot with a <strong>Sony a7R IV</strong> and my go-to lens
-        currently is the <strong>Sony FE 85mm F1.4 GM</strong>.
+        I mostly shoot with a <strong>Sony a7R IV</strong> and my go-to lens is
+        the <strong>Sony FE 85mm F1.4 GM</strong>.
       </>,
     ],
   },
@@ -59,10 +94,10 @@ export const highlightsContent: HighlightType[] = [
     link: '/blog',
     description: [
       <>
-        I love writing in general, and sometimes I structure my thoughts into
-        something coherent, and they make their way into{' '}
+        I love writing, and sometimes I even structure my thoughts coherently
+        enough to publish them in{' '}
         <Link href="/blog">
-          <a className="underline text-purple-600">the blog</a>
+          <a className="underline text-purple-600">my blog</a>
         </Link>
         !
       </>,
@@ -76,21 +111,10 @@ export const highlightsContent: HighlightType[] = [
         >
           controversially hosted on Medium
         </a>
-        , but people reached out to me through this very site to have my content
-        in one place and not behind a paywall so... this is the start!
+        , but people reached out to me through this very site to ask for my
+        content in one place and outside a paywall so... this is the start!
       </>,
       'Everything new will be released there, so check it out 🚀',
-    ],
-  },
-  {
-    title: 'Streaming',
-    imgSrc: '/images/highlights/streaming.jpg',
-    imgTitle: 'Live streaming on Twitch!',
-    link: 'https://www.twitch.tv/jmagrippis',
-    description: [
-      'After a decade of trying out new tech by building prototypes in isolation and solely for my own amusement, I’ve decided to get with the times and stream myself hacking them together!',
-      'I’m also noticing a gap in the market, in that there are plenty of talented coders streaming, but I haven’t found any Pair Programming streams...',
-      'This is the “greenest” section by far, so if you’ve got advice, or want to Pairway to Heaven with me, do get in touch 😄',
     ],
   },
   {
@@ -107,7 +131,7 @@ export const highlightsContent: HighlightType[] = [
         >
           the gram
         </a>{' '}
-        for a more broad and ephemeral "activity feed", but this is a curated
+        for a more broad and ephemeral “activity feed”, but this is a curated
         and persisted{' '}
         <Link href="/milestones">
           <a className="underline text-purple-600">list of highlights</a>
