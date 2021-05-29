@@ -31,7 +31,7 @@ export const Highlight = ({
       'bg-prism text-black': !alternate,
     })}
   >
-    <div className="container p-8 grid grid-cols-1 sm:grid-cols-3 gap-8 items-center">
+    <div className="container py-8 sm:px-8 grid grid-cols-1 sm:grid-cols-3 gap-8 items-center">
       <div className="col-span-2">
         {link ? (
           <LinkOrPlainAnchor href={link}>
@@ -39,10 +39,9 @@ export const Highlight = ({
               src={imgSrc}
               width={2048}
               height={1365}
-              offset="7rem"
               title={imgTitle}
               alt={imgTitle}
-              className="rounded shadow-lg"
+              className="sm:rounded shadow-lg"
             />
           </LinkOrPlainAnchor>
         ) : (
@@ -50,16 +49,15 @@ export const Highlight = ({
             src={imgSrc}
             width={2048}
             height={1365}
-            offset="7rem"
             title={imgTitle}
             alt={imgTitle}
-            className="rounded shadow-lg"
+            className="sm:rounded shadow-lg"
           />
         )}
       </div>
 
       <div
-        className={cn({
+        className={cn('px-8 sm:px-0', {
           'sm:row-start-1': alternate,
         })}
       >
