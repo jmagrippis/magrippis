@@ -120,8 +120,8 @@ it('displays the article in a semantic way', () => {
         'https://twitter.com/intent/tweet?'
       )
     })
-    cy.findByRole('button', { name: /copy/i }).click({ force: true })
-    cy.findByRole('button', { name: /copied/i }).click({ force: true })
+    cy.findByRole('button', { name: /copy/i }).click()
+    cy.findByRole('button', { name: /copied/i })
 
     cy.window().then((win) =>
       win.navigator.clipboard

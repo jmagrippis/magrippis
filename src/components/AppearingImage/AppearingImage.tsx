@@ -1,32 +1,21 @@
-import { useCallback } from 'react'
+import { ReactEventHandler, useCallback } from 'react'
 import { useSpring, animated } from 'react-spring'
-import Image from 'next/image'
+import Image, { ImageProps } from 'next/image'
 
-// should get these from the next/image type definitions
-type ImageProps = Omit<
-  JSX.IntrinsicElements['img'],
-  'src' | 'srcSet' | 'ref' | 'width' | 'height' | 'loading'
-> & {
-  src: string
-  quality?: number | string
-  priority?: boolean
-  unoptimized?: boolean
-} & {
-  width: number | string
-  height: number | string
-  unsized?: false
-} & { offset: string }
-
-export const AppearingImage = ({ offset, onLoad, ...props }: ImageProps) => {
+export const AppearingImage = ({ onLoad, ...props }: ImageProps) => {
   const [animatedStyle, set] = useSpring(() => ({
     opacity: 0,
   }))
 
-  const handleOnLoad = useCallback(() => {
-    set({
-      opacity: 1,
-    })
-  }, [set])
+  const handleOnLoad = useCallback<ReactEventHandler<HTMLImageElement>>(
+    (event) => {
+      set({
+        opacity: 1,
+      })
+      onLoad && onLoad(event)
+    },
+    [set, onLoad]
+  )
 
   return (
     <animated.div style={animatedStyle}>

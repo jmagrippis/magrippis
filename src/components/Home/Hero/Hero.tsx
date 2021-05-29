@@ -4,7 +4,7 @@ import { animated } from 'react-spring'
 import { useRoleTransitions } from './useRoleTransitions'
 
 export const Hero = () => {
-  const transitions = useRoleTransitions()
+  const transition = useRoleTransitions()
 
   return (
     <section className="p-8">
@@ -23,13 +23,13 @@ export const Hero = () => {
           <p className="text-3xl mb-1">Hi, I’m Johnny and I’m</p>
 
           <p className="relative text-4xl text-purple-600 h-24 sm:h-auto">
-            {transitions.map(({ item, key, props }) => (
+            {transition((style, role) => (
               <animated.span
                 className="absolute right-0 text-shadow-md"
-                key={key}
-                style={props}
+                key={role}
+                style={style}
               >
-                {item}
+                {role}
               </animated.span>
             ))}
           </p>
