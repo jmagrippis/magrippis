@@ -45,12 +45,11 @@ export const FeaturedImage = ({
           })}
         />
       )}
-      <div className={cn('max-w-full w-screen', className)}>
+      <div className={cn('max-w-full w-full', className)}>
         <AppearingImage
           src={imageSrc}
           width={2048}
           height={1152}
-          offset="3rem"
           className="sm:rounded shadow-lg"
           alt={`hero of "${title}"`}
         />

@@ -24,7 +24,7 @@ export const useRoleTransitions = () => {
     }
   }, [])
 
-  return useTransition(roles[0], null, {
+  return useTransition([roles[0]], {
     from: {
       opacity: 0,
       transform: 'translate3d(0,2rem,0)',

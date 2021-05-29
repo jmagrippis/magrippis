@@ -33,9 +33,7 @@ describe('coding challenges', () => {
               .scrollIntoView({
                 easing: 'linear',
               })
-              // element appears visible on the dashboard but
-              // Cypress claims its center is not without the force flag
-              .click({ force: true })
+              .click()
             cy.findByRole('heading', { name: 'Coding Challenges' }).should(
               'exist'
             )
