@@ -1,10 +1,19 @@
 import { Highlights } from './Highlights/Highlights'
-import { Signup } from './Signup'
+import { Signup } from './Signup/Signup'
 
 const BelowTheFold = () => (
   <>
     <Highlights />
-    <Signup prompt="If you made it this far, how about subscribing to..." />
+    <Signup
+      prompt={
+        <>
+          <p>If you made it this far,</p>
+          <p>
+            you will <strong>love</strong> my weekly updates!
+          </p>
+        </>
+      }
+    />
   </>
 )
 

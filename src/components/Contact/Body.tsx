@@ -1,10 +1,10 @@
-import { Signup } from '../Home/Signup'
+import { Signup } from '../Home/Signup/Signup'
 
 import { Form } from './Form'
 
 export const Body = () => (
   <main className="w-full flex-grow pt-4 bg-prism">
-    <div className="max-w-readability text-xl m-auto p-4 mb-4">
+    <div className="max-w-prose text-xl m-auto p-4 mb-4">
       <h1 className="text-4xl leading-normal mb-6">Contact</h1>
 
       <section className="mb-6">
@@ -31,8 +31,8 @@ export const Body = () => (
     <Signup
       prompt={
         <>
-          If you’d rather <strong>I</strong> get in touch, proactively, you
-          should subscribe to my newsletter!
+          If you’d rather <strong>I</strong> get in touch, proactively,
+          subscribe to my newsletter!
         </>
       }
     />

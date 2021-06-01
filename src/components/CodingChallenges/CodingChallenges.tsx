@@ -1,7 +1,7 @@
 import { NextSeo } from 'next-seo'
 
 import { getSeoProps } from '../getSeoProps'
-import { Signup } from '../Home/Signup'
+import { Signup } from '../Home/Signup/Signup'
 
 import { ChallengeSnippet } from './ChallengeSnippet'
 
