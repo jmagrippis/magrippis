@@ -7,4 +7,13 @@ module.exports = withPlugins([svgr], {
     locales: ['en'],
     defaultLocale: 'en',
   },
+  redirects() {
+    return [
+      {
+        source: '/tube',
+        destination: 'https://www.youtube.com/channel/UCm1ALyg61uhPoTnZBm7mY2g',
+        permanent: false,
+      },
+    ]
+  },
 })
