@@ -3,8 +3,11 @@ import cn from 'classnames'
 
 type Props = HTMLProps<HTMLAnchorElement>
 
-export const Notice = forwardRef<unknown, Props>(
-  ({ children, className, ...restProps }, ref) => (
+export const Notice = forwardRef<unknown, Props>(function Notice(
+  { children, className, ...restProps },
+  ref
+) {
+  return (
     <a
       ref={ref as LegacyRef<HTMLAnchorElement>}
       className={cn(
@@ -16,4 +19,4 @@ export const Notice = forwardRef<unknown, Props>(
       {children}
     </a>
   )
-)
+})

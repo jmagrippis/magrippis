@@ -1,5 +1,5 @@
 {
-  "extends": ["react-app"],
+  "extends": ["../eslintrc.json"],
   "env": {
     "jest": false,
     "mocha": true
