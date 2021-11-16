@@ -1,8 +1,8 @@
-import remark from 'remark'
+import { remark } from 'remark'
 import html from 'remark-html'
 import type { FieldSet, Record, Table } from 'airtable'
 
-import { styleLinks } from 'lib/remark/styleLinks'
+import styleLinks from 'lib/remark/styleLinks'
 import { airtableBase } from '../airtableBase'
 import { Milestone, MilestonesInterface } from './types'
 
