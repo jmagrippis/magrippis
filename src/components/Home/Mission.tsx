@@ -19,7 +19,7 @@ export const Mission = () => (
           landscape photography, or for 4X strategy video games, or for
           practicing handstands. I’m not gonna create a “Frontend specialist”
           brand, to complement the “evangelising GraphQL” brand, while promoting
-          the "career-change mentoring" brand.
+          the “career-change mentoring” brand.
         </p>
         <p>
           My brand is going to be me and all the things I fancy at any time! So,

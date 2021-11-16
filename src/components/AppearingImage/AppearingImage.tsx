@@ -2,7 +2,7 @@ import { ReactEventHandler, useCallback } from 'react'
 import { useSpring, animated } from 'react-spring'
 import Image, { ImageProps } from 'next/image'
 
-export const AppearingImage = ({ onLoad, ...props }: ImageProps) => {
+export const AppearingImage = ({ onLoad, alt, ...props }: ImageProps) => {
   const [animatedStyle, set] = useSpring(() => ({
     opacity: 0,
   }))
@@ -19,7 +19,7 @@ export const AppearingImage = ({ onLoad, ...props }: ImageProps) => {
 
   return (
     <animated.div style={animatedStyle}>
-      <Image {...props} onLoad={handleOnLoad} />
+      <Image {...props} alt={alt ?? ''} onLoad={handleOnLoad} />
     </animated.div>
   )
 }

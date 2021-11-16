@@ -1,11 +1,6 @@
 {
-  "extends": ["react-app", "react-app/jest"],
-  "parserOptions": {
-    "project": "./tsconfig.json"
-  },
+  "extends": "next/core-web-vitals",
   "rules": {
-    "jsx-a11y/accessible-emoji": 0,
-    "jsx-a11y/anchor-is-valid": 0,
     "arrow-body-style": ["error"],
     "object-shorthand": ["error"],
     "react/jsx-curly-brace-presence": ["error"],

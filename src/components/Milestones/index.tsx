@@ -1,5 +1,6 @@
-import { Milestone } from 'lib/repos/milestones/types'
 import { NextSeo } from 'next-seo'
+
+import type { Milestone } from 'lib/repos/milestones/types'
 
 import { getSeoProps } from '../getSeoProps'
 
