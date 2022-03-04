@@ -65,8 +65,11 @@
       "pre-commit": "yarn lint && pretty-quick --staged"
     }
   },
+  "engines": {
+    "node": "14.x"
+  },
   "volta": {
-    "node": "16.13.0",
+    "node": "14.19.0",
     "yarn": "1.22.17"
   },
   "license": "MIT"
