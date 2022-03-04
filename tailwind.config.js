@@ -2,13 +2,9 @@ const colors = require('tailwindcss/colors')
 const typography = require('@tailwindcss/typography')
 
 module.exports = {
-  purge: ['./src/**/*.tsx', './src/**/*.css'],
+  content: ['./src/**/*.tsx', './src/**/*.css'],
   corePlugins: {
     fontFamily: false,
-  },
-  variants: {
-    borderStyle: ['responsive', 'focus'],
-    backgroundColor: ['even', 'hover'],
   },
   theme: {
     container: {
@@ -23,7 +19,7 @@ module.exports = {
     extend: {
       colors: {
         'twitter-blue': '#1da1f2',
-        gray: colors.blueGray,
+        gray: colors.neutral,
       },
       typography: (theme) => ({
         DEFAULT: {
