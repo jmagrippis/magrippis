@@ -66,11 +66,11 @@
     }
   },
   "engines": {
-    "node": "14.x"
+    "node": "16.x"
   },
   "volta": {
-    "node": "14.19.0",
-    "yarn": "1.22.17"
+    "node": "16.15.0",
+    "yarn": "1.22.18"
   },
   "license": "MIT"
 }

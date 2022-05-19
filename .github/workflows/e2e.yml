@@ -3,7 +3,7 @@ name: E2E
 on: deployment_status
 
 env:
-  NODE_VERSION: 14.x
+  NODE_VERSION: 16.x
 
 jobs:
   e2e:
