@@ -1,7 +1,9 @@
-const withPlugins = require('next-compose-plugins')
-const svgr = require('next-svgr')
+const withSvgr = require('next-svgr')
 
-module.exports = withPlugins([svgr], {
+/**
+ * @type {import('next').NextConfig}
+ */
+const nextConfig = withSvgr({
   pageExtensions: ['js', 'jsx', 'ts', 'tsx'],
   i18n: {
     locales: ['en'],
@@ -17,3 +19,5 @@ module.exports = withPlugins([svgr], {
     ]
   },
 })
+
+module.exports = nextConfig

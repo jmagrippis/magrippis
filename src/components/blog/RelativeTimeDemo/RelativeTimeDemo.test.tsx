@@ -11,7 +11,7 @@ describe('RelativeTimeDemo', () => {
 
     render(<RelativeTimeDemo />)
 
-    const timestampInput = screen.getByLabelText(/timestamp/gi)
+    const timestampInput = screen.getByLabelText(/timestamp/i)
     userEvent.clear(timestampInput)
     await userEvent.type(timestampInput, `${timestamp}`)
 
@@ -25,9 +25,9 @@ describe('RelativeTimeDemo', () => {
 
     render(<RelativeTimeDemo />)
 
-    const isoStringInput = screen.getByLabelText(/ISO string/gi)
+    const isoStringInput = screen.getByLabelText(/ISO string/i)
     userEvent.clear(isoStringInput)
-    await userEvent.type(screen.getByLabelText(/ISO string/gi), isoString)
+    await userEvent.type(screen.getByLabelText(/ISO string/i), isoString)
 
     screen.getByText('10 minutes ago')
   })
