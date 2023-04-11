@@ -1,108 +1,43 @@
 const colors = require('tailwindcss/colors')
-const typography = require('@tailwindcss/typography')
+const withAlphaValue = (varName) => `hsl(var(--${varName}) / <alpha-value>)`
 
+/** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ['./src/**/*.tsx', './src/**/*.css'],
-  corePlugins: {
-    fontFamily: false,
-  },
-  theme: {
-    container: {
-      center: true,
-    },
-    screens: {
-      sm: '640px',
-      md: '768px',
-      lg: '1024px',
-      xl: '1280px',
-    },
-    extend: {
-      colors: {
-        'twitter-blue': '#1da1f2',
-        gray: colors.neutral,
-      },
-      typography: (theme) => ({
-        DEFAULT: {
-          css: {
-            h1: {
-              fontWeight: theme('fontWeight.normal'),
-              marginTop: '0',
-            },
-            h2: {
-              fontWeight: theme('fontWeight.normal'),
-              marginTop: '0',
-            },
-            h3: {
-              fontWeight: theme('fontWeight.normal'),
-              marginTop: '0',
-            },
-            a: {
-              color: theme('colors.purple.600'),
-              '&:hover': {
-                color: theme('colors.purple.800'),
-              },
-            },
-            img: {
-              margin: '0 auto',
-              boxShadow: theme('boxShadow.md'),
-              borderRadius: theme('borderRadius.DEFAULT'),
-            },
-            video: {
-              margin: '0 auto',
-              boxShadow: theme('boxShadow.md'),
-              borderRadius: theme('borderRadius.DEFAULT'),
-            },
-            pre: {
-              fontFamily: '"Fira Code", monospace',
-            },
-            code: {
-              backgroundColor: theme('colors.purple.100'),
-              color: theme('colors.purple.900'),
-              fontFamily: '"Fira Code", monospace',
-              fontWeight: theme('fontWeight.normal'),
-              paddingLeft: theme('padding.2'),
-              paddingRight: theme('padding.2'),
-            },
-          },
-        },
-        lg: {
-          css: {
-            h1: {
-              marginTop: '0',
-            },
-            h2: {
-              marginTop: '0',
-            },
-            h3: {
-              marginTop: '0',
-            },
-            img: {
-              margin: '0 auto',
-            },
-          },
-        },
-        xl: {
-          css: {
-            h1: {
-              marginTop: '0',
-            },
-            h2: {
-              marginTop: '0',
-            },
-            h3: {
-              marginTop: '0',
-            },
-            img: {
-              margin: '0 auto',
-            },
-          },
-        },
-      }),
-    },
-  },
-  plugins: [
-    typography({
-      modifiers: ['lg', 'xl'],
-    }),
-  ],
+	content: ['./src/**/*.{js,ts,jsx,tsx}'],
+	theme: {
+		colors: {
+			primary: colors.emerald,
+			secondary: colors.orange,
+			copy: {
+				base: withAlphaValue('copy-base-color'),
+				muted: withAlphaValue('copy-muted-color'),
+			},
+			surface: {
+				1: withAlphaValue('surface-1-color'),
+				2: withAlphaValue('surface-2-color'),
+				3: withAlphaValue('surface-3-color'),
+			},
+			emphasis: {
+				DEFAULT: withAlphaValue('emphasis-color'),
+				hover: withAlphaValue('emphasis-hover-color'),
+			},
+			gray: colors.stone,
+			white: colors.white,
+			transparent: 'transparent',
+			current: 'currentColor',
+		},
+		boxShadow: {
+			low: 'var(--shadow-elevation-low)',
+			mid: 'var(--shadow-elevation-medium)',
+			high: 'var(--shadow-elevation-high)',
+		},
+		container: {
+			center: true,
+		},
+		fontFamily: {
+			sans: ['Trispace', 'sans-serif', '"Noto Color Emoji"'],
+		},
+		extend: {},
+	},
+	plugins: [],
 }

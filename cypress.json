@@ -1,9 +1,0 @@
-{
-  "baseUrl": "http://localhost:3500",
-  "projectId": "aw4fvt",
-  "retries": {
-    "runMode": 2,
-    "openMode": 0
-  },
-  "defaultCommandTimeout": 15000
-}
