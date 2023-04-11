@@ -1,5 +1,0 @@
-{
-  "env": {
-    "POSTMARK_SECRET": "@postmark-secret"
-  }
-}

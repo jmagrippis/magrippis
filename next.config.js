@@ -1,19 +1,9 @@
-const withPlugins = require('next-compose-plugins')
-const svgr = require('next-svgr')
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+	experimental: {
+		appDir: true,
+		typedRoutes: true,
+	},
+}
 
-module.exports = withPlugins([svgr], {
-  pageExtensions: ['js', 'jsx', 'ts', 'tsx'],
-  i18n: {
-    locales: ['en'],
-    defaultLocale: 'en',
-  },
-  redirects() {
-    return [
-      {
-        source: '/tube',
-        destination: 'https://www.youtube.com/channel/UCm1ALyg61uhPoTnZBm7mY2g',
-        permanent: false,
-      },
-    ]
-  },
-})
+module.exports = nextConfig
