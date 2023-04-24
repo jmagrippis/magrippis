@@ -12,7 +12,7 @@ const Hero = () => (
 			className="col-span-3 rounded-full shadow-mid lg:col-span-2"
 		/>
 		<h1 className="col-span-9 text-2xl lg:col-span-10 lg:text-4xl">
-			Hi, I’m <strong>Johnny</strong> and...
+			Hello, I’m <strong>Johnny</strong> and...
 		</h1>
 	</section>
 )

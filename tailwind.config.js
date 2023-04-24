@@ -6,8 +6,8 @@ module.exports = {
 	content: ['./src/**/*.{js,ts,jsx,tsx}'],
 	theme: {
 		colors: {
-			primary: colors.emerald,
-			secondary: colors.orange,
+			primary: colors.purple,
+			secondary: colors.emerald,
 			copy: {
 				base: withAlphaValue('copy-base-color'),
 				muted: withAlphaValue('copy-muted-color'),
