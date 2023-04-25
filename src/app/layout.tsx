@@ -1,10 +1,10 @@
 import './globals.css'
+import {cookies} from 'next/headers'
 import {Trispace} from 'next/font/google'
 
 import {Header} from './Header/Header'
 import {Footer} from './Footer/Footer'
 
-// If loading a variable font, you don't need to specify the font weight
 const trispace = Trispace({
 	subsets: ['latin'],
 	display: 'swap',
@@ -28,10 +28,13 @@ export const metadata = {
 }
 
 const RootLayout = ({children}: {children: React.ReactNode}) => {
+	const cookieStore = cookies()
+	const themeCookie = cookieStore.get('theme')?.value ?? 'auto'
+
 	return (
-		<html lang="en" data-theme="auto" className={trispace.className}>
+		<html lang="en" data-theme={themeCookie} className={trispace.className}>
 			<body>
-				<Header />
+				<Header themeCookie={themeCookie} />
 				{children}
 				<Footer />
 			</body>
