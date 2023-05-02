@@ -1,6 +1,6 @@
 'use client'
 
-import {FormEvent, MouseEventHandler, useEffect, useState} from 'react'
+import {MouseEventHandler, useEffect, useState} from 'react'
 import {ThemeToggleIcon} from './ThemeToggleIcon'
 
 const themes = ['light', 'dark', 'auto'] as const
