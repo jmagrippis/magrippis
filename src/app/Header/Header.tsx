@@ -1,5 +1,8 @@
 import Link from 'next/link'
 import {ThemeToggle} from './ThemeToggle'
+import YouTubeIcon from '@/icons/youtube.svg'
+import GitHubIcon from '@/icons/github.svg'
+import InstagramIcon from '@/icons/instagram.svg'
 
 type Props = {themeCookie: string}
 
@@ -13,6 +16,36 @@ export const Header = ({themeCookie}: Props) => (
 				<Link className="hover:text-emphasis-hover" href="/about">
 					about
 				</Link>
+				<a
+					href="https://www.youtube.com/@jmagrippis"
+					target="_blank"
+					rel="noopener noreferrer"
+				>
+					<YouTubeIcon
+						title="Johnny's fun & informative YouTube channel 😄"
+						className="w-8 hover:text-emphasis-hover"
+					/>
+				</a>
+				<a
+					href="https://github.com/jmagrippis/magrippis"
+					target="_blank"
+					rel="noopener noreferrer"
+				>
+					<GitHubIcon
+						title="The code for this app, open-source and free on GitHub!"
+						className="w-7 hover:text-emphasis-hover"
+					/>
+				</a>
+				<a
+					href="https://www.instagram.com/jmagrippis"
+					target="_blank"
+					rel="noopener noreferrer"
+				>
+					<InstagramIcon
+						title="Johnny's Instagram"
+						className="w-7 hover:text-emphasis-hover"
+					/>
+				</a>
 				<ThemeToggle themeCookie={themeCookie} />
 			</div>
 		</nav>
