@@ -1,5 +1,4 @@
 import './globals.css'
-import {cookies} from 'next/headers'
 import {Trispace, Noto_Color_Emoji} from 'next/font/google'
 
 import {Header} from './Header/Header'
@@ -33,23 +32,21 @@ export const metadata = {
 	},
 }
 
-const RootLayout = ({children}: {children: React.ReactNode}) => {
-	const cookieStore = cookies()
-	const themeCookie = cookieStore.get('theme')?.value ?? 'auto'
-
-	return (
-		<html
-			lang="en"
-			data-theme={themeCookie}
-			className={`${sansFont.variable} ${emojiFont.variable}`}
-		>
-			<body>
-				<Header themeCookie={themeCookie} />
-				{children}
-				<Footer />
-			</body>
-		</html>
-	)
-}
+const RootLayout = ({children}: {children: React.ReactNode}) => (
+	<html
+		lang="en"
+		className={`${sansFont.variable} ${emojiFont.variable}`}
+		// data-theme will appear on the client
+		suppressHydrationWarning
+	>
+		<body>
+			{/* eslint-disable @next/next/no-sync-scripts */}
+			<script src="/theme-toggle.js" />
+			<Header />
+			{children}
+			<Footer />
+		</body>
+	</html>
+)
 
 export default RootLayout

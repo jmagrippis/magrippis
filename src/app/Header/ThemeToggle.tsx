@@ -1,15 +1,9 @@
 'use client'
 
-import {MouseEventHandler, useEffect, useState} from 'react'
+import type {MouseEventHandler} from 'react'
 import {ThemeToggleIcon} from './ThemeToggleIcon'
 
-const themes = ['light', 'dark', 'auto'] as const
-type Theme = (typeof themes)[number]
-
-const isTheme = (value: unknown): value is Theme =>
-	themes.includes(value as Theme)
-
-const deriveNextTheme = (currentTheme: string) => {
+const deriveNextTheme = (currentTheme: string | undefined) => {
 	switch (currentTheme) {
 		case 'light':
 			return 'dark'
@@ -23,31 +17,14 @@ const deriveNextTheme = (currentTheme: string) => {
 	}
 }
 
-type Props = {
-	themeCookie: string
-}
-
-export const ThemeToggle = ({themeCookie}: Props) => {
-	const [theme, setTheme] = useState<Theme>(
-		isTheme(themeCookie) ? themeCookie : 'auto'
-	)
-	useEffect(() => {
-		document.documentElement.dataset.theme = theme
-	}, [theme])
-
+export const ThemeToggle = () => {
 	const onClick: MouseEventHandler<HTMLButtonElement> = async (event) => {
 		event.preventDefault()
 
+		const theme = document.documentElement.dataset.theme
 		const nextTheme = deriveNextTheme(theme)
-		setTheme(nextTheme)
-
-		await fetch('/theme', {
-			method: 'POST',
-			body: JSON.stringify({theme: nextTheme}),
-			headers: new Headers({
-				'Content-Type': 'application/json',
-			}),
-		})
+		document.documentElement.dataset.theme = nextTheme
+		localStorage.setItem('theme', nextTheme)
 	}
 
 	return (
