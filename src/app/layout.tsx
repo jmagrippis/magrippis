@@ -1,13 +1,19 @@
 import './globals.css'
 import {cookies} from 'next/headers'
-import {Trispace} from 'next/font/google'
+import {Trispace, Noto_Color_Emoji} from 'next/font/google'
 
 import {Header} from './Header/Header'
 import {Footer} from './Footer/Footer'
 
-const trispace = Trispace({
+const sansFont = Trispace({
 	subsets: ['latin'],
-	display: 'swap',
+	variable: '--font-sans',
+})
+
+const emojiFont = Noto_Color_Emoji({
+	subsets: ['emoji'],
+	weight: '400',
+	variable: '--font-emoji',
 })
 
 const metaDescription =
@@ -32,7 +38,11 @@ const RootLayout = ({children}: {children: React.ReactNode}) => {
 	const themeCookie = cookieStore.get('theme')?.value ?? 'auto'
 
 	return (
-		<html lang="en" data-theme={themeCookie} className={trispace.className}>
+		<html
+			lang="en"
+			data-theme={themeCookie}
+			className={`${sansFont.variable} ${emojiFont.variable}`}
+		>
 			<body>
 				<Header themeCookie={themeCookie} />
 				{children}

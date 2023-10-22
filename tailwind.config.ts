@@ -1,8 +1,10 @@
-const colors = require('tailwindcss/colors')
-const withAlphaValue = (varName) => `hsl(var(--${varName}) / <alpha-value>)`
+import type {Config} from 'tailwindcss'
+import colors from 'tailwindcss/colors'
 
-/** @type {import('tailwindcss').Config} */
-module.exports = {
+const withAlphaValue = (varName: string) =>
+	`hsl(var(--${varName}) / <alpha-value>)`
+
+const config: Config = {
 	content: ['./src/**/*.{js,ts,jsx,tsx}'],
 	theme: {
 		colors: {
@@ -35,13 +37,13 @@ module.exports = {
 			center: true,
 		},
 		fontFamily: {
-			sans: ['Trispace', 'sans-serif', '"Noto Color Emoji"'],
+			sans: ['var(--font-sans)', 'var(--font-emoji)'],
 		},
 		extend: {
 			keyframes: {
 				blink: {
-					'0%, 100%': {opacity: 1},
-					'50%': {opacity: 0},
+					'0%, 100%': {opacity: '1'},
+					'50%': {opacity: '0'},
 				},
 			},
 			animation: {
@@ -51,3 +53,5 @@ module.exports = {
 	},
 	plugins: [],
 }
+
+export default config

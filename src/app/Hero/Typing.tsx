@@ -10,7 +10,7 @@ const PAUSED_MS = 1500
 type TypingState = 'typing' | 'deleting' | 'paused'
 
 type Props = {
-	titles: { article: string, title: string}[]
+	titles: {article: string; title: string}[]
 }
 
 const Typing = ({titles}: Props) => {
@@ -79,10 +79,7 @@ const Typing = ({titles}: Props) => {
 					typingState === 'paused' ? 'after:animate-blink' : ''
 				}`}
 			>
-				{title.slice(
-					0,
-					typedLength
-				)}
+				{title.slice(0, typedLength)}
 			</strong>
 		</>
 	)
