@@ -7,7 +7,7 @@ import InstagramIcon from '@/icons/instagram.svg'
 type Props = {themeCookie: string}
 
 export const Header = ({themeCookie}: Props) => (
-	<header className="flex bg-gray-900">
+	<header className="flex bg-gradient-to-br from-primary-700 to-primary-900">
 		<nav className="container flex items-center justify-between px-2 py-4 text-gray-50">
 			<Link className="hover:text-emphasis-hover" href="/">
 				jmagrippis

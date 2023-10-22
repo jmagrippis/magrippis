@@ -35,11 +35,10 @@ export const ThemeToggle = ({themeCookie}: Props) => {
 		document.documentElement.dataset.theme = theme
 	}, [theme])
 
-	const nextTheme = deriveNextTheme(theme)
-
 	const onClick: MouseEventHandler<HTMLButtonElement> = async (event) => {
 		event.preventDefault()
 
+		const nextTheme = deriveNextTheme(theme)
 		setTheme(nextTheme)
 
 		await fetch('/theme', {

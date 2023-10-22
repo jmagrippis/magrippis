@@ -1,0 +1,19 @@
+{
+	"name": "Johnny Magrippis",
+	"short_name": "jmagrippis",
+	"icons": [
+		{
+			"src": "/icon-192.png",
+			"type": "image/png",
+			"sizes": "192x192"
+		},
+		{
+			"src": "/icon.png",
+			"sizes": "512x512",
+			"type": "image/png"
+		}
+	],
+	"theme_color": "#9333ea",
+	"background_color": "#7e22ce",
+	"display": "minimal-ui"
+}
