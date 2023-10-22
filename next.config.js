@@ -1,9 +1,12 @@
+const {withContentlayer} = require('next-contentlayer')
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
 	experimental: {
 		serverActions: true,
 		typedRoutes: true,
 	},
+	reactStrictMode: true,
 	webpack(config) {
 		// Grab the existing rule that handles SVG imports
 		const fileLoaderRule = config.module.rules.find((rule) =>
@@ -33,4 +36,4 @@ const nextConfig = {
 	},
 }
 
-module.exports = nextConfig
+module.exports = withContentlayer(nextConfig)

@@ -36,7 +36,7 @@ const og = async () => {
 		{
 			width: 1200,
 			height: 630,
-		}
+		},
 	)
 }
 
