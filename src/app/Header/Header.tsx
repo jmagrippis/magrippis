@@ -1,12 +1,11 @@
 import Link from 'next/link'
+
 import {ThemeToggle} from './ThemeToggle'
 import YouTubeIcon from '@/icons/youtube.svg'
 import GitHubIcon from '@/icons/github.svg'
 import InstagramIcon from '@/icons/instagram.svg'
 
-type Props = {themeCookie: string}
-
-export const Header = ({themeCookie}: Props) => (
+export const Header = () => (
 	<header className="flex bg-gradient-to-br from-primary-700 to-primary-900">
 		<nav className="container flex items-center justify-between px-2 py-4 text-gray-50">
 			<Link className="hover:text-emphasis-hover" href="/">
@@ -46,7 +45,7 @@ export const Header = ({themeCookie}: Props) => (
 						className="w-7 hover:text-emphasis-hover"
 					/>
 				</a>
-				<ThemeToggle themeCookie={themeCookie} />
+				<ThemeToggle />
 			</div>
 		</nav>
 	</header>
