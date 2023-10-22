@@ -30,12 +30,18 @@ const Typing = ({titles}: Props) => {
 		}) => {
 			switch (typingState) {
 				case 'typing':
-					return setTimeout(() => {
-						setTypedLength(typedLength + 1)
-						if (typedLength + 1 === titles[selectedTitleIndex].title.length) {
-							setTypingState('paused')
-						}
-					}, Math.floor(Math.random() * (MAX_TYPING_MS - MIN_TYPING_MS + 1) + MIN_TYPING_MS))
+					return setTimeout(
+						() => {
+							setTypedLength(typedLength + 1)
+							if (typedLength + 1 === titles[selectedTitleIndex].title.length) {
+								setTypingState('paused')
+							}
+						},
+						Math.floor(
+							Math.random() * (MAX_TYPING_MS - MIN_TYPING_MS + 1) +
+								MIN_TYPING_MS,
+						),
+					)
 				case 'deleting':
 					return setTimeout(() => {
 						const nextTitleIndex = titles[selectedTitleIndex + 1]

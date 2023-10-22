@@ -19,6 +19,11 @@ const metaDescription =
 	'Johnny Magrippis is a Fullstack Engineer / Mentor / Photographer / (...) challenging the need to have a niche.'
 
 export const metadata = {
+	metadataBase: new URL(
+		process.env.VERCEL_URL
+			? `https://${process.env.VERCEL_URL}`
+			: `http://localhost:${process.env.PORT || 3000}`,
+	),
 	title: {
 		default: 'Johnny Magrippis | jmagrippis',
 		template: '%s | jmagrippis',

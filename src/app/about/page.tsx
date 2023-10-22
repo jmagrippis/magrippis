@@ -1,3 +1,5 @@
+import {PageTitle} from '../PageTitle'
+
 const metaDescription =
 	'Learn more about Johnny and this website in particular!'
 
@@ -13,8 +15,8 @@ export const metadata = {
 }
 
 const About = () => (
-	<main className="container px-2">
-		<h1 className="text-4xl">About</h1>
+	<main className="container px-2 pt-10">
+		<PageTitle>About</PageTitle>
 		<p>This is the about page</p>
 	</main>
 )

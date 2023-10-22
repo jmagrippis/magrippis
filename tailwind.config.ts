@@ -5,6 +5,7 @@ const withAlphaValue = (varName: string) =>
 	`hsl(var(--${varName}) / <alpha-value>)`
 
 const config: Config = {
+	darkMode: ['class', '[data-theme="dark"]'],
 	content: ['./src/**/*.{js,ts,jsx,tsx}'],
 	theme: {
 		colors: {
@@ -51,7 +52,7 @@ const config: Config = {
 			},
 		},
 	},
-	plugins: [],
+	plugins: [require('@tailwindcss/typography')],
 }
 
 export default config
