@@ -7,6 +7,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import {allPosts} from 'contentlayer/generated'
 import RelativeTimeDemo from '@/components/RelativeTimeDemo'
+import Demonstration from '@/components/Demonstration'
 
 export const generateStaticParams = () =>
 	allPosts.map((post) => {
@@ -23,6 +24,7 @@ type Props = {
 
 const mdxComponents: MDXComponents = {
 	// Custom Components
+	Demonstration,
 	RelativeTimeDemo,
 }
 
