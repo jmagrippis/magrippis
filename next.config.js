@@ -7,6 +7,17 @@ const nextConfig = {
 		typedRoutes: true,
 	},
 	reactStrictMode: true,
+	images: {
+		formats: ['image/avif', 'image/webp'],
+		remotePatterns: [
+			{
+				protocol: 'https',
+				hostname: 'img.youtube.com',
+				port: '',
+				pathname: '/vi/**',
+			},
+		],
+	},
 	webpack(config) {
 		// Grab the existing rule that handles SVG imports
 		const fileLoaderRule = config.module.rules.find((rule) =>

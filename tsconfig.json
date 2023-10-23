@@ -23,7 +23,8 @@
 		"paths": {
 			"@/*": ["./src/*"],
 			"contentlayer/generated": ["./.contentlayer/generated"]
-		}
+		},
+		"types": ["bun-types"]
 	},
 	"include": [
 		"src/global.d.ts",
