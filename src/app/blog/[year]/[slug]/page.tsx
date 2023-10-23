@@ -9,6 +9,7 @@ import {allPosts} from 'contentlayer/generated'
 import Demonstration from '@/components/Demonstration'
 import RelativeTimeDemo from '@/components/RelativeTimeDemo'
 import ShareCTA from '@/components/ShareCTA/ShareCTA'
+import {proseClasses} from '@/lib/sharedClasses'
 
 export const generateStaticParams = () =>
 	allPosts.map((post) => {
@@ -41,7 +42,7 @@ const Post = ({params: {slug, year}}: Props) => {
 
 	return (
 		<main className="pb-8">
-			<article className="container prose prose-lg prose-stone pt-10 dark:prose-invert lg:prose-xl xl:prose-2xl prose-a:decoration-emphasis prose-a:decoration-2 prose-a:transition-colors hover:prose-a:text-emphasis hover:prose-a:decoration-emphasis-hover prose-code:rounded-sm prose-code:bg-surface-2 prose-pre:p-0 prose-img:mx-auto md:prose-img:rounded md:prose-img:shadow-low">
+			<article className={`container ${proseClasses}`}>
 				<h1 className="bg-gradient-to-bl from-secondary-600 from-50% via-primary-500 to-primary-400 bg-clip-text px-2 text-transparent drop-shadow dark:from-secondary-500 dark:via-primary-400 dark:to-primary-200">
 					{post.title}
 				</h1>

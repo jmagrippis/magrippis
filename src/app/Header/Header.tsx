@@ -13,6 +13,9 @@ export const Header = () => (
 				<Link className="hover:text-emphasis-hover" href="/blog">
 					blog
 				</Link>
+				<Link className="hover:text-emphasis-hover" href="/about">
+					about
+				</Link>
 				<a
 					href="https://www.youtube.com/@jmagrippis"
 					target="_blank"

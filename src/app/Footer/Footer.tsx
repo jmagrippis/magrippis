@@ -4,6 +4,7 @@ import YouTubeIcon from '@/icons/youtube.svg'
 import GitHubIcon from '@/icons/github.svg'
 import DiscordIcon from '@/icons/discord.svg'
 import InstagramIcon from '@/icons/instagram.svg'
+import TikTokIcon from '@/icons/tikTok.svg'
 
 export const Footer = () => (
 	<footer className="mb-2 flex flex-col items-center justify-center gap-2">
@@ -39,6 +40,16 @@ export const Footer = () => (
 			>
 				<InstagramIcon
 					title="Johnny's Instagram"
+					className="w-6 hover:text-emphasis-hover"
+				/>
+			</a>
+			<a
+				href="https://www.tiktok.com/@jmagrippis"
+				target="_blank"
+				rel="noopener noreferrer"
+			>
+				<TikTokIcon
+					title="Johnny's TikTok account"
 					className="w-6 hover:text-emphasis-hover"
 				/>
 			</a>
