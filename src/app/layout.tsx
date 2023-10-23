@@ -3,6 +3,7 @@ import {Trispace, Noto_Color_Emoji} from 'next/font/google'
 
 import {Header} from './Header/Header'
 import {Footer} from './Footer/Footer'
+import Script from 'next/script'
 
 const sansFont = Trispace({
 	subsets: ['latin'],
@@ -44,9 +45,16 @@ const RootLayout = ({children}: {children: React.ReactNode}) => (
 		// data-theme will appear on the client
 		suppressHydrationWarning
 	>
-		<body>
+		<head>
 			{/* eslint-disable @next/next/no-sync-scripts */}
 			<script src="/theme-toggle.js" />
+		</head>
+		<body>
+			<Script
+				defer
+				data-domain="magrippis.com"
+				src="https://plausible.io/js/script.js"
+			/>
 			<Header />
 			{children}
 			<Footer />

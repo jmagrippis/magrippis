@@ -3,6 +3,8 @@ import {PageTitle} from '../PageTitle'
 import Image from 'next/image'
 import Link from 'next/link'
 
+import {isoStringToRelativeTime} from '@/lib/relativeTime'
+
 const sortedPosts = allPosts.sort((a, b) => {
 	return new Date(a.publishedAt) > new Date(b.publishedAt) ? -1 : 1
 })
@@ -10,12 +12,12 @@ const sortedPosts = allPosts.sort((a, b) => {
 const BlogIndex = () => (
 	<main className="container mb-8 pt-10">
 		<PageTitle>Blog</PageTitle>
-		<ul className="flex flex-col gap-4">
+		<ul className="divide-y divide-surface-2">
 			{sortedPosts.map((post) => {
 				const [year, slug] = post._raw.flattenedPath.split('/')
 
 				return (
-					<li key={post.title}>
+					<li key={post.title} className="py-8">
 						<article className="sm:grid sm:grid-cols-3 sm:gap-4">
 							<Link href={`/blog/${year}/${slug}`}>
 								<Image
@@ -39,6 +41,9 @@ const BlogIndex = () => (
 										</li>
 									))}
 								</ul>
+								<div className="place-self-end font-extralight">
+									{isoStringToRelativeTime(post.publishedAt)}
+								</div>
 							</div>
 						</article>
 					</li>
