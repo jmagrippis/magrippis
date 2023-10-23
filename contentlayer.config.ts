@@ -27,6 +27,7 @@ export default makeSource({
 	contentDirPath: 'posts',
 	documentTypes: [Post],
 	mdx: {
+		// @ts-ignore @mdx-js/esbuild is on an older version of vfile
 		rehypePlugins: [highlight],
 	},
 })
