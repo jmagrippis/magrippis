@@ -11,9 +11,9 @@ tags:
 It’s true, I’ve recently taken the cue from every other blog and added a little “sharing hub” at the end of my posts! No need to scroll down to check it out; since [my posts are compiled from MDX](https://magrippis.com/blog/2020/how-to-setup-MDX-in-Nextjs 'How to setup MDX in Next.js'), I can also embed it here for your convenience:
 
 <ShareCTA
-  shareUrl="https://magrippis.com/blog/2020/how-to-add-a-custom-Tweet-CTA-to-your-static-Nextjs-page"
-  title="How to add a custom Tweet CTA to your Next.js page"
-  tags={['Typescript', 'Nextjs', 'Frontend', 'MDX']}
+	shareUrl="https://magrippis.com/blog/2020/how-to-add-a-custom-Tweet-CTA-to-your-static-Nextjs-page"
+	title="How to add a custom Tweet CTA to your Next.js page"
+	tags={['Typescript', 'Nextjs', 'Frontend', 'MDX']}
 />
 
 Doesn’t _look_ complicated, but I did encounter a couple gotchas making it:
@@ -47,8 +47,8 @@ And let’s create a custom hook, so our components that need the `shareUrl` can
 // src/components/ShareCTA.tsx
 
 export const ShareCTA = () => {
-  const shareUrl = useShareUrl()
-  // ...
+	const shareUrl = useShareUrl()
+	// ...
 }
 ```
 
@@ -61,14 +61,14 @@ So we’ll want to sanitise it: a `.replace(/\?.+/, '')` will do the job. So our
 ```ts
 // src/components/useShareUrl.ts
 
-import { useRouter } from 'next/router'
+import {useRouter} from 'next/router'
 
-import { rootUrl } from 'constants'
+import {rootUrl} from 'constants'
 
 export const useShareUrl = () => {
-  const { asPath } = useRouter()
+	const {asPath} = useRouter()
 
-  return `${rootUrl}${asPath.replace(/\?.+/, '')}`
+	return `${rootUrl}${asPath.replace(/\?.+/, '')}`
 }
 ```
 
@@ -104,31 +104,31 @@ And have confidence “this actually works” with a Cypress test that looks lik
 // cypress/integration/blog.spec.ts
 
 it('displays the article in a semantic way', () => {
-  const blogPath = 'blog/2020/how-to-setup-MDX-in-Nextjs'
-  cy.visit(`/${blogPath}?utm_source=twitch-campaign`)
-  const expectedShareUrl = `${Cypress.config().baseUrl}/${blogPath}`
+	const blogPath = 'blog/2020/how-to-setup-MDX-in-Nextjs'
+	cy.visit(`/${blogPath}?utm_source=twitch-campaign`)
+	const expectedShareUrl = `${Cypress.config().baseUrl}/${blogPath}`
 
-  cy.findByRole('heading', {
-    name: 'How to setup MDX in Next.js',
-    level: 1,
-  }).should('exist')
-  cy.findByRole('article').should('exist')
+	cy.findByRole('heading', {
+		name: 'How to setup MDX in Next.js',
+		level: 1,
+	}).should('exist')
+	cy.findByRole('article').should('exist')
 
-  cy.findByRole('complementary').within(($aside) => {
-    cy.findByRole('link', { name: 'tweet' }).should(($anchor) => {
-      expect($anchor.attr('href')).to.include(
-        'https://twitter.com/intent/tweet?'
-      )
-    })
-    cy.findByRole('button', { name: /copy/i }).click()
-    cy.findByRole('button', { name: /copied/i })
+	cy.findByRole('complementary').within(($aside) => {
+		cy.findByRole('link', {name: 'tweet'}).should(($anchor) => {
+			expect($anchor.attr('href')).to.include(
+				'https://twitter.com/intent/tweet?',
+			)
+		})
+		cy.findByRole('button', {name: /copy/i}).click()
+		cy.findByRole('button', {name: /copied/i})
 
-    cy.window().then((win) =>
-      win.navigator.clipboard
-        .readText()
-        .then((text) => expect(text).to.equal(expectedShareUrl))
-    )
-  })
+		cy.window().then((win) =>
+			win.navigator.clipboard
+				.readText()
+				.then((text) => expect(text).to.equal(expectedShareUrl)),
+		)
+	})
 })
 ```
 
@@ -156,18 +156,18 @@ In which case, all we really need is a component that makes use of [Navigator.cl
 ```tsx
 // src/components/ShareCTA/CopyButton.tsx
 
-import { FC, useCallback } from 'react'
+import {FC, useCallback} from 'react'
 
 type Props = {
-  url: string
+	url: string
 }
 
-export const CopyButton: FC<Props> = ({ url }) => {
-  const handleClick = useCallback(async () => {
-    await navigator.clipboard.writeText(url)
-  }, [url])
+export const CopyButton: FC<Props> = ({url}) => {
+	const handleClick = useCallback(async () => {
+		await navigator.clipboard.writeText(url)
+	}, [url])
 
-  return <button onClick={handleClick}>copy link</button>
+	return <button onClick={handleClick}>copy link</button>
 }
 ```
 
@@ -177,20 +177,20 @@ Simple! Let’s work on the UX though, and tell the user they’ve successfully 
 // src/components/ShareCTA/CopyButton.tsx
 // ...
 
-export const CopyButton: FC<Props> = ({ url }) => {
-  const [justCopied, setJustCopied] = useState(false)
+export const CopyButton: FC<Props> = ({url}) => {
+	const [justCopied, setJustCopied] = useState(false)
 
-  const handleClick = useCallback(async () => {
-    await navigator.clipboard.writeText(url)
+	const handleClick = useCallback(async () => {
+		await navigator.clipboard.writeText(url)
 
-    setJustCopied(true)
-  }, [url])
+		setJustCopied(true)
+	}, [url])
 
-  return (
-    <button onClick={handleClick}>
-      {!justCopied ? <span>copy link</span> : <span>copied!</span>}
-    </button>
-  )
+	return (
+		<button onClick={handleClick}>
+			{!justCopied ? <span>copy link</span> : <span>copied!</span>}
+		</button>
+	)
 }
 ```
 
@@ -233,18 +233,18 @@ This component will be simpler than our `CopyButton`, although we’ll make it t
 ```tsx
 // src/components/ShareCTA/TweetButton.tsx
 
-import { FC } from 'react'
+import {FC} from 'react'
 
 type Props = {
-  title: string
-  url: string
-  tags: string[]
+	title: string
+	url: string
+	tags: string[]
 }
 
 // ...
 
 export const TweetButton: FC<Props> = (props) => (
-  <a href={getTwitterHref(props)}>tweet</a>
+	<a href={getTwitterHref(props)}>tweet</a>
 )
 ```
 
@@ -257,18 +257,18 @@ It’s just an anchor element! The complexity lies in `getTwitterHref`, which re
 export const TWITTER_INTENT_URL = 'https://twitter.com/intent/tweet'
 const TWITTER_HANDLE = 'jmagrippis'
 
-export const getTwitterHref = ({ url, title, tags }: Props) => {
-  const shareUrl = new URL(TWITTER_INTENT_URL)
-  const search = new URLSearchParams({
-    url,
-    text: title,
-    hashtags: tags.join(','),
-    via: TWITTER_HANDLE,
-  }).toString()
+export const getTwitterHref = ({url, title, tags}: Props) => {
+	const shareUrl = new URL(TWITTER_INTENT_URL)
+	const search = new URLSearchParams({
+		url,
+		text: title,
+		hashtags: tags.join(','),
+		via: TWITTER_HANDLE,
+	}).toString()
 
-  shareUrl.search = search
+	shareUrl.search = search
 
-  return shareUrl.href
+	return shareUrl.href
 }
 // ...
 ```
@@ -287,25 +287,25 @@ const TWITTER_HANDLE = 'jmagrippis'
 const TWITTER_SHORT_URL_LENGTH = 23
 const MAX_TWEET_LENGTH = 280
 
-export const getTwitterHref = ({ url, title, tags }: Props) => {
-  const shareUrl = new URL(TWITTER_INTENT_URL)
-  const search = new URLSearchParams({
-    url,
-    text: title,
-    hashtags: tags.join(','),
-    via: TWITTER_HANDLE,
-  }).toString()
+export const getTwitterHref = ({url, title, tags}: Props) => {
+	const shareUrl = new URL(TWITTER_INTENT_URL)
+	const search = new URLSearchParams({
+		url,
+		text: title,
+		hashtags: tags.join(','),
+		via: TWITTER_HANDLE,
+	}).toString()
 
-  const urlLengthDiff =
-    url.length - Math.min(url.length, TWITTER_SHORT_URL_LENGTH)
+	const urlLengthDiff =
+		url.length - Math.min(url.length, TWITTER_SHORT_URL_LENGTH)
 
-  if (search.length - Math.max(urlLengthDiff, 0) > MAX_TWEET_LENGTH) {
-    throw new Error(`Sharing "${title}" results in a tweet that is too long`)
-  }
+	if (search.length - Math.max(urlLengthDiff, 0) > MAX_TWEET_LENGTH) {
+		throw new Error(`Sharing "${title}" results in a tweet that is too long`)
+	}
 
-  shareUrl.search = search
+	shareUrl.search = search
 
-  return shareUrl.href
+	return shareUrl.href
 }
 // ...
 ```
@@ -313,74 +313,74 @@ export const getTwitterHref = ({ url, title, tags }: Props) => {
 As foretold, I did create dedicated unit tests for what `getTwitterHref` should do:
 
 ```ts
-import { getTwitterHref, TWITTER_INTENT_URL } from './TweetButton'
+import {getTwitterHref, TWITTER_INTENT_URL} from './TweetButton'
 
 describe('getTwitterHref', () => {
-  const title = 'How to add a Tweet Button to your blogposts!'
-  const url = 'https://magrippis.com/blog/2020/add-a-tweet-button'
-  const tags = ['typescript', 'nextjs', 'winning']
+	const title = 'How to add a Tweet Button to your blogposts!'
+	const url = 'https://magrippis.com/blog/2020/add-a-tweet-button'
+	const tags = ['typescript', 'nextjs', 'winning']
 
-  it('points to the Web Intent URL', () => {
-    const tweetHref = getTwitterHref({ title, url, tags })
+	it('points to the Web Intent URL', () => {
+		const tweetHref = getTwitterHref({title, url, tags})
 
-    expect(tweetHref).toContain(TWITTER_INTENT_URL)
-  })
+		expect(tweetHref).toContain(TWITTER_INTENT_URL)
+	})
 
-  it('has the title in the query params', () => {
-    const tweetHref = getTwitterHref({ title, url, tags })
+	it('has the title in the query params', () => {
+		const tweetHref = getTwitterHref({title, url, tags})
 
-    expect(tweetHref).toContain(
-      'text=How+to+add+a+Tweet+Button+to+your+blogposts'
-    )
-  })
+		expect(tweetHref).toContain(
+			'text=How+to+add+a+Tweet+Button+to+your+blogposts',
+		)
+	})
 
-  it('has the url in the query params', () => {
-    const tweetHref = getTwitterHref({ title, url, tags })
+	it('has the url in the query params', () => {
+		const tweetHref = getTwitterHref({title, url, tags})
 
-    expect(tweetHref).toContain(
-      'url=https%3A%2F%2Fmagrippis.com%2Fblog%2F2020%2Fadd-a-tweet-button'
-    )
-  })
+		expect(tweetHref).toContain(
+			'url=https%3A%2F%2Fmagrippis.com%2Fblog%2F2020%2Fadd-a-tweet-button',
+		)
+	})
 
-  it('has the via @jmagrippis in the query params', () => {
-    const tweetHref = getTwitterHref({ title, url, tags })
+	it('has the via @jmagrippis in the query params', () => {
+		const tweetHref = getTwitterHref({title, url, tags})
 
-    expect(tweetHref).toContain('via=jmagrippis')
-  })
+		expect(tweetHref).toContain('via=jmagrippis')
+	})
 
-  it('has the comma-separated tags in the query params', () => {
-    const tweetHref = getTwitterHref({ title, url, tags })
+	it('has the comma-separated tags in the query params', () => {
+		const tweetHref = getTwitterHref({title, url, tags})
 
-    expect(tweetHref).toContain('tags=typescript%2Cnextjs%2Cwinning')
-  })
+		expect(tweetHref).toContain('tags=typescript%2Cnextjs%2Cwinning')
+	})
 
-  it('errors out if the title is too long', () => {
-    const url =
-      'https://magrippis.com/blog/2020/this-url-will-be-truncated-by-twitter-so-its-length-should-not-affect-the-test-and-therefore-I-am-not-using-the-actual-title-below'
-    const title =
-      'This is soooooo long we should probably have a much catchier title what do you think friends? The problem is that we do want this to throw and now that the url is not a problem it is hard to get there without an absurdly long title!'
-    const tags = [
-      'the-hashtags',
-      'are-not-helping',
-      'neither',
-      'crash',
-      'EpicFail',
-      'testInProduction',
-    ]
+	it('errors out if the title is too long', () => {
+		const url =
+			'https://magrippis.com/blog/2020/this-url-will-be-truncated-by-twitter-so-its-length-should-not-affect-the-test-and-therefore-I-am-not-using-the-actual-title-below'
+		const title =
+			'This is soooooo long we should probably have a much catchier title what do you think friends? The problem is that we do want this to throw and now that the url is not a problem it is hard to get there without an absurdly long title!'
+		const tags = [
+			'the-hashtags',
+			'are-not-helping',
+			'neither',
+			'crash',
+			'EpicFail',
+			'testInProduction',
+		]
 
-    expect(() => getTwitterHref({ url, title, tags })).toThrow(
-      `Sharing "${title}" results in a tweet that is too long`
-    )
-  })
+		expect(() => getTwitterHref({url, title, tags})).toThrow(
+			`Sharing "${title}" results in a tweet that is too long`,
+		)
+	})
 
-  it('takes into account that the url will be shortened to a maximum of 23 characters', () => {
-    const url =
-      'https://magrippis-git-jma-47-share-url-and-custom-tweet-button-on-a.jmagrippis.vercel.app/blog/2020/how-to-BDD-and-E2E-test-your-responsive-web-app-with-Cypress'
-    const title = 'How to BDD and E2E test your responsive web app with Cypress'
-    const tags = ['Typescript', 'Frontend']
+	it('takes into account that the url will be shortened to a maximum of 23 characters', () => {
+		const url =
+			'https://magrippis-git-jma-47-share-url-and-custom-tweet-button-on-a.jmagrippis.vercel.app/blog/2020/how-to-BDD-and-E2E-test-your-responsive-web-app-with-Cypress'
+		const title = 'How to BDD and E2E test your responsive web app with Cypress'
+		const tags = ['Typescript', 'Frontend']
 
-    expect(() => getTwitterHref({ url, title, tags })).not.toThrow()
-  })
+		expect(() => getTwitterHref({url, title, tags})).not.toThrow()
+	})
 })
 ```
 
@@ -401,29 +401,29 @@ With our `CopyButton` & `TweetButton` all good and ready, all we need to do is u
 ```tsx
 // src/components/ShareCTA/ShareCTA.tsx
 
-import { FC } from 'react'
+import {FC} from 'react'
 
-import { CopyButton } from './CopyButton'
-import { TweetButton } from './TweetButton'
-import { useShareUrl } from './useShareUrl'
+import {CopyButton} from './CopyButton'
+import {TweetButton} from './TweetButton'
+import {useShareUrl} from './useShareUrl'
 
 type Props = {
-  title: string
-  tags: string[]
+	title: string
+	tags: string[]
 }
 
-export const ShareCTA: FC<Props> = ({ title, tags }) => {
-  const shareUrl = useShareUrl()
+export const ShareCTA: FC<Props> = ({title, tags}) => {
+	const shareUrl = useShareUrl()
 
-  return (
-    <aside>
-      <div>💜 sharing is caring 💜</div>
-      <div>
-        <TweetButton title={title} tags={tags} url={shareUrl} />
-        <CopyButton url={shareUrl} />
-      </div>
-    </aside>
-  )
+	return (
+		<aside>
+			<div>💜 sharing is caring 💜</div>
+			<div>
+				<TweetButton title={title} tags={tags} url={shareUrl} />
+				<CopyButton url={shareUrl} />
+			</div>
+		</aside>
+	)
 }
 ```
 
