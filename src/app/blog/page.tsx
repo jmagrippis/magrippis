@@ -31,7 +31,7 @@ const BlogIndex = () => (
 								<h2 className="text-2xl">
 									<Link href={`/blog/${year}/${slug}`}>{post.title}</Link>
 								</h2>
-								<p className="text-xl font-extralight">{post.snippet}</p>
+								<p className="grow text-xl font-extralight">{post.snippet}</p>
 								<ul className="flex gap-2 place-self-end font-light">
 									{post.tags.map((tag) => (
 										<li key={tag} className="rounded bg-surface-3 px-2">

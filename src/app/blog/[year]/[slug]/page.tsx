@@ -1,10 +1,12 @@
 import 'highlight.js/styles/github-dark-dimmed.min.css'
 
-import {allPosts} from 'contentlayer/generated'
+import type {MDXComponents} from 'mdx/types'
 import {useMDXComponent} from 'next-contentlayer/hooks'
 import {notFound} from 'next/navigation'
 import Image from 'next/image'
 import Link from 'next/link'
+import {allPosts} from 'contentlayer/generated'
+import RelativeTimeDemo from '@/components/RelativeTimeDemo'
 
 export const generateStaticParams = () =>
 	allPosts.map((post) => {
@@ -19,6 +21,11 @@ type Props = {
 	params: {slug: string; year: string}
 }
 
+const mdxComponents: MDXComponents = {
+	// Custom Components
+	RelativeTimeDemo,
+}
+
 const Post = ({params: {slug, year}}: Props) => {
 	const post = allPosts.find(
 		(post) => post._raw.flattenedPath === `${year}/${slug}`,
@@ -29,7 +36,7 @@ const Post = ({params: {slug, year}}: Props) => {
 	const MDXContent = useMDXComponent(post.body.code)
 
 	return (
-		<main className="pb-6">
+		<main className="pb-8">
 			<article className="container prose prose-lg prose-stone pt-10 dark:prose-invert lg:prose-xl xl:prose-2xl prose-a:decoration-emphasis prose-a:decoration-2 prose-a:transition-colors hover:prose-a:text-emphasis hover:prose-a:decoration-emphasis-hover prose-code:rounded-sm prose-code:bg-surface-2 prose-pre:p-0 prose-img:mx-auto md:prose-img:rounded md:prose-img:shadow-low">
 				<h1 className="bg-gradient-to-bl from-secondary-600 from-50% via-primary-500 to-primary-400 bg-clip-text px-2 text-transparent drop-shadow dark:from-secondary-500 dark:via-primary-400 dark:to-primary-200">
 					{post.title}
@@ -42,15 +49,15 @@ const Post = ({params: {slug, year}}: Props) => {
 					priority
 				/>
 				<section className="px-2">
-					<MDXContent />
+					<MDXContent components={mdxComponents} />
 				</section>
+				<Link
+					href="/blog"
+					className="mx-2 block rounded bg-surface-2 py-4 text-center text-lg font-semibold"
+				>
+					Check out all posts
+				</Link>
 			</article>
-			<Link
-				href="/blog"
-				className="mx-2 block rounded bg-surface-2 py-4 text-center text-lg font-semibold"
-			>
-				Check out all posts
-			</Link>
 		</main>
 	)
 }
