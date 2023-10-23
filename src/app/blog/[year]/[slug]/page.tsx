@@ -6,8 +6,9 @@ import {notFound} from 'next/navigation'
 import Image from 'next/image'
 import Link from 'next/link'
 import {allPosts} from 'contentlayer/generated'
-import RelativeTimeDemo from '@/components/RelativeTimeDemo'
 import Demonstration from '@/components/Demonstration'
+import RelativeTimeDemo from '@/components/RelativeTimeDemo'
+import ShareCTA from '@/components/ShareCTA/ShareCTA'
 
 export const generateStaticParams = () =>
 	allPosts.map((post) => {
@@ -26,6 +27,7 @@ const mdxComponents: MDXComponents = {
 	// Custom Components
 	Demonstration,
 	RelativeTimeDemo,
+	ShareCTA,
 }
 
 const Post = ({params: {slug, year}}: Props) => {
@@ -53,6 +55,7 @@ const Post = ({params: {slug, year}}: Props) => {
 				<section className="px-2">
 					<MDXContent components={mdxComponents} />
 				</section>
+				<ShareCTA className="mx-2" title={post.title} tags={post.tags} />
 				<Link
 					href="/blog"
 					className="mx-2 block rounded bg-surface-2 py-4 text-center text-lg font-semibold"
