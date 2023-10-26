@@ -10,6 +10,7 @@ import Demonstration from '@/components/Demonstration'
 import RelativeTimeDemo from '@/components/RelativeTimeDemo'
 import ShareCTA from '@/components/ShareCTA/ShareCTA'
 import {proseClasses} from '@/lib/sharedClasses'
+import type {Props} from './types'
 
 export const generateStaticParams = () =>
 	allPosts.map((post) => {
@@ -19,10 +20,6 @@ export const generateStaticParams = () =>
 			slug,
 		}
 	})
-
-type Props = {
-	params: {slug: string; year: string}
-}
 
 const mdxComponents: MDXComponents = {
 	// Custom Components

@@ -17,7 +17,7 @@ export const Header = () => (
 					about
 				</Link>
 				<a
-					href="https://www.youtube.com/@jmagrippis"
+					href="https://www.youtube.com/@jmagrippis?sub_confirmation=1"
 					target="_blank"
 					rel="noopener noreferrer"
 				>

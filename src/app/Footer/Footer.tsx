@@ -14,7 +14,7 @@ export const Footer = () => (
 
 		<div className="flex items-center justify-center gap-2">
 			<a
-				href="https://www.youtube.com/@johnnifytech"
+				href="https://www.youtube.com/@johnnifytech?sub_confirmation=1"
 				target="_blank"
 				rel="noopener noreferrer"
 			>
@@ -64,7 +64,7 @@ export const Footer = () => (
 				/>
 			</a>
 			<a
-				href="https://www.youtube.com/@jmagrippis"
+				href="https://www.youtube.com/@jmagrippis?sub_confirmation=1"
 				target="_blank"
 				rel="noopener noreferrer"
 			>

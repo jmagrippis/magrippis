@@ -1,5 +1,8 @@
 import {ImageResponse} from 'next/server'
 
+import {allPosts} from 'contentlayer/generated'
+import type {Props} from './types'
+
 // Route segment config
 export const runtime = 'edge'
 
@@ -9,12 +12,26 @@ export const size = {
 	width: 1200,
 	height: 630,
 }
-export const alt = 'jmagrippis | get inspired and code around the world!'
+export const generateImageMetadata = async ({params: {year, slug}}: Props) => {
+	const post = allPosts.find(
+		(post) => post._raw.flattenedPath === `${year}/${slug}`,
+	)
 
-const OG = async () => {
+	if (!post) return null
+
+	return [{alt: `${post.title} by @jmagrippis`, id: slug}]
+}
+
+const OG = async ({params: {slug, year}}: Props) => {
 	const sansFont = fetch(
-		new URL('../fonts/Trispace-Regular.ttf', import.meta.url),
+		new URL('../../../../fonts/Trispace-Regular.ttf', import.meta.url),
 	).then((res) => res.arrayBuffer())
+
+	const post = allPosts.find(
+		(post) => post._raw.flattenedPath === `${year}/${slug}`,
+	)
+
+	if (!post) return new Response('Not found', {status: 404})
 
 	return new ImageResponse(
 		(
@@ -38,7 +55,7 @@ const OG = async () => {
 						display: 'flex',
 						alignItems: 'center',
 						justifyContent: 'center',
-						padding: 48,
+						padding: 32,
 						flexDirection: 'column',
 						borderRadius: 16,
 					}}
@@ -50,24 +67,19 @@ const OG = async () => {
 							backgroundClip: 'text',
 							color: 'transparent',
 							display: 'flex',
-							alignItems: 'center',
 							justifyContent: 'center',
 							flexDirection: 'column',
 						}}
 					>
 						<div
 							style={{
-								fontSize: 114,
-								marginBottom: 48,
-								lineHeight: '86%',
+								fontSize: 80,
+								marginBottom: 32,
 							}}
 						>
-							Johnny Magrippis
+							{post.title}
 						</div>
-						<div>
-							I code around the world & inspire others to do the same! 🌍
-							@jmagrippis
-						</div>
+						<div style={{alignSelf: 'flex-end'}}>by @jmagrippis</div>
 					</div>
 				</div>
 			</div>
