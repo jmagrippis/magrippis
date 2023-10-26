@@ -1,6 +1,3 @@
-import Image from 'next/image'
-import livestreamCover from './streaming.jpg'
-
 import Hero from './Hero/Hero'
 import {Mission} from './Mission/Mission'
 import {YouTubeSection} from './YouTubeSection/YouTubeSection'
@@ -25,15 +22,6 @@ const Home = () => (
 			</Paragraph>
 		</section>
 		<OtherWork />
-		<section className="container">
-			<p className="px-2">Watch videos & streams!</p>
-			<Image
-				src={livestreamCover}
-				alt="Johnny livestreaming!"
-				placeholder="blur"
-				className="shadow-low sm:rounded-lg sm:px-2"
-			/>
-		</section>
 	</main>
 )
 
