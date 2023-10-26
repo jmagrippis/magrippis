@@ -45,6 +45,15 @@ const nextConfig = {
 
 		return config
 	},
+	redirects() {
+		return [
+			{
+				source: '/tube',
+				destination: 'https://www.youtube.com/@johnnifytech?sub_confirmation=1',
+				permanent: false,
+			},
+		]
+	},
 }
 
 module.exports = withContentlayer(nextConfig)
