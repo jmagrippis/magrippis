@@ -1,5 +1,6 @@
 import './globals.css'
 import {Trispace, Noto_Color_Emoji} from 'next/font/google'
+import type {Viewport} from 'next'
 
 import {Header} from './Header/Header'
 import {Footer} from './Footer/Footer'
@@ -36,6 +37,10 @@ export const metadata = {
 		type: 'website',
 		siteName: 'Johnny Magrippis',
 	},
+}
+
+export const viewport: Viewport = {
+	themeColor: '#9333ea',
 }
 
 const RootLayout = ({children}: {children: React.ReactNode}) => (
