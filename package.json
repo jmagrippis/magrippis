@@ -45,5 +45,8 @@
 	},
 	"volta": {
 		"node": "18.18.2"
-	}
+	},
+	"trustedDependencies": [
+		"sharp"
+	]
 }
