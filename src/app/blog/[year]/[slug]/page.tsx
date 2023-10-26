@@ -1,6 +1,5 @@
 import 'highlight.js/styles/github-dark-dimmed.min.css'
 
-import type {MDXComponents} from 'mdx/types'
 import type {Metadata} from 'next'
 import {useMDXComponent} from 'next-contentlayer/hooks'
 import {notFound} from 'next/navigation'
@@ -37,8 +36,8 @@ export const generateMetadata = async ({
 	}
 }
 
-const mdxComponents: MDXComponents = {
-	// Custom Components
+// Custom Components
+const mdxComponents = {
 	Demonstration,
 	RelativeTimeDemo,
 	ShareCTA,
