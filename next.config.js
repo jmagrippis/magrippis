@@ -4,6 +4,7 @@ const {withContentlayer} = require('next-contentlayer')
 const nextConfig = {
 	experimental: {
 		typedRoutes: true,
+		webpackBuildWorker: true,
 	},
 	reactStrictMode: true,
 	images: {
