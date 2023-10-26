@@ -14,11 +14,13 @@ const config: Config = {
 			copy: {
 				base: withAlphaValue('copy-base-color'),
 				muted: withAlphaValue('copy-muted-color'),
+				inverted: withAlphaValue('copy-inverted-color'),
 			},
 			surface: {
 				1: withAlphaValue('surface-1-color'),
 				2: withAlphaValue('surface-2-color'),
 				3: withAlphaValue('surface-3-color'),
+				inverted: withAlphaValue('surface-inverted-color'),
 			},
 			emphasis: {
 				DEFAULT: withAlphaValue('emphasis-color'),

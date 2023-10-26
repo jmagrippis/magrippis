@@ -13,7 +13,7 @@ const BlogIndex = () => (
 	<main className="container mb-8 pt-10">
 		<PageTitle>Blog</PageTitle>
 		<ul className="divide-y divide-surface-2">
-			{sortedPosts.map((post) => {
+			{sortedPosts.map((post, i) => {
 				const [year, slug] = post._raw.flattenedPath.split('/')
 
 				return (
@@ -25,7 +25,7 @@ const BlogIndex = () => (
 									width={2048}
 									height={1365}
 									alt={post.title}
-									priority
+									priority={i < 3}
 									className="mb-4 place-self-center sm:mb-0 sm:rounded sm:shadow-mid"
 								/>
 							</Link>

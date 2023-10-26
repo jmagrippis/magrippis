@@ -63,7 +63,7 @@
 	}
 
 	/* css vars */
-	* {
+	:root {
 		--brand-hue: 271deg;
 		--emphasis-hue: 142deg;
 		--transition-duration-short: 0.15s;
@@ -109,20 +109,22 @@
 		/* light */
 		--copy-base-color-light: var(--brand-hue) 10% 10%;
 		--copy-muted-color-light: var(--brand-hue) 6% 25%;
+
 		--surface-1-color-light: var(--brand-hue) 81% 96%;
 		--surface-2-color-light: var(--brand-hue) 76% 80%;
 		--surface-3-color-light: var(--emphasis-hue) 76% 80%;
-		--shadow-1-color-light: var(--brand-hue) 10% 10%;
+
 		--emphasis-color-light: var(--emphasis-hue) 81% 40%;
 		--emphasis-hover-color-light: var(--emphasis-hue) 78% 55%;
 
 		/* dark */
 		--copy-base-color-dark: var(--brand-hue) 100% 97%;
 		--copy-muted-color-dark: var(--brand-hue) 6% 90%;
+
 		--surface-1-color-dark: var(--brand-hue) 10% 10%;
 		--surface-2-color-dark: var(--brand-hue) 87% 21%;
 		--surface-3-color-dark: var(--emphasis-hue) 25% 11%;
-		--shadow-1-color-dark: var(--brand-hue) 64% 28%;
+
 		--emphasis-color-dark: var(--emphasis-hue) 78% 55%;
 		--emphasis-hover-color-dark: var(--emphasis-hue) 81% 44%;
 	}
@@ -132,9 +134,13 @@
 
 		--copy-base-color: var(--copy-base-color-light);
 		--copy-muted-color: var(--copy-muted-color-light);
+		--copy-inverted-color: var(--copy-base-color-dark);
+
 		--surface-1-color: var(--surface-1-color-light);
 		--surface-2-color: var(--surface-2-color-light);
 		--surface-3-color: var(--surface-3-color-light);
+		--surface-inverted-color: var(--surface-1-color-dark);
+
 		--emphasis-color: var(--emphasis-color-light);
 		--emphasis-hover-color: var(--emphasis-hover-color-light);
 	}
@@ -144,9 +150,13 @@
 
 		--copy-base-color: var(--copy-base-color-dark);
 		--copy-muted-color: var(--copy-muted-color-dark);
+		--copy-inverted-color: var(--copy-base-color-light);
+
 		--surface-1-color: var(--surface-1-color-dark);
 		--surface-2-color: var(--surface-2-color-dark);
 		--surface-3-color: var(--surface-3-color-dark);
+		--surface-inverted-color: var(--surface-1-color-light);
+
 		--emphasis-color: var(--emphasis-color-dark);
 		--emphasis-hover-color: var(--emphasis-hover-color-dark);
 	}
@@ -157,10 +167,13 @@
 
 			--copy-base-color: var(--copy-base-color-dark);
 			--copy-muted-color: var(--copy-muted-color-dark);
+			--copy-inverted-color: var(--copy-base-color-light);
+
 			--surface-1-color: var(--surface-1-color-dark);
 			--surface-2-color: var(--surface-2-color-dark);
 			--surface-3-color: var(--surface-3-color-dark);
-			--shadow-1-color: var(--shadow-1-color-dark);
+			--surface-inverted-color: var(--surface-1-color-light);
+
 			--emphasis-color: var(--emphasis-color-dark);
 			--emphasis-hover-color: var(--emphasis-hover-color-dark);
 		}
