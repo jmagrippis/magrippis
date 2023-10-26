@@ -17,7 +17,7 @@ const emojiFont = Noto_Color_Emoji({
 })
 
 const metaDescription =
-	'Johnny Magrippis is a Fullstack Engineer / Mentor / Photographer / (...) challenging the need to have a niche.'
+	'Johnny Magrippis is a Principal Fullstack Engineer / Creator / Mentor AND MORE, who loves learning... especially via teaching other people about Fullstack Development, meaningful automated tests, Svelte & SvelteKit, React & Next.js.'
 
 export const metadata = {
 	metadataBase: new URL(
