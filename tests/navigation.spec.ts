@@ -29,7 +29,8 @@ test('navigation smoke test', async ({page}) => {
 	expect(title).not.toBeNull()
 	const titleRegex = new RegExp(title as string)
 
-	await firstBlogpost.click()
+	await firstBlogpost.getByRole('link').click()
+
 	await expect(
 		page.getByRole('heading', {name: titleRegex, level: 1}),
 	).toBeVisible()
