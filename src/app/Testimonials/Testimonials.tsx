@@ -97,7 +97,7 @@ export const Testimonials = () => (
 						className="pb-8 last:pb-0 sm:inline-block sm:w-full sm:px-2"
 						key={username}
 					>
-						<figure className="bg-surface-inverted text-copy-inverted rounded-2xl p-8 text-base leading-6">
+						<figure className="bg-surface-inverted text-copy-inverted  rounded-2xl p-8 text-base leading-6 shadow-mid">
 							<blockquote>
 								<p>“{content}”</p>
 							</blockquote>
