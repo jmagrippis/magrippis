@@ -3,18 +3,9 @@ import Link from 'next/link'
 import {proseClasses} from '@/lib/sharedClasses'
 import {PageTitle} from '../PageTitle'
 
-const metaDescription =
-	'Learn more about Johnny and this website in particular!'
-
 export const metadata = {
 	title: 'About',
-	description: metaDescription,
-	openGraph: {
-		title: 'About | Johnny Magrippis',
-		description: metaDescription,
-		type: 'website',
-		siteName: 'Johnny Magrippis',
-	},
+	description: 'Learn more about Johnny and this website in particular!',
 }
 
 const About = () => (

@@ -5,6 +5,12 @@ import Link from 'next/link'
 
 import {isoStringToRelativeTime} from '@/lib/relativeTime'
 
+export const metadata = {
+	title: 'Blog',
+	description:
+		'Read the latest blogposts by Johnny, which include in-depth tutorials and guides for Typescript, Svelte, React, SvelteKit and Next.js!.. And sometimes more random thoughts you won’t see quoted in Stack Overflow 😛',
+}
+
 const sortedPosts = allPosts.sort((a, b) => {
 	return new Date(a.publishedAt) > new Date(b.publishedAt) ? -1 : 1
 })

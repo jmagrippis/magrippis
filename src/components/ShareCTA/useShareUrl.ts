@@ -7,5 +7,5 @@ export const useShareUrl = () => {
 		? `https://${process.env.NEXT_PUBLIC_ROOT_URL}`
 		: `http://localhost:${process.env.PORT || 3000}`
 
-	return `${rootUrl}/${pathname}`
+	return `${rootUrl}${pathname}`
 }
