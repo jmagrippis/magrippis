@@ -1,6 +1,7 @@
 import 'highlight.js/styles/github-dark-dimmed.min.css'
 
 import type {MDXComponents} from 'mdx/types'
+import type {Metadata} from 'next'
 import {useMDXComponent} from 'next-contentlayer/hooks'
 import {notFound} from 'next/navigation'
 import Image from 'next/image'
@@ -20,6 +21,21 @@ export const generateStaticParams = () =>
 			slug,
 		}
 	})
+
+export const generateMetadata = async ({
+	params: {year, slug},
+}: Props): Promise<Metadata> => {
+	const post = allPosts.find(
+		(post) => post._raw.flattenedPath === `${year}/${slug}`,
+	)
+
+	if (!post) notFound()
+
+	return {
+		title: post.title,
+		description: post.snippet,
+	}
+}
 
 const mdxComponents: MDXComponents = {
 	// Custom Components

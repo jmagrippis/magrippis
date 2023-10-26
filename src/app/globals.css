@@ -69,6 +69,8 @@
 		--transition-duration-short: 0.15s;
 		--transition-duration-long: 0.4s;
 
+		--header-height: 64px;
+
 		/* shadows */
 		--shadow-color: var(--brand-hue) 36% 60%;
 		--shadow-elevation-low: 0px 0.5px 0.6px hsl(var(--shadow-color) / 0.29),
