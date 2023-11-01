@@ -60,8 +60,8 @@ const Post = ({params: {slug, year}}: Props) => {
 				</h1>
 				<Image
 					src={`/blog/${year}/${slug}.jpg`}
-					width={2048}
-					height={1365}
+					width={1014}
+					height={675}
 					alt={post.title}
 					priority
 				/>
