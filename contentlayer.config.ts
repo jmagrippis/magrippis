@@ -1,5 +1,5 @@
 import {defineDocumentType, makeSource} from 'contentlayer/source-files'
-import highlight from 'rehype-highlight'
+import rehypePrettyCode from 'rehype-pretty-code'
 
 export const Post = defineDocumentType(() => ({
 	name: 'Post',
@@ -27,7 +27,14 @@ export default makeSource({
 	contentDirPath: 'posts',
 	documentTypes: [Post],
 	mdx: {
-		// @ts-ignore @mdx-js/esbuild is on an older version of vfile
-		rehypePlugins: [highlight],
+		rehypePlugins: [
+			[
+				rehypePrettyCode,
+				{
+					theme: 'dracula',
+					defaultLang: 'sh',
+				},
+			],
+		],
 	},
 })

@@ -1,5 +1,3 @@
-import 'highlight.js/styles/github-dark-dimmed.min.css'
-
 import type {Metadata} from 'next'
 import {useMDXComponent} from 'next-contentlayer/hooks'
 import {notFound} from 'next/navigation'
