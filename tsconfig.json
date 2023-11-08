@@ -23,8 +23,9 @@
 		"paths": {
 			"@/*": ["./src/*"],
 			"contentlayer/generated": ["./.contentlayer/generated"]
-		},
-		"types": ["bun-types"]
+		}
+		// bun-types breaks the types & lib settings at the moment
+		// "types": ["bun-types"]
 	},
 	"include": [
 		"src/global.d.ts",
