@@ -1,5 +1,6 @@
 import {defineDocumentType, makeSource} from 'contentlayer/source-files'
 import rehypePrettyCode from 'rehype-pretty-code'
+import smartypants from 'remark-smartypants'
 
 export const Post = defineDocumentType(() => ({
 	name: 'Post',
@@ -27,6 +28,7 @@ export default makeSource({
 	contentDirPath: 'posts',
 	documentTypes: [Post],
 	mdx: {
+		remarkPlugins: [smartypants],
 		rehypePlugins: [
 			[
 				rehypePrettyCode,
