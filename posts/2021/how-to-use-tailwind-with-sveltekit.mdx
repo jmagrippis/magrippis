@@ -83,7 +83,7 @@ With the dependencies installed and the PostCSS config above, we can **kill and 
 
 The only truly essential thing left, is to import the… Tailwind CSS files themselves! So, let’s create a `src/tailwind.css` file:
 
-```css
+```postcss
 /* src/tailwind.css */
 @tailwind base;
 @tailwind components;
@@ -92,7 +92,7 @@ The only truly essential thing left, is to import the… Tailwind CSS files them
 
 If we want every page and component in our app to be able to use Tailwind classes, which we probably do, we can import that file we just created, into our root layout file, `src/routes/$layout.svelte`:
 
-```html
+```svelte
 <!--  src/routes/$layout.svelte -->
 <script>
 	import '../tailwind.css'
@@ -108,7 +108,7 @@ Which means, every route in our app will have Tailwind imported… so our lone `
 
 Let’s go to `src/lib/Counter.svelte` and add a few classes to the button, to further prove our success:
 
-```html
+```svelte
 <!--  src/lib/Counter.svelte -->
 <button
 	class="shadow rounded bg-gray-900 px-6 py-2 text-2xl text-white"
@@ -149,7 +149,7 @@ module.exports = {
 
 You can read more about the Tailwind configuration object in [the official docs](https://tailwindcss.com/docs/configuration 'so many options'). The most important thing above is the `purge` property, where we specify we want to scan `.svelte` and `.css` files for usage of Tailwind classes, but we’ve also limited our colour palette and specified a new `svelte-prime` colour. Let’s use it on our button!
 
-```html
+```svelte
 <!--  src/lib/Counter.svelte -->
 <button
 	class="bg-svelte-prime-900 shadow rounded px-6 py-2 text-2xl text-white"
@@ -167,7 +167,7 @@ At this point, we are able to use Tailwind in our app, in every way described in
 
 First, we’ll update our Counter component:
 
-```html
+```svelte
 <!--  src/lib/Counter.svelte -->
 <button class="button" on:click="{increment}">Clicks: {count}</button>
 ```
@@ -187,7 +187,7 @@ module.exports = {
 
 Finally, let’s create our composed `.button`: you may create a new CSS file for your composed classes, or add to the `src/app.css` file the SvelteKit wizard created for us, or add to the `src/tailwind.css` file we created earlier, which would look like this:
 
-```css
+```postcss
 /* src/tailwind.css */
 @tailwind base;
 @tailwind components;
