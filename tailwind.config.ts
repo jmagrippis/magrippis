@@ -40,7 +40,7 @@ const config: Config = {
 			center: true,
 		},
 		fontFamily: {
-			sans: ['var(--font-sans)', 'var(--font-emoji)'],
+			sans: ['var(--font-sans)', 'system-ui', 'sans-serif'],
 		},
 		extend: {
 			keyframes: {

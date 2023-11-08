@@ -1,5 +1,5 @@
 import './globals.css'
-import {Trispace, Noto_Color_Emoji} from 'next/font/google'
+import {Trispace} from 'next/font/google'
 import type {Viewport} from 'next'
 
 import {Header} from './Header/Header'
@@ -9,12 +9,6 @@ import Script from 'next/script'
 const sansFont = Trispace({
 	subsets: ['latin'],
 	variable: '--font-sans',
-})
-
-const emojiFont = Noto_Color_Emoji({
-	subsets: ['emoji'],
-	weight: '400',
-	variable: '--font-emoji',
 })
 
 const metaDescription =
@@ -46,7 +40,7 @@ export const viewport: Viewport = {
 const RootLayout = ({children}: {children: React.ReactNode}) => (
 	<html
 		lang="en"
-		className={`${sansFont.variable} ${emojiFont.variable}`}
+		className={sansFont.variable}
 		// data-theme will appear on the client
 		suppressHydrationWarning
 	>
