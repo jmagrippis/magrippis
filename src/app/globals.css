@@ -112,11 +112,11 @@
 		--copy-base-color-light: var(--brand-hue) 10% 10%;
 		--copy-muted-color-light: var(--brand-hue) 6% 25%;
 
-		--surface-1-color-light: var(--brand-hue) 81% 96%;
+		--surface-1-color-light: var(--brand-hue) 80% 98%;
 		--surface-2-color-light: var(--brand-hue) 76% 80%;
 		--surface-3-color-light: var(--emphasis-hue) 76% 80%;
 
-		--emphasis-color-light: var(--emphasis-hue) 81% 40%;
+		--emphasis-color-light: var(--emphasis-hue) 85% 35%;
 		--emphasis-hover-color-light: var(--emphasis-hue) 78% 55%;
 
 		/* dark */
