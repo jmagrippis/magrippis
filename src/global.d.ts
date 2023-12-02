@@ -4,3 +4,7 @@ declare module '*.svg' {
 	const content: FunctionComponent<SVGAttributes<SVGElement> | {title: string}>
 	export default content
 }
+
+interface Window {
+	toggleTheme?(): void
+}

@@ -6,6 +6,7 @@ export const ThemeToggleIcon = () => (
 		aria-hidden="true"
 		viewBox="0 0 24 24"
 	>
+		<title>Toggle Theme</title>
 		<mask className={styles.moon} id="moon-mask">
 			<rect x="0" y="0" width="100%" height="100%" fill="white" />
 			<circle cx="24" cy="10" r="6" fill="black" />
