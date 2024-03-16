@@ -80,6 +80,6 @@ export default defineConfig({
 				command: 'bun run dev',
 				port: 3000,
 				reuseExistingServer: true,
-		  }
+			}
 		: undefined,
 })
