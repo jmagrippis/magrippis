@@ -64,7 +64,7 @@ export const Footer = () => (
 				/>
 			</a>
 			<a
-				href="https://www.youtube.com/@jmagrippis?sub_confirmation=1"
+				href="https://www.youtube.com/@johnnifytech?sub_confirmation=1"
 				target="_blank"
 				rel="noopener noreferrer"
 			>
