@@ -20,6 +20,18 @@ const Home = () => (
 				For the extra mile, leave a comment: some feedback, whether I made you
 				laugh, or helped you learn... or what you’d like to see me cover next!
 			</Paragraph>
+			<Paragraph>
+				If you want to exchange monetary support with getting{' '}
+				<strong>tremendous value</strong>, consider{' '}
+				<a
+					href="https://johnnify.com"
+					target="_blank"
+					rel="noopener noreferrer"
+				>
+					Johnnify Premium
+				</a>
+				! My private code, provided as SaaS 🚀
+			</Paragraph>
 		</section>
 		<OtherWork />
 	</main>
