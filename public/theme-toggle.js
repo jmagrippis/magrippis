@@ -4,7 +4,7 @@ const defaultTheme = 'dark'
 
 const getTheme = () => {
 	if (typeof localStorage !== 'undefined') {
-		return localStorage.getItem('theme') || defaultTheme
+		return localStorage.getItem(STORAGE_KEY) || defaultTheme
 	}
 	return defaultTheme
 }
@@ -19,7 +19,7 @@ setTheme(getTheme())
 const themeObserver = new MutationObserver(() => {
 	const nextTheme = document.documentElement.dataset.theme
 	if (nextTheme) {
-		localStorage.setItem('theme', nextTheme)
+		localStorage.setItem(STORAGE_KEY, nextTheme)
 	}
 })
 themeObserver.observe(document.documentElement, {

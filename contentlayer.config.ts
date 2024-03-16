@@ -1,6 +1,6 @@
 import {defineDocumentType, makeSource} from 'contentlayer/source-files'
-import rehypePrettyCode from 'rehype-pretty-code'
 import smartypants from 'remark-smartypants'
+import rehypeShiki from '@shikijs/rehype'
 
 export const Post = defineDocumentType(() => ({
 	name: 'Post',
@@ -28,13 +28,16 @@ export default makeSource({
 	contentDirPath: 'posts',
 	documentTypes: [Post],
 	mdx: {
+		// vfile-message theoretical type incompatibility
+		// @ts-ignore
 		remarkPlugins: [smartypants],
 		rehypePlugins: [
 			[
-				rehypePrettyCode,
+				// theoretical type incompatibility
+				// @ts-ignore
+				rehypeShiki,
 				{
 					theme: 'dracula',
-					defaultLang: 'sh',
 				},
 			],
 		],
