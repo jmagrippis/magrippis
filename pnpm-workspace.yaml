@@ -1,0 +1,33 @@
+packages:
+  - apps/*
+  - packages/*
+
+allowBuilds:
+  esbuild: true
+  workerd: true
+
+catalog:
+  '@types/node': ^26.1.0
+  typescript: ^6.0.3
+  vite: npm:@voidzero-dev/vite-plus-core@0.2.6
+  vite-plus: 0.2.6
+  wrangler: ^4.115.0
+
+minimumReleaseAgeExclude:
+  - miniflare@4.20260722.1
+  - wrangler@4.115.0
+
+onlyBuiltDependencies:
+  - '@tailwindcss/oxide'
+  - esbuild
+  - sharp
+  - workerd
+
+overrides:
+  vite: 'catalog:'
+
+peerDependencyRules:
+  allowAny:
+    - vite
+  allowedVersions:
+    vite: '*'

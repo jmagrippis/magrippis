@@ -1,0 +1,25 @@
+{
+	"$schema": "./node_modules/wrangler/config-schema.json",
+	"name": "magrippis",
+	"compatibility_date": "2026-07-29",
+	"workers_dev": false,
+	"routes": [
+		{
+			"pattern": "magrippis.com",
+			"custom_domain": true,
+		},
+	],
+	// No `main` on purpose: assets-only, which sidesteps kit#15960. Requests never
+	// reach a Worker, so Smart Placement and Argo cannot speed this site up.
+	"assets": {
+		"directory": "./build",
+		"not_found_handling": "404-page",
+	},
+	"observability": {
+		"logs": {
+			"enabled": true,
+			"head_sampling_rate": 1,
+			"invocation_logs": false,
+		},
+	},
+}

@@ -1,0 +1,31 @@
+name: End-to-End Tests (Production)
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  e2e-production:
+    timeout-minutes: 60
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./apps/web
+    steps:
+      - uses: actions/checkout@v6
+      - uses: voidzero-dev/setup-vp@v1
+        with:
+          node-version-file: .node-version
+          cache: true
+      - name: Install Playwright Browsers
+        run: vp exec playwright install --with-deps
+      - name: Run E2E tests against production
+        run: vp run playwright
+        env:
+          PUBLIC_ROOT_URL: https://magrippis.com
+      - uses: actions/upload-artifact@v7
+        if: always()
+        with:
+          name: e2e-test-results
+          path: ./apps/web/test-results/
+          retention-days: 30

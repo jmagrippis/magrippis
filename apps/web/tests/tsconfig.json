@@ -1,0 +1,14 @@
+{
+	// standalone on purpose: Playwright resolves `extends` through Node, which
+	// cannot resolve Kit 3's `$app/tsconfig`
+	"compilerOptions": {
+		"module": "esnext",
+		"target": "esnext",
+		"moduleResolution": "bundler",
+		"types": ["node"],
+		"strict": true,
+		"skipLibCheck": true,
+		"noEmit": true
+	},
+	"include": ["**/*.ts"]
+}

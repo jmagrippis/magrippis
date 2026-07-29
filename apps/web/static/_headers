@@ -1,0 +1,7 @@
+# Prerendering flattens `+server.ts` routes to files, losing the Content-Type
+# they set; the host would otherwise infer `text/xml` from the extension.
+/rss.xml
+  Content-Type: application/rss+xml; charset=utf-8
+
+/sitemap.xml
+  Content-Type: application/xml; charset=utf-8

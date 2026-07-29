@@ -1,0 +1,255 @@
+/* handy css variables from https://open-props.style/ */
+@import 'open-props/easings' layer(base);
+
+@import 'tailwindcss';
+@plugin '@tailwindcss/typography';
+
+@custom-variant dark (&:where([data-theme='dark'], [data-theme='dark'] *));
+
+@layer base {
+	/*
+		Additional "resets" based on Josh's article:
+		https://www.joshwcomeau.com/css/custom-css-reset/
+	*/
+	*,
+	*::before,
+	*::after {
+		box-sizing: border-box;
+	}
+
+	input,
+	button,
+	textarea,
+	select {
+		font: inherit;
+	}
+
+	p,
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		overflow-wrap: break-word;
+	}
+
+	h1,
+	h2,
+	h3 {
+		text-wrap: balance;
+	}
+
+	p {
+		text-wrap: pretty;
+	}
+
+	html,
+	body {
+		height: 100%;
+	}
+
+	body {
+		-webkit-font-smoothing: antialiased;
+		isolation: isolate;
+		display: flex;
+		flex-direction: column;
+
+		@apply bg-surface-1 text-copy-base;
+	}
+
+	html {
+		@apply transition-colors;
+	}
+
+	main {
+		flex-grow: 1;
+	}
+
+	a {
+		@apply decoration-emphasis underline decoration-2 transition-colors;
+	}
+
+	a:hover {
+		@apply decoration-emphasis-hover;
+	}
+
+	svg {
+		@apply transition-colors;
+	}
+
+	@keyframes blink {
+		0%,
+		100% {
+			opacity: 1;
+		}
+		50% {
+			opacity: 0;
+		}
+	}
+
+	:root {
+		--brand-hue: 271deg;
+		--emphasis-hue: 142deg;
+
+		--transition-duration-short: 0.15s;
+		--transition-duration-long: 0.4s;
+
+		--header-height: 64px;
+		--radius: 0.5rem;
+
+		--shadow-color: var(--brand-hue) 36% 60%;
+		--shadow-elevation-low:
+			0px 0.5px 0.6px hsl(var(--shadow-color) / 0.29),
+			0px 0.9px 1px -1.2px hsl(var(--shadow-color) / 0.29),
+			0px 2px 2.3px -2.5px hsl(var(--shadow-color) / 0.29);
+		--shadow-elevation-medium:
+			0px 0.5px 0.6px hsl(var(--shadow-color) / 0.31),
+			0px 1.7px 1.9px -0.8px hsl(var(--shadow-color) / 0.31),
+			0px 4.1px 4.6px -1.7px hsl(var(--shadow-color) / 0.31),
+			0px 10px 11.3px -2.5px hsl(var(--shadow-color) / 0.31);
+		--shadow-elevation-high:
+			0px 0.5px 0.6px hsl(var(--shadow-color) / 0.28),
+			0px 2.7px 3px -0.4px hsl(var(--shadow-color) / 0.28),
+			0px 5.1px 5.7px -0.7px hsl(var(--shadow-color) / 0.28),
+			0px 8.3px 9.3px -1.1px hsl(var(--shadow-color) / 0.28),
+			0px 13.1px 14.7px -1.4px hsl(var(--shadow-color) / 0.28),
+			-0.1px 20.5px 23.1px -1.8px hsl(var(--shadow-color) / 0.28),
+			-0.1px 31.1px 35px -2.1px hsl(var(--shadow-color) / 0.28),
+			-0.2px 45.8px 51.5px -2.5px hsl(var(--shadow-color) / 0.28);
+
+		/* light */
+		--copy-base-color-light: var(--brand-hue) 10% 10%;
+		--copy-muted-color-light: var(--brand-hue) 6% 25%;
+
+		--surface-1-color-light: var(--brand-hue) 80% 98%;
+		--surface-2-color-light: var(--brand-hue) 76% 80%;
+		--surface-3-color-light: var(--emphasis-hue) 76% 80%;
+
+		--emphasis-color-light: var(--emphasis-hue) 85% 35%;
+		--emphasis-hover-color-light: var(--emphasis-hue) 78% 55%;
+
+		/* dark */
+		--copy-base-color-dark: var(--brand-hue) 100% 97%;
+		--copy-muted-color-dark: var(--brand-hue) 6% 90%;
+
+		--surface-1-color-dark: var(--brand-hue) 10% 10%;
+		--surface-2-color-dark: var(--brand-hue) 87% 21%;
+		--surface-3-color-dark: var(--emphasis-hue) 25% 11%;
+
+		--emphasis-color-dark: var(--emphasis-hue) 78% 55%;
+		--emphasis-hover-color-dark: var(--emphasis-hue) 81% 44%;
+	}
+
+	:root,
+	[data-theme='light'] {
+		color-scheme: light;
+
+		--copy-base-color: var(--copy-base-color-light);
+		--copy-muted-color: var(--copy-muted-color-light);
+		--copy-inverted-color: var(--copy-base-color-dark);
+
+		--surface-1-color: var(--surface-1-color-light);
+		--surface-2-color: var(--surface-2-color-light);
+		--surface-3-color: var(--surface-3-color-light);
+		--surface-inverted-color: var(--surface-1-color-dark);
+
+		--emphasis-color: var(--emphasis-color-light);
+		--emphasis-hover-color: var(--emphasis-hover-color-light);
+	}
+
+	[data-theme='dark'] {
+		color-scheme: dark;
+
+		--copy-base-color: var(--copy-base-color-dark);
+		--copy-muted-color: var(--copy-muted-color-dark);
+		--copy-inverted-color: var(--copy-base-color-light);
+
+		--surface-1-color: var(--surface-1-color-dark);
+		--surface-2-color: var(--surface-2-color-dark);
+		--surface-3-color: var(--surface-3-color-dark);
+		--surface-inverted-color: var(--surface-1-color-light);
+
+		--emphasis-color: var(--emphasis-color-dark);
+		--emphasis-hover-color: var(--emphasis-hover-color-dark);
+	}
+}
+
+@theme inline {
+	/* The magrippis palette. Everything below derives from these. */
+	--color-copy-base: hsl(var(--copy-base-color));
+	--color-copy-muted: hsl(var(--copy-muted-color));
+	--color-copy-inverted: hsl(var(--copy-inverted-color));
+
+	--color-surface-1: hsl(var(--surface-1-color));
+	--color-surface-2: hsl(var(--surface-2-color));
+	--color-surface-3: hsl(var(--surface-3-color));
+	--color-surface-inverted: hsl(var(--surface-inverted-color));
+
+	--color-emphasis: hsl(var(--emphasis-color));
+	--color-emphasis-hover: hsl(var(--emphasis-hover-color));
+
+	/* Brand scales, kept as scales because the gradients need stops */
+	--color-primary-50: var(--color-purple-50);
+	--color-primary-100: var(--color-purple-100);
+	--color-primary-200: var(--color-purple-200);
+	--color-primary-300: var(--color-purple-300);
+	--color-primary-400: var(--color-purple-400);
+	--color-primary-500: var(--color-purple-500);
+	--color-primary-600: var(--color-purple-600);
+	--color-primary-700: var(--color-purple-700);
+	--color-primary-800: var(--color-purple-800);
+	--color-primary-900: var(--color-purple-900);
+	--color-primary-950: var(--color-purple-950);
+
+	--color-secondary-50: var(--color-emerald-50);
+	--color-secondary-100: var(--color-emerald-100);
+	--color-secondary-200: var(--color-emerald-200);
+	--color-secondary-300: var(--color-emerald-300);
+	--color-secondary-400: var(--color-emerald-400);
+	--color-secondary-500: var(--color-emerald-500);
+	--color-secondary-600: var(--color-emerald-600);
+	--color-secondary-700: var(--color-emerald-700);
+	--color-secondary-800: var(--color-emerald-800);
+	--color-secondary-900: var(--color-emerald-900);
+	--color-secondary-950: var(--color-emerald-950);
+
+	/* shadcn-svelte's tokens, mapped onto the palette above rather than duplicated */
+	--color-background: hsl(var(--surface-1-color));
+	--color-foreground: hsl(var(--copy-base-color));
+	--color-card: hsl(var(--surface-2-color));
+	--color-card-foreground: hsl(var(--copy-base-color));
+	--color-popover: hsl(var(--surface-1-color));
+	--color-popover-foreground: hsl(var(--copy-base-color));
+	--color-primary: var(--color-purple-600);
+	--color-primary-foreground: var(--color-purple-50);
+	--color-secondary: hsl(var(--surface-2-color));
+	--color-secondary-foreground: hsl(var(--copy-base-color));
+	--color-muted: hsl(var(--surface-2-color));
+	--color-muted-foreground: hsl(var(--copy-muted-color));
+	--color-accent: hsl(var(--surface-3-color));
+	--color-accent-foreground: hsl(var(--copy-base-color));
+	--color-destructive: var(--color-red-600);
+	--color-destructive-foreground: var(--color-red-50);
+	--color-border: hsl(var(--surface-2-color));
+	--color-input: hsl(var(--surface-2-color));
+	--color-ring: hsl(var(--emphasis-color));
+
+	--radius-sm: calc(var(--radius) - 4px);
+	--radius-md: calc(var(--radius) - 2px);
+	--radius-lg: var(--radius);
+	--radius-xl: calc(var(--radius) + 4px);
+
+	--shadow-low: var(--shadow-elevation-low);
+	--shadow-mid: var(--shadow-elevation-medium);
+	--shadow-high: var(--shadow-elevation-high);
+
+	--font-sans: 'Trispace Variable', system-ui, sans-serif;
+
+	--animate-blink: blink 0.8s infinite steps(1);
+}
+
+/* Matches the v3 `container: {center: true}`, which v4 has no config for */
+@utility container {
+	margin-inline: auto;
+}

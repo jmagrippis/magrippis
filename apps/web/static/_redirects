@@ -1,0 +1,2 @@
+# Ported from the Next.js `redirects()` config: a static deploy has no server.
+/tube https://www.youtube.com/@johnnifytech?sub_confirmation=1 302

@@ -1,0 +1,62 @@
+{
+	"permissions": {
+		"allow": [
+			"Edit",
+			"Write",
+			"WebSearch",
+			"WebFetch(domain:github.com)",
+			"WebFetch(domain:raw.githubusercontent.com)",
+			"WebFetch(domain:orm.drizzle.team)",
+			"Bash(cat:*)",
+			"Bash(mkdir:*)",
+			"Bash(ls:*)",
+			"Bash(mv:*)",
+			"Bash(pnpm format:*)",
+			"Bash(pnpm:*)",
+			"Bash(.specify/scripts/bash/*:*)",
+			"Bash(bash .specify/scripts/bash/*:*)",
+			"Bash(git diff:*)",
+			"mcp__svelte__get-documentation",
+			"mcp__svelte__list-sections",
+			"mcp__svelte__svelte-autofixer",
+			"mcp__playwright__browser_click",
+			"mcp__playwright__browser_close",
+			"mcp__playwright__browser_console_messages",
+			"mcp__playwright__browser_evaluate",
+			"mcp__playwright__browser_file_upload",
+			"mcp__playwright__browser_navigate",
+			"mcp__playwright__browser_resize",
+			"mcp__playwright__browser_snapshot",
+			"mcp__playwright__browser_tabs",
+			"mcp__playwright__browser_wait_for",
+			"mcp__cloudflare-docs__search_cloudflare_documentation"
+		],
+		"deny": [
+			"Bash(pnpm db:migrate)",
+			"Bash(pnpm db:migrate-prod)",
+			"Bash(pnpm --filter @repo/web db:migrate)",
+			"Bash(pnpm --filter @repo/web db:migrate-prod)"
+		],
+		"ask": [
+			"Bash(pnpm db:generate-migrations)",
+			"Bash(pnpm --filter @repo/web db:generate-migrations)",
+			"Bash(git stash:*)",
+			"Bash(git checkout:*)"
+		]
+	},
+	"hooks": {
+		"PostToolUse": [
+			{
+				"matcher": "Edit|MultiEdit|Write",
+				"hooks": [
+					{
+						"type": "command",
+						"command": "jq -r '.tool_input.file_path' | { read file_path; if echo \"$file_path\" | grep -q '\\.ts$'; then pnpm format \"$file_path\"; fi; }"
+					}
+				]
+			}
+		]
+	},
+	"enabledMcpjsonServers": ["svelte", "cloudflare-docs", "playwright"],
+	"enableAllProjectMcpServers": true
+}
