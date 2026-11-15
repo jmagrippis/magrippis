@@ -1,4 +1,4 @@
-import {SITE_DESCRIPTION} from '#lib/constants'
+import {SITE_DESCRIPTION} from '#lib/constants.js'
 
 import type {PageServerLoad} from './$types'
 

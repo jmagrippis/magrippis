@@ -19,7 +19,7 @@ So I’ve been favouring [Luxon](https://moment.github.io/luxon/index.html 'A po
 
 Even in their own their extensive docs, nothing relevant was matching “human” or even “ago”; turns out the magic word is actually “relative” and I decided to write the article that would have saved me some... _absolute time_. If you’re reading this, hopefully it’s saved you some 🙌🏽
 
-![nothing like saving time](https://media.giphy.com/media/3oz8xBmTULwn1QSNgI/giphy.gif)
+![nothing like saving time](./human-readable-timestamps-with-Luxon/nothing-like-saving-time.webp)
 
 ## The solution with Luxon
 

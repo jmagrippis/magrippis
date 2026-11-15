@@ -1,9 +1,15 @@
 <script lang="ts">
 	import {setMode, setTheme, theme} from 'mode-watcher'
+	import type {ClassValue} from 'svelte/elements'
 
-	import {Button} from '#lib/components/ui/button'
+	import {Button} from '#lib/components/ui/button/index.js'
 
 	import ThemeToggleIcon from './ThemeToggleIcon.svelte'
+
+	type Props = {
+		class?: ClassValue
+	}
+	let {class: className}: Props = $props()
 
 	const toggleTheme = () => {
 		const nextTheme = theme.current === 'dark' ? 'light' : 'dark'
@@ -16,9 +22,9 @@
 <Button
 	variant="ghost"
 	size="icon"
-	class="hover:text-emphasis-hover text-gray-50 hover:bg-transparent"
+	class={className}
 	onclick={toggleTheme}
 	aria-label="toggle light/dark theme"
 >
-	<ThemeToggleIcon class="size-8" />
+	<ThemeToggleIcon class="size-6" />
 </Button>

@@ -1,7 +1,8 @@
 <script lang="ts">
+	import NewTabHint from '#lib/components/NewTabHint.svelte'
 	import PageTitle from '#lib/components/typography/PageTitle.svelte'
-	import {GITHUB_REPO_URL, JOHNNIFY_URL} from '#lib/constants'
-	import {proseClasses} from '#lib/sharedClasses'
+	import {GITHUB_REPO_URL, JOHNNIFY_URL} from '#lib/constants.js'
+	import {proseClasses} from '#lib/sharedClasses.js'
 </script>
 
 <main class="container {proseClasses}">
@@ -28,7 +29,7 @@
 				target="_blank"
 				rel="noopener noreferrer"
 			>
-				to watch my videos
+				to watch my videos<NewTabHint />
 			</a>, instill confidence I can walk the walk besides talking the talk. It should encourage you
 			to reach out for a collaboration or mentoring!
 		</p>
@@ -45,7 +46,9 @@
 			Besides, larger projects are truly collaborative, and I don’t stick around companies for too
 			long. So, it’d be quite silly of me to say “if you want to see a Next.js app I worked on,
 			check out
-			<a href="https://www.zoopla.co.uk/" target="_blank" rel="noopener noreferrer"> Zoopla </a>!”
+			<a href="https://www.zoopla.co.uk/" target="_blank" rel="noopener noreferrer">
+				Zoopla<NewTabHint />
+			</a>!”
 		</p>
 		<p>
 			It’s technically correct, the best kind of correct, but with this website, it’s clear that: if
@@ -60,7 +63,7 @@
 		</p>
 		<p>
 			<a href="https://plausible.io/magrippis.com" target="_blank" rel="noopener noreferrer">
-				My analytics are public
+				My analytics are public<NewTabHint />
 			</a>
 			so you can see we’re not Zoopla by a longshot, but there <strong>is</strong> a decent amount of
 			people dropping by 👋
@@ -81,9 +84,9 @@
 		</p>
 		<p>
 			The code is open-source and free
-			<a href={GITHUB_REPO_URL} target="_blank" rel="noopener noreferrer">on GitHub</a>, you’re
-			welcome to peruse it! It’s got details on the specific stack I went with to make this site
-			tick.
+			<a href={GITHUB_REPO_URL} target="_blank" rel="noopener noreferrer">on GitHub<NewTabHint /></a
+			>, you’re welcome to peruse it! It’s got details on the specific stack I went with to make
+			this site tick.
 		</p>
 		<p>
 			I always keep my unpaid projects open-source and free, and have even done so for some of my
@@ -98,8 +101,8 @@
 		</p>
 		<p>
 			You can also find
-			<a href={JOHNNIFY_URL} target="_blank" rel="noopener noreferrer">Johnnify</a>, my other core
-			project, which is SvelteKit too.
+			<a href={JOHNNIFY_URL} target="_blank" rel="noopener noreferrer">Johnnify<NewTabHint /></a>,
+			my other core project, which is SvelteKit too.
 		</p>
 
 		<h2>Reaching out</h2>

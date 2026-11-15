@@ -1,4 +1,4 @@
-import {TWITTER_HANDLE} from '#lib/constants'
+import {TWITTER_HANDLE} from '#lib/constants.js'
 
 export const TWITTER_INTENT_URL = 'https://twitter.com/intent/tweet'
 

@@ -38,13 +38,13 @@ As for the three key drawbacks… This article is a guide to resolving them! Spo
 
 Strap in!
 
-![](https://media.giphy.com/media/jZh1hRsLJJk6Q/giphy.gif)
+![](./how-to-BDD-and-E2E-test-your-responsive-web-app-with-Cypress/strap-in.webp)
 
 ## Setting up for BDD
 
 Our end goal here is to run `yarn bdd` on a terminal and get the Cypress dashboard running, so we can develop with our test expectations and our app side by side.
 
-![](/blog/2020/bdd-and-e2e-with-cypress/full-spec.jpg)
+![](./how-to-BDD-and-E2E-test-your-responsive-web-app-with-Cypress/full-spec.jpg)
 
 We won’t have this many specs and target devices to start with, but we’ll get there! And the first step is getting into our project’s directory and running:
 
@@ -129,7 +129,7 @@ What we **will** delete is the `integration/examples` directory! The `integratio
 rm -rf cypress/integration/examples
 ```
 
-![](https://media.giphy.com/media/oQtO6wKK2q0c8/giphy.gif)
+![](./how-to-BDD-and-E2E-test-your-responsive-web-app-with-Cypress/rm-rf-explosion.webp)
 
 Next up is `plugins/index.js` which we’ll _kinda_ keep, but let’s switch it to Typescript. `mv cypress/plugins/index.js cypress/plugins/index.ts ` and open that file in your editor.
 
@@ -242,13 +242,13 @@ describe('home', () => {
 
 Feel free to kill the previous `yarn bdd` process and run it again, to ensure we’re running with our latest config. Click “Run all specs”!
 
-![](/blog/2020/bdd-and-e2e-with-cypress/cypress-open.jpg)
+![](./how-to-BDD-and-E2E-test-your-responsive-web-app-with-Cypress/cypress-open.jpg)
 
 This gets us into a smaller and likely redder version of the first screenshot in this article! Which means that we can now finally do some **Behaviour-Driven Development using Cypress**!
 
 We can keep making the tests green ✅, then extending them ❌, then writing our implementation to get us back to green and refactor ♻️, to our heart’s content! ❌ ✅ ♻️
 
-![](https://media.giphy.com/media/l2Sqir5ZxfoS27EvS/giphy.gif)
+![](./how-to-BDD-and-E2E-test-your-responsive-web-app-with-Cypress/nailed-it.webp)
 
 ## Testing across devices
 
@@ -282,7 +282,7 @@ export const testedViewports: Cypress.ViewportPreset[] = [
 
 Because in most situations my spec is the same across devices; it just **looks** a bit different. Maybe on one device the header is centred and list items are stacked, on another the header is to the left and list items are on a grid of 2 columns:
 
-![](/blog/2020/bdd-and-e2e-with-cypress/figma.jpg)
+![](./how-to-BDD-and-E2E-test-your-responsive-web-app-with-Cypress/figma.jpg)
 
 Which means I can just repeat the specs for every device in `testedViewports` and have a snapshot of how things look on each. Which means that, instead of copy & pasting the block of tests and having to amend `n` blocks every time I want to add a spec, I can `forEach` through that array like so:
 
@@ -304,7 +304,7 @@ describe('home', () => {
 
 And Cypress will happily label and run your specs against your `n` viewports! `n` times the confidence, at `/n` times the work!
 
-![](https://media.giphy.com/media/Vc5GabD7CnDaMB0VF5/giphy.gif)
+![](./how-to-BDD-and-E2E-test-your-responsive-web-app-with-Cypress/boom.webp)
 
 ## Running E2E
 
@@ -315,8 +315,6 @@ A very common mistake is to forget to set up a new environment variable in your 
 **But**, you deploy and you find that, in production, it’s all gone wrong! Debugging the problem, you quickly find you’re hitting that external api with `undefined` as the apiKey, but, the question is… Shouldn’t your automated tests have caught this?
 
 They **should** and they _would_ have had, if you _were_ running them against your deployments… so let’s set that up meow!
-
-![](https://i.giphy.com/media/o0vwzuFwCGAFO/giphy.webp)
 
 GitHub actions make it surprisingly easy! You could have this as part of an existing GitHub workflow, but I like keeping it separate, so let’s create a dedicated file inside the GitHub workflows directory: `.github/workflows/e2e.yml`
 
@@ -407,7 +405,7 @@ Our E2E setup would already be complete! But let’s be extra and set up that ne
 
 Again, [Gleb’s article is very thorough on the process](https://glebbahmutov.com/blog/develop-preview-test/), but the short of it is that if we click the “Runs” tab on the main Cypress window, click “Connect to Dashboard” and follow that flow…
 
-![](/blog/2020/bdd-and-e2e-with-cypress/cypress-dashboard-connect.jpg)
+![](./how-to-BDD-and-E2E-test-your-responsive-web-app-with-Cypress/cypress-dashboard-connect.jpg)
 
 We’ll eventually end up with an automatically amended `cypress.json`, one that has a `projectId` set for us. So our final `cypress.json` for this article, will be something like:
 
@@ -435,7 +433,7 @@ env:
 
 Actually work, bringing this article to a close!
 
-![When devops sets up a new action for you](https://media.giphy.com/media/S9iMXx6Lqrr5mJoMxC/giphy.gif)
+![When devops sets up a new action for you](./how-to-BDD-and-E2E-test-your-responsive-web-app-with-Cypress/devops-sets-up-a-new-action.webp)
 
 Raise a PR to see all the pieces fall into place! As a bonus, I’ve made [the Cypress Dashboard for the My Marvel app public](https://dashboard.cypress.io/projects/434y1o/runs "I'm hoping for all green when you visit"), so do have a look there: you can check out the screenshots and recordings of the latest runs!
 

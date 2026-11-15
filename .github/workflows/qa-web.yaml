@@ -17,7 +17,7 @@ jobs:
         working-directory: ./apps/web
     steps:
       - uses: actions/checkout@v6
-      - uses: voidzero-dev/setup-vp@v1
+      - uses: voidzero-dev/setup-vp@v1.22.0
         with:
           node-version-file: .node-version
           cache: true
@@ -36,7 +36,7 @@ jobs:
         working-directory: ./apps/web
     steps:
       - uses: actions/checkout@v6
-      - uses: voidzero-dev/setup-vp@v1
+      - uses: voidzero-dev/setup-vp@v1.22.0
         with:
           node-version-file: .node-version
           cache: true
@@ -60,7 +60,7 @@ jobs:
         working-directory: ./apps/web
     steps:
       - uses: actions/checkout@v6
-      - uses: voidzero-dev/setup-vp@v1
+      - uses: voidzero-dev/setup-vp@v1.22.0
         with:
           node-version-file: .node-version
           cache: true

@@ -1,26 +1,35 @@
 <script lang="ts">
-	import Paragraph from '#lib/components/typography/Paragraph.svelte'
-	import {getYouTubeUrl} from '#lib/getYouTubeUrl'
+	import type {Picture} from '@sveltejs/enhanced-img'
 
-	import carousel from './images/carousel.jpeg?enhanced'
-	import googleFonts from './images/google-fonts.png?enhanced'
-	import typing from './images/typing.jpeg?enhanced'
+	import Paragraph from '#lib/components/typography/Paragraph.svelte'
+	import {NEW_TAB_HINT} from '#lib/constants.js'
+	import {getYouTubeUrl} from '#lib/getYouTubeUrl.js'
+
+	const thumbnails = import.meta.glob<Picture>(
+		'./images/{google-fonts.png,typing.jpeg,carousel.jpeg}',
+		{
+			eager: true,
+			// width descriptors, so with `sizes` a phone fetches a phone-sized thumbnail rather than the 2x one
+			query: {enhanced: true, w: '540;768;1080;1280'},
+			import: 'default',
+		},
+	)
 
 	const videos = [
 		{
 			id: 'TKKpVlZRFLc',
 			title: 'Stop using Google Fonts in prod 📈 what to do instead! 📉',
-			img: googleFonts,
+			img: thumbnails['./images/google-fonts.png'],
 		},
 		{
 			id: 'N4899I-tAW4',
 			title: 'Code your own TYPING ANIMATION with React ⌨️',
-			img: typing,
+			img: thumbnails['./images/typing.jpeg'],
 		},
 		{
 			id: 'YqSLxkFuQp0',
 			title: '🧲 Magnetic Carousel with Tailwind 3 & Svelte 🎠',
-			img: carousel,
+			img: thumbnails['./images/carousel.jpeg'],
 		},
 	]
 </script>
@@ -35,11 +44,17 @@
 	<ul class="grid gap-6 py-8 sm:grid-cols-3 lg:gap-6 2xl:gap-8">
 		{#each videos as { id, img, title }, i (id)}
 			<li>
-				<a href={getYouTubeUrl(id)} target="_blank" rel="noopener noreferrer" aria-label={title}>
+				<a
+					href={getYouTubeUrl(id)}
+					target="_blank"
+					rel="noopener noreferrer"
+					aria-label={`${title}${NEW_TAB_HINT}`}
+				>
 					<enhanced:img
 						src={img}
 						alt=""
 						{title}
+						sizes="(min-width: 640px) 33vw, 100vw"
 						fetchpriority={i === 0 ? 'high' : 'auto'}
 						loading={i === 0 ? 'eager' : 'lazy'}
 						class="sm:rounded-lg"

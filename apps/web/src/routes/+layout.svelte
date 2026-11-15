@@ -9,7 +9,13 @@
 
 	import Footer from '#lib/components/Footer.svelte'
 	import Header from '#lib/components/Header.svelte'
-	import {SITE_DESCRIPTION, SITE_NAME, SITE_TITLE, SITE_URL, TWITTER_HANDLE} from '#lib/constants'
+	import {
+		SITE_DESCRIPTION,
+		SITE_NAME,
+		SITE_TITLE,
+		SITE_URL,
+		TWITTER_HANDLE,
+	} from '#lib/constants.js'
 
 	type Props = {
 		children: Snippet

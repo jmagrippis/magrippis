@@ -5,22 +5,23 @@
 	import TikTokIcon from '~icons/brand/tikTok'
 	import YouTubeIcon from '~icons/brand/youtube'
 
-	import {Button} from '#lib/components/ui/button'
+	import {Button} from '#lib/components/ui/button/index.js'
 	import {
 		DISCORD_URL,
 		GITHUB_REPO_URL,
 		INSTAGRAM_URL,
 		JOHNNIFY_URL,
 		TIKTOK_URL,
+		YOUTUBE_CHANNEL_NAME,
 		YOUTUBE_CHANNEL_URL,
-	} from '#lib/constants'
+	} from '#lib/constants.js'
 
 	import OutboundLink from './OutboundLink.svelte'
 
 	const socials = [
 		{
 			href: YOUTUBE_CHANNEL_URL,
-			label: 'Johnny’s fun & informative YouTube channel 😄',
+			label: YOUTUBE_CHANNEL_NAME,
 			icon: YouTubeIcon,
 			class: 'size-6',
 		},
@@ -58,7 +59,7 @@
 
 	<div class="flex items-center justify-center gap-2">
 		{#each socials as { href, label, icon: Icon, class: iconClass } (href)}
-			<OutboundLink {href} size="icon" class="hover:text-emphasis-hover no-underline">
+			<OutboundLink {href} variant="ghost" size="icon" class="no-underline">
 				<span class="sr-only">{label}</span>
 				<Icon class={iconClass} />
 			</OutboundLink>

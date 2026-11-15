@@ -8,7 +8,7 @@ export const load: PageServerLoad = async () => ({
 		description:
 			'Read the latest blogposts by Johnny, which include in-depth tutorials and guides for Typescript, Svelte, React, SvelteKit and Next.js!.. And sometimes more random thoughts you won’t see quoted in Stack Overflow 😛',
 	},
-	// not spreading the post: `html` is the whole article, and six of them have
+	// not spreading the post: `content` is the whole article, and six of them have
 	// no business reaching the client for an index
 	posts: allPosts
 		.map(({title, snippet, publishedAt, tags, year, slug, href}) => ({

@@ -15,6 +15,15 @@ for (const route of routes) {
 		await page.goto(route)
 		await expect(page.getByTestId('hydrated')).toBeVisible()
 		await expect(page.getByRole('heading', {level: 1})).toBeVisible()
+		// mid-fade, a relative date reads as low contrast; the cursor's endless blink never settles
+		await page.evaluate(() =>
+			Promise.all(
+				document
+					.getAnimations()
+					.filter((animation) => animation.effect?.getTiming().iterations !== Infinity)
+					.map((animation) => animation.finished),
+			),
+		)
 
 		const {violations} = await new AxeBuilder({page}).analyze()
 

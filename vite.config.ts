@@ -12,7 +12,9 @@ export default defineConfig({
 	run: {
 		tasks: {
 			sanity: {
-				command: 'vp check && vp run -r check && vp run -r test && vp run -r playwright',
+				// the build generates what type checks import: `$app/tsconfig` and the `#content` collections
+				command:
+					'vp run -r build && vp check && vp run -r check && vp run -r test && vp run -r playwright',
 			},
 		},
 	},
@@ -33,6 +35,15 @@ export default defineConfig({
 			'.svelte-kit/',
 			'.content-collections/',
 			'test-results/',
+			// Claude Code owns this and rewrites it in its own style
+			'.claude/settings.local.json',
+		],
+		overrides: [
+			{
+				// a post's code samples are what readers see, so they stay as written
+				files: ['apps/web/content/blog/**'],
+				options: {embeddedLanguageFormatting: 'off'},
+			},
 		],
 	},
 })

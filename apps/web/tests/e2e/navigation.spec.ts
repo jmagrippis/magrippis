@@ -1,26 +1,29 @@
 import {expect, test} from '@playwright/test'
 
+import {HEADLINE_NAME} from './headline'
+
 test('a reader explores the site and shares the latest post', async ({page}) => {
 	await page.goto('/')
 	await expect(page.getByTestId('hydrated')).toBeVisible()
 
-	await expect(page.getByRole('heading', {level: 1})).toContainText('Johnny')
+	await expect(page.getByRole('heading', {level: 1})).toHaveAccessibleName(HEADLINE_NAME)
 	await expect(page).toHaveTitle(/Johnny Magrippis/)
 
-	// the hero types itself out: server-rendered complete, then animated
-	const typedTitle = page.getByRole('heading', {level: 1}).locator('strong').last()
-	await expect(typedTitle).not.toHaveText('engineer')
-
 	const nav = page.getByRole('navigation')
+	const blogLink = nav.getByRole('link', {name: 'blog'})
+	await expect(nav.getByRole('link', {name: 'jmagrippis'})).toHaveAttribute('aria-current', 'page')
 
 	await nav.getByRole('link', {name: 'about'}).click()
 	await expect(page.getByRole('heading', {name: 'About', level: 1})).toBeVisible()
 	await expect(page).toHaveTitle(/About/)
 	await expect(page.getByRole('heading', {name: 'The Stack', level: 2})).toBeVisible()
+	await expect(nav.getByRole('link', {name: 'about'})).toHaveAttribute('aria-current', 'page')
+	await expect(nav.getByRole('link', {name: 'jmagrippis'})).not.toHaveAttribute('aria-current')
 
-	await nav.getByRole('link', {name: 'blog'}).click()
+	await blogLink.click()
 	await expect(page.getByRole('heading', {name: 'Blog', level: 1})).toBeVisible()
 	await expect(page).toHaveTitle(/Blog/)
+	await expect(blogLink).toHaveAttribute('aria-current', 'page')
 
 	// whichever post is newest, rather than pinning the test to today's content
 	const latestPost = page.getByRole('heading', {level: 2}).first()
@@ -31,6 +34,8 @@ test('a reader explores the site and shares the latest post', async ({page}) => 
 
 	await expect(page.getByRole('heading', {level: 1})).toHaveText(latestTitle!)
 	expect(await page.title()).toContain(latestTitle!)
+	// a post is in the blog section rather than the blog page itself
+	await expect(blogLink).toHaveAttribute('aria-current', 'true')
 
 	// the sharing hub every post ends with
 	const shareHub = page.getByRole('complementary')

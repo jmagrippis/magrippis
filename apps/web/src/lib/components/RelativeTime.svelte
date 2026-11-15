@@ -1,7 +1,7 @@
 <script lang="ts">
 	import {onMount} from 'svelte'
 
-	import {isoStringToAbsoluteDate, isoStringToRelativeTime} from '#lib/relativeTime'
+	import {isoStringToAbsoluteDate, isoStringToRelativeTime} from '#lib/relativeTime.js'
 
 	type Props = {
 		isoString: string
@@ -15,11 +15,14 @@
 		mounted = true
 	})
 
-	let label = $derived(
-		mounted
-			? (isoStringToRelativeTime(isoString) ?? isoStringToAbsoluteDate(isoString))
-			: isoStringToAbsoluteDate(isoString),
-	)
+	let absoluteDate = $derived(isoStringToAbsoluteDate(isoString))
 </script>
 
-<time datetime={isoString}>{label}</time>
+<!-- the upgrade is a new element, so swapping it in draws text rather than shifting it -->
+{#if mounted}
+	<time datetime={isoString} class="animate-fade-in"
+		>{isoStringToRelativeTime(isoString) ?? absoluteDate}</time
+	>
+{:else}
+	<time datetime={isoString}>{absoluteDate}</time>
+{/if}

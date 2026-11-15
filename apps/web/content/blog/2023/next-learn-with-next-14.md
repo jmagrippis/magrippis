@@ -46,7 +46,7 @@ We even refactor to multiple individual Skeleton UIs for just a single route, in
 
 There has to be a point where there's too much granularity in Skeleton UIs, like how there is a point where you've got too many loading spinners 😛 but I enjoyed the examples and they drove that cool feature home!
 
-![how many is too many?](https://i.giphy.com/media/YwAgyCddum3K0/giphy.webp)
+![how many is too many?](./next-learn-with-next-14/how-many-is-too-many.webp)
 
 ## Chapters 12-14
 
@@ -80,7 +80,7 @@ No joke, that's a top 2 reason to go with Next.js over some of the other great m
 
 So this was a huge missed opportunity to finish the course with a real banger! No worries though, I **gotchu** and we kept the stream going with two essential features you'd want in every single real app you deploy!
 
-![I gotchu fam](https://i.giphy.com/media/eJS4WUQ7MkNKx3qxPN/giphy.webp)
+![I gotchu fam](./next-learn-with-next-14/i-gotchu-fam.webp)
 
 ## My bonuses
 
@@ -115,6 +115,6 @@ On the other hand, if all they are doing is uncommenting code, even if they see 
 
 The takeaway is... Teaching is hard 😂 which is one of the reasons it's **my** favourite way to learn 😄
 
-![You just know that dog learned tons about our solar system prepping that talk](https://i.giphy.com/media/1fnwSUTsHRyGXEYMos/giphy.webp)
+![You just know that dog learned tons about our solar system prepping that talk](./next-learn-with-next-14/dog-presenting-the-solar-system.webp)
 
 So, if I'm going to end on one thing: Great course, great team clearly putting in work & love behind it, and **you** should check Next/Learn out! Either with me coding along the livestream, or without me, at your own pace 🚀

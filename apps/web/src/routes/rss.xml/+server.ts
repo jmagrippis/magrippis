@@ -1,7 +1,8 @@
 import {Feed} from 'feed'
 
 import {allPosts} from '#content'
-import {SITE_DESCRIPTION, SITE_NAME, SITE_URL} from '#lib/constants'
+import {SITE_DESCRIPTION, SITE_LANGUAGE, SITE_NAME, SITE_URL} from '#lib/constants.js'
+import {markdownToHtml} from '#lib/server/markdown.js'
 
 export const prerender = true
 
@@ -11,7 +12,7 @@ export const GET = async () => {
 		description: SITE_DESCRIPTION,
 		id: SITE_URL,
 		link: SITE_URL,
-		language: 'en',
+		language: SITE_LANGUAGE,
 		image: `${SITE_URL}/og/home.png`,
 		favicon: `${SITE_URL}/favicon.ico`,
 		copyright: `All rights reserved, ${SITE_NAME}`,
@@ -27,9 +28,12 @@ export const GET = async () => {
 			id: `${SITE_URL}${post.href}`,
 			link: `${SITE_URL}${post.href}`,
 			description: post.snippet,
-			// the same self-contained HTML the page renders — Shiki's inline styles
+			// the HTML the page renders, with absolute image URLs: Shiki's inline styles
 			// mean it survives in a reader or an email with no stylesheet
-			content: post.html,
+			content: await markdownToHtml(post.content, {
+				directory: post._meta.directory,
+				origin: SITE_URL,
+			}),
 			date: new Date(post.publishedAt),
 			image: `${SITE_URL}/og/${post.year}/${post.slug}.png`,
 			category: post.tags.map((name) => ({name})),

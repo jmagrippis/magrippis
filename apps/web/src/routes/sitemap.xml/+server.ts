@@ -1,5 +1,5 @@
 import {allPosts} from '#content'
-import {SITE_URL} from '#lib/constants'
+import {SITE_URL} from '#lib/constants.js'
 
 export const prerender = true
 

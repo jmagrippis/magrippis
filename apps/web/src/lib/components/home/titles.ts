@@ -1,3 +1,5 @@
+export const CURSOR = '|'
+
 export type Title = {
 	article: string
 	title: string
@@ -11,8 +13,9 @@ export const titles: Title[] = [
 	{article: 'an', title: 'artist'},
 	{article: 'a', title: 'YouTuber'},
 	{article: 'a', title: 'software engineer'},
-	{article: 'a', title: 'fullstack engineer'},
-	{article: 'a', title: 'Principal Software Engineer'},
+	{article: 'a', title: 'Fullstack Developer'},
+	{article: 'a', title: 'Staff Software Engineer'},
+	{article: 'a', title: 'Principal Engineer'},
 	{article: 'a', title: 'Javascript apologist'},
 	{article: 'a', title: 'Typescript aficionado'},
 	{article: 'a', title: 'GraphQL enthusiast'},

@@ -4,8 +4,9 @@
 	import OtherWork from '#lib/components/home/OtherWork.svelte'
 	import Testimonials from '#lib/components/home/Testimonials.svelte'
 	import YouTubeSection from '#lib/components/home/YouTubeSection.svelte'
+	import NewTabHint from '#lib/components/NewTabHint.svelte'
 	import Paragraph from '#lib/components/typography/Paragraph.svelte'
-	import {JOHNNIFY_URL} from '#lib/constants'
+	import {JOHNNIFY_URL} from '#lib/constants.js'
 </script>
 
 <main>
@@ -25,8 +26,9 @@
 		<Paragraph>
 			If you want to exchange monetary support with getting <strong>tremendous value</strong>,
 			consider
-			<a href={JOHNNIFY_URL} target="_blank" rel="noopener noreferrer">Johnnify Premium</a>! My
-			private code, provided as SaaS 🚀
+			<a href={JOHNNIFY_URL} target="_blank" rel="noopener noreferrer"
+				>Johnnify Premium<NewTabHint /></a
+			>! My private code, provided as SaaS 🚀
 		</Paragraph>
 	</section>
 

@@ -4,7 +4,7 @@
 	import NotFound from '#lib/components/NotFound.svelte'
 	import PageTitle from '#lib/components/typography/PageTitle.svelte'
 	import Paragraph from '#lib/components/typography/Paragraph.svelte'
-	import {Button} from '#lib/components/ui/button'
+	import {Button} from '#lib/components/ui/button/index.js'
 </script>
 
 <svelte:head>

@@ -3,25 +3,18 @@ packages:
   - packages/*
 
 allowBuilds:
+  '@tailwindcss/oxide': true
   esbuild: true
+  sharp: true
   workerd: true
 
 catalog:
-  '@types/node': ^26.1.0
+  '@types/node': ^26.6.6
+  # `svelte-kit sync` in Kit 3.2 reads tsconfig through `ts.sys`, which TypeScript 7's API lacks
   typescript: ^6.0.3
-  vite: npm:@voidzero-dev/vite-plus-core@0.2.6
-  vite-plus: 0.2.6
-  wrangler: ^4.115.0
-
-minimumReleaseAgeExclude:
-  - miniflare@4.20260722.1
-  - wrangler@4.115.0
-
-onlyBuiltDependencies:
-  - '@tailwindcss/oxide'
-  - esbuild
-  - sharp
-  - workerd
+  vite: npm:@voidzero-dev/vite-plus-core@1.6.0
+  vite-plus: 1.6.0
+  wrangler: ^4.162.0
 
 overrides:
   vite: 'catalog:'

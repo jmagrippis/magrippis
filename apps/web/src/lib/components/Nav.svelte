@@ -2,51 +2,57 @@
 	import {page} from '$app/state'
 	import YouTubeIcon from '~icons/brand/youtube'
 
-	import {Button} from '#lib/components/ui/button'
-	import {YOUTUBE_CHANNEL_URL} from '#lib/constants'
+	import {Button} from '#lib/components/ui/button/index.js'
+	import {YOUTUBE_CHANNEL_NAME, YOUTUBE_CHANNEL_URL} from '#lib/constants.js'
 
+	import OutboundLink from './OutboundLink.svelte'
 	import ThemeToggle from './ThemeToggle.svelte'
 
-	const linkClasses = 'text-gray-50 hover:text-emphasis-hover hover:bg-transparent'
-	const activeClasses = 'underline decoration-dashed'
+	// on the purple header, emphasis green falls under 3:1 in light theme where near-white holds it in both
+	const headerControlClasses = 'text-gray-50 focus-visible:ring-gray-50'
+	// unpadded, so the brand lines up with the page content and the row's gap alone spaces the links
+	const textLinkClasses = [headerControlClasses, 'px-0 aria-[current]:decoration-dashed']
+	// a 32px hit area that takes only its 24px icon's room in the row
+	const iconButtonClasses = [headerControlClasses, '-m-1 size-8 hover:text-emphasis-hover']
 
-	// the Hero owns the page's only h1, so the brand here is just a link home
-	let isHome = $derived(page.url.pathname === '/')
+	const currentFor = (href: string) => {
+		const {pathname} = page.url
+		if (pathname === href) return 'page'
+		if (href !== '/' && pathname.startsWith(`${href}/`)) return 'true'
+		return null
+	}
 </script>
 
-<nav class="container flex items-center justify-between px-2 py-4">
-	<div class="text-xl">
-		<Button variant="link" href="/" class={[linkClasses, isHome && activeClasses]}>
+<!-- `pb-3` makes the header 64px at the default text size; larger text grows it -->
+<nav class="container flex flex-wrap items-center justify-between gap-y-2 px-2 pt-4 pb-3">
+	<div class="text-base sm:text-xl">
+		<!-- the Hero owns the page's only h1, so the brand here is just a link home -->
+		<Button variant="link" href="/" class={textLinkClasses} aria-current={currentFor('/')}>
 			jmagrippis
 		</Button>
 	</div>
 
-	<div class="flex items-center gap-1 sm:gap-2">
-		<Button
-			variant="link"
-			href="/blog"
-			class={[linkClasses, page.url.pathname.startsWith('/blog') && activeClasses]}
-		>
+	<div class="flex flex-wrap items-center gap-4">
+		<Button variant="link" href="/blog" class={textLinkClasses} aria-current={currentFor('/blog')}>
 			blog
 		</Button>
 		<Button
 			variant="link"
 			href="/about"
-			class={[linkClasses, page.url.pathname === '/about' && activeClasses]}
+			class={textLinkClasses}
+			aria-current={currentFor('/about')}
 		>
 			about
 		</Button>
-		<Button
+		<OutboundLink
+			href={YOUTUBE_CHANNEL_URL}
 			variant="ghost"
 			size="icon"
-			href={YOUTUBE_CHANNEL_URL}
-			target="_blank"
-			rel="noopener noreferrer"
-			class="{linkClasses} no-underline"
+			class={[iconButtonClasses, 'no-underline']}
 		>
-			<span class="sr-only">Johnny’s fun & informative YouTube channel 😄</span>
-			<YouTubeIcon class="size-8" />
-		</Button>
-		<ThemeToggle />
+			<span class="sr-only">{YOUTUBE_CHANNEL_NAME}</span>
+			<YouTubeIcon class="size-6" />
+		</OutboundLink>
+		<ThemeToggle class={iconButtonClasses} />
 	</div>
 </nav>

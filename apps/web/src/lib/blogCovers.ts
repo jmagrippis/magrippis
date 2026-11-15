@@ -2,7 +2,8 @@ import type {Picture} from '@sveltejs/enhanced-img'
 
 const covers = import.meta.glob<Picture>('./images/blog/**/*.jpg', {
 	eager: true,
-	query: {enhanced: true},
+	// width descriptors, so with `sizes` a phone fetches a phone-sized cover rather than the 2x desktop one
+	query: {enhanced: true, w: '540;768;1080;1366;1920'},
 	import: 'default',
 })
 

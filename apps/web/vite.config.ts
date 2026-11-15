@@ -4,35 +4,50 @@ import {enhancedImages} from '@sveltejs/enhanced-img'
 import {sveltekit} from '@sveltejs/kit/vite'
 import {vitePreprocess} from '@sveltejs/vite-plugin-svelte'
 import tailwindcss from '@tailwindcss/vite'
+import {FontaineTransform, resolveCategoryFallbacks} from 'fontaine'
 import {FileSystemIconLoader} from 'unplugin-icons/loaders'
 import Icons from 'unplugin-icons/vite'
 import {defineConfig, lazyPlugins} from 'vite-plus'
 
 import {ogImages} from './scripts/ogImagesPlugin'
-import {svelteInspectorFix} from './scripts/svelteInspectorFix'
 
 export default defineConfig({
 	run: {
 		tasks: {
 			playwright: {
 				command: 'playwright test --config tests/playwright.config.ts',
-				input: [{auto: true}, '!test-results/**', '!.svelte-kit/**', '!build/**'],
-				env: ['PUBLIC_ROOT_URL', 'CI'],
+				// a run against a deployment depends on that site, not on any local file, so a cache hit would replay a stale result
+				cache: false,
 			},
 		},
 	},
 	plugins: lazyPlugins(() => [
+		FontaineTransform.vite({
+			// Trispace's glyphs come in three widths: a monospace face scaled to their average keeps each line's width, where Arial rewraps centered text.
+			// Stock Android has none of fontaine's monospace faces, but Chrome there matches its Cutive Mono by name
+			fallbacks: {
+				'Trispace Variable': [
+					...resolveCategoryFallbacks({
+						fontFamily: 'Trispace Variable',
+						fallbacks: {},
+						metrics: {category: 'monospace'},
+					}),
+					'Cutive Mono',
+				],
+			},
+		}),
 		tailwindcss(),
 		ogImages(),
 		contentCollections({configPath: 'content/content-collections.ts'}),
 		enhancedImages(),
 		sveltekit({
 			adapter: adapter(),
+			// Cloudflare serves `404.html` at any depth, where relative `./_app/` paths would miss
+			paths: {relative: false},
 			preprocess: vitePreprocess(),
 			compilerOptions: {runes: true},
-			vitePlugin: {inspector: true},
+			inspector: true,
 		}),
-		svelteInspectorFix(),
 		Icons({
 			compiler: 'svelte',
 			customCollections: {
@@ -46,8 +61,5 @@ export default defineConfig({
 	test: {
 		include: ['src/**/*.test.ts'],
 		mockReset: true,
-	},
-	preview: {
-		port: 5173,
 	},
 })

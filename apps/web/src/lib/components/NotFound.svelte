@@ -1,7 +1,7 @@
 <script lang="ts">
 	import PageTitle from '#lib/components/typography/PageTitle.svelte'
 	import Paragraph from '#lib/components/typography/Paragraph.svelte'
-	import {Button} from '#lib/components/ui/button'
+	import {Button} from '#lib/components/ui/button/index.js'
 </script>
 
 <main class="container flex flex-col items-center gap-4 pt-10 pb-16">

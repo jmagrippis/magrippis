@@ -23,7 +23,7 @@ So, **in this article we will**:
 - Create a `CopyUrl` button
 - Create a custom `Tweet` CTA
 
-![](https://media.giphy.com/media/CjmvTCZf2U3p09Cn0h/giphy.gif)
+![](./how-to-add-a-custom-Tweet-CTA-to-your-static-Nextjs-page/im-ready.webp)
 
 ## What’s our `shareUrl`?
 
@@ -78,11 +78,11 @@ const rootUrl = 'https://magrippis.com'
 
 ## How can I test this?
 
-The above would do, but **what if we’re BDD-ing**? What if we’re What if we're [E2E testing the Vercel preview deploys of our Pull Requests](https://magrippis.com/blog/2020/how-to-BDD-and-E2E-test-your-responsive-web-app-with-Cypress 'How to BDD and E2E test your responsive web app with Cypress')? In those cases, `rootUrl` should be `http://localhost:3500` in development, and `https://deploy-preview-subdomain-with-unique-hash.vercel.app` in the deploy previews...
+The above would do, but **what if we’re BDD-ing**? What if we’re [E2E testing the Vercel preview deploys of our Pull Requests](https://magrippis.com/blog/2020/how-to-BDD-and-E2E-test-your-responsive-web-app-with-Cypress 'How to BDD and E2E test your responsive web app with Cypress')? In those cases, `rootUrl` should be `http://localhost:3500` in development, and `https://deploy-preview-subdomain-with-unique-hash.vercel.app` in the deploy previews...
 
 In other words, we’d want the `rootUrl` to be dynamic, something to tell us what the deploy domain is. Thankfully, in the Vercel project dashboard you can set up something like this in the settings:
 
-![](/blog/2020/tweet-cta-in-nextjs/vercel-environment-variables.png)
+![](./how-to-add-a-custom-Tweet-CTA-to-your-static-Nextjs-page/vercel-environment-variables.png)
 
 And then amend the constants file to use the new `NEXT_PUBLIC_ROOT_URL` environment variable:
 
@@ -137,7 +137,7 @@ Our Cypress test checks we’ve got a Twitter share button and a Copy Url button
 
 Of course, at this stage in the article, the test will be failing, which is our cue to move on to the next section and start implementing the components!
 
-![](https://media.giphy.com/media/RIkgfue3mXysO7Gw5h/giphy.gif)
+![](./how-to-add-a-custom-Tweet-CTA-to-your-static-Nextjs-page/next-penguin.webp)
 
 ## Using the Clipboard API for a `CopyUrl` button
 
@@ -190,7 +190,7 @@ Can you guess why we went with `justCopied` for the name of the state variable?
 
 It’s because we’ll finish by reverting the text back after a couple seconds!
 
-![](https://media.giphy.com/media/9xwKJOXn0ondCM1AQ4/giphy.gif)
+![](./how-to-add-a-custom-Tweet-CTA-to-your-static-Nextjs-page/i-knew-it.webp)
 
 We’ll do it with a `useEffect` that depends on `justCopied`: when `justCopied` is truthy, our effect will set a timeout to turn it back to `false`. And let’s not forget to return the cleanup to remove that timeout:
 
@@ -214,7 +214,7 @@ We’ll do it with a `useEffect` that depends on `justCopied`: when `justCopied`
 
 This gets us there functionality-wise, and that part of the Cypress test will be happy! If you wanna make your component look like mine above, with styling using [Tailwind](https://tailwindcss.com/ 'utility-first CSS framework') and a couple SVG icons for good measure, do have a look straight at [my site’s repo](https://github.com/jmagrippis/magrippis/blob/main/src/components/ShareCTA/CopyButton.tsx 'Open source for learning purposes baby!').
 
-![](https://media.giphy.com/media/LQnk2jb6lUQmQ4pOXA/giphy.gif)
+![](./how-to-add-a-custom-Tweet-CTA-to-your-static-Nextjs-page/grab-some-binoculars.webp)
 
 ## Using Twitter’s Intent API for a custom `Tweet` CTA
 
@@ -379,7 +379,7 @@ Testing Library is great for helping you avoid implementation details, but in th
 
 Besides, we’re done!
 
-![](https://media.giphy.com/media/clspXK4twFiGjTwxOZ/giphy.gif)
+![](./how-to-add-a-custom-Tweet-CTA-to-your-static-Nextjs-page/spider-man-dodges.webp)
 
 ## Putting it all together
 
@@ -416,7 +416,7 @@ export const ShareCTA: FC<Props> = ({title, tags}) => {
 
 And we’re done!
 
-![](https://media.giphy.com/media/l0Iyl55kTeh71nTXy/giphy.gif)
+![](./how-to-add-a-custom-Tweet-CTA-to-your-static-Nextjs-page/all-done.webp)
 
 Well, if we do want some fancier styling, we can always have another look at my site’s repo, to see exactly how I used Tailwind to style my [TweetButton](https://github.com/jmagrippis/magrippis/blob/main/src/components/ShareCTA/TweetButton.tsx 'apologies for the inline styles') and [ShareCTA](https://github.com/jmagrippis/magrippis/blob/main/src/components/ShareCTA/ShareCTA.tsx), and freely lift things as needed 😄
 
@@ -428,4 +428,4 @@ NextSEO is a handy library which takes care of the boilerplate for injecting met
 
 Until then, I’m calling it: **mission accomplished**!
 
-![](https://media.giphy.com/media/26u4lOMA8JKSnL9Uk/giphy.gif)
+![](./how-to-add-a-custom-Tweet-CTA-to-your-static-Nextjs-page/mission-accomplished.webp)

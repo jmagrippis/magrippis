@@ -88,6 +88,12 @@
 		}
 	}
 
+	@keyframes fade-in {
+		from {
+			opacity: 0;
+		}
+	}
+
 	:root {
 		--brand-hue: 271deg;
 		--emphasis-hue: 142deg;
@@ -244,12 +250,24 @@
 	--shadow-mid: var(--shadow-elevation-medium);
 	--shadow-high: var(--shadow-elevation-high);
 
-	--font-sans: 'Trispace Variable', system-ui, sans-serif;
+	/* fontaine generates the fallback face but cannot reach a custom property */
+	--font-sans: 'Trispace Variable', 'Trispace Variable fallback', system-ui, sans-serif;
 
 	--animate-blink: blink 0.8s infinite steps(1);
+	--animate-fade-in: fade-in var(--transition-duration-long) var(--ease-out-3);
 }
 
 /* Matches the v3 `container: {center: true}`, which v4 has no config for */
 @utility container {
 	margin-inline: auto;
 }
+
+/* The hero headline: the widest title and its cursor, 15.86em, fill the width. The 1.125rem floor sits under
+   the 18.2px a 305px screen gives, so only enlarged text reaches it */
+@utility text-headline {
+	font-size: max(min(var(--text-2xl), calc(100cqi / 15.86)), 1.125rem);
+	line-height: var(--text-2xl--line-height);
+}
+
+/* Where that floor wins, 15.86 × 1.125rem, a title can't fit one line. A literal: a container query can't read a custom property */
+@custom-variant headline-wraps (@container (width < 17.8425rem));

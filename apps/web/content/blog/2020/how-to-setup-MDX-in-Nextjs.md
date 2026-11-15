@@ -54,7 +54,7 @@ export const Demonstration = () => {
 
 Isn’t that cool?!
 
-![that IS cool](https://media.giphy.com/media/vEgtLzJo8n7qg/giphy.gif 'that IS cool')
+![that IS cool](./how-to-setup-MDX-in-Nextjs/that-is-cool.webp 'that IS cool')
 
 And if you think it’s cool enough to bring in your own Next.js blog, well, you’re in luck, as the next section is…
 
@@ -207,7 +207,7 @@ It’s somewhat funky, as the default export has to be a Higher Order Component 
 
 At this point, navigating to `/blog/mdx-ftw` will work, check it out!
 
-![it worked!](https://media.giphy.com/media/d2Z4rTi11c9LRita/giphy.gif 'it worked!')
+![it worked!](./how-to-setup-MDX-in-Nextjs/it-worked.webp 'it worked!')
 
 Great job!
 
@@ -424,4 +424,4 @@ More important at this point would be to style those pages nicely and, hey, how 
 
 But before doing either, make sure to pat yourself in the back: we did it, we set up MDX in our Next.js app! 👏🏼🥳🎉
 
-![we did it!](https://media.giphy.com/media/l3vR1Orv4xDgXX7Z6/giphy.gif 'we did it!')
+![we did it!](./how-to-setup-MDX-in-Nextjs/we-did-it.webp 'we did it!')

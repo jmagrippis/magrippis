@@ -6,15 +6,12 @@
 			"WebSearch",
 			"WebFetch(domain:github.com)",
 			"WebFetch(domain:raw.githubusercontent.com)",
-			"WebFetch(domain:orm.drizzle.team)",
 			"Bash(cat:*)",
 			"Bash(mkdir:*)",
 			"Bash(ls:*)",
 			"Bash(mv:*)",
-			"Bash(pnpm format:*)",
 			"Bash(pnpm:*)",
-			"Bash(.specify/scripts/bash/*:*)",
-			"Bash(bash .specify/scripts/bash/*:*)",
+			"Bash(vp:*)",
 			"Bash(git diff:*)",
 			"mcp__svelte__get-documentation",
 			"mcp__svelte__list-sections",
@@ -28,35 +25,44 @@
 			"mcp__playwright__browser_resize",
 			"mcp__playwright__browser_snapshot",
 			"mcp__playwright__browser_tabs",
-			"mcp__playwright__browser_wait_for",
-			"mcp__cloudflare-docs__search_cloudflare_documentation"
+			"mcp__playwright__browser_wait_for"
 		],
-		"deny": [
-			"Bash(pnpm db:migrate)",
-			"Bash(pnpm db:migrate-prod)",
-			"Bash(pnpm --filter @repo/web db:migrate)",
-			"Bash(pnpm --filter @repo/web db:migrate-prod)"
-		],
-		"ask": [
-			"Bash(pnpm db:generate-migrations)",
-			"Bash(pnpm --filter @repo/web db:generate-migrations)",
-			"Bash(git stash:*)",
-			"Bash(git checkout:*)"
-		]
+		"ask": ["Bash(git stash:*)", "Bash(git checkout:*)"]
 	},
+	"extraKnownMarketplaces": {
+		"cloudflare": {
+			"source": {
+				"source": "github",
+				"repo": "cloudflare/skills"
+			}
+		}
+	},
+	"enabledPlugins": {
+		"cloudflare@cloudflare": true
+	},
+	"enableAllProjectMcpServers": true,
 	"hooks": {
-		"PostToolUse": [
+		"SessionStart": [
 			{
-				"matcher": "Edit|MultiEdit|Write",
+				"matcher": "startup|resume",
 				"hooks": [
 					{
 						"type": "command",
-						"command": "jq -r '.tool_input.file_path' | { read file_path; if echo \"$file_path\" | grep -q '\\.ts$'; then pnpm format \"$file_path\"; fi; }"
+						"command": "bash \"$CLAUDE_PROJECT_DIR\"/.claude/hooks/setup-cloud-session.sh"
+					}
+				]
+			}
+		],
+		"PostToolUse": [
+			{
+				"matcher": "Edit|Write",
+				"hooks": [
+					{
+						"type": "command",
+						"command": "file=$(jq -r '.tool_input.file_path'); case \"$file\" in \"$CLAUDE_PROJECT_DIR\"/*) cd \"$CLAUDE_PROJECT_DIR\"; vp lint --fix --no-error-on-unmatched-pattern \"$file\"; vp fmt --no-error-on-unmatched-pattern \"$file\" ;; esac"
 					}
 				]
 			}
 		]
-	},
-	"enabledMcpjsonServers": ["svelte", "cloudflare-docs", "playwright"],
-	"enableAllProjectMcpServers": true
+	}
 }

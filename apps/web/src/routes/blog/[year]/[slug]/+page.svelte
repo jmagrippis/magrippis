@@ -1,10 +1,10 @@
 <script lang="ts">
-	import {getBlogCover} from '#lib/blogCovers'
+	import {getBlogCover} from '#lib/blogCovers.js'
 	import RelativeTime from '#lib/components/RelativeTime.svelte'
 	import ShareCTA from '#lib/components/share/ShareCTA.svelte'
-	import {Button} from '#lib/components/ui/button'
-	import {SITE_URL} from '#lib/constants'
-	import {proseClasses} from '#lib/sharedClasses'
+	import {Button} from '#lib/components/ui/button/index.js'
+	import {SITE_URL} from '#lib/constants.js'
+	import {proseClasses, proseColumnSizes} from '#lib/sharedClasses.js'
 
 	import type {PageData} from './$types'
 
@@ -29,7 +29,12 @@
 			<RelativeTime isoString={post.publishedAt} />
 		</div>
 
-		<enhanced:img src={getBlogCover(post.year, post.slug)} alt="" fetchpriority="high" />
+		<enhanced:img
+			src={getBlogCover(post.year, post.slug)}
+			alt=""
+			sizes={proseColumnSizes(0)}
+			fetchpriority="high"
+		/>
 
 		<!-- eslint-disable-next-line svelte/no-at-html-tags -- built at compile time from our own markdown -->
 		<section class="px-2">{@html post.html}</section>

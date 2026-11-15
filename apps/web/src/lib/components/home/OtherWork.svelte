@@ -1,14 +1,22 @@
 <script lang="ts">
+	import type {Picture} from '@sveltejs/enhanced-img'
+
+	import NewTabHint from '#lib/components/NewTabHint.svelte'
 	import Paragraph from '#lib/components/typography/Paragraph.svelte'
 	import Subtitle from '#lib/components/typography/Subtitle.svelte'
-	import {JOHNNIFY_URL, YOUTUBE_CHANNEL_URL} from '#lib/constants'
+	import {JOHNNIFY_URL, YOUTUBE_CHANNEL_URL} from '#lib/constants.js'
 
-	import bloggingCover from './images/blogging.jpg?enhanced'
-	import consultingCover from './images/consulting.jpg?enhanced'
-	import mentoringCover from './images/mentoring.jpg?enhanced'
-	import streamingCover from './images/streaming.jpg?enhanced'
-	import workshopsCover from './images/workshops.jpg?enhanced'
 	import OtherWorkItem from './OtherWorkItem.svelte'
+
+	const covers = import.meta.glob<Picture>(
+		'./images/{consulting,mentoring,workshops,blogging,streaming}.jpg',
+		{
+			eager: true,
+			// width descriptors, so with `sizes` a phone fetches a phone-sized cover rather than the 2x one
+			query: {enhanced: true, w: '540;768;1080;1366;1920'},
+			import: 'default',
+		},
+	)
 </script>
 
 <section class="flex flex-col items-center">
@@ -17,7 +25,7 @@
 	<Paragraph>Here’s a few more of my things you may find useful:</Paragraph>
 
 	<div class="container mt-8 mb-4 flex flex-col gap-4 px-2 xl:mb-12 xl:gap-16">
-		<OtherWorkItem name="Consulting" image={consultingCover}>
+		<OtherWorkItem name="Consulting" image={covers['./images/consulting.jpg']}>
 			<p>
 				I love solving problems and I’ve been doing that professionally as a Software Engineer for
 				decades!
@@ -41,7 +49,7 @@
 			</p>
 		</OtherWorkItem>
 
-		<OtherWorkItem name="Mentoring" image={mentoringCover} reversed>
+		<OtherWorkItem name="Mentoring" image={covers['./images/mentoring.jpg']} reversed>
 			<p>
 				My most fulfilling work... maybe tied with my YouTube videos, whenever I get a particularly
 				heart-felt comment 😄
@@ -62,7 +70,7 @@
 			</p>
 		</OtherWorkItem>
 
-		<OtherWorkItem name="Workshops" image={workshopsCover}>
+		<OtherWorkItem name="Workshops" image={covers['./images/workshops.jpg']}>
 			<p>
 				I am a firm believer in the power of workshops. Even those your employer forces you to
 				attend! It’s all in the power of the facilitators to design something engaging that leaves
@@ -87,7 +95,7 @@
 			</p>
 		</OtherWorkItem>
 
-		<OtherWorkItem name="Blogging" image={bloggingCover} reversed>
+		<OtherWorkItem name="Blogging" image={covers['./images/blogging.jpg']} reversed>
 			<p>
 				I <strong>love</strong> writing!
 			</p>
@@ -104,7 +112,7 @@
 					rel="noopener noreferrer"
 					class="hover:text-emphasis-hover ml-2"
 				>
-					find my video transcripts over at Johnnify
+					find my video transcripts over at Johnnify<NewTabHint />
 				</a>.
 			</p>
 			<p>
@@ -112,7 +120,7 @@
 			</p>
 		</OtherWorkItem>
 
-		<OtherWorkItem name="Livestreams" image={streamingCover}>
+		<OtherWorkItem name="Livestreams" image={covers['./images/streaming.jpg']}>
 			<p>
 				Yes,
 				<a
@@ -121,7 +129,7 @@
 					rel="noopener noreferrer"
 					class="hover:text-emphasis-hover ml-2"
 				>
-					livestreams get a special mention as your final CTA
+					livestreams get a special mention as your final CTA<NewTabHint />
 				</a> 😄
 			</p>
 			<p>

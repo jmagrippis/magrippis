@@ -1,6 +1,6 @@
 {
 	"extends": "$app/tsconfig",
-	"include": ["src"],
+	"include": ["src", "tests", "content/content-collections.ts"],
 	"compilerOptions": {
 		"allowJs": true,
 		"checkJs": true,
@@ -10,6 +10,7 @@
 		"skipLibCheck": true,
 		"sourceMap": true,
 		"strict": true,
-		"moduleResolution": "bundler"
+		"moduleResolution": "bundler",
+		"types": ["$app/types", "node"]
 	}
 }

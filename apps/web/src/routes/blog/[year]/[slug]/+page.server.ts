@@ -1,6 +1,7 @@
 import {error} from '@sveltejs/kit'
 
 import {allPosts} from '#content'
+import {markdownToHtml} from '#lib/server/markdown.js'
 
 import type {EntryGenerator, PageServerLoad} from './$types'
 
@@ -24,7 +25,7 @@ export const load: PageServerLoad = async ({params}) => {
 			href: post.href,
 			year: post.year,
 			slug: post.slug,
-			html: post.html,
+			html: await markdownToHtml(post.content, {directory: post._meta.directory, origin: ''}),
 		},
 	}
 }

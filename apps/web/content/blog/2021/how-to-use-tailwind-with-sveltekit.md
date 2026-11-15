@@ -15,7 +15,7 @@ A few months ago I was trialing a different sharing format for my adventures in 
 
 SvelteKit has since switched to using [Vite](https://vitejs.dev/ 'Next Generation Frontend Tooling') as the bundler, officially went into Beta last week, and has straightforward [docs](https://kit.svelte.dev/docs "If I didn't have any MDX I would have transitioned to it already!") finally open to the public. I’ve been loving building small stuff with it, it’s at the point where I can heartily recommend you give it a shot!
 
-![](https://media.giphy.com/media/SwrtjuaZWnjVnfe9J6/giphy.gif 'give it a shot!')
+![](./how-to-use-tailwind-with-sveltekit/give-it-a-shot.webp 'give it a shot!')
 
 Some third-party libraries, especially those involving http requests, may give you trouble, but if you’re willing to get closer to the metal you’ll make it work… For example, I had to drop the official Airtable client, and write my own requests to their API using `node-fetch` directly.
 
@@ -117,7 +117,7 @@ Let’s go to `src/lib/Counter.svelte` and add a few classes to the button, to f
 
 Our app should instantly update again, giving us a fancier button: Awesome!
 
-![](https://media.giphy.com/media/mXnO9IiWWarkI/giphy.gif 'Awesome!')
+![](./how-to-use-tailwind-with-sveltekit/awesome.webp 'Awesome!')
 
 ## Purging and configuring Tailwind
 

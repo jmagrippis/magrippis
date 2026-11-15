@@ -19,6 +19,7 @@
 		<enhanced:img
 			src={image}
 			alt="Johnny {name}!"
+			sizes="(min-width: 1536px) 886px, (min-width: 1280px) 745px, (min-width: 1024px) 1008px, (min-width: 768px) 752px, (min-width: 640px) 624px, calc(100vw - 16px)"
 			loading="lazy"
 			class="shadow-low w-full rounded-lg"
 		/>
