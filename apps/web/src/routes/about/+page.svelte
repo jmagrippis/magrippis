@@ -61,14 +61,6 @@
 			of my posts have gone relatively viral. Therefore, I should ensure noone’s left with broken links!
 			Which means how I structure my routes needs to stay consistent.
 		</p>
-		<p>
-			<a href="https://plausible.io/magrippis.com" target="_blank" rel="noopener noreferrer">
-				My analytics are public<NewTabHint />
-			</a>
-			so you can see we’re not Zoopla by a longshot, but there <strong>is</strong> a decent amount of
-			people dropping by 👋
-		</p>
-
 		<h2>The Stack</h2>
 		<p>
 			This site is built with latest <strong>Svelte</strong> and <strong>SvelteKit</strong>, styled

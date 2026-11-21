@@ -12,6 +12,7 @@
 		"dev": "vp dev",
 		"build": "vp build",
 		"preview": "wrangler dev",
+		"deploy": "vp build && wrangler deploy",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --tsgo --incremental",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --tsgo --incremental --watch",
 		"test": "vp test",

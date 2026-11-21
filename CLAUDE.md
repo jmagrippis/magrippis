@@ -32,7 +32,7 @@
 - A post's address, `/blog/<year>/<slug>`, never changes: posts have gone viral and are linked from elsewhere.
 - Anything canonical (`og:url`, share links, sitemap, feed) is built from `SITE_URL`, because prerendering gives `page.url` a fake origin.
 - Posts are plain Markdown with no components: no MDX, no mdsvex. Their HTML is self-contained, one Shiki theme with inline styles, because the feed carries the same HTML.
-- Response headers go in `apps/web/static/_headers` and redirects in `apps/web/static/_redirects`, because prerendered `+server.ts` routes lose their headers.
+- Response headers go in `apps/web/static/_headers` and path redirects in `apps/web/static/_redirects`, because prerendered `+server.ts` routes lose their headers. Host redirects, such as `www`, are a Cloudflare Redirect Rule.
 - Leave `trailingSlash` alone: Cloudflare's default already matches Kit's flat `route.html` output.
 - No `svelte.config.js`: configure Kit through `sveltekit(...)` in `apps/web/vite.config.ts`. No `$lib`: import through the `#lib/*` and `#content` subpath imports.
 - A `#lib` import names its file with an extension, `.js` for TypeScript modules, as the shadcn-svelte CLI writes it: `#lib/utils.js`, `#lib/components/ui/button/index.js`, `#lib/components/NotFound.svelte`.

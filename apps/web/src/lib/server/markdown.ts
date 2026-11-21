@@ -134,7 +134,7 @@ const servePostImages =
 					)
 				} else {
 					throw new Error(
-						`${src}: a post's images sit next to it, as JPEG or PNG stills or WebP animations. README.md shows how to convert a GIF`,
+						`${src}: a post's images sit next to it, as JPEG or PNG stills or WebP animations. Convert a GIF from apps/web: node scripts/gifToWebp.ts <source.gif> <destination.webp> [width]`,
 					)
 				}
 			})
