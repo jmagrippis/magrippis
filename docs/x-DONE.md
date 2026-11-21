@@ -17,3 +17,13 @@ Lighthouse 13.6.0, mobile, median of 5 runs, LCP in ms. Live is the Next.js site
 | `/`     | 2421 | 2425  | 2114 |
 | `/blog` | 2874 | 2499  | 2267 |
 | A post  | 3623 | 2567  | 2140 |
+
+## 1.4 magrippis.com is served by Cloudflare (2026-11-21)
+
+Lighthouse 13.6.0, mobile, median of 5 runs on the same day, LCP in ms. CLS was 0 on Cloudflare throughout, and 0.022 on Vercel's home page.
+
+| Page    | Vercel | Cloudflare |
+| ------- | ------ | ---------- |
+| `/`     | 2282   | 2137       |
+| `/blog` | 2875   | 2282       |
+| A post  | 4041   | 2283       |
