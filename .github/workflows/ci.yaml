@@ -3,8 +3,17 @@ name: CI
 on:
   push:
     branches: [main]
+    paths: &site
+      - 'apps/web/**'
+      - '.github/workflows/ci.yaml'
+      - '.node-version'
+      - 'package.json'
+      - 'pnpm-lock.yaml'
+      - 'pnpm-workspace.yaml'
+      - 'vite.config.ts'
   pull_request:
     branches: [main]
+    paths: *site
 
 permissions:
   contents: read
