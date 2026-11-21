@@ -61,7 +61,5 @@ export default defineConfig({
 	test: {
 		include: ['src/**/*.test.ts'],
 		mockReset: true,
-		// a file's first render of every post loads Shiki's grammars and encodes the stills: over 5s on a CI runner
-		testTimeout: 30_000,
 	},
 })
